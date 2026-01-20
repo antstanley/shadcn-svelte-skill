@@ -74,10 +74,19 @@ jobs:
           python scripts/package_skill.py shadcn-svelte dist
           ls -la dist/
 
+      - name: Generate install script
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          sed "s/__VERSION__/$VERSION/g" scripts/install.sh > dist/install.sh
+          chmod +x dist/install.sh
+          cat dist/install.sh
+
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           name: shadcn-svelte Skill ${{ steps.version.outputs.tag }}
           body_path: release_notes.md
-          files: dist/shadcn-svelte.skill
+          files: |
+            dist/shadcn-svelte.skill
+            dist/install.sh
           fail_on_unmatched_files: true

@@ -4,13 +4,20 @@ A Claude Code skill for [shadcn-svelte](https://shadcn-svelte.com) - a Svelte 5 
 
 ## Installation
 
-### From Release
+Install the latest release using curl:
 
-1. Download the latest `shadcn-svelte.skill` file from the [Releases](../../releases) page
-2. Install in Claude Code:
-   ```
-   /skill install path/to/shadcn-svelte.skill
-   ```
+```bash
+curl -fsSL https://github.com/antstanley/shadcn-svelte-skill/releases/latest/download/install.sh | bash
+```
+
+This installs the skill to `~/.claude/skills/shadcn-svelte`.
+
+### Install a Specific Version
+
+```bash
+# Download and run the install script for a specific version
+curl -fsSL https://github.com/antstanley/shadcn-svelte-skill/releases/download/v1.0.0/install.sh | bash
+```
 
 ### From Source
 
@@ -19,9 +26,10 @@ A Claude Code skill for [shadcn-svelte](https://shadcn-svelte.com) - a Svelte 5 
    ```bash
    python scripts/package_skill.py shadcn-svelte dist
    ```
-3. Install the generated skill:
-   ```
-   /skill install dist/shadcn-svelte.skill
+3. Extract to your skills directory:
+   ```bash
+   mkdir -p ~/.claude/skills/shadcn-svelte
+   unzip dist/shadcn-svelte.skill -d ~/.claude/skills/shadcn-svelte
    ```
 
 ## Usage
