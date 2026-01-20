@@ -1,18 +1,31 @@
 name: Package and Release Skill
 
 on:
-  release:
-    types: [created]
+  push:
+    tags:
+      - "v*.*.*"
 
 jobs:
-  package:
+  release:
     runs-on: ubuntu-latest
+    # Only run on main branch tags
+    if: github.ref_type == 'tag'
     permissions:
       contents: write
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Verify tag is on main branch
+        run: |
+          git fetch --all
+          if ! git branch -r --contains ${{ github.sha }} | grep -q 'origin/main'; then
+            echo "Error: Tag must be on main branch"
+            exit 1
+          fi
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -22,16 +35,49 @@ jobs:
       - name: Install dependencies
         run: pip install pyyaml
 
-      - name: Validate skill
+      - name: Get version from tag
+        id: version
         run: |
-          python scripts/validate_skill.py shadcn-svelte
+          VERSION=${GITHUB_REF#refs/tags/v}
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "tag=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+
+      - name: Extract changelog for version
+        id: changelog
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          # Extract section between this version header and the next version header (or end of file)
+          CHANGELOG=$(awk -v ver="$VERSION" '
+            /^## \[/ {
+              if (found) exit
+              if (index($0, "["ver"]")) found=1
+            }
+            found {print}
+          ' CHANGELOG.md)
+
+          # Save to file for body_path
+          echo "$CHANGELOG" > release_notes.md
+
+          # Check if we found content
+          if [ -z "$CHANGELOG" ]; then
+            echo "Warning: No changelog found for version $VERSION"
+            echo "## Release ${{ steps.version.outputs.tag }}" > release_notes.md
+            echo "" >> release_notes.md
+            echo "See [CHANGELOG.md](CHANGELOG.md) for details." >> release_notes.md
+          fi
+
+      - name: Validate skill
+        run: python scripts/validate_skill.py shadcn-svelte
 
       - name: Package skill
         run: |
           python scripts/package_skill.py shadcn-svelte dist
           ls -la dist/
 
-      - name: Upload skill to release
+      - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: dist/*.skill
+          name: shadcn-svelte Skill ${{ steps.version.outputs.tag }}
+          body_path: release_notes.md
+          files: dist/shadcn-svelte.skill
+          fail_on_unmatched_files: true
