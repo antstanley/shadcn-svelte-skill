@@ -1,0 +1,79 @@
+name: Update Documentation
+
+on:
+  schedule:
+    # Run daily at 4am UTC
+    - cron: '0 4 * * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  update-docs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Create update branch
+        run: |
+          BRANCH_NAME="docs-update-$(date +%Y%m%d)"
+          echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
+          git checkout -b "$BRANCH_NAME"
+
+      - name: Download latest documentation
+        run: python scripts/download_docs.py
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git add -A source/
+          if git diff --cached --quiet; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "📭 No documentation changes detected"
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "📬 Documentation changes detected:"
+            git diff --cached --stat
+          fi
+
+      - name: Commit and push changes
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "docs: update shadcn-svelte documentation $(date +%Y-%m-%d)"
+          git push origin "$BRANCH_NAME"
+
+      - name: Create Draft PR
+        if: steps.changes.outputs.has_changes == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          DIFF_STAT=$(git diff --stat origin/main...HEAD)
+          gh pr create \
+            --draft \
+            --title "docs: update shadcn-svelte documentation $(date +%Y-%m-%d)" \
+            --body "## Automated Documentation Update
+
+          This PR was automatically generated to update the shadcn-svelte documentation.
+
+          ### Changes
+          \`\`\`
+          $DIFF_STAT
+          \`\`\`
+
+          ### Review Checklist
+          - [ ] Review the documentation changes
+          - [ ] Update \`shadcn-svelte/references/\` if needed
+          - [ ] Re-package the skill if references changed
+
+          ---
+          🤖 Generated automatically by the update-docs workflow"
