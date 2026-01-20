@@ -1,0 +1,117 @@
+# shadcn-svelte
+
+> shadcn-svelte is a collection of beautifully-designed, accessible components for Svelte and SvelteKit. It is built with TypeScript, Tailwind CSS, and Bits UI primitives. Open Source. Open Code. AI-Ready. It also comes with a command-line tool to install and manage components and a registry system to publish and distribute code.
+
+## Overview
+
+- [About](docs/about.md): Powered by amazing open source projects.
+- [Changelog](docs/changelog.md): Latest updates and announcements.
+- [shadcn-svelte](docs/cli.md): Use the shadcn-svelte CLI to add components to your project.
+- [components.json](docs/components-json.md): Configuration for your project.
+- [JavaScript](docs/javascript.md): How to use shadcn-svelte with JavaScript.
+- [Legacy Docs](docs/legacy.md): View the legacy docs for shadcn-svelte and Tailwind v3.
+- [Theming](docs/theming.md): Use CSS Variables to customize the look and feel of your application.
+
+## Installation
+
+- [Astro](docs/installation/astro.md): How to setup shadcn-svelte in an Astro project.
+- [Manual Installation](docs/installation/manual.md): How to setup shadcn-svelte manually.
+- [SvelteKit](docs/installation/sveltekit.md): How to setup shadcn-svelte in a SvelteKit project.
+- [Vite](docs/installation/vite.md): How to setup shadcn-svelte in a Vite project.
+
+## Components
+
+### Form & Input
+
+- [Button](docs/components/button.md): Displays a button or a component that looks like a button.
+- [Button Group](docs/components/button-group.md): A container that groups related buttons together with consistent styling.
+- [Calendar](docs/components/calendar.md): A calendar component that allows users to select dates.
+- [Checkbox](docs/components/checkbox.md): A control that allows the user to toggle between checked and not checked.
+- [Combobox](docs/components/combobox.md): Autocomplete input and command palette with a list of suggestions.
+- [Date Picker](docs/components/date-picker.md): A date picker component with range and presets.
+- [Field](docs/components/field.md): Combine labels, controls, and help text to compose accessible form fields and grouped inputs.
+- [Formsnap](docs/components/form.md): Building forms with Formsnap, Superforms, & Zod.
+- [Input](docs/components/input.md): Displays a form input field or a component that looks like an input field.
+- [Input Group](docs/components/input-group.md): Display additional information or actions to an input or textarea.
+- [Input OTP](docs/components/input-otp.md): Accessible one-time password component with copy paste functionality.
+- [Label](docs/components/label.md): Renders an accessible label associated with controls.
+- [Native Select](docs/components/native-select.md): A styled native HTML select element with consistent design system integration.
+- [Radio Group](docs/components/radio-group.md): A set of checkable buttons—known as radio buttons—where no more than one of the buttons can be checked at a time.
+- [Select](docs/components/select.md): Displays a list of options for the user to pick from—triggered by a button.
+- [Slider](docs/components/slider.md): An input where the user selects a value from within a given range.
+- [Switch](docs/components/switch.md): A control that allows the user to toggle between checked and not checked.
+- [Textarea](docs/components/textarea.md): Displays a form textarea or a component that looks like a textarea.
+
+### Layout & Navigation
+
+- [Accordion](docs/components/accordion.md): A vertically stacked set of interactive headings that each reveal a section of content.
+- [Breadcrumb](docs/components/breadcrumb.md): Displays the path to the current resource using a hierarchy of links.
+- [Navigation Menu](docs/components/navigation-menu.md): A collection of links for navigating websites.
+- [Resizable](docs/components/resizable.md): Accessible resizable panel groups and layouts with keyboard support.
+- [Scroll Area](docs/components/scroll-area.md): Augments native scroll functionality for custom, cross-browser styling.
+- [Separator](docs/components/separator.md): Visually or semantically separates content.
+- [Sidebar](docs/components/sidebar.md): A composable, themeable and customizable sidebar component.
+- [Tabs](docs/components/tabs.md): A set of layered sections of content—known as tab panels—that are displayed one at a time.
+
+### Overlays & Dialogs
+
+- [Alert Dialog](docs/components/alert-dialog.md): A modal dialog that interrupts the user with important content and expects a response.
+- [Command](docs/components/command.md): Fast, composable, unstyled command menu for Svelte.
+- [Context Menu](docs/components/context-menu.md): Displays a menu to the user — such as a set of actions or functions — triggered by right click.
+- [Dialog](docs/components/dialog.md): A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.
+- [Drawer](docs/components/drawer.md): A drawer component for Svelte.
+- [Dropdown Menu](docs/components/dropdown-menu.md): Displays a menu to the user — such as a set of actions or functions — triggered by a button.
+- [Hover Card](docs/components/hover-card.md): For sighted users to preview content available behind a link.
+- [Menubar](docs/components/menubar.md): A visually persistent menu common in desktop applications that provides quick access to a consistent set of commands.
+- [Popover](docs/components/popover.md): Displays rich content in a portal, triggered by a button.
+- [Sheet](docs/components/sheet.md): Extends the Dialog component to display content that complements the main content of the screen.
+- [Tooltip](docs/components/tooltip.md): A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.
+
+### Feedback & Status
+
+- [Alert](docs/components/alert.md): Displays a callout for user attention.
+- [Badge](docs/components/badge.md): Displays a badge or a component that looks like a badge.
+- [Empty](docs/components/empty.md): Use the Empty component to display a empty state.
+- [Progress](docs/components/progress.md): Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.
+- [Skeleton](docs/components/skeleton.md): Use to show a placeholder while content is loading.
+- [Sonner](docs/components/sonner.md): An opinionated toast component for Svelte.
+- [Spinner](docs/components/spinner.md): An indicator that can be used to show a loading state.
+
+### Display & Media
+
+- [Aspect Ratio](docs/components/aspect-ratio.md): Displays content within a desired ratio.
+- [Avatar](docs/components/avatar.md): An image element with a fallback for representing the user.
+- [Card](docs/components/card.md): Displays a card with header, content, and footer.
+- [Carousel](docs/components/carousel.md): A carousel with motion and swipe built using Embla.
+- [Chart](docs/components/chart.md): Beautiful charts. Built using LayerChart. Copy and paste into your apps.
+- [Data Table](docs/components/data-table.md): Powerful table and datagrids built using TanStack Table.
+- [Item](docs/components/item.md): A versatile component that you can use to display any content.
+- [Kbd](docs/components/kbd.md): Used to display textual user input from keyboard.
+- [Table](docs/components/table.md): A responsive table component.
+- [Typography](docs/components/typography.md): Styles for headings, paragraphs, lists...etc
+
+### Misc
+
+- [Collapsible](docs/components/collapsible.md): An interactive component which expands/collapses a panel.
+- [Pagination](docs/components/pagination.md): Pagination with page navigation, next and previous links.
+- [Range Calendar](docs/components/range-calendar.md): A calendar component that allows users to select a range of dates.
+- [Toggle](docs/components/toggle.md): A two-state button that can be either on or off.
+- [Toggle Group](docs/components/toggle-group.md): A set of two-state buttons that can be toggled on or off.
+
+## Dark Mode
+
+- [Astro](docs/dark-mode/astro.md): Adding dark mode to your Astro site.
+- [Svelte](docs/dark-mode/svelte.md): Adding dark mode to your Svelte site.
+
+## Migration
+
+- [Svelte 5](docs/migration/svelte-5.md): How to migrate from Svelte 4 and Tailwind 3 to Svelte 5.
+- [Tailwind v4](docs/migration/tailwind-v4.md): How to use shadcn-svelte with Tailwind v4 and Svelte 5.
+
+## Registry
+
+- [Examples](docs/registry/examples.md): Examples of registry items: styles, components, css vars, etc.
+- [FAQ](docs/registry/faq.md): Frequently asked questions about running a registry.
+- [Getting Started](docs/registry/getting-started.md): Learn how to get setup and run your own component registry.
+- [registry-item.json](docs/registry/registry-item-json.md): Specification for registry items.
+- [registry.json](docs/registry/registry-json.md): Schema for running your own component registry.

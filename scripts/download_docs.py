@@ -33,25 +33,43 @@ def extract_urls(content: str) -> list[str]:
     return sorted(set(urls))
 
 
-def url_to_filepath(url: str, output_dir: Path) -> Path:
+def url_to_local_path(url: str) -> str:
+    """Convert a URL to a local relative path."""
+    parsed = urlparse(url)
+    path = parsed.path
+    if path.startswith("/docs/"):
+        path = path[6:]  # Remove /docs/
+    return f"docs/{path}"
+
+
+def url_to_filepath(url: str, docs_dir: Path) -> Path:
     """Convert a URL to a local file path."""
     parsed = urlparse(url)
-    # Remove /docs/ prefix and .md suffix to get the path
     path = parsed.path
     if path.startswith("/docs/"):
         path = path[6:]  # Remove /docs/
 
-    # Handle the file path
     if path.endswith(".md"):
-        filepath = output_dir / path
+        filepath = docs_dir / path
     else:
-        filepath = output_dir / f"{path}.md"
+        filepath = docs_dir / f"{path}.md"
 
     return filepath
 
 
-def download_docs(output_dir: Path) -> int:
-    """Download all documentation files."""
+def update_llms_txt(content: str, urls: list[str]) -> str:
+    """Update llms.txt content to use local file paths."""
+    updated_content = content
+    for url in urls:
+        local_path = url_to_local_path(url)
+        updated_content = updated_content.replace(url, local_path)
+    return updated_content
+
+
+def download_docs(source_dir: Path) -> int:
+    """Download all documentation files and update llms.txt."""
+    docs_dir = source_dir / "docs"
+
     print(f"📥 Downloading llms.txt from {LLMS_TXT_URL}")
 
     content = download_file(LLMS_TXT_URL)
@@ -62,28 +80,39 @@ def download_docs(output_dir: Path) -> int:
     urls = extract_urls(content)
     print(f"📋 Found {len(urls)} .md files to download\n")
 
-    # Clear existing references (except keeping directory structure)
-    if output_dir.exists():
-        for md_file in output_dir.rglob("*.md"):
+    # Clear existing docs (except keeping directory structure)
+    if docs_dir.exists():
+        for md_file in docs_dir.rglob("*.md"):
             md_file.unlink()
+
+    # Ensure directories exist
+    source_dir.mkdir(parents=True, exist_ok=True)
+    docs_dir.mkdir(parents=True, exist_ok=True)
 
     success_count = 0
     fail_count = 0
 
     for url in urls:
-        filepath = url_to_filepath(url, output_dir)
+        filepath = url_to_filepath(url, docs_dir)
 
         # Create parent directories
         filepath.parent.mkdir(parents=True, exist_ok=True)
 
-        print(f"  Downloading: {filepath.relative_to(output_dir)}")
+        print(f"  Downloading: {filepath.relative_to(docs_dir)}")
 
-        content = download_file(url)
-        if content:
-            filepath.write_text(content)
+        file_content = download_file(url)
+        if file_content:
+            filepath.write_text(file_content)
             success_count += 1
         else:
             fail_count += 1
+
+    # Update llms.txt with local paths and save
+    print(f"\n📝 Updating llms.txt with local paths...")
+    updated_llms = update_llms_txt(content, urls)
+    llms_path = source_dir / "llms.txt"
+    llms_path.write_text(updated_llms)
+    print(f"  Saved: {llms_path}")
 
     print()
     print(f"✅ Downloaded {success_count} files")
@@ -97,15 +126,15 @@ def main() -> int:
     # Determine output directory
     script_dir = Path(__file__).parent
     repo_root = script_dir.parent
-    output_dir = repo_root / "source" / "docs"
+    source_dir = repo_root / "source"
 
     # Allow override via command line
     if len(sys.argv) > 1:
-        output_dir = Path(sys.argv[1])
+        source_dir = Path(sys.argv[1])
 
-    print(f"📁 Output directory: {output_dir}\n")
+    print(f"📁 Source directory: {source_dir}\n")
 
-    return download_docs(output_dir)
+    return download_docs(source_dir)
 
 
 if __name__ == "__main__":
