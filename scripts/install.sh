@@ -5,7 +5,7 @@ set -e
 # This script installs the shadcn-svelte skill for Claude Code
 
 SKILL_NAME="shadcn-svelte"
-INSTALL_DIR="$HOME/.claude/skills/$SKILL_NAME"
+INSTALL_DIR="$(PWD)/.claude/skills"
 REPO="antstanley/shadcn-svelte-skill"
 
 # Version is baked in at release time
