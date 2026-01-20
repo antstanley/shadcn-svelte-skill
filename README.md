@@ -85,7 +85,46 @@ Creates `dist/shadcn-svelte.skill`.
 
 ### Release
 
-Create a new GitHub release and the workflow will automatically package and attach the `.skill` file.
+Releases are automated via GitHub Actions when a version tag is pushed to the `main` branch.
+
+#### Steps to Release
+
+1. **Update CHANGELOG.md** with the new version section:
+   ```markdown
+   ## [1.1.0] - 2025-01-25
+
+   ### Added
+   - New feature description
+
+   ### Changed
+   - Change description
+   ```
+
+2. **Commit the changelog**:
+   ```bash
+   git add CHANGELOG.md
+   git commit -m "docs: update changelog for v1.1.0"
+   ```
+
+3. **Create and push a version tag**:
+   ```bash
+   git tag v1.1.0
+   git push origin main
+   git push origin v1.1.0
+   ```
+
+4. The workflow will automatically:
+   - Verify the tag is on the `main` branch
+   - Validate and package the skill
+   - Extract the changelog section for this version
+   - Create a GitHub Release with the `.skill` file attached
+
+#### Version Format
+
+Tags must follow semantic versioning: `v{major}.{minor}.{patch}`
+- `v1.0.0` - Initial release
+- `v1.1.0` - New features (backward compatible)
+- `v1.0.1` - Bug fixes
 
 ## Updating Documentation
 
