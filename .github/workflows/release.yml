@@ -1,0 +1,37 @@
+name: Package and Release Skill
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Validate skill
+        run: |
+          python scripts/validate_skill.py shadcn-svelte
+
+      - name: Package skill
+        run: |
+          python scripts/package_skill.py shadcn-svelte dist
+          ls -la dist/
+
+      - name: Upload skill to release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*.skill
