@@ -99,7 +99,7 @@ Detailed documentation is organized in `references/`:
 
 - **Overview**: `about.md`, `cli.md`, `components-json.md`, `theming.md`
 - **Installation**: `installation/sveltekit.md`, `installation/astro.md`, `installation/vite.md`
-- **Components**: `components/[name].md` - 54 component guides
+- **Components**: `components/[name].md` - 59 component guides
 - **Dark Mode**: `dark-mode/svelte.md`, `dark-mode/astro.md`
 - **Migration**: `migration/svelte-5.md`, `migration/tailwind-v4.md`
 - **Registry**: `registry/getting-started.md` - custom registry creation

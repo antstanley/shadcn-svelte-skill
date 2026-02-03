@@ -4,10 +4,6 @@ Building forms with Formsnap, Superforms, & Zod.
 
 [Docs](https://formsnap.dev)
 
-We are not actively developing this component anymore.
-
-The Form component is an abstraction over the `formsnap` & `sveltekit-superforms` libraries. Going forward, we recommend using the [`<Field />`](https://shadcn-svelte.com/docs/components/field) component to build forms.
-
 Forms are tricky. They are one of the most common things you'll build in a web application, but also one of the most complex.
 
 Well-designed HTML forms are:

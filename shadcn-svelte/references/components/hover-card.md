@@ -2,38 +2,9 @@
 
 For sighted users to preview content available behind a link.
 
-## Installation
+[Docs](https://bits-ui.com/docs/components/link-preview)
 
-```bash
-pnpm dlx shadcn-svelte@latest add hover-card
-```
-
-```bash
-npx shadcn-svelte@latest add hover-card
-```
-
-```bash
-bun x shadcn-svelte@latest add hover-card
-```
-
-## Usage
-
-```svelte
-<script lang="ts">
-  import * as HoverCard from "$lib/components/ui/hover-card/index.js";
-</script>
-
-<HoverCard.Root>
-  <HoverCard.Trigger>Hover</HoverCard.Trigger>
-  <HoverCard.Content>
-    SvelteKit - Web development, streamlined
-  </HoverCard.Content>
-</HoverCard.Root>
-```
-
-## Examples
-
-### Profile Card
+[API Reference](https://bits-ui.com/docs/components/link-preview#api-reference)
 
 ```svelte
 <script lang="ts">
@@ -41,13 +12,12 @@ bun x shadcn-svelte@latest add hover-card
   import * as Avatar from "$lib/components/ui/avatar/index.js";
   import * as HoverCard from "$lib/components/ui/hover-card/index.js";
 </script>
-
 <HoverCard.Root>
   <HoverCard.Trigger
     href="https://github.com/sveltejs"
     target="_blank"
     rel="noreferrer noopener"
-    class="rounded-sm underline-offset-4 hover:underline"
+    class="rounded-sm underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-black"
   >
     @sveltejs
   </HoverCard.Trigger>
@@ -72,12 +42,32 @@ bun x shadcn-svelte@latest add hover-card
 </HoverCard.Root>
 ```
 
-## Components
+## Installation
 
-- **HoverCard.Root** - Root container
-- **HoverCard.Trigger** - Element that triggers the hover card
-- **HoverCard.Content** - Hover card content
+```bash
+pnpm dlx shadcn-svelte@latest add hover-card
+```
 
-## API
+```bash
+npx shadcn-svelte@latest add hover-card
+```
 
-Built on [Bits UI Link Preview](https://bits-ui.com/docs/components/link-preview).
+```bash
+bun x shadcn-svelte@latest add hover-card
+```
+
+## Usage
+
+```svelte
+<script lang="ts">
+  import * as HoverCard from "$lib/components/ui/hover-card/index.js";
+</script>
+```
+
+```svelte
+<HoverCard.Root>
+  <HoverCard.Trigger>Hover</HoverCard.Trigger>
+  <HoverCard.Content>
+    SvelteKit - Web development, streamlined </HoverCard.Content>
+</HoverCard.Root>
+```

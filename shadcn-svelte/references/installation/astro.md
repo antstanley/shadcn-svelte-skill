@@ -90,14 +90,18 @@ tsconfig.json
 ```json
 {
   "compilerOptions": {
+    // ...
     "baseUrl": ".",
     "paths": {
       "$lib": ["./src/lib"],
       "$lib/*": ["./src/lib/*"]
     }
+    // ...
   }
 }
 ```
+
+If needed, adapt the path aliases to your specific needs ([learn more about it](https://docs.astro.build/en/guides/aliases/)).
 
 ### Run the CLI
 

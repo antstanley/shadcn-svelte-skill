@@ -1,114 +1,204 @@
 # Getting Started
 
-How to create and publish a custom component registry.
+Learn how to get setup and run your own component registry.
 
-## Overview
+This guide will walk you through the process of setting up your own component registry.
 
-Create a custom component registry to distribute your components, blocks, and themes.
+It assumes you already have a project with components and would like to turn it into a registry.
 
-## Setup
+If you're starting a new registry project, you can use the [registry template](https://github.com/huntabyte/shadcn-svelte/tree/main/registry-template) as a starting point. It's already configured for you.
 
-### 1. Create registry.json
+## registry.json
 
-Create a `registry.json` file at your project root:
+The `registry.json` file is only required if you're using the `shadcn-svelte` CLI to build your registry.
+
+If you're using a different build system, you can skip this step as long as your build system produces valid JSON files that conform to the [registry-item schema specification](https://shadcn-svelte.com/docs/registry/registry-item-json).
+
+### Add a registry.json file
+
+Create a `registry.json` file in the root of your project.
+
+registry.json
 
 ```json
 {
   "$schema": "https://shadcn-svelte.com/schema/registry.json",
-  "name": "my-registry",
-  "homepage": "https://my-registry.com",
-  "items": []
+  "name": "acme",
+  "homepage": "https://acme.com",
+  "items": [
+    // ...
+ ]
 }
 ```
 
-### 2. Organize Components
+This `registry.json` file must conform to the [registry schema specification](https://shadcn-svelte.com/docs/registry/registry-json).
 
-Store components in a structured directory:
+## Add a registry item
 
+### Create your component
+
+Add your first component. Here's an example of a simple `<HelloWorld />` component:
+
+registry/hello-world/hello-world.svelte
+
+```svelte
+<script lang="ts">
+  import { Button } from "$lib/components/ui/button/index.js";
+</script>
+<Button>Hello World</Button>
 ```
-registry/
-├── hello-world/
-│   ├── hello-world.svelte
-│   └── index.ts
-├── my-button/
-│   ├── my-button.svelte
-│   └── index.ts
+
+**Note:** This example places the component in the `registry/` directory. You can place it anywhere in your project as long as you set the correct path in the `registry.json` file and you follow the `registry/[NAME]` directory structure.
+
+```txt
+registry
+ hello-world
+     hello-world.svelte
 ```
 
-You can place components anywhere in your project as long as you set the correct path in the `registry.json` file.
+**Important:** If you're placing your component in a custom directory, make sure it can be detected by Tailwind CSS.
 
-### 3. Define Registry Entry
+src/routes/layout.css
 
-Add component metadata to `registry.json`:
+```css
+@source "./registry/@acmecorp/ui-lib";
+```
+
+### Add your component to the registry
+
+To add your component to the registry, you need to add your component definition to `registry.json`.
+
+registry.json
 
 ```json
 {
   "$schema": "https://shadcn-svelte.com/schema/registry.json",
-  "name": "my-registry",
-  "homepage": "https://my-registry.com",
+  "name": "acme",
+  "homepage": "https://acme.com",
   "items": [
     {
       "name": "hello-world",
       "type": "registry:block",
       "title": "Hello World",
-      "description": "A simple hello world component",
+      "description": "A simple hello world component.",
       "files": [
         {
-          "path": "registry/hello-world/hello-world.svelte",
+          "path": "./src/lib/hello-world/hello-world.svelte",
           "type": "registry:component"
         }
-      ]
+     ]
     }
   ]
 }
 ```
 
-## Build and Deploy
+You define your registry item by adding a `name`, `type`, `title`, `description` and `files`.
 
-### Install CLI
+For every file you add, you must specify the `path` and `type` of the file. The `path` is the relative path to the file from the root of your project. The `type` is the type of the file.
+
+You can read more about the registry item schema and file types in the [registry item schema docs](https://shadcn-svelte.com/docs/registry/registry-item-json).
+
+## Build your registry
+
+### Install the shadcn-svelte CLI
 
 ```bash
-pnpm add -D shadcn-svelte
+pnpm i shadcn-svelte@latest
 ```
 
-### Add Build Script
+```bash
+npm i shadcn-svelte@latest
+```
+
+```bash
+bun install shadcn-svelte@latest
+```
+
+### Add a build script
+
+Add a `registry:build` script to your `package.json` file.
+
+package.json
 
 ```json
 {
   "scripts": {
-    "build:registry": "shadcn-svelte build"
+    "registry:build": "pnpm shadcn-svelte registry build"
   }
 }
 ```
 
-### Run Build
+### Run the build script
+
+Run the build script to generate the registry JSON files.
 
 ```bash
-pnpm build:registry
+pnpm run registry:build
 ```
-
-This generates JSON files in `static/r/` by default.
-
-### Development
-
-Registry items are accessible at:
-
-```
-http://localhost:5173/r/[component-name].json
-```
-
-### Production
-
-Deploy to a public URL to share your registry. Users can install:
 
 ```bash
-pnpm dlx shadcn-svelte@latest add https://my-registry.com/r/hello-world.json
+npm run registry:build
 ```
 
-## Security
+```bash
+bun run registry:build
+```
 
-Authentication isn't built-in. For private registries:
+**Note:** By default, the build script will generate the registry JSON files in `static/r` e.g `static/r/hello-world.json`.
 
-- Implement token-based validation
-- Use query parameters: `?token=[SECURE_TOKEN]`
-- Encrypt and expire all tokens
+You can change the output directory by passing the `--output` option. See the [shadcn-svelte registry build command](https://shadcn-svelte.com/docs/cli#registry-build) for more information.
+
+## Serve your registry
+
+You can serve your registry by running the dev server.
+
+```bash
+pnpm run dev
+```
+
+```bash
+npm run dev
+```
+
+```bash
+bun run dev
+```
+
+Your files will now be served at `http://localhost:5173/r/[NAME].json` eg. `http://localhost:5173/r/hello-world.json`.
+
+## Publish your registry
+
+To make your registry available to other developers, you can publish it by deploying your project to a public URL.
+
+## Adding Auth
+
+The `shadcn-svelte` CLI does not offer a built-in way to add auth to your registry. We recommend handling authorization on your registry server.
+
+A common simple approach is to use a `token` query parameter to authenticate requests to your registry. e.g. `http://localhost:5173/r/hello-world.json?token=[SECURE_TOKEN_HERE]`.
+
+Use the secure token to authenticate requests and return a 401 Unauthorized response if the token is invalid. The `shadcn-svelte` CLI will handle the 401 response and display a message to the user.
+
+**Note:** Make sure to encrypt and expire tokens.
+
+## Guidelines
+
+Here are some guidelines to follow when building components for a registry.
+
+- The following properties are required for the block definition: `name` , `description` , `type` and `files` .
+- Make sure to list all registry dependencies in `registryDependencies` . A registry dependency is the name of the component in the registry eg. `input` , `button` , `card` , etc or a URL to a registry item eg. `http://localhost:5173/r/editor.json` - Ideally, place your files within a registry item in `components` , `hooks` , `lib` directories.
+
+## Install using the CLI
+
+To install a registry item using the `shadcn-svelte` CLI, use the `add` command followed by the URL of the registry item.
+
+```bash
+pnpm dlx shadcn-svelte@latest add http://localhost:5173/r/hello-world.json
+```
+
+```bash
+npx shadcn-svelte@latest add http://localhost:5173/r/hello-world.json
+```
+
+```bash
+bun x shadcn-svelte@latest add http://localhost:5173/r/hello-world.json
+```

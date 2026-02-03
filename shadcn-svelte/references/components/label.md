@@ -2,6 +2,23 @@
 
 Renders an accessible label associated with controls.
 
+[Docs](https://bits-ui.com/docs/components/label)
+
+[API Reference](https://bits-ui.com/docs/components/label#api-reference)
+
+```svelte
+<script lang="ts">
+  import { Checkbox } from "$lib/components/ui/checkbox/index.js";
+  import { Label } from "$lib/components/ui/label/index.js";
+</script>
+<div>
+  <div class="flex items-center space-x-2">
+    <Checkbox id="terms" />
+    <Label for="terms">Accept terms and conditions</Label>
+  </div>
+</div>
+```
+
 ## Installation
 
 ```bash
@@ -22,40 +39,8 @@ bun x shadcn-svelte@latest add label
 <script lang="ts">
   import { Label } from "$lib/components/ui/label/index.js";
 </script>
+```
 
+```svelte
 <Label for="email">Your email address</Label>
 ```
-
-## Examples
-
-### With Checkbox
-
-```svelte
-<script lang="ts">
-  import { Checkbox } from "$lib/components/ui/checkbox/index.js";
-  import { Label } from "$lib/components/ui/label/index.js";
-</script>
-
-<div class="flex items-center space-x-2">
-  <Checkbox id="terms" />
-  <Label for="terms">Accept terms and conditions</Label>
-</div>
-```
-
-### With Input
-
-```svelte
-<script lang="ts">
-  import { Input } from "$lib/components/ui/input/index.js";
-  import { Label } from "$lib/components/ui/label/index.js";
-</script>
-
-<div class="grid gap-1.5">
-  <Label for="email">Email</Label>
-  <Input id="email" type="email" placeholder="you@example.com" />
-</div>
-```
-
-## Accessibility
-
-The `for` attribute on the Label should match the `id` of the form control it describes. This ensures proper accessibility linking between the label and its associated input element.
