@@ -4,28 +4,35 @@ on:
   push:
     tags:
       - "v*.*.*"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Tag to release (e.g. v1.0.3)"
+        required: true
 
 jobs:
   release:
     runs-on: ubuntu-latest
-    # Only run on main branch tags
-    if: github.ref_type == 'tag'
     permissions:
       contents: write
 
     steps:
+      - name: Determine tag
+        id: version
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            TAG="${{ github.event.inputs.tag }}"
+          else
+            TAG="${GITHUB_REF#refs/tags/}"
+          fi
+          VERSION="${TAG#v}"
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "tag=$TAG" >> $GITHUB_OUTPUT
+
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ref: main
-
-      - name: Verify tag is on main branch
-        run: |
-          git fetch --all
-          if ! git branch -r --contains ${{ github.sha }} | grep -q 'origin/main'; then
-            echo "Error: Tag must be on main branch"
-            exit 1
-          fi
+          ref: ${{ steps.version.outputs.tag }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -34,13 +41,6 @@ jobs:
 
       - name: Install dependencies
         run: pip install pyyaml
-
-      - name: Get version from tag
-        id: version
-        run: |
-          VERSION=${GITHUB_REF#refs/tags/v}
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
-          echo "tag=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
 
       - name: Extract changelog for version
         id: changelog
