@@ -2,6 +2,50 @@
 
 A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.
 
+[Docs](https://bits-ui.com/docs/components/dialog)
+
+[API Reference](https://bits-ui.com/docs/components/dialog#api-reference)
+
+```svelte
+<script lang="ts">
+  import { Button, buttonVariants } from "$lib/components/ui/button/index.js";
+  import * as Dialog from "$lib/components/ui/dialog/index.js";
+  import { Input } from "$lib/components/ui/input/index.js";
+  import { Label } from "$lib/components/ui/label/index.js";
+</script>
+<Dialog.Root>
+  <form>
+    <Dialog.Trigger class={buttonVariants({ variant: "outline" })}
+      >Open Dialog</Dialog.Trigger
+    >
+    <Dialog.Content class="sm:max-w-[425px]">
+      <Dialog.Header>
+        <Dialog.Title>Edit profile</Dialog.Title>
+        <Dialog.Description>
+          Make changes to your profile here. Click save when you&apos;re done.
+        </Dialog.Description>
+      </Dialog.Header>
+      <div class="grid gap-4">
+        <div class="grid gap-3">
+          <Label for="name-1">Name</Label>
+          <Input id="name-1" name="name" defaultValue="Pedro Duarte" />
+        </div>
+        <div class="grid gap-3">
+          <Label for="username-1">Username</Label>
+          <Input id="username-1" name="username" defaultValue="@peduarte" />
+        </div>
+      </div>
+      <Dialog.Footer>
+        <Dialog.Close class={buttonVariants({ variant: "outline" })}
+          >Cancel</Dialog.Close
+        >
+        <Button type="submit">Save changes</Button>
+      </Dialog.Footer>
+    </Dialog.Content>
+  </form>
+</Dialog.Root>
+```
+
 ## Installation
 
 ```bash
@@ -22,7 +66,9 @@ bun x shadcn-svelte@latest add dialog
 <script lang="ts">
   import * as Dialog from "$lib/components/ui/dialog/index.js";
 </script>
+```
 
+```svelte
 <Dialog.Root>
   <Dialog.Trigger>Open</Dialog.Trigger>
   <Dialog.Content>
@@ -39,68 +85,40 @@ bun x shadcn-svelte@latest add dialog
 
 ## Examples
 
-### With Form
+### Custom close button
 
 ```svelte
 <script lang="ts">
-  import { Button, buttonVariants } from "$lib/components/ui/button/index.js";
+  import { buttonVariants } from "$lib/components/ui/button/index.js";
   import * as Dialog from "$lib/components/ui/dialog/index.js";
   import { Input } from "$lib/components/ui/input/index.js";
   import { Label } from "$lib/components/ui/label/index.js";
 </script>
-
 <Dialog.Root>
-  <Dialog.Trigger class={buttonVariants({ variant: "outline" })}>
-    Edit Profile
-  </Dialog.Trigger>
-  <Dialog.Content class="sm:max-w-[425px]">
+  <Dialog.Trigger class={buttonVariants({ variant: "outline" })}
+    >Share</Dialog.Trigger
+  >
+  <Dialog.Content class="sm:max-w-md">
     <Dialog.Header>
-      <Dialog.Title>Edit profile</Dialog.Title>
+      <Dialog.Title>Share link</Dialog.Title>
       <Dialog.Description>
-        Make changes to your profile here. Click save when you're done.
+        Anyone who has this link will be able to view this.
       </Dialog.Description>
     </Dialog.Header>
-    <div class="grid gap-4">
-      <div class="grid gap-3">
-        <Label for="name">Name</Label>
-        <Input id="name" value="Pedro Duarte" />
-      </div>
-      <div class="grid gap-3">
-        <Label for="username">Username</Label>
-        <Input id="username" value="@peduarte" />
+    <div class="flex items-center gap-2">
+      <div class="grid flex-1 gap-2">
+        <Label for="link" class="sr-only">Link</Label>
+        <Input
+          id="link"
+          defaultValue="https://shadcn-svelte.com/docs/installation"
+        />
       </div>
     </div>
-    <Dialog.Footer>
-      <Dialog.Close class={buttonVariants({ variant: "outline" })}>
-        Cancel
-      </Dialog.Close>
-      <Button type="submit">Save changes</Button>
+    <Dialog.Footer class="sm:justify-start">
+      <Dialog.Close class={buttonVariants({ variant: "secondary" })}
+        >Close</Dialog.Close
+      >
     </Dialog.Footer>
   </Dialog.Content>
 </Dialog.Root>
 ```
-
-### Custom Close Button
-
-```svelte
-<Dialog.Footer class="sm:justify-start">
-  <Dialog.Close class={buttonVariants({ variant: "secondary" })}>
-    Close
-  </Dialog.Close>
-</Dialog.Footer>
-```
-
-## Components
-
-- **Dialog.Root** - Root container
-- **Dialog.Trigger** - Button that opens the dialog
-- **Dialog.Content** - Dialog content container
-- **Dialog.Header** - Header section
-- **Dialog.Title** - Dialog title
-- **Dialog.Description** - Dialog description
-- **Dialog.Footer** - Footer section
-- **Dialog.Close** - Close button
-
-## API
-
-Built on [Bits UI Dialog](https://bits-ui.com/docs/components/dialog).

@@ -2,6 +2,13 @@
 
 Displays a form input field or a component that looks like an input field.
 
+```svelte
+<script lang="ts">
+  import { Input } from "$lib/components/ui/input/index.js";
+</script>
+<Input type="email" placeholder="Email" class="max-w-xs" />
+```
+
 ## Installation
 
 ```bash
@@ -22,7 +29,9 @@ bun x shadcn-svelte@latest add input
 <script lang="ts">
   import { Input } from "$lib/components/ui/input/index.js";
 </script>
+```
 
+```svelte
 <Input />
 ```
 
@@ -31,6 +40,9 @@ bun x shadcn-svelte@latest add input
 ### Default
 
 ```svelte
+<script lang="ts">
+  import { Input } from "$lib/components/ui/input/index.js";
+</script>
 <Input type="email" placeholder="Email" class="max-w-xs" />
 ```
 
@@ -41,7 +53,6 @@ bun x shadcn-svelte@latest add input
   import { Input } from "$lib/components/ui/input/index.js";
   import { Label } from "$lib/components/ui/label/index.js";
 </script>
-
 <div class="grid w-full max-w-sm items-center gap-1.5">
   <Label for="picture">Picture</Label>
   <Input id="picture" type="file" />
@@ -51,6 +62,9 @@ bun x shadcn-svelte@latest add input
 ### Disabled
 
 ```svelte
+<script lang="ts">
+  import { Input } from "$lib/components/ui/input/index.js";
+</script>
 <Input disabled type="email" placeholder="Email" class="max-w-sm" />
 ```
 
@@ -60,11 +74,11 @@ bun x shadcn-svelte@latest add input
 <script lang="ts">
   import { Input } from "$lib/components/ui/input/index.js";
   import { Label } from "$lib/components/ui/label/index.js";
+  const id = $props.id();
 </script>
-
 <div class="flex w-full max-w-sm flex-col gap-1.5">
-  <Label for="email">Email</Label>
-  <Input type="email" id="email" placeholder="Email" />
+  <Label for="email-{id}">Email</Label>
+  <Input type="email" id="email-{id}" placeholder="Email" />
 </div>
 ```
 
@@ -75,21 +89,8 @@ bun x shadcn-svelte@latest add input
   import { Button } from "$lib/components/ui/button/index.js";
   import { Input } from "$lib/components/ui/input/index.js";
 </script>
-
 <div class="flex w-full max-w-sm items-center gap-2">
   <Input type="email" placeholder="Email" />
   <Button type="submit" variant="outline">Subscribe</Button>
 </div>
 ```
-
-## Props
-
-The Input component accepts all standard HTML input attributes:
-
-- `type` - Input type (text, email, password, file, etc.)
-- `placeholder` - Placeholder text
-- `disabled` - Whether the input is disabled
-- `required` - Whether the input is required
-- `name` - Input name for form submission
-- `value` - Input value
-- `class` - Additional CSS classes

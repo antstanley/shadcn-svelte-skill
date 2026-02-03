@@ -1,9 +1,12 @@
-# shadcn-svelte CLI Documentation
+# shadcn-svelte
 
-The shadcn-svelte CLI provides three main commands for managing components in Svelte projects:
+Use the shadcn-svelte CLI to add components to your project.
 
-## Init Command
-The `init` command sets up a new project by installing dependencies, adding utilities, and configuring CSS variables. During setup, users configure import aliases and select a base color from options including slate, gray, zinc, neutral, or stone.
+## init
+
+Use the `init` command to initialize dependencies for a new project.
+
+The `init` command installs dependencies, adds the `cn` util, and creates CSS variables for the project.
 
 ```bash
 pnpm dlx shadcn-svelte@latest init
@@ -17,8 +20,45 @@ npx shadcn-svelte@latest init
 bun x shadcn-svelte@latest init
 ```
 
-## Add Command
-This command installs individual components or all components to your project. Users can specify which components to add, skip dependency installation, and use the `--overwrite` flag to replace existing files.
+You will be asked a few questions to configure `components.json`:
+
+```txt
+Which base color would you like to use?  Slate
+Where is your global CSS file? (this file will be overwritten)  src/routes/layout.css
+Configure the import alias for lib:  $lib
+Configure the import alias for components:  $lib/components
+Configure the import alias for utils:  $lib/utils
+Configure the import alias for hooks:  $lib/hooks
+Configure the import alias for ui:  $lib/components/ui
+```
+
+**Options**
+
+```bash
+Usage: shadcn-svelte init [options]
+initialize your project and install dependencies
+Options:
+  -c, --cwd <path>           the working directory (default: the current directory)
+  -o, --overwrite            overwrite existing files (default: false)
+  --no-deps                  disable adding & installing dependencies
+  --skip-preflight           ignore preflight checks and continue (default: false)
+  --base-color <name>        the base color for the components (choices: "slate", "gray", "zinc",
+                             "neutral", "stone")
+  --css <path>               path to the global CSS file
+  --components-alias <path>  import alias for components
+  --lib-alias <path>         import alias for lib
+  --utils-alias <path>       import alias for utils
+  --hooks-alias <path>       import alias for hooks
+  --ui-alias <path>          import alias for ui
+  --proxy <proxy>            fetch items from registry using a proxy
+  -h, --help                 display help for command
+```
+
+***
+
+## add
+
+Use the `add` command to add components and dependencies to your project.
 
 ```bash
 pnpm dlx shadcn-svelte@latest add [component]
@@ -32,10 +72,65 @@ npx shadcn-svelte@latest add [component]
 bun x shadcn-svelte@latest add [component]
 ```
 
-## Registry Build Command
-The `registry build` command generates registry JSON files from a `registry.json` source file, outputting them to the `static/r` directory by default.
+**Options**
 
-## Proxy Support
-The CLI supports proxy configurations through the `--proxy` option or by setting the `HTTP_PROXY` environment variable, enabling requests to work through proxy servers when accessing the shadcn-svelte registry.
+```bash
+Usage: shadcn-svelte add [options] [components...]
+add components to your project
+Arguments:
+  components         the components to add or a url to the component
+Options:
+  -c, --cwd <path>   the working directory (default: the current directory)
+  --no-deps         skips adding & installing package dependencies
+  --skip-preflight  ignore preflight checks and continue (default: false)
+  -a, --all         install all components to your project (default: false)
+  -y, --yes         skip confirmation prompt (default: false)
+  -o, --overwrite   overwrite existing files (default: false)
+  --proxy <proxy>   fetch components from registry using a proxy
+  -h, --help        display help for command
+```
 
-All commands offer flexibility through various flags and options, making it easy to customize initialization and component installation workflows.
+***
+
+## registry build
+
+Use the `registry build` command to generate the registry JSON files.
+
+```bash
+pnpm dlx shadcn-svelte@latest registry build [registry.json]
+```
+
+```bash
+npx shadcn-svelte@latest registry build [registry.json]
+```
+
+```bash
+bun x shadcn-svelte@latest registry build [registry.json]
+```
+
+This command reads the `registry.json` file and generates the registry JSON files into the `static/r` directory.
+
+**Options**
+
+```bash
+Usage: shadcn-svelte registry build [options] [registry]
+build components for a shadcn-svelte registry
+Arguments:
+  registry             path to registry.json file (default: ./registry.json)
+Options:
+  -c, --cwd <path>     the working directory (default: the current directory)
+  -o, --output <path>  destination directory for json files (default: ./static/r)
+  -h, --help           display help for command
+```
+
+***
+
+## Outgoing Requests
+
+### Proxy
+
+This enables the use of a proxy when sending out requests to fetch from the `shadcn-svelte` registry. If the `HTTP_PROXY` or `http_proxy` environment variables have been set, the request library underneath will respect the proxy settings.
+
+```bash
+HTTP_PROXY="<proxy-url>" npx shadcn-svelte@latest init
+```

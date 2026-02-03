@@ -2,6 +2,25 @@
 
 Used to display textual user input from keyboard.
 
+```svelte
+<script lang="ts">
+  import * as Kbd from "$lib/components/ui/kbd/index.js";
+</script>
+<div class="flex flex-col items-center gap-4">
+  <Kbd.Group>
+    <Kbd.Root></Kbd.Root>
+    <Kbd.Root></Kbd.Root>
+    <Kbd.Root></Kbd.Root>
+    <Kbd.Root></Kbd.Root>
+  </Kbd.Group>
+  <Kbd.Group>
+    <Kbd.Root>Ctrl</Kbd.Root>
+    <span>+</span>
+    <Kbd.Root>B</Kbd.Root>
+  </Kbd.Group>
+</div>
+```
+
 ## Installation
 
 ```bash
@@ -22,92 +41,118 @@ bun x shadcn-svelte@latest add kbd
 <script lang="ts">
   import * as Kbd from "$lib/components/ui/kbd/index.js";
 </script>
+```
 
+```svelte
 <Kbd.Root>B</Kbd.Root>
 ```
 
 ## Examples
 
-### Single Key
+### Group
+
+Use the `Kbd.Group` component to group keyboard keys together.
 
 ```svelte
-<Kbd.Root>⌘</Kbd.Root>
-<Kbd.Root>Ctrl</Kbd.Root>
-<Kbd.Root>Esc</Kbd.Root>
+<script lang="ts">
+  import * as Kbd from "$lib/components/ui/kbd/index.js";
+</script>
+<div class="flex flex-col items-center gap-4">
+  <p class="text-muted-foreground text-sm">
+    Use
+    <Kbd.Group>
+      <Kbd.Root>Ctrl + B</Kbd.Root>
+      <Kbd.Root>Ctrl + K</Kbd.Root>
+    </Kbd.Group>
+    to open the command palette
+  </p>
+</div>
 ```
 
-### Key Group
+### Button
+
+Use the `Kbd.Root` component inside a `Button` component to display a keyboard key inside a button.
 
 ```svelte
-<Kbd.Group>
-  <Kbd.Root>⌘</Kbd.Root>
-  <Kbd.Root>⇧</Kbd.Root>
-  <Kbd.Root>⌥</Kbd.Root>
-  <Kbd.Root>⌃</Kbd.Root>
-</Kbd.Group>
+<script lang="ts">
+  import { Button } from "$lib/components/ui/button/index.js";
+  import * as Kbd from "$lib/components/ui/kbd/index.js";
+</script>
+<div class="flex flex-wrap items-center gap-4">
+  <Button variant="outline" size="sm" class="pe-2">
+    Accept <Kbd.Root></Kbd.Root>
+  </Button>
+  <Button variant="outline" size="sm" class="pe-2">
+    Cancel <Kbd.Root>Esc</Kbd.Root>
+  </Button>
+</div>
 ```
 
-### With Plus Sign
+### Tooltip
+
+You can use the `Kbd.Root` component inside a `Tooltip` component to display a tooltip with a keyboard key.
 
 ```svelte
-<Kbd.Group>
-  <Kbd.Root>Ctrl</Kbd.Root>
-  <span>+</span>
-  <Kbd.Root>B</Kbd.Root>
-</Kbd.Group>
+<script lang="ts">
+  import * as ButtonGroup from "$lib/components/ui/button-group/index.js";
+  import { Button } from "$lib/components/ui/button/index.js";
+  import * as Kbd from "$lib/components/ui/kbd/index.js";
+  import * as Tooltip from "$lib/components/ui/tooltip/index.js";
+</script>
+<div class="flex flex-wrap gap-4">
+  <ButtonGroup.Root>
+    <Tooltip.Root>
+      <Tooltip.Trigger>
+        {#snippet child({ props })}
+          <Button size="sm" variant="outline" {...props}>Save</Button>
+        {/snippet}
+      </Tooltip.Trigger>
+      <Tooltip.Content>
+        <div class="flex items-center gap-2">
+          Save Changes <Kbd.Root>S</Kbd.Root>
+        </div>
+      </Tooltip.Content>
+    </Tooltip.Root>
+    <Tooltip.Root>
+      <Tooltip.Trigger>
+        {#snippet child({ props })}
+          <Button size="sm" variant="outline" {...props}>Print</Button>
+        {/snippet}
+      </Tooltip.Trigger>
+      <Tooltip.Content>
+        <div class="flex items-center gap-2">
+          Print Document
+          <Kbd.Group>
+            <Kbd.Root>Ctrl</Kbd.Root>
+            <Kbd.Root>P</Kbd.Root>
+          </Kbd.Group>
+        </div>
+      </Tooltip.Content>
+    </Tooltip.Root>
+  </ButtonGroup.Root>
+</div>
 ```
 
-### In Button
+### Input Group
+
+You can use the `Kbd.Root` component inside a `InputGroup.Addon` component to display a keyboard key inside an input group.
 
 ```svelte
-<Button variant="outline" size="sm" class="pe-2">
-  Accept <Kbd.Root>↵</Kbd.Root>
-</Button>
-
-<Button variant="outline" size="sm" class="pe-2">
-  Cancel <Kbd.Root>Esc</Kbd.Root>
-</Button>
+<script lang="ts">
+  import * as Kbd from "$lib/components/ui/kbd/index.js";
+  import * as InputGroup from "$lib/components/ui/input-group/index.js";
+  import SearchIcon from "@lucide/svelte/icons/search";
+</script>
+<div class="flex w-full max-w-xs flex-col gap-6">
+  <InputGroup.Root>
+    <InputGroup.Input placeholder="Search..." />
+    <InputGroup.Addon>
+      <SearchIcon />
+    </InputGroup.Addon>
+    <InputGroup.Addon align="inline-end">
+      <Kbd.Root></Kbd.Root>
+      <Kbd.Root>K</Kbd.Root>
+    </InputGroup.Addon>
+  </InputGroup.Root>
+</div>
 ```
-
-### In Tooltip
-
-```svelte
-<Tooltip.Content>
-  <div class="flex items-center gap-2">
-    Save Changes <Kbd.Root>⌘S</Kbd.Root>
-  </div>
-</Tooltip.Content>
-```
-
-### In Input Group
-
-```svelte
-<InputGroup.Root>
-  <InputGroup.Input placeholder="Search..." />
-  <InputGroup.Addon>
-    <SearchIcon />
-  </InputGroup.Addon>
-  <InputGroup.Addon align="inline-end">
-    <Kbd.Root>⌘</Kbd.Root>
-    <Kbd.Root>K</Kbd.Root>
-  </InputGroup.Addon>
-</InputGroup.Root>
-```
-
-### Inline Text
-
-```svelte
-<p class="text-muted-foreground text-sm">
-  Use
-  <Kbd.Group>
-    <Kbd.Root>Ctrl + B</Kbd.Root>
-    <Kbd.Root>Ctrl + K</Kbd.Root>
-  </Kbd.Group>
-  to open the command palette
-</p>
-```
-
-## Components
-
-- **Kbd.Root** - Individual key display
-- **Kbd.Group** - Groups multiple keys together

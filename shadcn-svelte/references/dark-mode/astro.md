@@ -2,45 +2,50 @@
 
 Adding dark mode to your Astro site.
 
-## Setup
+Just like in regular Svelte, we use the `class` strategy from Tailwind CSS to support dark mode toggling. See the [Tailwind CSS documentation](https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually) for more information.
 
-### Add Inline Script
+How you add the `dark` class to the `html` element is up to you. In this guide, we'll take a look at enabling dark mode toggling with [mode-watcher](https://github.com/svecosystem/mode-watcher).
 
-Add an inline script to your `<head>` to prevent flash of incorrect theme:
+## Usage
+
+### Create an inline theme script
+
+This script will, in part, keep and track the dark mode value in `localStorage` and prevent [FUOC](https://en.wikipedia.org/wiki/Flash_of_unstyled_content).
+
+src/pages/index.astro
 
 ```astro
 ---
-// src/pages/index.astro
+import "../styles/global.css";
 ---
-
-<html>
-  <head>
-    <script is:inline>
-      const getTheme = () => {
-        if (typeof localStorage !== "undefined" && localStorage.getItem("mode-watcher-mode")) {
-          return localStorage.getItem("mode-watcher-mode");
-        }
-        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-          return "dark";
-        }
-        return "light";
-      };
-
-      const theme = getTheme();
-
-      if (theme === "light") {
-        document.documentElement.classList.remove("dark");
-      } else {
-        document.documentElement.classList.add("dark");
-      }
-
-      window.localStorage.setItem("mode-watcher-mode", theme);
-    </script>
-  </head>
-  <body>
-    <!-- content -->
-  </body>
+<script is:inline>
+  const isBrowser = typeof localStorage !== 'undefined';
+  const getThemePreference = () => {
+    if (isBrowser && localStorage.getItem('theme')) {
+      return localStorage.getItem('theme');
+    }
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark' : 'light';
+  };
+  const isDark = getThemePreference() === 'dark';
+  document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
+  if (isBrowser) {
+    const observer = new MutationObserver(() => {
+      const isDark = document.documentElement.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+  }
+</script>
+<html lang="en">
+ <body>
+      <h1>Astro</h1>
+ </body>
 </html>
+</script>
 ```
 
 ### Install mode-watcher
@@ -57,78 +62,99 @@ npm i mode-watcher@0.5.1
 bun install mode-watcher@0.5.1
 ```
 
-### Add ModeWatcher
+### Add the ModeWatcher component
+
+Import the `ModeWatcher` component and use it in your page with the `client:load` directive:
+
+src/pages/index.astro
 
 ```astro
 ---
+import "../styles/global.css";
 import { ModeWatcher } from "mode-watcher";
 ---
 
-<ModeWatcher client:load />
+<html lang="en">
+ <body>
+      <h1>Astro</h1>
+      <ModeWatcher client:load />
+ </body>
+</html>
 ```
 
-## Theme Toggle
+### Create a mode toggle
 
-### Light Switch
+Create a mode toggle on your site to toggle between light and dark mode:
+
+#### Light switch
 
 ```svelte
 <script lang="ts">
+  import SunIcon from "@lucide/svelte/icons/sun";
+  import MoonIcon from "@lucide/svelte/icons/moon";
   import { toggleMode } from "mode-watcher";
   import { Button } from "$lib/components/ui/button/index.js";
-  import Sun from "lucide-svelte/icons/sun";
-  import Moon from "lucide-svelte/icons/moon";
 </script>
-
 <Button onclick={toggleMode} variant="outline" size="icon">
-  <Sun
-    class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
+  <SunIcon
+    class="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 !transition-all dark:scale-0 dark:-rotate-90"
   />
-  <Moon
-    class="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+  <MoonIcon
+    class="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 !transition-all dark:scale-100 dark:rotate-0"
   />
   <span class="sr-only">Toggle theme</span>
 </Button>
 ```
 
-### Dropdown Menu
+#### Dropdown menu
 
 ```svelte
 <script lang="ts">
-  import { setMode, resetMode } from "mode-watcher";
-  import { Button } from "$lib/components/ui/button/index.js";
+  import SunIcon from "@lucide/svelte/icons/sun";
+  import MoonIcon from "@lucide/svelte/icons/moon";
+  import { resetMode, setMode } from "mode-watcher";
   import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
-  import Sun from "lucide-svelte/icons/sun";
-  import Moon from "lucide-svelte/icons/moon";
+  import { buttonVariants } from "$lib/components/ui/button/index.js";
 </script>
-
 <DropdownMenu.Root>
-  <DropdownMenu.Trigger>
-    {#snippet child({ props })}
-      <Button {...props} variant="outline" size="icon">
-        <Sun
-          class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
-        />
-        <Moon
-          class="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
-        />
-        <span class="sr-only">Toggle theme</span>
-      </Button>
-    {/snippet}
+  <DropdownMenu.Trigger
+    class={buttonVariants({ variant: "outline", size: "icon" })}
+  >
+    <SunIcon
+      class="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 !transition-all dark:scale-0 dark:-rotate-90"
+    />
+    <MoonIcon
+      class="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 !transition-all dark:scale-100 dark:rotate-0"
+    />
+    <span class="sr-only">Toggle theme</span>
   </DropdownMenu.Trigger>
   <DropdownMenu.Content align="end">
-    <DropdownMenu.Item onclick={() => setMode("light")}>Light</DropdownMenu.Item>
+    <DropdownMenu.Item onclick={() => setMode("light")}>Light</DropdownMenu.Item
+    >
     <DropdownMenu.Item onclick={() => setMode("dark")}>Dark</DropdownMenu.Item>
     <DropdownMenu.Item onclick={() => resetMode()}>System</DropdownMenu.Item>
   </DropdownMenu.Content>
 </DropdownMenu.Root>
 ```
 
-### Add to Page
+### Add mode toggle to page
+
+Add the mode toggle to the page (also with the `client:load` directive):
+
+src/pages/index.astro
 
 ```astro
 ---
-import ModeToggle from "@/components/mode-toggle.svelte";
+import "../styles/global.css";
+import { ModeWatcher } from "mode-watcher";
+import ModeToggle from "$lib/components/mode-toggle.svelte";
 ---
 
-<ModeToggle client:load />
+<html lang="en">
+ <body>
+      <h1>Astro</h1>
+      <ModeWatcher client:load />
+      <ModeToggle client:load />
+ </body>
+</html>
 ```

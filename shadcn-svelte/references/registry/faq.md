@@ -1,75 +1,99 @@
 # FAQ
 
-Frequently asked questions about the registry.
+Frequently asked questions about running a registry.
 
-## Complex Components
+## Frequently asked questions
 
-Registry items can include multiple file types:
+### What does a complex component look like?
+
+Here's an example of a complex component that installs a page, two components, a hook, a format-date utils and a config file.
 
 ```json
 {
   "$schema": "https://shadcn-svelte.com/schema/registry-item.json",
   "name": "hello-world",
-  "type": "registry:block",
   "title": "Hello World",
-  "description": "A hello world block",
+  "type": "registry:block",
+  "description": "A complex hello world component",
   "files": [
     {
-      "path": "registry/hello-world/+page.svelte",
+      "path": "registry/hello-world/page.svelte",
       "type": "registry:page",
-      "target": "src/routes/hello-world/+page.svelte"
+      "target": "src/routes/hello/+page.svelte"
     },
     {
-      "path": "registry/hello-world/hello-world.svelte",
+      "path": "registry/hello-world/components/hello-world.svelte",
       "type": "registry:component"
     },
     {
-      "path": "registry/hello-world/use-hello.svelte.ts",
+      "path": "registry/hello-world/components/formatted-message.svelte",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/hello-world/hooks/use-hello.svelte.ts",
       "type": "registry:hook"
     },
     {
-      "path": "registry/hello-world/utils.ts",
-      "type": "registry:lib"
+      "path": "registry/hello-world/lib/format-date.ts",
+      "type": "registry:utils"
+    },
+    {
+      "path": "registry/hello-world/hello.config.ts",
+      "type": "registry:file",
+      "target": "hello.config.ts"
     }
-  ]
+ ]
 }
 ```
 
-## Adding Custom Tailwind Colors
+### How do I add a new Tailwind color?
 
-Add custom colors to `cssVars` under `light` and `dark` keys:
+To add a new color you need to add it to `cssVars` under `light` and `dark` keys.
 
 ```json
 {
+  "$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+  "name": "hello-world",
+  "title": "Hello World",
+  "type": "registry:block",
+  "description": "A complex hello world component",
+  "files": [
+    // ...
+ ],
   "cssVars": {
     "light": {
-      "brand": "oklch(0.5 0.2 240)"
+      "brand-background": "20 14.3% 4.1%",
+      "brand-accent": "20 14.3% 4.1%"
     },
     "dark": {
-      "brand": "oklch(0.7 0.2 240)"
+      "brand-background": "20 14.3% 4.1%",
+      "brand-accent": "20 14.3% 4.1%"
     }
   }
 }
 ```
 
-Once added, the color becomes available as utility classes:
+The CLI will update the project CSS file. Once updated, the new colors will be available to be used as utility classes: `bg-brand` and `text-brand-accent`.
 
-```html
-<div class="bg-brand text-brand-foreground">...</div>
-```
+### How do I add or override a Tailwind theme variable?
 
-## Customizing Theme Variables
-
-Add theme overrides using `cssVars.theme`:
+To add or override a theme variable you add it to `cssVars.theme` under the key you want to add or override.
 
 ```json
 {
+  "$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+  "name": "hello-world",
+  "title": "Hello World",
+  "type": "registry:block",
+  "description": "A complex hello world component",
+  "files": [
+    // ...
+ ],
   "cssVars": {
     "theme": {
-      "--text-base": "1rem",
-      "--text-sm": "0.875rem",
-      "--ease-in-out": "cubic-bezier(0.4, 0, 0.2, 1)",
-      "--font-sans": "Inter, system-ui, sans-serif"
+      "text-base": "3rem",
+      "ease-in-out": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "font-heading": "Poppins, sans-serif"
     }
   }
 }

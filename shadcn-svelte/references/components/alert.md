@@ -2,6 +2,42 @@
 
 Displays a callout for user attention.
 
+```svelte
+<script lang="ts">
+  import * as Alert from "$lib/components/ui/alert/index.js";
+  import CheckCircle2Icon from "@lucide/svelte/icons/check-circle-2";
+  import AlertCircleIcon from "@lucide/svelte/icons/alert-circle";
+  import PopcornIcon from "@lucide/svelte/icons/popcorn";
+</script>
+<div class="grid w-full max-w-xl items-start gap-4">
+  <Alert.Root>
+    <CheckCircle2Icon />
+    <Alert.Title>Success! Your changes have been saved</Alert.Title>
+    <Alert.Description
+      >This is an alert with icon, title and description.</Alert.Description
+    >
+  </Alert.Root>
+  <Alert.Root>
+    <PopcornIcon />
+    <Alert.Title
+      >This Alert has a title and an icon. No description.</Alert.Title
+    >
+  </Alert.Root>
+  <Alert.Root variant="destructive">
+    <AlertCircleIcon />
+    <Alert.Title>Unable to process your payment.</Alert.Title>
+    <Alert.Description>
+      <p>Please verify your billing information and try again.</p>
+      <ul class="list-inside list-disc text-sm">
+        <li>Check your card details</li>
+        <li>Ensure sufficient funds</li>
+        <li>Verify billing address</li>
+      </ul>
+    </Alert.Description>
+  </Alert.Root>
+</div>
+```
+
 ## Installation
 
 ```bash
@@ -22,69 +58,13 @@ bun x shadcn-svelte@latest add alert
 <script lang="ts">
   import * as Alert from "$lib/components/ui/alert/index.js";
 </script>
-
-<Alert.Root>
-  <Alert.Title>Heads up!</Alert.Title>
-  <Alert.Description>
-    You can add components to your app using the CLI.
-  </Alert.Description>
-</Alert.Root>
 ```
-
-## Examples
-
-### Default
 
 ```svelte
 <Alert.Root>
   <Alert.Title>Heads up!</Alert.Title>
   <Alert.Description>
-    You can add components to your app using the CLI.
+    You can add components to your app using the cli.
   </Alert.Description>
 </Alert.Root>
 ```
-
-### With Icon
-
-```svelte
-<script lang="ts">
-  import Terminal from "@lucide/svelte/icons/terminal";
-  import * as Alert from "$lib/components/ui/alert/index.js";
-</script>
-
-<Alert.Root>
-  <Terminal class="size-4" />
-  <Alert.Title>Heads up!</Alert.Title>
-  <Alert.Description>
-    You can add components to your app using the CLI.
-  </Alert.Description>
-</Alert.Root>
-```
-
-### Destructive
-
-```svelte
-<script lang="ts">
-  import CircleAlert from "@lucide/svelte/icons/circle-alert";
-  import * as Alert from "$lib/components/ui/alert/index.js";
-</script>
-
-<Alert.Root variant="destructive">
-  <CircleAlert class="size-4" />
-  <Alert.Title>Error</Alert.Title>
-  <Alert.Description>
-    Your session has expired. Please log in again.
-  </Alert.Description>
-</Alert.Root>
-```
-
-## Components
-
-- **Alert.Root** - Main container (accepts `variant` prop)
-- **Alert.Title** - Alert heading
-- **Alert.Description** - Alert body text
-
-## Variants
-
-- **default** - Standard alert styling
-- **destructive** - Error/warning styling

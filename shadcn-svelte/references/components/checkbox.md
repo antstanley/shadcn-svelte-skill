@@ -2,6 +2,51 @@
 
 A control that allows the user to toggle between checked and not checked.
 
+[Docs](https://bits-ui.com/docs/components/checkbox)
+
+[API Reference](https://bits-ui.com/docs/components/checkbox#api-reference)
+
+```svelte
+<script lang="ts">
+  import { Checkbox } from "$lib/components/ui/checkbox/index.js";
+  import { Label } from "$lib/components/ui/label/index.js";
+</script>
+<div class="flex flex-col gap-6">
+  <div class="flex items-center gap-3">
+    <Checkbox id="terms" />
+    <Label for="terms">Accept terms and conditions</Label>
+  </div>
+  <div class="flex items-start gap-3">
+    <Checkbox id="terms-2" checked />
+    <div class="grid gap-2">
+      <Label for="terms-2">Accept terms and conditions</Label>
+      <p class="text-muted-foreground text-sm">
+        By clicking this checkbox, you agree to the terms and conditions.
+      </p>
+    </div>
+  </div>
+  <div class="flex items-start gap-3">
+    <Checkbox id="toggle" disabled />
+    <Label for="toggle">Enable notifications</Label>
+  </div>
+  <Label
+    class="hover:bg-accent/50 flex items-start gap-3 rounded-lg border p-3 has-[[aria-checked=true]]:border-blue-600 has-[[aria-checked=true]]:bg-blue-50 dark:has-[[aria-checked=true]]:border-blue-900 dark:has-[[aria-checked=true]]:bg-blue-950"
+  >
+    <Checkbox
+      id="toggle-2"
+      checked
+      class="data-[state=checked]:border-blue-600 data-[state=checked]:bg-blue-600 data-[state=checked]:text-white dark:data-[state=checked]:border-blue-700 dark:data-[state=checked]:bg-blue-700"
+    />
+    <div class="grid gap-1.5 font-normal">
+      <p class="text-sm leading-none font-medium">Enable notifications</p>
+      <p class="text-muted-foreground text-sm">
+        You can enable or disable notifications at any time.
+      </p>
+    </div>
+  </Label>
+</div>
+```
+
 ## Installation
 
 ```bash
@@ -22,74 +67,8 @@ bun x shadcn-svelte@latest add checkbox
 <script lang="ts">
   import { Checkbox } from "$lib/components/ui/checkbox/index.js";
 </script>
-
-<Checkbox />
 ```
-
-## Examples
-
-### Default
 
 ```svelte
 <Checkbox />
 ```
-
-### Checked
-
-```svelte
-<Checkbox checked />
-```
-
-### Disabled
-
-```svelte
-<Checkbox disabled />
-```
-
-### With Label
-
-```svelte
-<script lang="ts">
-  import { Checkbox } from "$lib/components/ui/checkbox/index.js";
-  import { Label } from "$lib/components/ui/label/index.js";
-</script>
-
-<div class="flex items-center space-x-2">
-  <Checkbox id="terms" />
-  <Label for="terms">Accept terms and conditions</Label>
-</div>
-```
-
-### With Description
-
-```svelte
-<div class="flex items-start space-x-2">
-  <Checkbox id="notifications" />
-  <div class="grid gap-1.5 leading-none">
-    <Label for="notifications">Enable notifications</Label>
-    <p class="text-muted-foreground text-sm">
-      You will receive notifications about important updates.
-    </p>
-  </div>
-</div>
-```
-
-### Custom Styling
-
-Use data attributes and CSS classes for custom appearance:
-
-```svelte
-<Checkbox class="data-[state=checked]:bg-blue-500" />
-```
-
-## API
-
-The Checkbox component is built on [Bits UI Checkbox](https://bits-ui.com/docs/components/checkbox).
-
-### Props
-
-- `checked` - Whether the checkbox is checked
-- `disabled` - Whether the checkbox is disabled
-- `required` - Whether the checkbox is required
-- `name` - The name of the checkbox for form submission
-- `value` - The value of the checkbox for form submission

@@ -1,27 +1,42 @@
 # registry.json
 
-Schema reference for the registry.json file.
+Schema for running your own component registry.
 
-## Overview
+The `registry.json` schema is used to define your custom component registry.
 
-The `registry.json` file defines your custom component registry metadata and configuration.
-
-## Schema
+registry.json
 
 ```json
 {
   "$schema": "https://shadcn-svelte.com/schema/registry.json",
-  "name": "my-registry",
-  "homepage": "https://my-registry.com",
-  "items": []
+  "name": "shadcn-svelte",
+  "homepage": "https://shadcn-svelte.com",
+  "items": [
+    {
+      "name": "hello-world",
+      "type": "registry:block",
+      "title": "Hello World",
+      "description": "A simple hello world component.",
+      "files": [
+        {
+          "path": "src/lib/registry/blocks/hello-world/hello-world.svelte",
+          "type": "registry:component"
+        }
+     ]
+    }
+  ]
 }
 ```
 
-## Properties
+## Definitions
+
+You can see the JSON Schema for `registry.json` [here](https://shadcn-svelte.com/schema/registry.json).
 
 ### $schema
 
-Points to the schema definition:
+The `$schema` property is used to specify the schema for the `registry.json` file.
+
+registry.json
 
 ```json
 {
@@ -31,27 +46,33 @@ Points to the schema definition:
 
 ### name
 
-Identifies your registry for metadata and data attributes:
+The `name` property is used to specify the name of your registry. This is used for data attributes and other metadata.
+
+registry.json
 
 ```json
 {
-  "name": "my-registry"
+  "name": "acme"
 }
 ```
 
 ### homepage
 
-References your registry's web location:
+The homepage of your registry. This is used for data attributes and other metadata.
+
+registry.json
 
 ```json
 {
-  "homepage": "https://my-registry.com"
+  "homepage": "https://acme.com"
 }
 ```
 
 ### items
 
-Contains registry entries following the registry-item specification:
+The `items` in your registry. Each item must implement the [registry-item schema specification](https://shadcn-svelte.com/schema/registry-item.json).
+
+registry.json
 
 ```json
 {
@@ -60,46 +81,87 @@ Contains registry entries following the registry-item specification:
       "name": "hello-world",
       "type": "registry:block",
       "title": "Hello World",
-      "description": "A hello world component",
+      "description": "A simple hello world component.",
       "files": [
         {
-          "path": "registry/hello-world/hello-world.svelte",
+          "path": "src/lib/registry/blocks/hello-world/hello-world.svelte",
           "type": "registry:component"
         }
-      ]
+     ]
     }
   ]
 }
 ```
 
-### aliases
+See the [registry-item schema documentation](https://shadcn-svelte.com/docs/registry/registry-item-json) for more information.
 
-Maps internal import paths to transformation targets:
+### aliases `aliases` define how your registry's internal import paths will be transformed when users install your components. These should match how you import components within your registry code.
+
+For example, if your registry's component has:
+
+```svelte
+<script lang="ts">
+  import { Button } from "@/lib/registry/ui/button/index.js";
+  import { cn } from "@/lib/utils.js";
+</script>
+```
+
+Then your `registry.json` should have matching aliases:
+
+registry.json
 
 ```json
 {
   "aliases": {
-    "lib": "$lib/registry/lib",
-    "ui": "$lib/registry/ui",
-    "components": "$lib/registry/components",
-    "utils": "$lib/utils",
-    "hooks": "$lib/registry/hooks"
+    "lib": "@/lib", // Matches your internal imports
+    "ui": "@/lib/registry/ui", // Matches your internal imports
+    "components": "@/lib/registry/components", // Matches your internal imports
+    "utils": "@/lib/utils", // Matches your internal imports
+    "hooks": "@/lib/hooks" // Matches your internal imports
   }
 }
 ```
 
-Custom aliases should mirror your actual import structure.
+When users install your component, these paths will be transformed according to their `components.json` configuration. The aliases you define here are the "source" paths that will be replaced.
 
-### overrideDependencies
+Default aliases (if you don't specify any):
 
-Force specific dependency versions:
+registry.json
 
 ```json
 {
-  "overrideDependencies": {
-    "bits-ui": "1.0.0-next.50"
+  "aliases": {
+    "lib": "$lib/registry/lib", // For internal library code
+    "ui": "$lib/registry/ui", // For UI components
+    "components": "$lib/registry/components", // For component-specific code
+    "utils": "$lib/utils", // For utility functions
+    "hooks": "$lib/registry/hooks" // For reactive state and logic (.svelte.js|ts)
   }
 }
 ```
 
-**Warning:** This can lead to version conflicts if not carefully managed. Use sparingly.
+### overrideDependencies `overrideDependencies` lets you force specific version ranges for dependencies, overriding what `shadcn-svelte registry build` detects in your `package.json`.
+
+Common use cases:
+
+- Using latest pre-release versions: `"overrideDependencies": ["paneforge@next"]` - Pinning to specific versions: `"overrideDependencies": ["dep@1.5.0"]` **Warning**: Overriding dependencies can lead to version conflicts if not carefully managed. This option should be used sparingly.
+
+Example transformation:
+
+```json
+// Your registry's package.json
+{
+  "dependencies": {
+    "paneforge": "1.0.0-next.1"
+  }
+}
+```
+
+When the user installs your component, the latest `@next` version will be used instead of `1.0.0-next.1` ```json
+{
+  "dependencies": {
+    "paneforge": "1.0.0-next.1", // overrideDependencies: []
+    "paneforge": "1.0.0-next.5" // overrideDependencies: ["paneforge@next"]
+  }
+}
+```

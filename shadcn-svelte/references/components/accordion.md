@@ -2,6 +2,60 @@
 
 A vertically stacked set of interactive headings that each reveal a section of content.
 
+[Docs](https://bits-ui.com/docs/components/accordion)
+
+[API Reference](https://bits-ui.com/docs/components/accordion#api-reference)
+
+```svelte
+<script lang="ts">
+  import * as Accordion from "$lib/components/ui/accordion/index.js";
+</script>
+<Accordion.Root type="single" class="w-full sm:max-w-[70%]" value="item-1">
+  <Accordion.Item value="item-1">
+    <Accordion.Trigger>Product Information</Accordion.Trigger>
+    <Accordion.Content class="flex flex-col gap-4 text-balance">
+      <p>
+        Our flagship product combines cutting-edge technology with sleek design.
+        Built with premium materials, it offers unparalleled performance and
+        reliability.
+      </p>
+      <p>
+        Key features include advanced processing capabilities, and an intuitive
+        user interface designed for both beginners and experts.
+      </p>
+    </Accordion.Content>
+  </Accordion.Item>
+  <Accordion.Item value="item-2">
+    <Accordion.Trigger>Shipping Details</Accordion.Trigger>
+    <Accordion.Content class="flex flex-col gap-4 text-balance">
+      <p>
+        We offer worldwide shipping through trusted courier partners. Standard
+        delivery takes 3-5 business days, while express shipping ensures
+        delivery within 1-2 business days.
+      </p>
+      <p>
+        All orders are carefully packaged and fully insured. Track your shipment
+        in real-time through our dedicated tracking portal.
+      </p>
+    </Accordion.Content>
+  </Accordion.Item>
+  <Accordion.Item value="item-3">
+    <Accordion.Trigger>Return Policy</Accordion.Trigger>
+    <Accordion.Content class="flex flex-col gap-4 text-balance">
+      <p>
+        We stand behind our products with a comprehensive 30-day return policy.
+        If you&apos;re not completely satisfied, simply return the item in its
+        original condition.
+      </p>
+      <p>
+        Our hassle-free return process includes free return shipping and full
+        refunds processed within 48 hours of receiving the returned item.
+      </p>
+    </Accordion.Content>
+  </Accordion.Item>
+</Accordion.Root>
+```
+
 ## Installation
 
 ```bash
@@ -22,7 +76,9 @@ bun x shadcn-svelte@latest add accordion
 <script lang="ts">
   import * as Accordion from "$lib/components/ui/accordion/index.js";
 </script>
+```
 
+```svelte
 <Accordion.Root type="single">
   <Accordion.Item value="item-1">
     <Accordion.Trigger>Is it accessible?</Accordion.Trigger>
@@ -32,73 +88,3 @@ bun x shadcn-svelte@latest add accordion
   </Accordion.Item>
 </Accordion.Root>
 ```
-
-## Examples
-
-### Single Accordion
-
-Only one item can be open at a time:
-
-```svelte
-<Accordion.Root type="single" class="w-full" value="item-1">
-  <Accordion.Item value="item-1">
-    <Accordion.Trigger>Product Information</Accordion.Trigger>
-    <Accordion.Content>
-      Our flagship product combines cutting-edge technology with sleek design.
-    </Accordion.Content>
-  </Accordion.Item>
-  <Accordion.Item value="item-2">
-    <Accordion.Trigger>Shipping Details</Accordion.Trigger>
-    <Accordion.Content>
-      We offer worldwide shipping through trusted courier partners.
-    </Accordion.Content>
-  </Accordion.Item>
-  <Accordion.Item value="item-3">
-    <Accordion.Trigger>Return Policy</Accordion.Trigger>
-    <Accordion.Content>
-      We stand behind our products with a comprehensive 30-day return policy.
-    </Accordion.Content>
-  </Accordion.Item>
-</Accordion.Root>
-```
-
-### Multiple Accordion
-
-Multiple items can be open simultaneously:
-
-```svelte
-<Accordion.Root type="multiple">
-  <Accordion.Item value="item-1">
-    <Accordion.Trigger>Section 1</Accordion.Trigger>
-    <Accordion.Content>Content for section 1</Accordion.Content>
-  </Accordion.Item>
-  <Accordion.Item value="item-2">
-    <Accordion.Trigger>Section 2</Accordion.Trigger>
-    <Accordion.Content>Content for section 2</Accordion.Content>
-  </Accordion.Item>
-</Accordion.Root>
-```
-
-## API
-
-Built on [Bits UI Accordion](https://bits-ui.com/docs/components/accordion).
-
-### Accordion.Root Props
-
-- `type` - "single" or "multiple"
-- `value` - Currently open item(s)
-- `disabled` - Whether the accordion is disabled
-- `collapsible` - Whether items can be collapsed (single mode)
-
-### Accordion.Item Props
-
-- `value` - Unique identifier for the item
-- `disabled` - Whether this item is disabled
-
-### Accordion.Trigger Props
-
-- Default trigger styling with chevron icon
-
-### Accordion.Content Props
-
-- Animated content reveal with smooth transitions

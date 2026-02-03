@@ -5,6 +5,19 @@ All notable changes to the shadcn-svelte skill will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.3] - 2026-02-03
+
+### Changed
+
+- Updated all 78 reference docs to latest upstream shadcn-svelte documentation
+- Component count increased from 54 to 59 (updated SKILL.md accordingly)
+- Form component (`form.md`) is no longer marked as deprecated — deprecation notice removed upstream
+
+### Added
+
+- New component references: Button Group, Empty, Field, Input Group, Item, Kbd, Native Select, Spinner
+- Expanded documentation across all existing components with additional examples, API references, and usage patterns
+
 ## [1.0.2] - 2025-01-20
 
 ### Changed

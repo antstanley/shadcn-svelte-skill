@@ -2,6 +2,27 @@
 
 A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.
 
+[Docs](https://bits-ui.com/docs/components/tooltip)
+
+[API Reference](https://bits-ui.com/docs/components/tooltip#api-reference)
+
+```svelte
+<script lang="ts">
+  import { buttonVariants } from "../ui/button/index.js";
+  import * as Tooltip from "$lib/components/ui/tooltip/index.js";
+</script>
+<Tooltip.Provider>
+  <Tooltip.Root>
+    <Tooltip.Trigger class={buttonVariants({ variant: "outline" })}
+      >Hover</Tooltip.Trigger
+    >
+    <Tooltip.Content>
+      <p>Add to library</p>
+    </Tooltip.Content>
+  </Tooltip.Root>
+</Tooltip.Provider>
+```
+
 ## Installation
 
 ```bash
@@ -16,30 +37,31 @@ npx shadcn-svelte@latest add tooltip
 bun x shadcn-svelte@latest add tooltip
 ```
 
-## Setup
+## Usage
 
-The `Tooltip.Provider` should be placed once in your root layout, wrapping all content that will contain tooltips. This ensures only one tooltip within the provider can be open at a time.
+The `Tooltip.Provider` component should be placed once in your root layout, wrapping all content that will contain tooltips. This ensures that only one tooltip within the provider can be open at a time.
+
+src/routes/+layout.svelte
 
 ```svelte
-<!-- src/routes/+layout.svelte -->
 <script lang="ts">
   import * as Tooltip from "$lib/components/ui/tooltip/index.js";
-
   let { children } = $props();
 </script>
+```
 
+```svelte
 <Tooltip.Provider>
   {@render children()}
 </Tooltip.Provider>
 ```
 
-## Usage
+Then use tooltips anywhere in your app:
 
 ```svelte
 <script lang="ts">
   import * as Tooltip from "$lib/components/ui/tooltip/index.js";
 </script>
-
 <Tooltip.Root>
   <Tooltip.Trigger>Hover</Tooltip.Trigger>
   <Tooltip.Content>
@@ -48,56 +70,21 @@ The `Tooltip.Provider` should be placed once in your root layout, wrapping all c
 </Tooltip.Root>
 ```
 
-## Examples
+### Nested Providers
 
-### With Button
-
-```svelte
-<script lang="ts">
-  import { Button } from "$lib/components/ui/button/index.js";
-  import * as Tooltip from "$lib/components/ui/tooltip/index.js";
-</script>
-
-<Tooltip.Root>
-  <Tooltip.Trigger>
-    {#snippet child({ props })}
-      <Button variant="outline" {...props}>Hover me</Button>
-    {/snippet}
-  </Tooltip.Trigger>
-  <Tooltip.Content>
-    <p>This is a tooltip</p>
-  </Tooltip.Content>
-</Tooltip.Root>
-```
-
-### Instant Tooltips
-
-Create zones with `delayDuration={0}` for instant tooltips:
+You can nest providers to create groups with different settings. Tooltips use the closest ancestor provider. This is useful when you want instant tooltips in specific areas:
 
 ```svelte
 <Tooltip.Provider delayDuration={0}>
-  <!-- Tooltips in this area appear instantly -->
 </Tooltip.Provider>
 ```
 
-## Components
+***
 
-- **Tooltip.Provider** - Context provider (place in root layout)
-- **Tooltip.Root** - Root container for individual tooltip
-- **Tooltip.Trigger** - Element that triggers the tooltip
-- **Tooltip.Content** - Tooltip content
+## Changelog
 
-## API
+### 2025-12 Update tooltip colors
 
-Built on [Bits UI Tooltip](https://bits-ui.com/docs/components/tooltip).
+We've updated the tooltip colors to use the foreground color for the background and the background color for the foreground.
 
-### Tooltip.Provider Props
-
-- `delayDuration` - Delay before tooltip appears (default: 700ms)
-- `skipDelayDuration` - Time before delay resets after leaving a tooltip
-
-### Tooltip.Content Props
-
-- `side` - Side to render ("top" | "right" | "bottom" | "left")
-- `align` - Alignment ("start" | "center" | "end")
-- `sideOffset` - Distance from trigger
+Replace `bg-primary text-primary-foreground` with `bg-foreground text-background` for `<Tooltip.Content />`.

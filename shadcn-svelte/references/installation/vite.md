@@ -50,6 +50,7 @@ tsconfig.app.json
 ```json
 {
   "compilerOptions": {
+    // ...
     "baseUrl": ".",
     "paths": {
       "$lib": ["./src/lib"],
