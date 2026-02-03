@@ -29,6 +29,7 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             TAG="${{ github.event.inputs.tag }}"
+            CHECKOUT_REF="${{ github.ref }}"
           elif [ "${{ github.event_name }}" = "pull_request" ]; then
             HEAD_SHA="${{ github.event.pull_request.head.sha }}"
             TAG=$(gh api "repos/${{ github.repository }}/tags" --paginate --jq ".[] | select(.commit.sha == \"$HEAD_SHA\") | .name" | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' | head -1)
@@ -37,18 +38,21 @@ jobs:
               echo "skip=true" >> $GITHUB_OUTPUT
               exit 0
             fi
+            CHECKOUT_REF="${{ github.event.pull_request.base.ref }}"
           else
             TAG="${GITHUB_REF#refs/tags/}"
+            CHECKOUT_REF="$TAG"
           fi
           VERSION="${TAG#v}"
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "tag=$TAG" >> $GITHUB_OUTPUT
+          echo "ref=$CHECKOUT_REF" >> $GITHUB_OUTPUT
 
       - name: Checkout repository
         if: steps.version.outputs.skip != 'true'
         uses: actions/checkout@v4
         with:
-          ref: ${{ steps.version.outputs.tag }}
+          ref: ${{ steps.version.outputs.ref }}
 
       - name: Set up Python
         if: steps.version.outputs.skip != 'true'
