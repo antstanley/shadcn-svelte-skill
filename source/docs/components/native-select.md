@@ -2,6 +2,12 @@
 
 A styled native HTML select element with consistent design system integration.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 For a styled select component, see the [Select](https://shadcn-svelte.com/docs/components/select) component.
 
 ```svelte
