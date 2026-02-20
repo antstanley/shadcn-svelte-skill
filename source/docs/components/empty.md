@@ -2,6 +2,12 @@
 
 Use the Empty component to display a empty state.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import * as Empty from "$lib/components/ui/empty/index.js";
