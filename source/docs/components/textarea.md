@@ -2,6 +2,12 @@
 
 Displays a form textarea or a component that looks like a textarea.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import { Textarea } from "$lib/components/ui/textarea/index.js";

@@ -6,6 +6,12 @@ A vertically stacked set of interactive headings that each reveal a section of c
 
 [API Reference](https://bits-ui.com/docs/components/accordion#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import * as Accordion from "$lib/components/ui/accordion/index.js";
