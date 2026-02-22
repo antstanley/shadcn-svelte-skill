@@ -2,6 +2,12 @@
 
 Displays a form input field or a component that looks like an input field.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import { Input } from "$lib/components/ui/input/index.js";

@@ -2,6 +2,12 @@
 
 Latest updates and announcements.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ## October 2025 - New Components For this round of components, I looked at what we build every day, the boring stuff we rebuild over and over, and made reusable abstractions you can actually use.
 
 - [Spinner](https://shadcn-svelte.com/docs/components/spinner) : An indicator to show a loading state.
