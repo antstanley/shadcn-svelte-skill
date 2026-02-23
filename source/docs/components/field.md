@@ -2,6 +2,12 @@
 
 Combine labels, controls, and help text to compose accessible form fields and grouped inputs.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import { Button } from "$lib/components/ui/button/index.js";

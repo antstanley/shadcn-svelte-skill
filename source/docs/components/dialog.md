@@ -6,6 +6,12 @@ A window overlaid on either the primary window or another dialog window, renderi
 
 [API Reference](https://bits-ui.com/docs/components/dialog#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import { Button, buttonVariants } from "$lib/components/ui/button/index.js";
