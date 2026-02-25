@@ -4,6 +4,12 @@ Displays a button or a component that looks like a button.
 
 [API Reference](https://bits-ui.com/docs/components/button#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 **Updated:** We have updated the button component to add new sizes: `icon-sm` and `icon-lg`. See the [changelog](https://shadcn-svelte.com/docs/components/button#changelog) for more details. Follow the instructions to update your project.
 
 ```svelte

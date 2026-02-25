@@ -2,6 +2,12 @@
 
 A composable, themeable and customizable sidebar component.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 A sidebar that collapses to icons.
 
 Sidebars are one of the most complex components to build. They are central to any application and often contain a lot of moving parts.
