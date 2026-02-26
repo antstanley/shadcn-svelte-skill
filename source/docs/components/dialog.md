@@ -6,6 +6,12 @@ A window overlaid on either the primary window or another dialog window, renderi
 
 [API Reference](https://bits-ui.com/docs/components/dialog#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import { Button, buttonVariants } from "$lib/components/ui/button/index.js";
@@ -15,9 +21,12 @@ A window overlaid on either the primary window or another dialog window, renderi
 </script>
 <Dialog.Root>
   <form>
-    <Dialog.Trigger class={buttonVariants({ variant: "outline" })}
-      >Open Dialog</Dialog.Trigger
+    <Dialog.Trigger
+      type="button"
+      class={buttonVariants({ variant: "outline" })}
     >
+      Open Dialog
+    </Dialog.Trigger>
     <Dialog.Content class="sm:max-w-[425px]">
       <Dialog.Header>
         <Dialog.Title>Edit profile</Dialog.Title>
@@ -36,9 +45,12 @@ A window overlaid on either the primary window or another dialog window, renderi
         </div>
       </div>
       <Dialog.Footer>
-        <Dialog.Close class={buttonVariants({ variant: "outline" })}
-          >Cancel</Dialog.Close
+        <Dialog.Close
+          type="button"
+          class={buttonVariants({ variant: "outline" })}
         >
+          Cancel
+        </Dialog.Close>
         <Button type="submit">Save changes</Button>
       </Dialog.Footer>
     </Dialog.Content>
