@@ -2,6 +2,12 @@
 
 Displays the path to the current resource using a hierarchy of links.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import * as Breadcrumb from "$lib/components/ui/breadcrumb/index.js";

@@ -6,6 +6,12 @@ A control that allows the user to toggle between checked and not checked.
 
 [API Reference](https://bits-ui.com/docs/components/switch#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import { Label } from "$lib/components/ui/label/index.js";
