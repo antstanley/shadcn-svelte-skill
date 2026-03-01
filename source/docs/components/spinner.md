@@ -2,6 +2,12 @@
 
 An indicator that can be used to show a loading state.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import { Spinner } from "$lib/components/ui/spinner/index.js";
