@@ -2,6 +2,12 @@
 
 How to use shadcn-svelte with Tailwind v4 and Svelte 5.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 This documentation site is now running Tailwind v4. If you're looking for the old Tailwind v3 docs, you can find them here: [https://tw3.shadcn-svelte.com](https://tw3.shadcn-svelte.com).
 
 ## What's New
