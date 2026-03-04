@@ -4,6 +4,12 @@ A drawer component for Svelte.
 
 [Docs](https://github.com/huntabyte/vaul-svelte)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import MinusIcon from "@lucide/svelte/icons/minus";

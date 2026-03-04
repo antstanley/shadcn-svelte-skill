@@ -6,6 +6,12 @@ Accessible one-time password component with copy paste functionality.
 
 [API Reference](https://bits-ui.com/docs/components/pin-input#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import * as InputOTP from "$lib/components/ui/input-otp/index.js";
