@@ -6,6 +6,12 @@ An image element with a fallback for representing the user.
 
 [API Reference](https://bits-ui.com/docs/components/avatar#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import * as Avatar from "$lib/components/ui/avatar/index.js";
