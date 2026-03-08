@@ -6,6 +6,12 @@ Fast, composable, unstyled command menu for Svelte.
 
 [API Reference](https://bits-ui.com/docs/components/command#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import CalculatorIcon from "@lucide/svelte/icons/calculator";
