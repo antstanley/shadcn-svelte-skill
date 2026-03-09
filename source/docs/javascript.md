@@ -2,6 +2,12 @@
 
 How to use shadcn-svelte with JavaScript.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 This project and the components are written in TypeScript. We recommend using TypeScript for your project as well.
 
 However, we provide a JavaScript version of the components as well. The JavaScript version is *only* available via the [CLI](https://shadcn-svelte.com/docs/cli).
