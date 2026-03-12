@@ -2,6 +2,12 @@
 
 Beautiful charts. Built using LayerChart. Copy and paste into your apps.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 **Important:** LayerChart v2 is still in pre-release and is actively evolving. Only use if you're comfortable with potential breaking changes before stable v2.
 
 Your feedback will be invaluable in shaping the release and features. Current development status can be tracked [here](https://github.com/techniq/layerchart/pull/449).

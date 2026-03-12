@@ -6,6 +6,12 @@ Displays an indicator showing the completion progress of a task, typically displ
 
 [API Reference](https://bits-ui.com/docs/components/progress#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import { onMount } from "svelte";
