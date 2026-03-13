@@ -6,6 +6,12 @@ Displays a list of options for the user to pick fromtriggered by a button.
 
 [API Reference](https://bits-ui.com/docs/components/select#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import * as Select from "$lib/components/ui/select/index.js";
