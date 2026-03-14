@@ -6,6 +6,12 @@ Displays rich content in a portal, triggered by a button.
 
 [API Reference](https://bits-ui.com/docs/components/popover#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import { buttonVariants } from "$lib/components/ui/button/index.js";
