@@ -2,6 +2,12 @@
 
 A composable, themeable and customizable sidebar component.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 A sidebar that collapses to icons.
 
 Sidebars are one of the most complex components to build. They are central to any application and often contain a lot of moving parts.
@@ -227,9 +233,9 @@ The `Sidebar.Provider` component is used to provide the sidebar context to the `
 
 ### Props
 
-| Name                         | Type                             | Description                                                                                                                                           |
-| -------------------------------------------------------- | ------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `open`         | `boolean`                 | Open state of the sidebar (bindable).                                                                                                                 |
+| Name                          | Type                             | Description                                                                                                                                            |
+| ----------------------------------------------------------- | -------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `open`         | `boolean`                 | Open state of the sidebar (bindable).                                                                                                                  |
 | `onOpenChange` | `(open: boolean) => void` | A callback fired *after* the open state of the sidebar changes if uncontrolled, and *before* the sidebar opens or closes if controlled. |
 
 ### Width
@@ -284,10 +290,10 @@ The main `Sidebar` component used to render a collapsible sidebar.
 
 ### Props
 
-| Property                    | Type                                                                 | Description                                     |
-| ------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------- |
-| `side`        | `left` or `right`                               | The side of the sidebar.                        |
-| `variant`     | `sidebar`, `floating`, or `inset` | The variant of the sidebar.                     |
+| Property                     | Type                                                                 | Description                                      |
+| ---------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `side`        | `left` or `right`                               | The side of the sidebar.                         |
+| `variant`     | `sidebar`, `floating`, or `inset` | The variant of the sidebar.                      |
 | `collapsible` | `offcanvas`, `icon`, or `none`    | Collapsible state of the sidebar. |
 
 ### side
@@ -333,11 +339,11 @@ Available options are `offcanvas`, `icon` and `none`.
 <Sidebar.Root collapsible="offcanvas | icon | none" />
 ```
 
-| Prop                      | Description                                                  |
-| ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| Prop                       | Description                                                  |
+| -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
 | `offcanvas` | A collapsible sidebar that slides in from the left or right. |
 | `icon`      | A sidebar that collapses to icons.                           |
-| `none`      | A non-collapsible sidebar.                     |
+| `none`      | A non-collapsible sidebar.                    |
 
 ## useSidebar
 
@@ -346,20 +352,22 @@ The `useSidebar` function is used to hook into the sidebar context. It returns a
 ```svelte
 <script lang="ts">
   import { useSidebar } from "$lib/components/ui/sidebar/index.js";
+  const sidebar = useSidebar();
+  // ...
   sidebar.state;
   sidebar.isMobile;
   sidebar.toggle();
 </script>
 ```
 
-| Property                      | Type                                           | Description                                            |
-| --------------------------------------------------------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| `state`         | `expanded` or `collapsed` | The current state of the sidebar.                      |
-| `open`          | `boolean`                               | Whether the sidebar is open.                           |
-| `setOpen`       | `(open: boolean) => void`               | Sets the open state of the sidebar.                    |
-| `openMobile`    | `boolean`                               | Whether the sidebar is open on mobile.                 |
-| `setOpenMobile` | `(open: boolean) => void`               | Sets the open state of the sidebar on mobile.          |
-| `isMobile`      | `boolean`                               | Whether the sidebar is on mobile.                      |
+| Property                       | Type                                           | Description                                             |
+| ------------------------------------------------------------ | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `state`         | `expanded` or `collapsed` | The current state of the sidebar.                       |
+| `open`          | `boolean`                               | Whether the sidebar is open.                            |
+| `setOpen`       | `(open: boolean) => void`               | Sets the open state of the sidebar.                     |
+| `openMobile`    | `boolean`                               | Whether the sidebar is open on mobile.                  |
+| `setOpenMobile` | `(open: boolean) => void`               | Sets the open state of the sidebar on mobile.           |
+| `isMobile`      | `boolean`                               | Whether the sidebar is on mobile.                       |
 | `toggle`        | `() => void`                            | Toggles the sidebar. Desktop and mobile. |
 
 ## Sidebar.Header
