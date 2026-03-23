@@ -6,6 +6,12 @@ Accessible one-time password component with copy paste functionality.
 
 [API Reference](https://bits-ui.com/docs/components/pin-input#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import * as InputOTP from "$lib/components/ui/input-otp/index.js";
@@ -181,7 +187,7 @@ You can use the `InputOTP.Separator` component to add a separator between the gr
 
 ```svelte
 <script lang="ts" module>
-  import { z } from "zod/v4";
+  import { z } from "zod";
   const formSchema = z.object({
     pin: z.string().min(6, {
       message: "Your one-time password must be at least 6 characters."
