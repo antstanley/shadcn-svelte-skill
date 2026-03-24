@@ -6,6 +6,12 @@ Pagination with page navigation, next and previous links.
 
 [API Reference](https://bits-ui.com/docs/components/pagination#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import * as Pagination from "$lib/components/ui/pagination/index.js";
@@ -14,7 +20,7 @@ Pagination with page navigation, next and previous links.
   {#snippet children({ pages, currentPage })}
     <Pagination.Content>
       <Pagination.Item>
-        <Pagination.Previous />
+        <Pagination.PrevButton />
       </Pagination.Item>
       {#each pages as page (page.key)}
         {#if page.type === "ellipsis"}
@@ -33,7 +39,7 @@ Pagination with page navigation, next and previous links.
         <Pagination.Ellipsis />
       </Pagination.Item>
       <Pagination.Item>
-        <Pagination.Next />
+        <Pagination.NextButton />
       </Pagination.Item>
     </Pagination.Content>
   {/snippet}
