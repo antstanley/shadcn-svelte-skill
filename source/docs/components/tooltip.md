@@ -6,6 +6,12 @@ A popup that displays information related to an element when the element receive
 
 [API Reference](https://bits-ui.com/docs/components/tooltip#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import { buttonVariants } from "../ui/button/index.js";
