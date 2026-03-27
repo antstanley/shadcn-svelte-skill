@@ -2,6 +2,12 @@
 
 A styled native HTML select element with consistent design system integration.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 For a styled select component, see the [Select](https://shadcn-svelte.com/docs/components/select) component.
 
 ```svelte
@@ -175,8 +181,8 @@ The `NativeSelect` component provides native HTML select functionality with cons
 
 The main select component that wraps the native HTML select element.
 
-| Prop                  | Type            | Default |
-| ------------------------------------------------- | ------------------------------------------- | ------------------------------------------------- |
+| Prop                   | Type            | Default  |
+| ---------------------------------------------------- | --------------------------------------------- | ----------------------------------------------------- |
 | `class` | `string` |  |
 
 All other props are passed through to the underlying `<select>` element.
@@ -192,11 +198,11 @@ All other props are passed through to the underlying `<select>` element.
 
 Represents an individual option within the select.
 
-| Prop                     | Type             | Default        |
-| ---------------------------------------------------- | -------------------------------------------- | -------------------------------------------------------- |
+| Prop                      | Type             | Default        |
+| ------------------------------------------------------- | ---------------------------------------------- | ----------------------------------------------------------- |
 | `value`    | `string`  |                       |
 | `disabled` | `boolean` | `false` |
-| `class`    | `string`  |         |
+| `class`    | `string`  |        |
 
 All other props are passed through to the underlying `<option>` element.
 
@@ -209,11 +215,11 @@ All other props are passed through to the underlying `<option>` element.
 
 Groups related options together for better organization.
 
-| Prop                     | Type             | Default        |
-| ---------------------------------------------------- | -------------------------------------------- | -------------------------------------------------------- |
+| Prop                      | Type             | Default        |
+| ------------------------------------------------------- | ---------------------------------------------- | ----------------------------------------------------------- |
 | `label`    | `string`  |                       |
 | `disabled` | `boolean` | `false` |
-| `class`    | `string`  |         |
+| `class`    | `string`  |        |
 
 All other props are passed through to the underlying `<optgroup>` element.
 
