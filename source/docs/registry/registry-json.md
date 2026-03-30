@@ -2,6 +2,12 @@
 
 Schema for running your own component registry.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 The `registry.json` schema is used to define your custom component registry.
 
 registry.json
