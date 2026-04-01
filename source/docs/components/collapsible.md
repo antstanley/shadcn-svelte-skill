@@ -6,6 +6,12 @@ An interactive component which expands/collapses a panel.
 
 [API Reference](https://bits-ui.com/docs/components/collapsible#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import ChevronsUpDownIcon from "@lucide/svelte/icons/chevrons-up-down";
