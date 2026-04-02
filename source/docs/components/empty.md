@@ -2,6 +2,12 @@
 
 Use the Empty component to display a empty state.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import * as Empty from "$lib/components/ui/empty/index.js";
@@ -176,9 +182,7 @@ Use the `EmptyMedia` component to display an avatar group in the empty state.
 <Empty.Root class="flex-none border">
   <Empty.Header>
     <Empty.Media>
-      <div
-        class="*:ring-background flex -space-x-2 *:size-12 *:ring-2 *:grayscale"
-      >
+      <Avatar.Group class="grayscale">
         <Avatar.Root>
           <Avatar.Image src="https://github.com/shadcn.png" alt="@shadcn" />
           <Avatar.Fallback>CN</Avatar.Fallback>
@@ -197,7 +201,7 @@ Use the `EmptyMedia` component to display an avatar group in the empty state.
           />
           <Avatar.Fallback>ER</Avatar.Fallback>
         </Avatar.Root>
-      </div>
+      </Avatar.Group>
     </Empty.Media>
     <Empty.Title>No Team Members</Empty.Title>
     <Empty.Description
