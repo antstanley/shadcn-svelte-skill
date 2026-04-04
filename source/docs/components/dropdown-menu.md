@@ -6,6 +6,12 @@ Displays a menu to the user  such as a set of actions or functions  triggered by
 
 [API Reference](https://bits-ui.com/docs/components/dropdown-menu#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
