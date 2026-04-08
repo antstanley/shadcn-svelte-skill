@@ -6,6 +6,12 @@ An input where the user selects a value from within a given range.
 
 [API Reference](https://bits-ui.com/docs/components/slider#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import { Slider } from "$lib/components/ui/slider/index.js";

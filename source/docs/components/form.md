@@ -4,6 +4,12 @@ Building forms with Formsnap, Superforms, & Zod.
 
 [Docs](https://formsnap.dev)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 Forms are tricky. They are one of the most common things you'll build in a web application, but also one of the most complex.
 
 Well-designed HTML forms are:
@@ -205,7 +211,7 @@ That's it. You now have a fully accessible form that is type-safe and has client
 
 ```svelte
 <script lang="ts" module>
-  import { z } from "zod/v4";
+  import { z } from "zod";
   const formSchema = z.object({
     username: z.string().min(2).max(50)
   });
