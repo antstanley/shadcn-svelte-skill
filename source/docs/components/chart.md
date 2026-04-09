@@ -2,6 +2,12 @@
 
 Beautiful charts. Built using LayerChart. Copy and paste into your apps.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 **Important:** LayerChart v2 is still in pre-release and is actively evolving. Only use if you're comfortable with potential breaking changes before stable v2.
 
 Your feedback will be invaluable in shaping the release and features. Current development status can be tracked [here](https://github.com/techniq/layerchart/pull/449).
@@ -137,7 +143,7 @@ These components handle a lot of the common chart scaffolding for you, while all
     x="month"
     axis="x"
     seriesLayout="group"
-    tooltip={false}
+    tooltipContext={false}
     series={[
       {
         key: "desktop",
@@ -171,7 +177,7 @@ The `props` prop is how you can pass custom props to the various components that
     xScale={scaleBand().padding(0.25)}
     x="month"
     axis="x"
-    tooltip={false}
+    tooltipContext={false}
     seriesLayout="group"
     series={[
       {
@@ -224,7 +230,7 @@ The `props` prop is how you can pass custom props to the various components that
     xScale={scaleBand().padding(0.25)}
     x="month"
     axis="x"
-    tooltip={false}
+    tooltipContext={false}
     seriesLayout="group"
     series={[
       {
@@ -255,7 +261,7 @@ To add a tooltip, we'll use the custom `Chart.Tooltip` component from `chart`.
 
 ### Add the `Chart.Tooltip` component to the chart
 
-We'll replace the `tooltip={false}` prop with the `tooltip` snippet where we'll place the `Chart.Tooltip` component.
+We'll replace the `tooltipContext={false}` prop with the `tooltip` snippet where we'll place the `Chart.Tooltip` component.
 
 ```svelte
 <Chart.Container config={chartConfig} class="min-h-[200px] w-full">
@@ -675,15 +681,15 @@ Chart comes with the `<Chart.Tooltip>` component. You can use this component to 
 
 Use the following props to customize the tooltip.
 
-| Prop                           | Type                                                        | Description                                                           |
-| :--------------------------------------------------------- | :-------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------- |
-| `labelKey`       | string                                                      | The config or data key to use for the label.                          |
-| `nameKey`        | string                                                      | The config or data key to use for the name.                           |
-| `indicator`      | `dot` `line` or `dashed` | The indicator style for the tooltip.                                  |
-| `hideLabel`      | boolean                                                     | Whether to hide the label.                                            |
-| `hideIndicator`  | boolean                                                     | Whether to hide the indicator.                                        |
-| `label`          | string                                                      | A custom label for the tooltip                                        |
-| `labelFormatter` | function                                                    | A function to format the label.                                       |
+| Prop                            | Type                                                        | Description                                                            |
+| :------------------------------------------------------------ | :---------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------ |
+| `labelKey`       | string                                                      | The config or data key to use for the label.                           |
+| `nameKey`        | string                                                      | The config or data key to use for the name.                            |
+| `indicator`      | `dot` `line` or `dashed` | The indicator style for the tooltip.                                   |
+| `hideLabel`      | boolean                                                     | Whether to hide the label.                                             |
+| `hideIndicator`  | boolean                                                     | Whether to hide the indicator.                                         |
+| `label`          | string                                                      | A custom label for the tooltip                                         |
+| `labelFormatter` | function                                                    | A function to format the label.                                        |
 | `formatter`      | Snippet                                                     | A snippet to provide flexible rendering of the tooltip. |
 
 ### Colors
