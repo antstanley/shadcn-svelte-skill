@@ -2,6 +2,12 @@
 
 Used to display textual user input from keyboard.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import * as Kbd from "$lib/components/ui/kbd/index.js";
