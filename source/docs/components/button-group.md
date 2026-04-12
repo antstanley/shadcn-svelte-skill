@@ -2,6 +2,12 @@
 
 A container that groups related buttons together with consistent styling.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import Archive from "@lucide/svelte/icons/archive";
@@ -319,7 +325,7 @@ Wrap an `InputGroup` component to create complex input layouts.
       <Plus />
     </Button>
   </ButtonGroup.Root>
-  <ButtonGroup.Root>
+  <ButtonGroup.Root class="flex-1">
     <InputGroup.Root>
       <InputGroup.Input
         placeholder={voiceEnabled

@@ -2,6 +2,12 @@
 
 Use CSS Variables to customize the look and feel of your application.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 We use CSS variables for styling. This allows you to easily change the colors of components without having to update class names.
 
 ## Convention

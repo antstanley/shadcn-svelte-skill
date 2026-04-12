@@ -6,6 +6,12 @@ Visually or semantically separates content.
 
 [API Reference](https://bits-ui.com/docs/components/separator#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import { Separator } from "$lib/components/ui/separator/index.js";
