@@ -2,6 +2,12 @@
 
 A date picker component with range and presets.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import Calendar from "$lib/components/ui/calendar/calendar.svelte";
