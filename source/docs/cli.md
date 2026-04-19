@@ -2,6 +2,12 @@
 
 Use the shadcn-svelte CLI to add components to your project.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ## init
 
 Use the `init` command to initialize dependencies for a new project.
