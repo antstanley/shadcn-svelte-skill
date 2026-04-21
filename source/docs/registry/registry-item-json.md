@@ -2,6 +2,12 @@
 
 Specification for registry items.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Open source, local first apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 The `registry-item.json` schema is used to define your custom registry items.
 
 registry-item.json
