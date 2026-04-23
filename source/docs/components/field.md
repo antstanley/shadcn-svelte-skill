@@ -2,6 +2,12 @@
 
 Combine labels, controls, and help text to compose accessible form fields and grouped inputs.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import { Button } from "$lib/components/ui/button/index.js";
@@ -166,7 +172,7 @@ bun x shadcn-svelte@latest add field
   <Field.Group>
     <Field.Field>
       <Field.Label for="name">Full name</Field.Label>
-      <Input id="name" autoComplete="off" placeholder="Evil Rabbit" />
+      <Input id="name" autocomplete="off" placeholder="Evil Rabbit" />
       <Field.Description
         >This appears on invoices and emails.</Field.Description
       >
