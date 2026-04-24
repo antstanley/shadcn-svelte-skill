@@ -2,6 +2,12 @@
 
 Learn how to get setup and run your own component registry.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 This guide will walk you through the process of setting up your own component registry.
 
 It assumes you already have a project with components and would like to turn it into a registry.

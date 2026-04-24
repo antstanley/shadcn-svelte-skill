@@ -6,6 +6,12 @@ A modal dialog that interrupts the user with important content and expects a res
 
 [API Reference](https://bits-ui.com/docs/components/alert-dialog#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import * as AlertDialog from "$lib/components/ui/alert-dialog/index.js";
