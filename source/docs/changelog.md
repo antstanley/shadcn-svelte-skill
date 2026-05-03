@@ -2,6 +2,12 @@
 
 Latest updates and announcements.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ## October 2025 - New Components For this round of components, I looked at what we build every day, the boring stuff we rebuild over and over, and made reusable abstractions you can actually use.
 
 - [Spinner](https://shadcn-svelte.com/docs/components/spinner) : An indicator to show a loading state.
@@ -140,7 +146,7 @@ The Drawer is built on top of [vaul-svelte](https://vaul-svelte.com) and is a po
   import PlusIcon from "@lucide/svelte/icons/plus";
   import * as Drawer from "$lib/components/ui/drawer/index.js";
   import { Button, buttonVariants } from "$lib/components/ui/button/index.js";
-  import { BarChart, type ChartContextValue } from "layerchart";
+  import { BarChart } from "layerchart";
   import { scaleBand } from "d3-scale";
   import { cubicInOut } from "svelte/easing";
   const data = [
@@ -188,7 +194,6 @@ The Drawer is built on top of [vaul-svelte](https://vaul-svelte.com) and is a po
   function handleClick(adjustment: number) {
     goal = Math.max(200, Math.min(400, goal + adjustment));
   }
-  let context = $state<ChartContextValue>();
 </script>
 <Drawer.Root>
   <Drawer.Trigger class={buttonVariants({ variant: "outline" })}
@@ -234,31 +239,18 @@ The Drawer is built on top of [vaul-svelte](https://vaul-svelte.com) and is a po
         <div class="mt-3 h-[120px]">
           <div class="h-full w-full">
             <BarChart
-              bind:context
               data={data.map((d, i) => ({ goal: d.goal, index: i }))}
               y="goal"
               x="index"
               xScale={scaleBand().padding(0.25)}
               axis={false}
-              tooltip={false}
+              tooltipContext={false}
               props={{
                 bars: {
                   stroke: "none",
                   rounded: "all",
                   radius: 4,
-                  // use the height of the chart to animate the bars
-                  initialY: context?.height,
-                  initialHeight: 0,
-                  motion: {
-                    x: { type: "tween", duration: 500, easing: cubicInOut },
-                    width: { type: "tween", duration: 500, easing: cubicInOut },
-                    height: {
-                      type: "tween",
-                      duration: 500,
-                      easing: cubicInOut
-                    },
-                    y: { type: "tween", duration: 500, easing: cubicInOut }
-                  },
+                  motion: { type: "tween", duration: 500, easing: cubicInOut },
                   fill: "var(--color-foreground)",
                   fillOpacity: 0.9
                 },
