@@ -2,6 +2,12 @@
 
 Frequently asked questions about running a registry.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ## Frequently asked questions
 
 ### What does a complex component look like?

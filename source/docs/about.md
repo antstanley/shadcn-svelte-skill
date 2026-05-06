@@ -2,6 +2,12 @@
 
 Powered by amazing open source projects.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ## About
 
 [shadcn-svelte](https://github.com/huntabyte/shadcn-svelte) is a port of [shadcn/ui](https://ui.shadcn.com) for Svelte/SvelteKit. It's maintained by [Huntabyte](https://x.com/huntabyte), [CokaKoala](https://github.com/adriangonz97), and [Aidan Bleser](https://x.com/ieeeedan) and has received countless contributions from the community.
