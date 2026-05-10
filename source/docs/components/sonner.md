@@ -4,6 +4,12 @@ An opinionated toast component for Svelte.
 
 [Docs](https://svelte-sonner.vercel.app/)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import { toast } from "svelte-sonner";
