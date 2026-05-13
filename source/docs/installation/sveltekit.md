@@ -2,6 +2,12 @@
 
 How to setup shadcn-svelte in a SvelteKit project.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ### Create project
 
 Use the SvelteKit CLI to create a new project with TailwindCSS
