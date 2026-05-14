@@ -6,6 +6,12 @@ A calendar component that allows users to select a range of dates.
 
 [API Reference](https://bits-ui.com/docs/components/range-calendar#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import { getLocalTimeZone, today } from "@internationalized/date";
