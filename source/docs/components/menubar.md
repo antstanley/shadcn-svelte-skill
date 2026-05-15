@@ -6,6 +6,12 @@ A visually persistent menu common in desktop applications that provides quick ac
 
 [API Reference](https://bits-ui.com/docs/components/menubar#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import * as Menubar from "$lib/components/ui/menubar/index.js";
