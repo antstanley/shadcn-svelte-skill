@@ -4,13 +4,19 @@ A drawer component for Svelte.
 
 [Docs](https://github.com/huntabyte/vaul-svelte)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import MinusIcon from "@lucide/svelte/icons/minus";
   import PlusIcon from "@lucide/svelte/icons/plus";
   import * as Drawer from "$lib/components/ui/drawer/index.js";
   import { Button, buttonVariants } from "$lib/components/ui/button/index.js";
-  import { BarChart, type ChartContextValue } from "layerchart";
+  import { BarChart } from "layerchart";
   import { scaleBand } from "d3-scale";
   import { cubicInOut } from "svelte/easing";
   const data = [
@@ -58,7 +64,6 @@ A drawer component for Svelte.
   function handleClick(adjustment: number) {
     goal = Math.max(200, Math.min(400, goal + adjustment));
   }
-  let context = $state<ChartContextValue>();
 </script>
 <Drawer.Root>
   <Drawer.Trigger class={buttonVariants({ variant: "outline" })}
@@ -104,31 +109,18 @@ A drawer component for Svelte.
         <div class="mt-3 h-[120px]">
           <div class="h-full w-full">
             <BarChart
-              bind:context
               data={data.map((d, i) => ({ goal: d.goal, index: i }))}
               y="goal"
               x="index"
               xScale={scaleBand().padding(0.25)}
               axis={false}
-              tooltip={false}
+              tooltipContext={false}
               props={{
                 bars: {
                   stroke: "none",
                   rounded: "all",
                   radius: 4,
-                  // use the height of the chart to animate the bars
-                  initialY: context?.height,
-                  initialHeight: 0,
-                  motion: {
-                    x: { type: "tween", duration: 500, easing: cubicInOut },
-                    width: { type: "tween", duration: 500, easing: cubicInOut },
-                    height: {
-                      type: "tween",
-                      duration: 500,
-                      easing: cubicInOut
-                    },
-                    y: { type: "tween", duration: 500, easing: cubicInOut }
-                  },
+                  motion: { type: "tween", duration: 500, easing: cubicInOut },
                   fill: "var(--color-foreground)",
                   fillOpacity: 0.9
                 },

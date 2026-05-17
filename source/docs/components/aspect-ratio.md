@@ -6,6 +6,12 @@ Displays content within a desired ratio.
 
 [API Reference](https://bits-ui.com/docs/components/aspect-ratio#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import { AspectRatio } from "$lib/components/ui/aspect-ratio/index.js";
