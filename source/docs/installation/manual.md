@@ -2,6 +2,12 @@
 
 How to setup shadcn-svelte manually.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ### Add Tailwind
 
 Use the `sv` CLI to add Tailwind CSS to your project.
