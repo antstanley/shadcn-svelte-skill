@@ -6,6 +6,12 @@ Renders an accessible label associated with controls.
 
 [API Reference](https://bits-ui.com/docs/components/label#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import { Checkbox } from "$lib/components/ui/checkbox/index.js";
