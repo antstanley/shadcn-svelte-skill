@@ -4,6 +4,12 @@ Powerful table and datagrids built using TanStack Table.
 
 [Docs](https://tanstack.com/table/v8/docs/introduction)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import ChevronDownIcon from "@lucide/svelte/icons/chevron-down";

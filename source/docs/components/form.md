@@ -4,6 +4,12 @@ Building forms with Formsnap, Superforms, & Zod.
 
 [Docs](https://formsnap.dev)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 Forms are tricky. They are one of the most common things you'll build in a web application, but also one of the most complex.
 
 Well-designed HTML forms are:
@@ -130,9 +136,9 @@ src/routes/settings/settings-form.svelte
     superForm,
   } from "sveltekit-superforms";
   import { zod4Client } from "sveltekit-superforms/adapters";
-  let { data }: { data: { form: SuperValidated<Infer<FormSchema>> } } =
+  let { form: initialForm }: { form: SuperValidated<Infer<FormSchema>> } =
     $props();
-  const form = superForm(data.form, {
+  const form = superForm(initialForm, {
     validators: zod4Client(formSchema),
   });
   const { form: formData, enhance } = form;
@@ -166,7 +172,7 @@ src/routes/settings/+page.svelte
   import SettingsForm from "./settings-form.svelte";
   let { data }: { data: PageData } = $props();
 </script>
-<SettingsForm {data} />
+<SettingsForm form={data.form} />
 ```
 
 ### Create an Action
@@ -205,7 +211,7 @@ That's it. You now have a fully accessible form that is type-safe and has client
 
 ```svelte
 <script lang="ts" module>
-  import { z } from "zod/v4";
+  import { z } from "zod";
   const formSchema = z.object({
     username: z.string().min(2).max(50)
   });
