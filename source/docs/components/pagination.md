@@ -6,6 +6,12 @@ Pagination with page navigation, next and previous links.
 
 [API Reference](https://bits-ui.com/docs/components/pagination#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import * as Pagination from "$lib/components/ui/pagination/index.js";
