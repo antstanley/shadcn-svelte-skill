@@ -6,6 +6,12 @@ A set of two-state buttons that can be toggled on or off.
 
 [API Reference](https://bits-ui.com/docs/components/toggle-group#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import * as ToggleGroup from "$lib/components/ui/toggle-group/index.js";
