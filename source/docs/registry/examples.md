@@ -2,6 +2,12 @@
 
 Examples of registry items: styles, components, css vars, etc.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ## registry:style
 
 ### Custom style that extends shadcn-svelte
