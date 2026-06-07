@@ -71,7 +71,7 @@
 
 - [Alert](docs/components/alert.md): Displays a callout for user attention.
 - [Badge](docs/components/badge.md): Displays a badge or a component that looks like a badge.
-- [Empty](docs/components/empty.md): Use the Empty component to display a empty state.
+- [Empty](docs/components/empty.md): Use the Empty component to display an empty state.
 - [Progress](docs/components/progress.md): Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.
 - [Skeleton](docs/components/skeleton.md): Use to show a placeholder while content is loading.
 - [Sonner](docs/components/sonner.md): An opinionated toast component for Svelte.
