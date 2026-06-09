@@ -6,6 +6,12 @@ Accessible resizable panel groups and layouts with keyboard support.
 
 [API Reference](https://www.paneforge.com/docs/components/pane-group)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import * as Resizable from "$lib/components/ui/resizable/index.js";

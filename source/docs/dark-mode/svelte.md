@@ -2,6 +2,12 @@
 
 Adding dark mode to your Svelte site.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ## Install mode-watcher
 
 Start by installing `mode-watcher`:
