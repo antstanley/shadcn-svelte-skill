@@ -6,6 +6,12 @@ A carousel with motion and swipe built using Embla.
 
 [API Reference](https://www.embla-carousel.com/api)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import * as Card from "$lib/components/ui/card/index.js";
