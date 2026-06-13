@@ -2,9 +2,11 @@
 
 Displays a list of options for the user to pick fromtriggered by a button.
 
-[Docs](https://bits-ui.com/docs/components/select)
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
 
-[API Reference](https://bits-ui.com/docs/components/select#api-reference)
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
 
 ```svelte
 <script lang="ts">
@@ -85,7 +87,7 @@ bun x shadcn-svelte@latest add select
 </script>
 <Select.Root type="single">
   <Select.Trigger class="w-[280px]">Select a timezone</Select.Trigger>
-  <Select.Content>
+  <Select.Content class="max-h-[300px]">
     <Select.Group>
       <Select.Label>North America</Select.Label>
       <Select.Item value="est">Eastern Standard Time (EST)</Select.Item>

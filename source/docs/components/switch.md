@@ -2,9 +2,11 @@
 
 A control that allows the user to toggle between checked and not checked.
 
-[Docs](https://bits-ui.com/docs/components/switch)
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
 
-[API Reference](https://bits-ui.com/docs/components/switch#api-reference)
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
 
 ```svelte
 <script lang="ts">

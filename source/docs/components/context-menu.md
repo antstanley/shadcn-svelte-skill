@@ -2,9 +2,11 @@
 
 Displays a menu to the user  such as a set of actions or functions  triggered by right click.
 
-[Docs](https://bits-ui.com/docs/components/context-menu)
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
 
-[API Reference](https://bits-ui.com/docs/components/context-menu#api-reference)
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
 
 ```svelte
 <script lang="ts">

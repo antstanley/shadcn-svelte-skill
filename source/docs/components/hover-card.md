@@ -2,9 +2,11 @@
 
 For sighted users to preview content available behind a link.
 
-[Docs](https://bits-ui.com/docs/components/link-preview)
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
 
-[API Reference](https://bits-ui.com/docs/components/link-preview#api-reference)
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
 
 ```svelte
 <script lang="ts">

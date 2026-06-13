@@ -2,9 +2,11 @@
 
 Fast, composable, unstyled command menu for Svelte.
 
-[Docs](https://bits-ui.com/docs/components/command)
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
 
-[API Reference](https://bits-ui.com/docs/components/command#api-reference)
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
 
 ```svelte
 <script lang="ts">
