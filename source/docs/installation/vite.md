@@ -2,6 +2,12 @@
 
 How to setup shadcn-svelte in a Vite project.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ### Add TailwindCSS
 
 Use the Svelte CLI to add Tailwind CSS to your project.

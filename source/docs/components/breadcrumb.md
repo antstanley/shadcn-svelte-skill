@@ -2,6 +2,12 @@
 
 Displays the path to the current resource using a hierarchy of links.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import * as Breadcrumb from "$lib/components/ui/breadcrumb/index.js";
@@ -247,7 +253,7 @@ We provide a `<Breadcrumb.Ellipsis />` component to show a collapsed state when 
 
 ### Link component
 
-To use a custom link component from your routing library, you can use the `asChild` prop on `<Breadcrumb.Link />`.
+To use a link just add the `href` prop to `<Breadcrumb.Link />`.
 
 ```svelte
 <script lang="ts">
@@ -302,7 +308,7 @@ It displays a dropdown on desktop and a drawer on mobile.
   const items = [
     { href: "#", label: "Home" },
     { href: "#", label: "Documentation" },
-    { href: "#", label: "Building Your Application" },
+    { href: "#", label: "Build Your Application" },
     { href: "#", label: "Data Fetching" },
     { label: "Caching and Revalidating" }
  ];

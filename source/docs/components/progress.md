@@ -2,9 +2,11 @@
 
 Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.
 
-[Docs](https://bits-ui.com/docs/components/progress)
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
 
-[API Reference](https://bits-ui.com/docs/components/progress#api-reference)
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
 
 ```svelte
 <script lang="ts">
