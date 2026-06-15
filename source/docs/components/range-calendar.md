@@ -2,9 +2,11 @@
 
 A calendar component that allows users to select a range of dates.
 
-[Docs](https://bits-ui.com/docs/components/range-calendar)
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
 
-[API Reference](https://bits-ui.com/docs/components/range-calendar#api-reference)
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
 
 ```svelte
 <script lang="ts">

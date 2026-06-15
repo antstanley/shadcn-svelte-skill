@@ -2,9 +2,11 @@
 
 An image element with a fallback for representing the user.
 
-[Docs](https://bits-ui.com/docs/components/avatar)
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
 
-[API Reference](https://bits-ui.com/docs/components/avatar#api-reference)
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
 
 ```svelte
 <script lang="ts">

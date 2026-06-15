@@ -2,9 +2,11 @@
 
 A visually persistent menu common in desktop applications that provides quick access to a consistent set of commands.
 
-[Docs](https://bits-ui.com/docs/components/menubar)
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
 
-[API Reference](https://bits-ui.com/docs/components/menubar#api-reference)
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
 
 ```svelte
 <script lang="ts">

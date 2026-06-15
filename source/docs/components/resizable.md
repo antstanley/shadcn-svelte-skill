@@ -2,9 +2,11 @@
 
 Accessible resizable panel groups and layouts with keyboard support.
 
-[Docs](https://www.paneforge.com)
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
 
-[API Reference](https://www.paneforge.com/docs/components/pane-group)
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
 
 ```svelte
 <script lang="ts">

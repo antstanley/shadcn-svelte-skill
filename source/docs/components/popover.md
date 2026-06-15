@@ -2,9 +2,11 @@
 
 Displays rich content in a portal, triggered by a button.
 
-[Docs](https://bits-ui.com/docs/components/popover)
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
 
-[API Reference](https://bits-ui.com/docs/components/popover#api-reference)
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
 
 ```svelte
 <script lang="ts">
