@@ -2,9 +2,11 @@
 
 Augments native scroll functionality for custom, cross-browser styling.
 
-[Docs](https://bits-ui.com/docs/components/scroll-area)
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
 
-[API Reference](https://bits-ui.com/docs/components/scroll-area#api-reference)
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
 
 ```svelte
 <script lang="ts">

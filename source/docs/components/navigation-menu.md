@@ -2,9 +2,11 @@
 
 A collection of links for navigating websites.
 
-[Docs](https://bits-ui.com/docs/components/navigation-menu)
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
 
-[API Reference](https://bits-ui.com/docs/components/navigation-menu#api-reference)
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
 
 ```svelte
 <script lang="ts">

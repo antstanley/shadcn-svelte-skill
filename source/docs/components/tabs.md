@@ -2,9 +2,11 @@
 
 A set of layered sections of contentknown as tab panelsthat are displayed one at a time.
 
-[Docs](https://bits-ui.com/docs/components/tabs)
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
 
-[API Reference](https://bits-ui.com/docs/components/tabs#api-reference)
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
 
 ```svelte
 <script lang="ts">

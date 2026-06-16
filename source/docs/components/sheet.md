@@ -2,9 +2,11 @@
 
 Extends the Dialog component to display content that complements the main content of the screen.
 
-[Docs](https://bits-ui.com/docs/components/dialog)
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
 
-[API Reference](https://bits-ui.com/docs/components/dialog#api-reference)
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
 
 ```svelte
 <script lang="ts">

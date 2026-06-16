@@ -2,9 +2,11 @@
 
 A modal dialog that interrupts the user with important content and expects a response.
 
-[Docs](https://bits-ui.com/docs/components/alert-dialog)
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
 
-[API Reference](https://bits-ui.com/docs/components/alert-dialog#api-reference)
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
 
 ```svelte
 <script lang="ts">

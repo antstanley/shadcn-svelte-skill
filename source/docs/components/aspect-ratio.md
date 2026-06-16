@@ -2,9 +2,11 @@
 
 Displays content within a desired ratio.
 
-[Docs](https://bits-ui.com/docs/components/aspect-ratio)
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
 
-[API Reference](https://bits-ui.com/docs/components/aspect-ratio#api-reference)
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
 
 ```svelte
 <script lang="ts">

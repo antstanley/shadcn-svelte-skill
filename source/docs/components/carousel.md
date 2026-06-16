@@ -2,9 +2,11 @@
 
 A carousel with motion and swipe built using Embla.
 
-[Docs](https://www.embla-carousel.com/get-started/svelte)
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
 
-[API Reference](https://www.embla-carousel.com/api)
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
 
 ```svelte
 <script lang="ts">

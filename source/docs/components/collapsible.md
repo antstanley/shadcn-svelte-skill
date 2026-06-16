@@ -2,9 +2,11 @@
 
 An interactive component which expands/collapses a panel.
 
-[Docs](https://bits-ui.com/docs/components/collapsible)
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
 
-[API Reference](https://bits-ui.com/docs/components/collapsible#api-reference)
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
 
 ```svelte
 <script lang="ts">
