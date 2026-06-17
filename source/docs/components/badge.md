@@ -2,6 +2,12 @@
 
 Displays a badge or a component that looks like a badge.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import { Badge } from "$lib/components/ui/badge/index.js";

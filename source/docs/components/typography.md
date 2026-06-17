@@ -2,6 +2,12 @@
 
 Styles for headings, paragraphs, lists...etc
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 We do not ship any typography styles by default. This page is an example of how you can use utility classes to style your text.
 
 ```svelte

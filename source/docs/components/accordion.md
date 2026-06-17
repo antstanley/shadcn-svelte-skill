@@ -2,9 +2,11 @@
 
 A vertically stacked set of interactive headings that each reveal a section of content.
 
-[Docs](https://bits-ui.com/docs/components/accordion)
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
 
-[API Reference](https://bits-ui.com/docs/components/accordion#api-reference)
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
 
 ```svelte
 <script lang="ts">

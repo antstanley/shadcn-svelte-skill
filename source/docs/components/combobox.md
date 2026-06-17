@@ -2,6 +2,12 @@
 
 Autocomplete input and command palette with a list of suggestions.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import CheckIcon from "@lucide/svelte/icons/check";
