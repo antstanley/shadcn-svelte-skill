@@ -6,6 +6,12 @@ Renders an accessible label associated with controls.
 
 [API Reference](https://bits-ui.com/docs/components/label#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import { Checkbox } from "$lib/components/ui/checkbox/index.js";
@@ -19,7 +25,7 @@ Renders an accessible label associated with controls.
 </div>
 ```
 
-## Installation
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add label
@@ -33,7 +39,7 @@ npx shadcn-svelte@latest add label
 bun x shadcn-svelte@latest add label
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
