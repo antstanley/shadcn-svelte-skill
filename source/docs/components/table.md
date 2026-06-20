@@ -2,6 +2,12 @@
 
 A responsive table component.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import * as Table from "$lib/components/ui/table/index.js";
@@ -79,7 +85,7 @@ A responsive table component.
 </Table.Root>
 ```
 
-## Installation
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add table
@@ -93,7 +99,7 @@ npx shadcn-svelte@latest add table
 bun x shadcn-svelte@latest add table
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -123,7 +129,7 @@ bun x shadcn-svelte@latest add table
 </Table.Root>
 ```
 
-## Data Table
+## [Data Table](#data-table)
 
 You can use the `<Table />` component to build more complex data tables. Combine it with [@tanstack/table](https://tanstack.com/table) to create tables with sorting, filtering and pagination.
 
