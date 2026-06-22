@@ -6,6 +6,12 @@ A calendar component that allows users to select dates.
 
 [API Reference](https://bits-ui.com/docs/components/calendar#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import { getLocalTimeZone, today } from "@internationalized/date";
@@ -20,13 +26,13 @@ A calendar component that allows users to select dates.
 />
 ```
 
-## Blocks
+## [Blocks](#blocks)
 
 We have built a collection of 30+ calendar blocks that you can use to build your own calendar components.
 
 See call calendar blocks in the [Blocks Library](https://shadcn-svelte.com/blocks/calendar) page.
 
-## Installation
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add calendar
@@ -40,19 +46,19 @@ npx shadcn-svelte@latest add calendar
 bun x shadcn-svelte@latest add calendar
 ```
 
-## About
+## [About](#about)
 
 The `<Calendar />` component is built on top of the [Bits UI Calendar](https://www.bits-ui.com/docs/components/calendar) component, which uses the [@internationalized/date](https://react-spectrum.adobe.com/internationalized/date/index.html) package to handle dates.
 
 If you're looking for a range calendar, check out the [Range Calendar](https://shadcn-svelte.com/docs/components/range-calendar) component.
 
-## Date Picker
+## [Date Picker](#date-picker)
 
 You can use the `<Calendar />` component to build a date picker. See the [Date Picker](https://shadcn-svelte.com/docs/components/date-picker) page for more information.
 
-## Examples
+## [Examples](#examples)
 
-### Range Calendar
+### [Range Calendar](#range-calendar)
 
 ```svelte
 <script lang="ts">
@@ -68,7 +74,7 @@ You can use the `<Calendar />` component to build a date picker. See the [Date P
 />
 ```
 
-### Month and Year Selector
+### [Month and Year Selector](#month-and-year-selector)
 
 ```svelte
 <script lang="ts">
@@ -123,7 +129,7 @@ You can use the `<Calendar />` component to build a date picker. See the [Date P
 </div>
 ```
 
-### Date of Birth Picker
+### [Date of Birth Picker](#date-of-birth-picker)
 
 ```svelte
 <script lang="ts">
@@ -173,7 +179,7 @@ You can use the `<Calendar />` component to build a date picker. See the [Date P
 </div>
 ```
 
-### Date and Time Picker
+### [Date and Time Picker](#date-and-time-picker)
 
 ```svelte
 <script lang="ts">
@@ -232,7 +238,7 @@ You can use the `<Calendar />` component to build a date picker. See the [Date P
 </div>
 ```
 
-### Natural Language Picker
+### [Natural Language Picker](#natural-language-picker)
 
 This component uses the `chrono-node` library to parse natural language dates.
 
@@ -336,7 +342,7 @@ This component uses the `chrono-node` library to parse natural language dates.
 </div>
 ```
 
-## Upgrade Guide
+## [Upgrade Guide](#upgrade-guide)
 
 You can upgrade to the latest version of the `<Calendar />` component by running the following command:
 
@@ -354,7 +360,7 @@ bun x shadcn-svelte@latest add calendar
 
 When you're prompted to overwrite the existing files, select `Yes`. **If you have made any changes to the `Calendar` component, you will need to merge your changes with the new version.**
 
-#### Installing Blocks
+#### [Installing Blocks](#installing-blocks)
 
 After upgrading the `Calendar` component, you can add the new blocks with the following:
 

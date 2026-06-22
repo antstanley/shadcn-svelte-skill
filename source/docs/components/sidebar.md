@@ -2,6 +2,12 @@
 
 A composable, themeable and customizable sidebar component.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 A sidebar that collapses to icons.
 
 Sidebars are one of the most complex components to build. They are central to any application and often contain a lot of moving parts.
@@ -12,7 +18,7 @@ We now have a solid foundation to build on top of. Composable. Themeable. Custom
 
 [Browse the Blocks Library](https://shadcn-svelte.com/blocks).
 
-## Installation
+## [Installation](#installation)
 
 Run the following command to install the `sidebar` components:
 
@@ -57,7 +63,7 @@ src/routes/layout.css
 }
 ```
 
-## Structure
+## [Structure](#structure)
 
 A `Sidebar` component is composed of the following parts:
 
@@ -70,7 +76,7 @@ A `Sidebar` component is composed of the following parts:
 
 ![Sidebar structure](/img/sidebar/sidebar-structure.png) ![Sidebar structure](/img/sidebar/sidebar-structure-dark.png)
 
-## Usage
+## [Usage](#usage)
 
 src/routes/+layout.svelte
 
@@ -105,7 +111,7 @@ src/lib/components/app-sidebar.svelte
 </Sidebar.Root>
 ```
 
-## Your First Sidebar
+## [Your First Sidebar](#your-first-sidebar)
 
 Let's start with the most basic sidebar. A collapsible sidebar with a menu.
 
@@ -213,7 +219,7 @@ You've created your first sidebar.
 
 Your first sidebar.
 
-## Components
+## [Components](#components)
 
 The components in the `sidebar-*.svelte` files are built to be composable i.e you build your sidebar by putting the provided components together. They also compose well with other shadcn-svelte components such as `DropdownMenu`, `Collapsible`, `Dialog`, etc.
 
@@ -221,18 +227,18 @@ The components in the `sidebar-*.svelte` files are built to be composable i.e yo
 
 In the next sections, we'll go over each component and how to use them.
 
-## Sidebar.Provider
+## [Sidebar.Provider](#sidebarprovider)
 
 The `Sidebar.Provider` component is used to provide the sidebar context to the `Sidebar` component. You should always wrap your application in a `Sidebar.Provider` component.
 
-### Props
+### [Props](#props)
 
-| Name                         | Type                             | Description                                                                                                                                           |
-| -------------------------------------------------------- | ------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `open`         | `boolean`                 | Open state of the sidebar (bindable).                                                                                                                 |
+| Name                          | Type                             | Description                                                                                                                                            |
+| ----------------------------------------------------------- | -------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `open`         | `boolean`                 | Open state of the sidebar (bindable).                                                                                                                  |
 | `onOpenChange` | `(open: boolean) => void` | A callback fired *after* the open state of the sidebar changes if uncontrolled, and *before* the sidebar opens or closes if controlled. |
 
-### Width
+### [Width](#width)
 
 If you have a single sidebar in your application, you can use the `SIDEBAR_WIDTH` and `SIDEBAR_WIDTH_MOBILE` constants in `src/lib/components/ui/sidebar/constants.ts` to set the width of the sidebar.
 
@@ -257,7 +263,7 @@ To set the width of the sidebar, you can use the `--sidebar-width` and `--sideba
 
 This will not only handle the width of the sidebar but also the layout spacing.
 
-### Keyboard Shortcut
+### [Keyboard Shortcut](#keyboard-shortcut)
 
 The `SIDEBAR_KEYBOARD_SHORTCUT` variable in `src/lib/components/ui/sidebar/constants.ts` is used to set the keyboard shortcut used to open and close the sidebar.
 
@@ -271,7 +277,7 @@ src/lib/components/ui/sidebar/constants.ts
 export const SIDEBAR_KEYBOARD_SHORTCUT = "b";
 ```
 
-## Sidebar.Root
+## [Sidebar.Root](#sidebarroot)
 
 The main `Sidebar` component used to render a collapsible sidebar.
 
@@ -282,15 +288,15 @@ The main `Sidebar` component used to render a collapsible sidebar.
 <Sidebar.Root />
 ```
 
-### Props
+### [Props](#props-1)
 
-| Property                    | Type                                                                 | Description                                     |
-| ------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------- |
-| `side`        | `left` or `right`                               | The side of the sidebar.                        |
-| `variant`     | `sidebar`, `floating`, or `inset` | The variant of the sidebar.                     |
+| Property                     | Type                                                                 | Description                                      |
+| ---------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `side`        | `left` or `right`                               | The side of the sidebar.                         |
+| `variant`     | `sidebar`, `floating`, or `inset` | The variant of the sidebar.                      |
 | `collapsible` | `offcanvas`, `icon`, or `none`    | Collapsible state of the sidebar. |
 
-### side
+### [side](#side)
 
 Use the `side` prop to change the side of the sidebar.
 
@@ -300,7 +306,7 @@ Available options are `left` and `right`.
 <Sidebar.Root side="left | right" />
 ```
 
-### variant
+### [variant](#variant)
 
 Use the `variant` prop to change the variant of the sidebar.
 
@@ -323,7 +329,7 @@ Available options are `sidebar`, `floating` and `inset`.
 </Sidebar.Provider>
 ```
 
-### collapsible
+### [collapsible](#collapsible)
 
 Use the `collapsible` prop to make the sidebar collapsible.
 
@@ -333,36 +339,38 @@ Available options are `offcanvas`, `icon` and `none`.
 <Sidebar.Root collapsible="offcanvas | icon | none" />
 ```
 
-| Prop                      | Description                                                  |
-| ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| Prop                       | Description                                                  |
+| -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
 | `offcanvas` | A collapsible sidebar that slides in from the left or right. |
 | `icon`      | A sidebar that collapses to icons.                           |
-| `none`      | A non-collapsible sidebar.                     |
+| `none`      | A non-collapsible sidebar.                    |
 
-## useSidebar
+## [useSidebar](#usesidebar)
 
 The `useSidebar` function is used to hook into the sidebar context. It returns a reactive class instance, so it *cannot* be destructured. Additionally, it must be called during the lifecycle of the component.
 
 ```svelte
 <script lang="ts">
   import { useSidebar } from "$lib/components/ui/sidebar/index.js";
+  const sidebar = useSidebar();
+  // ...
   sidebar.state;
   sidebar.isMobile;
   sidebar.toggle();
 </script>
 ```
 
-| Property                      | Type                                           | Description                                            |
-| --------------------------------------------------------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| `state`         | `expanded` or `collapsed` | The current state of the sidebar.                      |
-| `open`          | `boolean`                               | Whether the sidebar is open.                           |
-| `setOpen`       | `(open: boolean) => void`               | Sets the open state of the sidebar.                    |
-| `openMobile`    | `boolean`                               | Whether the sidebar is open on mobile.                 |
-| `setOpenMobile` | `(open: boolean) => void`               | Sets the open state of the sidebar on mobile.          |
-| `isMobile`      | `boolean`                               | Whether the sidebar is on mobile.                      |
+| Property                       | Type                                           | Description                                             |
+| ------------------------------------------------------------ | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `state`         | `expanded` or `collapsed` | The current state of the sidebar.                       |
+| `open`          | `boolean`                               | Whether the sidebar is open.                            |
+| `setOpen`       | `(open: boolean) => void`               | Sets the open state of the sidebar.                     |
+| `openMobile`    | `boolean`                               | Whether the sidebar is open on mobile.                  |
+| `setOpenMobile` | `(open: boolean) => void`               | Sets the open state of the sidebar on mobile.           |
+| `isMobile`      | `boolean`                               | Whether the sidebar is on mobile.                       |
 | `toggle`        | `() => void`                            | Toggles the sidebar. Desktop and mobile. |
 
-## Sidebar.Header
+## [Sidebar.Header](#sidebarheader)
 
 Use the `Sidebar.Header` component to add a sticky header to the sidebar.
 
@@ -401,7 +409,7 @@ src/lib/components/app-sidebar.svelte
 </Sidebar.Root>
 ```
 
-## Sidebar.Footer
+## [Sidebar.Footer](#sidebarfooter)
 
 Use the `Sidebar.Footer` component to add a sticky footer to the sidebar.
 
@@ -458,7 +466,7 @@ src/lib/components/app-sidebar.svelte
 </Sidebar.Provider>
 ```
 
-## Sidebar.Content
+## [Sidebar.Content](#sidebarcontent)
 
 The `Sidebar.Content` component is used to wrap the content of the sidebar. This is where you add your `Sidebar.Group` components. It is scrollable.
 
@@ -471,7 +479,7 @@ The `Sidebar.Content` component is used to wrap the content of the sidebar. This
 </Sidebar.Root>
 ```
 
-## Sidebar.Group
+## [Sidebar.Group](#sidebargroup)
 
 Use the `Sidebar.Group` component to create a section within the sidebar.
 
@@ -493,7 +501,7 @@ A sidebar group.
 </Sidebar.Root>
 ```
 
-## Collapsible Sidebar.Group
+## [Collapsible Sidebar.Group](#collapsible-sidebargroup)
 
 To make a `Sidebar.Group` collapsible, wrap it in a `Collapsible`.
 
@@ -521,7 +529,7 @@ A collapsible sidebar group.
 
 **Note:** We wrap the `Collapsible.Trigger` in a `Sidebar.GroupLabel` to render a button.
 
-## Sidebar.GroupAction
+## [Sidebar.GroupAction](#sidebargroupaction)
 
 Use the `Sidebar.GroupAction` component to add an action to a `Sidebar.Group`.
 
@@ -537,7 +545,7 @@ Use the `Sidebar.GroupAction` component to add an action to a `Sidebar.Group`.
 
 A sidebar group with an action button.
 
-## Sidebar.Menu
+## [Sidebar.Menu](#sidebarmenu)
 
 The `Sidebar.Menu` component is used for building a menu within a `Sidebar.Group`.
 
@@ -575,11 +583,11 @@ A sidebar menu with a list of projects.
 </Sidebar.Root>
 ```
 
-## Sidebar.MenuButton
+## [Sidebar.MenuButton](#sidebarmenubutton)
 
 The `Sidebar.MenuButton` component is used to render a menu button within a `Sidebar.Menu`.
 
-### Link or Anchor
+### [Link or Anchor](#link-or-anchor)
 
 By default, the `Sidebar.MenuButton` renders a button, but you can use the `child` snippet to render a different component such as an `<a>` tag.
 
@@ -591,7 +599,7 @@ By default, the `Sidebar.MenuButton` renders a button, but you can use the `chil
 </Sidebar.MenuButton>
 ```
 
-### Icon and Label
+### [Icon and Label](#icon-and-label)
 
 You can render an icon and a truncated label inside the button. Remember to wrap the label in a `<span>` tag.
 
@@ -606,7 +614,7 @@ You can render an icon and a truncated label inside the button. Remember to wrap
 </Sidebar.MenuButton>
 ```
 
-### isActive
+### [isActive](#isactive)
 
 Use the `isActive` prop to mark a menu item as active.
 
@@ -621,7 +629,7 @@ Use the `isActive` prop to mark a menu item as active.
 </Sidebar.MenuButton>
 ```
 
-## Sidebar.MenuAction
+## [Sidebar.MenuAction](#sidebarmenuaction)
 
 The `Sidebar.MenuAction` component is used to render a menu action within a `Sidebar.Menu`.
 
@@ -643,7 +651,7 @@ This button works independently of the `Sidebar.MenuButton`, i.e. you can have t
 </Sidebar.MenuItem>
 ```
 
-### DropdownMenu
+### [DropdownMenu](#dropdownmenu)
 
 Here's an example of a `Sidebar.MenuAction` that renders a `DropdownMenu`.
 
@@ -679,7 +687,7 @@ A sidebar menu action with a dropdown menu.
 </Sidebar.MenuItem>
 ```
 
-## Sidebar.MenuSub
+## [Sidebar.MenuSub](#sidebarmenusub)
 
 The `Sidebar.MenuSub` component is used to render a submenu within a `Sidebar.Menu`.
 
@@ -701,7 +709,7 @@ A sidebar menu sub.
 </Sidebar.MenuItem>
 ```
 
-## Collapsible Sidebar.Menu
+## [Collapsible Sidebar.Menu](#collapsible-sidebarmenu)
 
 To make a `Sidebar.Menu` collapsible, wrap it and the `Sidebar.MenuSub` components in a `Collapsible`.
 
@@ -726,7 +734,7 @@ A collapsible sidebar menu.
 </Sidebar.Menu>
 ```
 
-## Sidebar.MenuBadge
+## [Sidebar.MenuBadge](#sidebarmenubadge)
 
 The `Sidebar.MenuBadge` component is used to render a badge within a `Sidebar.MenuItem`.
 
@@ -739,7 +747,7 @@ A sidebar menu badge.
 </Sidebar.MenuItem>
 ```
 
-## Sidebar.MenuSkeleton
+## [Sidebar.MenuSkeleton](#sidebarmenuskeleton)
 
 The `Sidebar.MenuSkeleton` component is used to render a skeleton within a `Sidebar.MenuItem`. You can use this to show a loading state while waiting for data to load.
 
@@ -753,7 +761,7 @@ The `Sidebar.MenuSkeleton` component is used to render a skeleton within a `Side
 </Sidebar.Menu>
 ```
 
-## Sidebar.Separator
+## [Sidebar.Separator](#sidebarseparator)
 
 The `Sidebar.Separator` component is used to render a separator within a `Sidebar`.
 
@@ -769,7 +777,7 @@ The `Sidebar.Separator` component is used to render a separator within a `Sideba
 </Sidebar.Root>
 ```
 
-## Sidebar.Trigger
+## [Sidebar.Trigger](#sidebartrigger)
 
 Use the `Sidebar.Trigger` component to render a button that toggles the sidebar.
 
@@ -784,7 +792,7 @@ The `Sidebar.Trigger` component must be used within a `Sidebar.Provider`.
 </Sidebar.Provider>
 ```
 
-## Custom Trigger
+## [Custom Trigger](#custom-trigger)
 
 To create a custom trigger, you can use the `useSidebar` hook.
 
@@ -796,7 +804,7 @@ To create a custom trigger, you can use the `useSidebar` hook.
 <button onclick={() => sidebar.toggle()}>Toggle Sidebar</button>
 ```
 
-## Sidebar.Rail
+## [Sidebar.Rail](#sidebarrail)
 
 The `Sidebar.Rail` component is used to render a rail within a `Sidebar.Root`. This rail can be used to toggle the sidebar.
 
@@ -811,7 +819,7 @@ The `Sidebar.Rail` component is used to render a rail within a `Sidebar.Root`. T
 </Sidebar.Root>
 ```
 
-## Controlled Sidebar
+## [Controlled Sidebar](#controlled-sidebar)
 
 Use Svelte's [Function Binding](https://svelte.dev/docs/svelte/bind#Function-bindings) to control the sidebar state.
 
@@ -831,7 +839,7 @@ A controlled sidebar.
 </Sidebar.Provider>
 ```
 
-## Theming
+## [Theming](#theming)
 
 We use the following CSS variables to theme the sidebar.
 
@@ -860,7 +868,7 @@ We use the following CSS variables to theme the sidebar.
 
 **We intentionally use different variables for the sidebar and the rest of the application** to make it easy to have a sidebar that is styled differently from the rest of the application. Think a sidebar with a darker shade from the main application.
 
-## Styling
+## [Styling](#styling)
 
 Here are some tips for styling the sidebar based on different states.
 
