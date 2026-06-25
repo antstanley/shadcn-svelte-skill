@@ -4,13 +4,19 @@ A drawer component for Svelte.
 
 [Docs](https://github.com/huntabyte/vaul-svelte)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import MinusIcon from "@lucide/svelte/icons/minus";
   import PlusIcon from "@lucide/svelte/icons/plus";
   import * as Drawer from "$lib/components/ui/drawer/index.js";
   import { Button, buttonVariants } from "$lib/components/ui/button/index.js";
-  import { BarChart, type ChartContextValue } from "layerchart";
+  import { BarChart } from "layerchart";
   import { scaleBand } from "d3-scale";
   import { cubicInOut } from "svelte/easing";
   const data = [
@@ -58,7 +64,6 @@ A drawer component for Svelte.
   function handleClick(adjustment: number) {
     goal = Math.max(200, Math.min(400, goal + adjustment));
   }
-  let context = $state<ChartContextValue>();
 </script>
 <Drawer.Root>
   <Drawer.Trigger class={buttonVariants({ variant: "outline" })}
@@ -104,31 +109,18 @@ A drawer component for Svelte.
         <div class="mt-3 h-[120px]">
           <div class="h-full w-full">
             <BarChart
-              bind:context
               data={data.map((d, i) => ({ goal: d.goal, index: i }))}
               y="goal"
               x="index"
               xScale={scaleBand().padding(0.25)}
               axis={false}
-              tooltip={false}
+              tooltipContext={false}
               props={{
                 bars: {
                   stroke: "none",
                   rounded: "all",
                   radius: 4,
-                  // use the height of the chart to animate the bars
-                  initialY: context?.height,
-                  initialHeight: 0,
-                  motion: {
-                    x: { type: "tween", duration: 500, easing: cubicInOut },
-                    width: { type: "tween", duration: 500, easing: cubicInOut },
-                    height: {
-                      type: "tween",
-                      duration: 500,
-                      easing: cubicInOut
-                    },
-                    y: { type: "tween", duration: 500, easing: cubicInOut }
-                  },
+                  motion: { type: "tween", duration: 500, easing: cubicInOut },
                   fill: "var(--color-foreground)",
                   fillOpacity: 0.9
                 },
@@ -149,11 +141,11 @@ A drawer component for Svelte.
 </Drawer.Root>
 ```
 
-## About
+## [About](#about)
 
 Drawer is built on top of [Vaul Svelte](https://vaul-svelte.com), which is a Svelte port of [Vaul](https://vaul.emilkowal.ski) by [Emil Kowalski](https://twitter.com/emilkowalski_).
 
-## Installation
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add drawer
@@ -167,7 +159,7 @@ npx shadcn-svelte@latest add drawer
 bun x shadcn-svelte@latest add drawer
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -191,9 +183,60 @@ bun x shadcn-svelte@latest add drawer
 </Drawer.Root>
 ```
 
-## Examples
+## [Examples](#examples)
 
-### Responsive Dialog
+### [Sides](#sides)
+
+Use the `direction` prop to set the side of the drawer. Available options are `top`, `right`, `bottom`, and `left`.
+
+```svelte
+<script lang="ts">
+  import * as Drawer from "$lib/components/ui/drawer/index.js";
+  import { Button, buttonVariants } from "$lib/components/ui/button/index.js";
+  import { cn } from "$lib/utils.js";
+  const DRAWER_SIDES = ["top", "right", "bottom", "left"] as const;
+</script>
+<div class="flex flex-wrap gap-2">
+  {#each DRAWER_SIDES as side (side)}
+    <Drawer.Root direction={side === "bottom" ? undefined : side}>
+      <Drawer.Trigger
+        class={cn(buttonVariants({ variant: "outline" }), "capitalize")}
+      >
+        {side}
+      </Drawer.Trigger>
+      <Drawer.Content
+        class="data-[vaul-drawer-direction=bottom]:max-h-[50vh] data-[vaul-drawer-direction=top]:max-h-[50vh]"
+      >
+        <Drawer.Header>
+          <Drawer.Title>Move Goal</Drawer.Title>
+          <Drawer.Description>Set your daily activity goal.</Drawer.Description>
+        </Drawer.Header>
+        <div class="no-scrollbar overflow-y-auto px-4">
+          {#each Array.from({ length: 10 }) as _, i (i)}
+            <p class="mb-4 leading-normal">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          {/each}
+        </div>
+        <Drawer.Footer>
+          <Button>Submit</Button>
+          <Drawer.Close class={buttonVariants({ variant: "outline" })}>
+            Cancel
+          </Drawer.Close>
+        </Drawer.Footer>
+      </Drawer.Content>
+    </Drawer.Root>
+  {/each}
+</div>
+```
+
+### [Responsive Dialog](#responsive-dialog)
 
 You can combine the `Dialog` and `Drawer` components to create a responsive dialog. This renders a `Dialog` on desktop and a `Drawer` on mobile.
 

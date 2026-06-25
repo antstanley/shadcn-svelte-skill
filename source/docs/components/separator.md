@@ -6,6 +6,12 @@ Visually or semantically separates content.
 
 [API Reference](https://bits-ui.com/docs/components/separator#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import { Separator } from "$lib/components/ui/separator/index.js";
@@ -28,7 +34,7 @@ Visually or semantically separates content.
 </div>
 ```
 
-## Installation
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add separator
@@ -42,7 +48,7 @@ npx shadcn-svelte@latest add separator
 bun x shadcn-svelte@latest add separator
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
