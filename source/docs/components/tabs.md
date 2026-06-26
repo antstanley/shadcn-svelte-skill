@@ -6,6 +6,12 @@ A set of layered sections of contentknown as tab panelsthat are displayed one at
 
 [API Reference](https://bits-ui.com/docs/components/tabs#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import * as Tabs from "$lib/components/ui/tabs/index.js";
@@ -70,7 +76,7 @@ A set of layered sections of contentknown as tab panelsthat are displayed one at
 </div>
 ```
 
-## Installation
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add tabs
@@ -84,7 +90,7 @@ npx shadcn-svelte@latest add tabs
 bun x shadcn-svelte@latest add tabs
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
