@@ -2,13 +2,19 @@
 
 Adding dark mode to your Astro site.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 Just like in regular Svelte, we use the `class` strategy from Tailwind CSS to support dark mode toggling. See the [Tailwind CSS documentation](https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually) for more information.
 
 How you add the `dark` class to the `html` element is up to you. In this guide, we'll take a look at enabling dark mode toggling with [mode-watcher](https://github.com/svecosystem/mode-watcher).
 
-## Usage
+## [Usage](#usage)
 
-### Create an inline theme script
+### [Create an inline theme script](#create-an-inline-theme-script)
 
 This script will, in part, keep and track the dark mode value in `localStorage` and prevent [FUOC](https://en.wikipedia.org/wiki/Flash_of_unstyled_content).
 
@@ -48,7 +54,7 @@ import "../styles/global.css";
 </script>
 ```
 
-### Install mode-watcher
+### [Install mode-watcher](#install-mode-watcher)
 
 ```bash
 pnpm i mode-watcher@0.5.1
@@ -62,7 +68,7 @@ npm i mode-watcher@0.5.1
 bun install mode-watcher@0.5.1
 ```
 
-### Add the ModeWatcher component
+### [Add the ModeWatcher component](#add-the-modewatcher-component)
 
 Import the `ModeWatcher` component and use it in your page with the `client:load` directive:
 
@@ -82,11 +88,11 @@ import { ModeWatcher } from "mode-watcher";
 </html>
 ```
 
-### Create a mode toggle
+### [Create a mode toggle](#create-a-mode-toggle)
 
 Create a mode toggle on your site to toggle between light and dark mode:
 
-#### Light switch
+#### [Light switch](#light-switch)
 
 ```svelte
 <script lang="ts">
@@ -106,7 +112,7 @@ Create a mode toggle on your site to toggle between light and dark mode:
 </Button>
 ```
 
-#### Dropdown menu
+#### [Dropdown menu](#dropdown-menu)
 
 ```svelte
 <script lang="ts">
@@ -137,7 +143,7 @@ Create a mode toggle on your site to toggle between light and dark mode:
 </DropdownMenu.Root>
 ```
 
-### Add mode toggle to page
+### [Add mode toggle to page](#add-mode-toggle-to-page)
 
 Add the mode toggle to the page (also with the `client:load` directive):
 

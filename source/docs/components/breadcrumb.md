@@ -2,6 +2,12 @@
 
 Displays the path to the current resource using a hierarchy of links.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import * as Breadcrumb from "$lib/components/ui/breadcrumb/index.js";
@@ -38,7 +44,7 @@ Displays the path to the current resource using a hierarchy of links.
 </Breadcrumb.Root>
 ```
 
-## Installation
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add breadcrumb
@@ -52,7 +58,7 @@ npx shadcn-svelte@latest add breadcrumb
 bun x shadcn-svelte@latest add breadcrumb
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -78,9 +84,9 @@ bun x shadcn-svelte@latest add breadcrumb
 </Breadcrumb.Root>
 ```
 
-## Examples
+## [Examples](#examples)
 
-### Custom separator
+### [Custom separator](#custom-separator)
 
 Use a custom component in the `<slot>` of `<Breadcrumb.Separator />` to create a custom separator.
 
@@ -132,7 +138,7 @@ Use a custom component in the `<slot>` of `<Breadcrumb.Separator />` to create a
 
 ***
 
-### Dropdown
+### [Dropdown](#dropdown)
 
 You can compose `<Breadcrumb.Item />` with a `<DropdownMenu />` to create a dropdown in the breadcrumb.
 
@@ -199,7 +205,7 @@ You can compose `<Breadcrumb.Item />` with a `<DropdownMenu />` to create a drop
 
 ***
 
-### Collapsed
+### [Collapsed](#collapsed)
 
 We provide a `<Breadcrumb.Ellipsis />` component to show a collapsed state when the breadcrumb is too long.
 
@@ -245,9 +251,9 @@ We provide a `<Breadcrumb.Ellipsis />` component to show a collapsed state when 
 
 ***
 
-### Link component
+### [Link component](#link-component)
 
-To use a custom link component from your routing library, you can use the `asChild` prop on `<Breadcrumb.Link />`.
+To use a link just add the `href` prop to `<Breadcrumb.Link />`.
 
 ```svelte
 <script lang="ts">
@@ -286,7 +292,7 @@ To use a custom link component from your routing library, you can use the `asChi
 
 ***
 
-### Responsive
+### [Responsive](#responsive)
 
 Here's an example of a responsive breadcrumb that composes `<Breadcrumb.Item />` with `<Breadcrumb.Ellipsis />`, `<DropdownMenu />`, and `<Drawer />`.
 
@@ -302,7 +308,7 @@ It displays a dropdown on desktop and a drawer on mobile.
   const items = [
     { href: "#", label: "Home" },
     { href: "#", label: "Documentation" },
-    { href: "#", label: "Building Your Application" },
+    { href: "#", label: "Build Your Application" },
     { href: "#", label: "Data Fetching" },
     { label: "Caching and Revalidating" }
  ];

@@ -2,6 +2,12 @@
 
 An indicator that can be used to show a loading state.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import { Spinner } from "$lib/components/ui/spinner/index.js";
@@ -22,7 +28,7 @@ An indicator that can be used to show a loading state.
 </div>
 ```
 
-## Installation
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add spinner
@@ -36,7 +42,7 @@ npx shadcn-svelte@latest add spinner
 bun x shadcn-svelte@latest add spinner
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -48,7 +54,7 @@ bun x shadcn-svelte@latest add spinner
 <Spinner />
 ```
 
-## Customization
+## [Customization](#customization)
 
 You can replace the default spinner icon with any other icon by editing the `Spinner` component.
 
@@ -68,9 +74,9 @@ You can replace the default spinner icon with any other icon by editing the `Spi
 />
 ```
 
-## Examples
+## [Examples](#examples)
 
-### Size
+### [Size](#size)
 
 Use the `size-*` utility class to change the size of the spinner.
 
@@ -86,7 +92,7 @@ Use the `size-*` utility class to change the size of the spinner.
 </div>
 ```
 
-### Color
+### [Color](#color)
 
 Use the `text-*` utility class to change the color of the spinner.
 
@@ -103,7 +109,7 @@ Use the `text-*` utility class to change the color of the spinner.
 </div>
 ```
 
-### Button
+### [Button](#button)
 
 Add a spinner to a button to indicate a loading state. The `<Button />` will handle the spacing between the spinner and the text.
 
@@ -128,7 +134,7 @@ Add a spinner to a button to indicate a loading state. The `<Button />` will han
 </div>
 ```
 
-### Badge
+### [Badge](#badge)
 
 You can also use a spinner inside a badge.
 
@@ -153,7 +159,7 @@ You can also use a spinner inside a badge.
 </div>
 ```
 
-### Input Group
+### [Input Group](#input-group)
 
 Input Group can have spinners inside `<InputGroup.Addon>`.
 
@@ -183,7 +189,7 @@ Input Group can have spinners inside `<InputGroup.Addon>`.
 </div>
 ```
 
-### Empty
+### [Empty](#empty)
 
 ```svelte
 <script lang="ts">
@@ -207,7 +213,7 @@ Input Group can have spinners inside `<InputGroup.Addon>`.
 </Empty.Root>
 ```
 
-### Item
+### [Item](#item)
 
 Use the spinner inside `<Item.Media>` to indicate a loading state.
 
