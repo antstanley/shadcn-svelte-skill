@@ -2,6 +2,12 @@
 
 Displays a card with header, content, and footer.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import { Button } from "$lib/components/ui/button/index.js";
@@ -48,7 +54,7 @@ Displays a card with header, content, and footer.
 </Card.Root>
 ```
 
-## Installation
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add card
@@ -62,7 +68,7 @@ npx shadcn-svelte@latest add card
 bun x shadcn-svelte@latest add card
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -85,7 +91,7 @@ bun x shadcn-svelte@latest add card
 </Card.Root>
 ```
 
-## Examples
+## [Examples](#examples)
 
 ```svelte
 <script lang="ts">
