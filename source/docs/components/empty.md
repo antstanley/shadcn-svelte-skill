@@ -1,6 +1,12 @@
 # Empty
 
-Use the Empty component to display a empty state.
+Use the Empty component to display an empty state.
+
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
 
 ```svelte
 <script lang="ts">
@@ -34,7 +40,7 @@ Use the Empty component to display a empty state.
 </Empty.Root>
 ```
 
-## Installation
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add empty
@@ -48,7 +54,7 @@ npx shadcn-svelte@latest add empty
 bun x shadcn-svelte@latest add empty
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -72,11 +78,11 @@ bun x shadcn-svelte@latest add empty
 </Empty.Root>
 ```
 
-## Examples
+## [Examples](#examples)
 
-### Outline
+### [Outline](#outline)
 
-Use the `border` utility class to create a outline empty state.
+Use the `border` utility class to create an outline empty state.
 
 ```svelte
 <script lang="ts">
@@ -100,7 +106,7 @@ Use the `border` utility class to create a outline empty state.
 </Empty.Root>
 ```
 
-### Background
+### [Background](#background)
 
 Use the `bg-*` and `bg-gradient-*` utilities to add a background to the empty state.
 
@@ -132,7 +138,7 @@ Use the `bg-*` and `bg-gradient-*` utilities to add a background to the empty st
 </Empty.Root>
 ```
 
-### Avatar
+### [Avatar](#avatar)
 
 Use the `EmptyMedia` component to display an avatar in the empty state.
 
@@ -162,7 +168,7 @@ Use the `EmptyMedia` component to display an avatar in the empty state.
 </Empty.Root>
 ```
 
-### Avatar Group
+### [Avatar Group](#avatar-group)
 
 Use the `EmptyMedia` component to display an avatar group in the empty state.
 
@@ -176,9 +182,7 @@ Use the `EmptyMedia` component to display an avatar group in the empty state.
 <Empty.Root class="flex-none border">
   <Empty.Header>
     <Empty.Media>
-      <div
-        class="*:ring-background flex -space-x-2 *:size-12 *:ring-2 *:grayscale"
-      >
+      <Avatar.Group class="grayscale">
         <Avatar.Root>
           <Avatar.Image src="https://github.com/shadcn.png" alt="@shadcn" />
           <Avatar.Fallback>CN</Avatar.Fallback>
@@ -197,7 +201,7 @@ Use the `EmptyMedia` component to display an avatar group in the empty state.
           />
           <Avatar.Fallback>ER</Avatar.Fallback>
         </Avatar.Root>
-      </div>
+      </Avatar.Group>
     </Empty.Media>
     <Empty.Title>No Team Members</Empty.Title>
     <Empty.Description
@@ -213,7 +217,7 @@ Use the `EmptyMedia` component to display an avatar group in the empty state.
 </Empty.Root>
 ```
 
-### InputGroup
+### [InputGroup](#inputgroup)
 
 You can add an `InputGroup` component to the `EmptyContent` component.
 

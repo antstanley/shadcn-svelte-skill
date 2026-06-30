@@ -2,6 +2,12 @@
 
 A versatile component that you can use to display any content.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 The `Item` component is a straightforward flex container that can house nearly any type of content. Use it to display a title, description, and actions. Group it with the `ItemGroup` component to create a list of items.
 
 You can pretty much achieve the same result with the `div` element and some classes, but **I've built this so many times** that I decided to create a component for it. Now I use it all the time.
@@ -43,7 +49,7 @@ You can pretty much achieve the same result with the `div` element and some clas
 </div>
 ```
 
-## Installation
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add item
@@ -57,7 +63,7 @@ npx shadcn-svelte@latest add item
 bun x shadcn-svelte@latest add item
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -78,15 +84,15 @@ bun x shadcn-svelte@latest add item
 </Item.Root>
 ```
 
-## Item vs Field
+## [Item vs Field](#item-vs-field)
 
 Use Field if you need to display a form input such as a checkbox, input, radio, or select.
 
 If you only need to display content such as a title, description, and actions, use `Item`.
 
-## Examples
+## [Examples](#examples)
 
-### Variants
+### [Variants](#variants)
 
 ```svelte
 <script lang="ts">
@@ -130,7 +136,7 @@ If you only need to display content such as a title, description, and actions, u
 </div>
 ```
 
-### Size
+### [Size](#size)
 
 The `Item` component has different sizes for different use cases. For example, you can use the `sm` size for a compact item or the default size for a standard item.
 
@@ -171,7 +177,7 @@ The `Item` component has different sizes for different use cases. For example, y
 </div>
 ```
 
-### Icon
+### [Icon](#icon)
 
 ```svelte
 <script lang="ts">
@@ -197,7 +203,7 @@ The `Item` component has different sizes for different use cases. For example, y
 </div>
 ```
 
-### Avatar
+### [Avatar](#avatar)
 
 ```svelte
 <script lang="ts">
@@ -267,7 +273,7 @@ The `Item` component has different sizes for different use cases. For example, y
 </div>
 ```
 
-### Image
+### [Image](#image)
 
 ```svelte
 <script lang="ts">
@@ -326,7 +332,7 @@ The `Item` component has different sizes for different use cases. For example, y
 </div>
 ```
 
-### Group
+### [Group](#group)
 
 ```svelte
 <script lang="ts">
@@ -379,7 +385,7 @@ The `Item` component has different sizes for different use cases. For example, y
 </div>
 ```
 
-### Header
+### [Header](#header)
 
 ```svelte
 <script lang="ts">
@@ -431,7 +437,7 @@ The `Item` component has different sizes for different use cases. For example, y
 </div>
 ```
 
-### Link
+### [Link](#link)
 
 To render an item as a link, use the the `child` snippet. The hover and focus states will be applied to the anchor element.
 
@@ -475,7 +481,7 @@ To render an item as a link, use the the `child` snippet. The hover and focus st
 </div>
 ```
 
-### Dropdown
+### [Dropdown](#dropdown)
 
 ```svelte
 <script lang="ts">
