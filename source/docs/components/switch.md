@@ -6,6 +6,12 @@ A control that allows the user to toggle between checked and not checked.
 
 [API Reference](https://bits-ui.com/docs/components/switch#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import { Label } from "$lib/components/ui/label/index.js";
@@ -17,7 +23,7 @@ A control that allows the user to toggle between checked and not checked.
 </div>
 ```
 
-## Installation
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add switch
@@ -31,7 +37,7 @@ npx shadcn-svelte@latest add switch
 bun x shadcn-svelte@latest add switch
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
