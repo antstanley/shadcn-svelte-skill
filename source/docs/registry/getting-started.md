@@ -2,19 +2,25 @@
 
 Learn how to get setup and run your own component registry.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 This guide will walk you through the process of setting up your own component registry.
 
 It assumes you already have a project with components and would like to turn it into a registry.
 
 If you're starting a new registry project, you can use the [registry template](https://github.com/huntabyte/shadcn-svelte/tree/main/registry-template) as a starting point. It's already configured for you.
 
-## registry.json
+## [registry.json](#registryjson)
 
 The `registry.json` file is only required if you're using the `shadcn-svelte` CLI to build your registry.
 
 If you're using a different build system, you can skip this step as long as your build system produces valid JSON files that conform to the [registry-item schema specification](https://shadcn-svelte.com/docs/registry/registry-item-json).
 
-### Add a registry.json file
+### [Add a registry.json file](#add-a-registryjson-file)
 
 Create a `registry.json` file in the root of your project.
 
@@ -33,9 +39,9 @@ registry.json
 
 This `registry.json` file must conform to the [registry schema specification](https://shadcn-svelte.com/docs/registry/registry-json).
 
-## Add a registry item
+## [Add a registry item](#add-a-registry-item)
 
-### Create your component
+### [Create your component](#create-your-component)
 
 Add your first component. Here's an example of a simple `<HelloWorld />` component:
 
@@ -64,7 +70,7 @@ src/routes/layout.css
 @source "./registry/@acmecorp/ui-lib";
 ```
 
-### Add your component to the registry
+### [Add your component to the registry](#add-your-component-to-the-registry)
 
 To add your component to the registry, you need to add your component definition to `registry.json`.
 
@@ -98,9 +104,9 @@ For every file you add, you must specify the `path` and `type` of the file. The 
 
 You can read more about the registry item schema and file types in the [registry item schema docs](https://shadcn-svelte.com/docs/registry/registry-item-json).
 
-## Build your registry
+## [Build your registry](#build-your-registry)
 
-### Install the shadcn-svelte CLI
+### [Install the shadcn-svelte CLI](#install-the-shadcn-svelte-cli)
 
 ```bash
 pnpm i shadcn-svelte@latest
@@ -114,7 +120,7 @@ npm i shadcn-svelte@latest
 bun install shadcn-svelte@latest
 ```
 
-### Add a build script
+### [Add a build script](#add-a-build-script)
 
 Add a `registry:build` script to your `package.json` file.
 
@@ -128,7 +134,7 @@ package.json
 }
 ```
 
-### Run the build script
+### [Run the build script](#run-the-build-script)
 
 Run the build script to generate the registry JSON files.
 
@@ -148,7 +154,7 @@ bun run registry:build
 
 You can change the output directory by passing the `--output` option. See the [shadcn-svelte registry build command](https://shadcn-svelte.com/docs/cli#registry-build) for more information.
 
-## Serve your registry
+## [Serve your registry](#serve-your-registry)
 
 You can serve your registry by running the dev server.
 
@@ -166,11 +172,11 @@ bun run dev
 
 Your files will now be served at `http://localhost:5173/r/[NAME].json` eg. `http://localhost:5173/r/hello-world.json`.
 
-## Publish your registry
+## [Publish your registry](#publish-your-registry)
 
 To make your registry available to other developers, you can publish it by deploying your project to a public URL.
 
-## Adding Auth
+## [Adding Auth](#adding-auth)
 
 The `shadcn-svelte` CLI does not offer a built-in way to add auth to your registry. We recommend handling authorization on your registry server.
 
@@ -180,14 +186,14 @@ Use the secure token to authenticate requests and return a 401 Unauthorized resp
 
 **Note:** Make sure to encrypt and expire tokens.
 
-## Guidelines
+## [Guidelines](#guidelines)
 
 Here are some guidelines to follow when building components for a registry.
 
 - The following properties are required for the block definition: `name` , `description` , `type` and `files` .
 - Make sure to list all registry dependencies in `registryDependencies` . A registry dependency is the name of the component in the registry eg. `input` , `button` , `card` , etc or a URL to a registry item eg. `http://localhost:5173/r/editor.json` - Ideally, place your files within a registry item in `components` , `hooks` , `lib` directories.
 
-## Install using the CLI
+## [Install using the CLI](#install-using-the-cli)
 
 To install a registry item using the `shadcn-svelte` CLI, use the `add` command followed by the URL of the registry item.
 

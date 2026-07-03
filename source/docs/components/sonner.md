@@ -4,6 +4,12 @@ An opinionated toast component for Svelte.
 
 [Docs](https://svelte-sonner.vercel.app/)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import { toast } from "svelte-sonner";
@@ -24,11 +30,11 @@ An opinionated toast component for Svelte.
 </Button>
 ```
 
-## About
+## [About](#about)
 
 The Sonner component is provided by [svelte-sonner](https://svelte-sonner.vercel.app/), which is a Svelte port of [Sonner](https://sonner.emilkowal.ski/), originally created by [Emil Kowalski](https://twitter.com/emilkowalski_) for React.
 
-## Installation
+## [Installation](#installation)
 
 Setup theme support
 
@@ -63,7 +69,7 @@ Add the Toaster component
 {@render children?.()}
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -76,7 +82,7 @@ Add the Toaster component
 <Button onclick={() => toast("Hello world")}>Show toast</Button>
 ```
 
-## Examples
+## [Examples](#examples)
 
 ```svelte
 <script lang="ts">
@@ -133,9 +139,9 @@ Add the Toaster component
 </div>
 ```
 
-## Changelog
+## [Changelog](#changelog)
 
-### 2025-12 Icons
+### [2025-12 Icons](#2025-12-icons)
 
 We've updated the Sonner component to use icons from `lucide`. Update your `sonner.svelte` file to use the new icons.
 

@@ -6,6 +6,12 @@ A collection of links for navigating websites.
 
 [API Reference](https://bits-ui.com/docs/components/navigation-menu#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import * as NavigationMenu from "$lib/components/ui/navigation-menu/index.js";
@@ -215,7 +221,7 @@ A collection of links for navigating websites.
 </NavigationMenu.Root>
 ```
 
-## Installation
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add navigation-menu
@@ -229,7 +235,7 @@ npx shadcn-svelte@latest add navigation-menu
 bun x shadcn-svelte@latest add navigation-menu
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
