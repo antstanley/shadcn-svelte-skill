@@ -30,7 +30,6 @@
 - [Combobox](docs/components/combobox.md): Autocomplete input and command palette with a list of suggestions.
 - [Date Picker](docs/components/date-picker.md): A date picker component with range and presets.
 - [Field](docs/components/field.md): Combine labels, controls, and help text to compose accessible form fields and grouped inputs.
-- [Formsnap](docs/components/form.md): Building forms with Formsnap, Superforms, & Zod.
 - [Input](docs/components/input.md): Displays a form input field or a component that looks like an input field.
 - [Input Group](docs/components/input-group.md): Display additional information or actions to an input or textarea.
 - [Input OTP](docs/components/input-otp.md): Accessible one-time password component with copy paste functionality.
@@ -71,7 +70,7 @@
 
 - [Alert](docs/components/alert.md): Displays a callout for user attention.
 - [Badge](docs/components/badge.md): Displays a badge or a component that looks like a badge.
-- [Empty](docs/components/empty.md): Use the Empty component to display a empty state.
+- [Empty](docs/components/empty.md): Use the Empty component to display an empty state.
 - [Progress](docs/components/progress.md): Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.
 - [Skeleton](docs/components/skeleton.md): Use to show a placeholder while content is loading.
 - [Sonner](docs/components/sonner.md): An opinionated toast component for Svelte.

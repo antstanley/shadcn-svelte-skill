@@ -2,6 +2,12 @@
 
 A container that groups related buttons together with consistent styling.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import Archive from "@lucide/svelte/icons/archive";
@@ -101,7 +107,7 @@ A container that groups related buttons together with consistent styling.
 </ButtonGroup.Root>
 ```
 
-## Installation
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add button-group
@@ -115,7 +121,7 @@ npx shadcn-svelte@latest add button-group
 bun x shadcn-svelte@latest add button-group
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -130,7 +136,7 @@ bun x shadcn-svelte@latest add button-group
 </ButtonGroup.Root>
 ```
 
-## Accessibility
+## [Accessibility](#accessibility)
 
 - The `ButtonGroup` component has the `role` attribute set to `group` .
 - Use `tabindex` to navigate between the buttons in the group.
@@ -143,14 +149,14 @@ bun x shadcn-svelte@latest add button-group
 </ButtonGroup>
 ```
 
-## ButtonGroup vs ToggleGroup
+## [ButtonGroup vs ToggleGroup](#buttongroup-vs-togglegroup)
 
 - Use the `ButtonGroup` component when you want to group buttons that perform an action.
 - Use the `ToggleGroup` component when you want to group buttons that toggle a state.
 
-## Examples
+## [Examples](#examples)
 
-### Orientation
+### [Orientation](#orientation)
 
 Set the `orientation` prop to change the button group layout.
 
@@ -175,7 +181,7 @@ Set the `orientation` prop to change the button group layout.
 </ButtonGroup.Root>
 ```
 
-### Size
+### [Size](#size)
 
 Control the size of buttons using the `size` prop on individual buttons.
 
@@ -213,7 +219,7 @@ Control the size of buttons using the `size` prop on individual buttons.
 </div>
 ```
 
-### Nested
+### [Nested](#nested)
 
 Nest `ButtonGroup` components to create button groups with spacing.
 
@@ -243,7 +249,7 @@ Nest `ButtonGroup` components to create button groups with spacing.
 </ButtonGroup.Root>
 ```
 
-### Separator
+### [Separator](#separator)
 
 The `ButtonGroupSeparator` component visually divides buttons within a group.
 
@@ -261,7 +267,7 @@ Buttons with variant `outline` do not need a separator since they have a border.
 </ButtonGroup.Root>
 ```
 
-### Split
+### [Split](#split)
 
 Create a split button group by adding two buttons separated by a `ButtonGroupSeparator`.
 
@@ -280,7 +286,7 @@ Create a split button group by adding two buttons separated by a `ButtonGroupSep
 </ButtonGroup.Root>
 ```
 
-### Input
+### [Input](#input)
 
 Wrap an `Input` component with buttons.
 
@@ -299,7 +305,7 @@ Wrap an `Input` component with buttons.
 </ButtonGroup.Root>
 ```
 
-### Input Group
+### [Input Group](#input-group)
 
 Wrap an `InputGroup` component to create complex input layouts.
 
@@ -319,7 +325,7 @@ Wrap an `InputGroup` component to create complex input layouts.
       <Plus />
     </Button>
   </ButtonGroup.Root>
-  <ButtonGroup.Root>
+  <ButtonGroup.Root class="flex-1">
     <InputGroup.Root>
       <InputGroup.Input
         placeholder={voiceEnabled
@@ -351,7 +357,7 @@ Wrap an `InputGroup` component to create complex input layouts.
 </ButtonGroup.Root>
 ```
 
-### Dropdown Menu
+### [Dropdown Menu](#dropdown-menu)
 
 Create a split button group with a `DropdownMenu` component.
 
@@ -418,7 +424,7 @@ Create a split button group with a `DropdownMenu` component.
 </ButtonGroup.Root>
 ```
 
-### Select
+### [Select](#select)
 
 Pair with a `Select` component.
 
@@ -470,7 +476,7 @@ Pair with a `Select` component.
 </ButtonGroup.Root>
 ```
 
-### Popover
+### [Popover](#popover)
 
 Use with a `Popover` component.
 
