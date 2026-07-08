@@ -2,7 +2,13 @@
 
 Use the shadcn-svelte CLI to add components to your project.
 
-## init
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
+## [init](#init)
 
 Use the `init` command to initialize dependencies for a new project.
 
@@ -56,7 +62,7 @@ Options:
 
 ***
 
-## add
+## [add](#add)
 
 Use the `add` command to add components and dependencies to your project.
 
@@ -92,7 +98,7 @@ Options:
 
 ***
 
-## registry build
+## [registry build](#registry-build)
 
 Use the `registry build` command to generate the registry JSON files.
 
@@ -125,9 +131,9 @@ Options:
 
 ***
 
-## Outgoing Requests
+## [Outgoing Requests](#outgoing-requests)
 
-### Proxy
+### [Proxy](#proxy)
 
 This enables the use of a proxy when sending out requests to fetch from the `shadcn-svelte` registry. If the `HTTP_PROXY` or `http_proxy` environment variables have been set, the request library underneath will respect the proxy settings.
 
