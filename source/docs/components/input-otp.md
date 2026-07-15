@@ -6,6 +6,12 @@ Accessible one-time password component with copy paste functionality.
 
 [API Reference](https://bits-ui.com/docs/components/pin-input#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import * as InputOTP from "$lib/components/ui/input-otp/index.js";
@@ -27,11 +33,13 @@ Accessible one-time password component with copy paste functionality.
 </InputOTP.Root>
 ```
 
-## About
+View Code
+
+## [About](#about)
 
 Input OTP is built on top of Bits UI's [PinInput](https://bits-ui.com/docs/components/pin-input) which is inspired by [@guilherme\_rodz](https://twitter.com/guilherme_rodz)'s Input OTP component.
 
-## Installation
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add input-otp
@@ -45,7 +53,7 @@ npx shadcn-svelte@latest add input-otp
 bun x shadcn-svelte@latest add input-otp
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -71,9 +79,9 @@ bun x shadcn-svelte@latest add input-otp
 </InputOTP.Root>
 ```
 
-## Examples
+## [Examples](#examples)
 
-### Pattern
+### [Pattern](#pattern)
 
 Use the `pattern` prop to define a custom pattern for the OTP input.
 
@@ -93,6 +101,8 @@ Use the `pattern` prop to define a custom pattern for the OTP input.
 </InputOTP.Root>
 ```
 
+View Code
+
 ```svelte
 <script lang="ts">
   import * as InputOTP from "$lib/components/ui/input-otp/index.js";
@@ -102,7 +112,7 @@ Use the `pattern` prop to define a custom pattern for the OTP input.
 </InputOTP.Root>
 ```
 
-### Separator
+### [Separator](#separator)
 
 You can use the `InputOTP.Separator` component to add a separator between the groups of cells.
 
@@ -133,6 +143,8 @@ You can use the `InputOTP.Separator` component to add a separator between the gr
 </InputOTP.Root>
 ```
 
+View Code
+
 ```svelte
 <script lang="ts">
   import * as InputOTP from "$lib/components/ui/input-otp/index.js";
@@ -154,7 +166,7 @@ You can use the `InputOTP.Separator` component to add a separator between the gr
 </InputOTP.Root>
 ```
 
-### Controlled
+### [Controlled](#controlled)
 
 ```svelte
 <script lang="ts">
@@ -177,11 +189,13 @@ You can use the `InputOTP.Separator` component to add a separator between the gr
 </div>
 ```
 
-### Form
+View Code
+
+### [Form](#form)
 
 ```svelte
 <script lang="ts" module>
-  import { z } from "zod/v4";
+  import { z } from "zod";
   const formSchema = z.object({
     pin: z.string().min(6, {
       message: "Your one-time password must be at least 6 characters."
@@ -231,3 +245,5 @@ You can use the `InputOTP.Separator` component to add a separator between the gr
   <Form.Button>Submit</Form.Button>
 </form>
 ```
+
+View Code
