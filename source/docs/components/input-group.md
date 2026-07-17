@@ -2,6 +2,12 @@
 
 Display additional information or actions to an input or textarea.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import IconCheck from "@tabler/icons-svelte/icons/check";
@@ -90,7 +96,9 @@ Display additional information or actions to an input or textarea.
 </div>
 ```
 
-## Installation
+View Code
+
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add input-group
@@ -104,7 +112,7 @@ npx shadcn-svelte@latest add input-group
 bun x shadcn-svelte@latest add input-group
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -125,9 +133,9 @@ bun x shadcn-svelte@latest add input-group
 </InputGroup.Root>
 ```
 
-## Examples
+## [Examples](#examples)
 
-### Icon
+### [Icon](#icon)
 
 ```svelte
 <script lang="ts">
@@ -171,7 +179,9 @@ bun x shadcn-svelte@latest add input-group
 </div>
 ```
 
-### Text
+View Code
+
+### [Text](#text)
 
 Display additional text information alongside inputs.
 
@@ -215,7 +225,9 @@ Display additional text information alongside inputs.
 </div>
 ```
 
-### Button
+View Code
+
+### [Button](#button)
 
 Add buttons to perform actions within the input group.
 
@@ -290,7 +302,9 @@ Add buttons to perform actions within the input group.
 </div>
 ```
 
-### Tooltip
+View Code
+
+### [Tooltip](#tooltip)
 
 Add tooltips to provide additional context or help.
 
@@ -371,7 +385,9 @@ Add tooltips to provide additional context or help.
 </div>
 ```
 
-### Textarea
+View Code
+
+### [Textarea](#textarea)
 
 Input groups also work with textarea components. Use `block-start` or `block-end` for alignment.
 
@@ -411,7 +427,9 @@ Input groups also work with textarea components. Use `block-start` or `block-end
 </div>
 ```
 
-### Spinner
+View Code
+
+### [Spinner](#spinner)
 
 Show loading indicators while processing input.
 
@@ -455,7 +473,9 @@ Show loading indicators while processing input.
 </div>
 ```
 
-### Label
+View Code
+
+### [Label](#label)
 
 Add labels within input groups to improve accessibility.
 
@@ -500,7 +520,9 @@ Add labels within input groups to improve accessibility.
 </div>
 ```
 
-### Dropdown
+View Code
+
+### [Dropdown](#dropdown)
 
 Pair input groups with dropdown menus for complex interactions.
 
@@ -562,7 +584,9 @@ Pair input groups with dropdown menus for complex interactions.
 </div>
 ```
 
-### Button Group
+View Code
+
+### [Button Group](#button-group)
 
 Wrap input groups with button groups to create prefixes and suffixes.
 
@@ -589,7 +613,9 @@ Wrap input groups with button groups to create prefixes and suffixes.
 </div>
 ```
 
-### Custom Input
+View Code
+
+### [Custom Input](#custom-input)
 
 Add the `data-slot="input-group-control"` attribute to your custom input for automatic behavior and focus state handling.
 
@@ -614,3 +640,5 @@ No style is applied to the custom input. Apply your own styles using the `class`
   </InputGroup.Root>
 </div>
 ```
+
+View Code

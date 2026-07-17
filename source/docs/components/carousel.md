@@ -6,6 +6,12 @@ A carousel with motion and swipe built using Embla.
 
 [API Reference](https://www.embla-carousel.com/api)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import * as Card from "$lib/components/ui/card/index.js";
@@ -32,11 +38,13 @@ A carousel with motion and swipe built using Embla.
 </Carousel.Root>
 ```
 
-## About
+View Code
+
+## [About](#about)
 
 The carousel component is built using the [Embla Carousel](https://www.embla-carousel.com/get-started/svelte/) library.
 
-## Installation
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add carousel
@@ -50,7 +58,7 @@ npx shadcn-svelte@latest add carousel
 bun x shadcn-svelte@latest add carousel
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -70,9 +78,9 @@ bun x shadcn-svelte@latest add carousel
 </Carousel.Root>
 ```
 
-## Examples
+## [Examples](#examples)
 
-### Sizes
+### [Sizes](#sizes)
 
 To set the size of the items, you can use the `basis` utility class on the `<Carousel.Item />`.
 
@@ -107,6 +115,8 @@ To set the size of the items, you can use the `basis` utility class on the `<Car
 </Carousel.Root>
 ```
 
+View Code
+
 ```svelte
 
 <Carousel.Root>
@@ -129,7 +139,7 @@ To set the size of the items, you can use the `basis` utility class on the `<Car
 </Carousel.Root>
 ```
 
-### Spacing
+### [Spacing](#spacing)
 
 To set the spacing between the items, we use a `ps-[VALUE]` utility on the `<Carousel.Item />` and a negative `-ms-[VALUE]` on the `<Carousel.Content />`.
 
@@ -159,6 +169,8 @@ To set the spacing between the items, we use a `ps-[VALUE]` utility on the `<Car
 </Carousel.Root>
 ```
 
+View Code
+
 ```svelte
 <Carousel.Root>
   <Carousel.Content class="-ms-4">
@@ -179,7 +191,7 @@ To set the spacing between the items, we use a `ps-[VALUE]` utility on the `<Car
 </Carousel.Root>
 ```
 
-### Orientation
+### [Orientation](#orientation)
 
 Use the `orientation` prop to set the orientation of the carousel.
 
@@ -213,6 +225,8 @@ Use the `orientation` prop to set the orientation of the carousel.
 </Carousel.Root>
 ```
 
+View Code
+
 ```svelte
 <Carousel.Root orientation="vertical | horizontal">
   <Carousel.Content>
@@ -223,7 +237,7 @@ Use the `orientation` prop to set the orientation of the carousel.
 </Carousel.Root>
 ```
 
-## Options
+## [Options](#options)
 
 You can pass options to the carousel using the `opts` prop. See the [Embla Carousel docs](https://www.embla-carousel.com/api/options/) for more information.
 
@@ -242,7 +256,7 @@ You can pass options to the carousel using the `opts` prop. See the [Embla Carou
 </Carousel.Root>
 ```
 
-## API
+## [API](#api)
 
 Use reactive state and the `setApi` callback to get an instance of the carousel API.
 
@@ -290,6 +304,8 @@ Use reactive state and the `setApi` callback to get an instance of the carousel 
 </div>
 ```
 
+View Code
+
 ```svelte
 <script lang="ts">
   import { type CarouselAPI } from "$lib/components/ui/carousel/context.js";
@@ -315,7 +331,7 @@ Use reactive state and the `setApi` callback to get an instance of the carousel 
 </Carousel.Root>
 ```
 
-## Events
+## [Events](#events)
 
 You can listen to events using the api instance from `bind:api`.
 
@@ -341,7 +357,7 @@ You can listen to events using the api instance from `bind:api`.
 </Carousel.Root>
 ```
 
-## Plugins
+## [Plugins](#plugins)
 
 You can use the `plugins` prop to add plugins to the carousel.
 
@@ -392,5 +408,7 @@ You can use the `plugins` prop to add plugins to the carousel.
   <Carousel.Next />
 </Carousel.Root>
 ```
+
+View Code
 
 See the [Embla Carousel docs](https://www.embla-carousel.com/api/plugins/) for more information on using plugins.

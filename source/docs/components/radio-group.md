@@ -6,6 +6,12 @@ A set of checkable buttonsknown as radio buttonswhere no more than one of the bu
 
 [API Reference](https://bits-ui.com/docs/components/radio-group#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import * as RadioGroup from "$lib/components/ui/radio-group/index.js";
@@ -27,7 +33,9 @@ A set of checkable buttonsknown as radio buttonswhere no more than one of the bu
 </RadioGroup.Root>
 ```
 
-## Installation
+View Code
+
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add radio-group
@@ -41,7 +49,7 @@ npx shadcn-svelte@latest add radio-group
 bun x shadcn-svelte@latest add radio-group
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
