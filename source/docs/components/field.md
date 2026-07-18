@@ -2,6 +2,12 @@
 
 Combine labels, controls, and help text to compose accessible form fields and grouped inputs.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import { Button } from "$lib/components/ui/button/index.js";
@@ -137,7 +143,9 @@ Combine labels, controls, and help text to compose accessible form fields and gr
 </div>
 ```
 
-## Installation
+View Code
+
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add field
@@ -151,7 +159,7 @@ npx shadcn-svelte@latest add field
 bun x shadcn-svelte@latest add field
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -166,14 +174,14 @@ bun x shadcn-svelte@latest add field
   <Field.Group>
     <Field.Field>
       <Field.Label for="name">Full name</Field.Label>
-      <Input id="name" autoComplete="off" placeholder="Evil Rabbit" />
+      <Input id="name" autocomplete="off" placeholder="Evil Rabbit" />
       <Field.Description
         >This appears on invoices and emails.</Field.Description
       >
     </Field.Field>
     <Field.Field>
       <Field.Label for="username">Username</Field.Label>
-      <Input id="username" autoComplete="off" aria-invalid />
+      <Input id="username" autocomplete="off" aria-invalid />
       <Field.Error>Choose another username.</Field.Error>
     </Field.Field>
     <Field.Field orientation="horizontal">
@@ -184,7 +192,7 @@ bun x shadcn-svelte@latest add field
 </Field.Set>
 ```
 
-## Anatomy
+## [Anatomy](#anatomy)
 
 The `Field` family is designed for composing accessible forms. A typical field is structured as follows:
 
@@ -200,9 +208,9 @@ The `Field` family is designed for composing accessible forms. A typical field i
 - `Field.Content` is a flex column that groups label and description. Not required if you have no description.
 - Wrap related fields with `Field.Group` , and use `Field.Set` with `Field.Legend` for semantic grouping.
 
-## Examples
+## [Examples](#examples)
 
-### Input
+### [Input](#input)
 
 ```svelte
 <script lang="ts">
@@ -231,7 +239,9 @@ The `Field` family is designed for composing accessible forms. A typical field i
 </div>
 ```
 
-### Textarea
+View Code
+
+### [Textarea](#textarea)
 
 ```svelte
 <script lang="ts">
@@ -257,7 +267,9 @@ The `Field` family is designed for composing accessible forms. A typical field i
 </div>
 ```
 
-### Select
+View Code
+
+### [Select](#select)
 
 ```svelte
 <script lang="ts">
@@ -299,7 +311,9 @@ The `Field` family is designed for composing accessible forms. A typical field i
 </div>
 ```
 
-### Slider
+View Code
+
+### [Slider](#slider)
 
 ```svelte
 <script lang="ts">
@@ -330,7 +344,9 @@ The `Field` family is designed for composing accessible forms. A typical field i
 </div>
 ```
 
-### Fieldset
+View Code
+
+### [Fieldset](#fieldset)
 
 ```svelte
 <script lang="ts">
@@ -363,7 +379,9 @@ The `Field` family is designed for composing accessible forms. A typical field i
 </div>
 ```
 
-### Checkbox
+View Code
+
+### [Checkbox](#checkbox)
 
 ```svelte
 <script lang="ts">
@@ -429,7 +447,9 @@ The `Field` family is designed for composing accessible forms. A typical field i
 </div>
 ```
 
-### Radio
+View Code
+
+### [Radio](#radio)
 
 ```svelte
 <script lang="ts">
@@ -467,7 +487,9 @@ The `Field` family is designed for composing accessible forms. A typical field i
 </div>
 ```
 
-### Switch
+View Code
+
+### [Switch](#switch)
 
 ```svelte
 <script lang="ts">
@@ -488,7 +510,9 @@ The `Field` family is designed for composing accessible forms. A typical field i
 </div>
 ```
 
-### Choice Card
+View Code
+
+### [Choice Card](#choice-card)
 
 Wrap `Field` components inside `FieldLabel` to create selectable field groups. This works with `RadioItem`, `Checkbox` and `Switch` components.
 
@@ -536,7 +560,9 @@ Wrap `Field` components inside `FieldLabel` to create selectable field groups. T
 </div>
 ```
 
-### Field Group
+View Code
+
+### [Field Group](#field-group)
 
 Stack `Field` components with `Field.Group`. Add `Field.Separator` to divide them.
 
@@ -588,7 +614,9 @@ Stack `Field` components with `Field.Group`. Add `Field.Separator` to divide the
 </div>
 ```
 
-### Responsive Layout
+View Code
+
+### [Responsive Layout](#responsive-layout)
 
 - **Vertical fields:** Default orientation stacks label, control, and helper textideal for mobile-first layouts.
 - **Horizontal fields:** Set `orientation="horizontal"` on `Field` to align the label and control side-by-side. Pair with `Field.Content` to keep descriptions aligned.
@@ -644,7 +672,9 @@ Stack `Field` components with `Field.Group`. Add `Field.Separator` to divide the
 </div>
 ```
 
-## Validation and Errors
+View Code
+
+## [Validation and Errors](#validation-and-errors)
 
 - Add `data-invalid` to `Field` to switch the entire block into an error state.
 - Add `aria-invalid` on the input itself for assistive technologies.
@@ -658,7 +688,7 @@ Stack `Field` components with `Field.Group`. Add `Field.Separator` to divide the
 </Field.Field>
 ```
 
-## Accessibility
+## [Accessibility](#accessibility)
 
 - `Field.Set` and `Field.Legend` keep related controls grouped for keyboard and assistive tech users.
 - `Field` outputs `role="group"` so nested controls inherit labeling from `Field.Label` and `Field.Legend` when combined.
