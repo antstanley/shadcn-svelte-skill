@@ -2,6 +2,12 @@
 
 A date picker component with range and presets.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import Calendar from "$lib/components/ui/calendar/calendar.svelte";
@@ -50,13 +56,15 @@ A date picker component with range and presets.
 </div>
 ```
 
-## Installation
+View Code
+
+## [Installation](#installation)
 
 The Date Picker is built using a composition of the `<Popover />` and either the `<Calendar />` or `<RangeCalendar />` components.
 
 See installations instructions for the [Popover](https://shadcn-svelte.com/docs/components/popover#installation), [Calendar](https://shadcn-svelte.com/docs/components/calendar#installation), and [Range Calendar](https://shadcn-svelte.com/docs/components/range-calendar#installation) components.
 
-## Usage
+## [Usage](#usage)
 
 lib/components/example-date-picker.svelte
 
@@ -99,9 +107,9 @@ lib/components/example-date-picker.svelte
 </Popover.Root>
 ```
 
-## Examples
+## [Examples](#examples)
 
-### Date of Birth Picker
+### [Date of Birth Picker](#date-of-birth-picker)
 
 ```svelte
 <script lang="ts">
@@ -151,9 +159,13 @@ lib/components/example-date-picker.svelte
 </div>
 ```
 
-### Picker with Input
+View Code
 
-### Date and Time Picker
+### [Picker with Input](#picker-with-input)
+
+View Code
+
+### [Date and Time Picker](#date-and-time-picker)
 
 ```svelte
 <script lang="ts">
@@ -212,7 +224,9 @@ lib/components/example-date-picker.svelte
 </div>
 ```
 
-### Natural Language Picker
+View Code
+
+### [Natural Language Picker](#natural-language-picker)
 
 This component uses the `chrono-node` library to parse natural language dates.
 
@@ -315,3 +329,5 @@ This component uses the `chrono-node` library to parse natural language dates.
   </div>
 </div>
 ```
+
+View Code
