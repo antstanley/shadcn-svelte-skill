@@ -6,6 +6,12 @@ Fast, composable, unstyled command menu for Svelte.
 
 [API Reference](https://bits-ui.com/docs/components/command#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import CalculatorIcon from "@lucide/svelte/icons/calculator";
@@ -56,7 +62,9 @@ Fast, composable, unstyled command menu for Svelte.
 </Command.Root>
 ```
 
-## Installation
+View Code
+
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add command
@@ -70,7 +78,7 @@ npx shadcn-svelte@latest add command
 bun x shadcn-svelte@latest add command
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -98,9 +106,9 @@ bun x shadcn-svelte@latest add command
 </Command.Root>
 ```
 
-## Examples
+## [Examples](#examples)
 
-### Dialog
+### [Dialog](#dialog)
 
 ```svelte
 <script lang="ts">
@@ -168,6 +176,8 @@ bun x shadcn-svelte@latest add command
 </Command.Dialog>
 ```
 
+View Code
+
 To show the command menu in a dialog, use the `<Command.Dialog />` component instead of `<Command.Root />`. It accepts props for both the `<Dialog.Root />` and `<Command.Root />` components.
 
 lib/components/example-command-menu.svelte
@@ -198,12 +208,12 @@ lib/components/example-command-menu.svelte
 </Command.Dialog>
 ```
 
-### Combobox
+### [Combobox](#combobox)
 
 You can use the `<Command />` component as a combobox. See the [Combobox](https://shadcn-svelte.com/docs/components/combobox) page for more information.
 
-## Changelog
+## [Changelog](#changelog)
 
-### 2024-10-30 Classes for icons
+### [2024-10-30 Classes for icons](#2024-10-30-classes-for-icons)
 
 - Added `gap-2 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0` to the `<Command.Item>` component to automatically style the icons inside.

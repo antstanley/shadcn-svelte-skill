@@ -2,9 +2,15 @@
 
 Examples of registry items: styles, components, css vars, etc.
 
-## registry:style
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
 
-### Custom style that extends shadcn-svelte
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
+## [registry:style](#registrystyle)
+
+### [Custom style that extends shadcn-svelte](#custom-style-that-extends-shadcn-svelte)
 
 The following registry item is a custom style that extends shadcn/ui. On `npx shadcn-svelte@latest init`, it will:
 
@@ -41,7 +47,7 @@ example-style.json
 }
 ```
 
-### Custom style from scratch
+### [Custom style from scratch](#custom-style-from-scratch)
 
 The following registry item is a custom style that *doesn't* extend shadcn-svelte. See the `extends: none` field.
 
@@ -92,9 +98,9 @@ example-style.json
 }
 ```
 
-## registry:theme
+## [registry:theme](#registrytheme)
 
-### Custom theme
+### [Custom theme](#custom-theme)
 
 example-theme.json
 
@@ -128,7 +134,7 @@ example-theme.json
 }
 ```
 
-### Custom colors
+### [Custom colors](#custom-colors)
 
 The following style will init using shadcn-svelte defaults and then add a custom `brand` color.
 
@@ -150,9 +156,9 @@ example-style.json
 }
 ```
 
-## registry:block
+## [registry:block](#registryblock)
 
-### Custom block
+### [Custom block](#custom-block)
 
 This blocks installs the `login-01` block from the shadcn-svelte registry.
 
@@ -181,7 +187,7 @@ login-01.json
 }
 ```
 
-### Install a block and override primitives
+### [Install a block and override primitives](#install-a-block-and-override-primitives)
 
 You can install a block from the shadcn-svelte registry and override the primitives using your custom ones.
 
@@ -206,9 +212,9 @@ example-style.json
 }
 ```
 
-## CSS Variables
+## [CSS Variables](#css-variables)
 
-### Custom Theme Variables
+### [Custom Theme Variables](#custom-theme-variables)
 
 Add custom theme variables to the `theme` object.
 
@@ -228,7 +234,7 @@ example-theme.json
 }
 ```
 
-### Override Tailwind CSS variables
+### [Override Tailwind CSS variables](#override-tailwind-css-variables)
 
 example-theme.json
 
@@ -250,9 +256,9 @@ example-theme.json
 }
 ```
 
-## Add custom CSS
+## [Add custom CSS](#add-custom-css)
 
-### Base styles
+### [Base styles](#base-styles)
 
 example-base.json
 
@@ -274,7 +280,7 @@ example-base.json
 }
 ```
 
-### Components
+### [Components](#components)
 
 example-card.json
 
@@ -296,9 +302,9 @@ example-card.json
 }
 ```
 
-## Add custom utilities
+## [Add custom utilities](#add-custom-utilities)
 
-### Simple utility
+### [Simple utility](#simple-utility)
 
 example-component.json
 
@@ -315,7 +321,7 @@ example-component.json
 }
 ```
 
-### Complex utility
+### [Complex utility](#complex-utility)
 
 example-utility.json
 
@@ -336,7 +342,7 @@ example-utility.json
 }
 ```
 
-### Functional utilities
+### [Functional utilities](#functional-utilities)
 
 example-functional.json
 
@@ -353,7 +359,7 @@ example-functional.json
 }
 ```
 
-## Add custom animations
+## [Add custom animations](#add-custom-animations)
 
 Note: you need to define both `@keyframes` in css and `theme` in cssVars to use animations.
 
