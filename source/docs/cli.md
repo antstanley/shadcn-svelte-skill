@@ -2,7 +2,13 @@
 
 Use the shadcn-svelte CLI to add components to your project.
 
-## init
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
+## [init](#init)
 
 Use the `init` command to initialize dependencies for a new project.
 
@@ -38,12 +44,13 @@ Configure the import alias for ui:  $lib/components/ui
 Usage: shadcn-svelte init [options]
 initialize your project and install dependencies
 Options:
-  -c, --cwd <path>           the working directory (default: the current directory)
-  -o, --overwrite            overwrite existing files (default: false)
+  --preset <preset>          the preset to use
+  -c, --cwd <path>           the working directory
   --no-deps                  disable adding & installing dependencies
   --skip-preflight           ignore preflight checks and continue (default: false)
-  --base-color <name>        the base color for the components (choices: "slate", "gray", "zinc",
-                             "neutral", "stone")
+  --reinstall                reinstall existing components when style changes
+  --no-reinstall             skip reinstalling existing components when style changes
+  --base-color <name>        the base color for the components (choices: "neutral", "stone", "zinc", "mauve", "olive", "mist", "taupe")
   --css <path>               path to the global CSS file
   --components-alias <path>  import alias for components
   --lib-alias <path>         import alias for lib
@@ -56,7 +63,7 @@ Options:
 
 ***
 
-## add
+## [add](#add)
 
 Use the `add` command to add components and dependencies to your project.
 
@@ -92,7 +99,59 @@ Options:
 
 ***
 
-## registry build
+## [apply](#apply)
+
+Use the `apply` command to apply a preset to an existing project.
+
+```bash
+pnpm dlx shadcn-svelte@latest apply a2r6bw
+```
+
+```bash
+npx shadcn-svelte@latest apply a2r6bw
+```
+
+```bash
+bun x shadcn-svelte@latest apply a2r6bw
+```
+
+You can apply only the theme or fonts from a preset without reinstalling UI components:
+
+```bash
+pnpm dlx shadcn-svelte@latest apply a2r6bw --only theme
+```
+
+```bash
+npx shadcn-svelte@latest apply a2r6bw --only theme
+```
+
+```bash
+bun x shadcn-svelte@latest apply a2r6bw --only theme
+```
+
+Supported values for `--only` are `theme` and `font`.
+
+**Options**
+
+```bash
+Usage: shadcn-svelte apply [options]
+apply a preset to an existing project
+Arguments:
+  preset             the preset to apply
+Options:
+  --preset <preset>  the preset to apply
+  --only [parts]     apply only parts of a preset: theme, font
+  -c, --cwd <path>   the working directory (default: the current directory)
+  -y, --yes          overwrite existing files without confirmation (default: false)
+  -s, --silent       mute output (default: false)
+  --skip-preflight   ignore preflight checks and continue (default: false)
+  --proxy <proxy>    fetch items from registry using a proxy
+  -h, --help         display help for command
+```
+
+***
+
+## [registry build](#registry-build)
 
 Use the `registry build` command to generate the registry JSON files.
 
@@ -125,9 +184,9 @@ Options:
 
 ***
 
-## Outgoing Requests
+## [Outgoing Requests](#outgoing-requests)
 
-### Proxy
+### [Proxy](#proxy)
 
 This enables the use of a proxy when sending out requests to fetch from the `shadcn-svelte` registry. If the `HTTP_PROXY` or `http_proxy` environment variables have been set, the request library underneath will respect the proxy settings.
 
