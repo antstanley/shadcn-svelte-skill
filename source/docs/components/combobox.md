@@ -2,6 +2,12 @@
 
 Autocomplete input and command palette with a list of suggestions.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import CheckIcon from "@lucide/svelte/icons/check";
@@ -91,13 +97,15 @@ Autocomplete input and command palette with a list of suggestions.
 </Popover.Root>
 ```
 
-## Installation
+View Code
+
+## [Installation](#installation)
 
 The Combobox is built using a composition of the `<Popover />` and the `<Command />` components.
 
 See installation instructions for the [Popover](https://shadcn-svelte.com/docs/components/popover#installation) and the [Command](https://shadcn-svelte.com/docs/components/command#installation) components.
 
-## Usage
+## [Usage](#usage)
 
 Expand
 
@@ -197,9 +205,9 @@ lib/components/example-combobox.svelte
 
 Expand
 
-## Examples
+## [Examples](#examples)
 
-### Combobox
+### [Combobox](#combobox)
 
 ```svelte
 <script lang="ts">
@@ -290,7 +298,9 @@ Expand
 </Popover.Root>
 ```
 
-### Popover
+View Code
+
+### [Popover](#popover)
 
 ```svelte
 <script lang="ts">
@@ -405,7 +415,9 @@ Expand
 </div>
 ```
 
-### Dropdown menu
+View Code
+
+### [Dropdown menu](#dropdown-menu)
 
 ```svelte
 <script lang="ts">
@@ -510,7 +522,9 @@ Expand
 </div>
 ```
 
-### Responsive
+View Code
+
+### [Responsive](#responsive)
 
 You can create a responsive combobox by using the `<Popover />` on desktop and the `<Drawer />` components on mobile.
 
@@ -622,3 +636,5 @@ You can create a responsive combobox by using the `<Popover />` on desktop and t
   </Drawer.Root>
 {/if}
 ```
+
+View Code
