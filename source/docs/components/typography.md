@@ -2,6 +2,12 @@
 
 Styles for headings, paragraphs, lists...etc
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 We do not ship any typography styles by default. This page is an example of how you can use utility classes to style your text.
 
 ```svelte
@@ -136,7 +142,9 @@ We do not ship any typography styles by default. This page is an example of how 
 </div>
 ```
 
-## h1
+View Code
+
+## [h1](#h1)
 
 ```svelte
 <h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
@@ -144,7 +152,9 @@ We do not ship any typography styles by default. This page is an example of how 
 </h1>
 ```
 
-## h2
+View Code
+
+## [h2](#h2)
 
 ```svelte
 <h2
@@ -154,13 +164,17 @@ We do not ship any typography styles by default. This page is an example of how 
 </h2>
 ```
 
-## h3
+View Code
+
+## [h3](#h3)
 
 ```svelte
 <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">The Joke Tax</h3>
 ```
 
-## h4
+View Code
+
+## [h4](#h4)
 
 ```svelte
 <h4 class="scroll-m-20 text-xl font-semibold tracking-tight">
@@ -168,7 +182,9 @@ We do not ship any typography styles by default. This page is an example of how 
 </h4>
 ```
 
-## p
+View Code
+
+## [p](#p)
 
 ```svelte
 <p class="leading-7 [&:not(:first-child)]:mt-6">
@@ -177,7 +193,9 @@ We do not ship any typography styles by default. This page is an example of how 
 </p>
 ```
 
-## blockquote
+View Code
+
+## [blockquote](#blockquote)
 
 ```svelte
 <blockquote class="mt-6 border-s-2 ps-6 italic">
@@ -186,7 +204,9 @@ We do not ship any typography styles by default. This page is an example of how 
 </blockquote>
 ```
 
-## table
+View Code
+
+## [table](#table)
 
 ```svelte
 <div class="my-6 w-full overflow-y-auto">
@@ -247,7 +267,9 @@ We do not ship any typography styles by default. This page is an example of how 
 </div>
 ```
 
-## list
+View Code
+
+## [list](#list)
 
 ```svelte
 <ul class="my-6 ms-6 list-disc [&>li]:mt-2">
@@ -257,7 +279,9 @@ We do not ship any typography styles by default. This page is an example of how 
 </ul>
 ```
 
-## Inline code
+View Code
+
+## [Inline code](#inline-code)
 
 ```svelte
 <code
@@ -267,7 +291,9 @@ We do not ship any typography styles by default. This page is an example of how 
 </code>
 ```
 
-## Lead
+View Code
+
+## [Lead](#lead)
 
 ```svelte
 <p class="text-muted-foreground text-xl">
@@ -276,20 +302,28 @@ We do not ship any typography styles by default. This page is an example of how 
 </p>
 ```
 
-## Large
+View Code
+
+## [Large](#large)
 
 ```svelte
 <div class="text-lg font-semibold">Are you sure absolutely sure?</div>
 ```
 
-## Small
+View Code
+
+## [Small](#small)
 
 ```svelte
 <small class="text-sm leading-none font-medium">Email address</small>
 ```
 
-## Muted
+View Code
+
+## [Muted](#muted)
 
 ```svelte
 <p class="text-muted-foreground text-sm">Enter your email address.</p>
 ```
+
+View Code
