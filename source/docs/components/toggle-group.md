@@ -6,6 +6,12 @@ A set of two-state buttons that can be toggled on or off.
 
 [API Reference](https://bits-ui.com/docs/components/toggle-group#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import * as ToggleGroup from "$lib/components/ui/toggle-group/index.js";
@@ -41,7 +47,9 @@ A set of two-state buttons that can be toggled on or off.
 </ToggleGroup.Root>
 ```
 
-## Installation
+View Code
+
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add toggle-group
@@ -55,7 +63,7 @@ npx shadcn-svelte@latest add toggle-group
 bun x shadcn-svelte@latest add toggle-group
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -71,9 +79,9 @@ bun x shadcn-svelte@latest add toggle-group
 </ToggleGroup.Root>
 ```
 
-## Examples
+## [Examples](#examples)
 
-### Outline
+### [Outline](#outline)
 
 ```svelte
 <script lang="ts">
@@ -95,7 +103,9 @@ bun x shadcn-svelte@latest add toggle-group
 </ToggleGroup.Root>
 ```
 
-### Single
+View Code
+
+### [Single](#single)
 
 ```svelte
 <script lang="ts">
@@ -117,7 +127,9 @@ bun x shadcn-svelte@latest add toggle-group
 </ToggleGroup.Root>
 ```
 
-### Small
+View Code
+
+### [Small](#small)
 
 ```svelte
 <script lang="ts">
@@ -139,7 +151,9 @@ bun x shadcn-svelte@latest add toggle-group
 </ToggleGroup.Root>
 ```
 
-### Large
+View Code
+
+### [Large](#large)
 
 ```svelte
 <script lang="ts">
@@ -161,7 +175,9 @@ bun x shadcn-svelte@latest add toggle-group
 </ToggleGroup.Root>
 ```
 
-### Disabled
+View Code
+
+### [Disabled](#disabled)
 
 ```svelte
 <script lang="ts">
@@ -183,7 +199,9 @@ bun x shadcn-svelte@latest add toggle-group
 </ToggleGroup.Root>
 ```
 
-### Spacing
+View Code
+
+### [Spacing](#spacing)
 
 Use `spacing={2}` to add spacing between toggle group items.
 
@@ -221,3 +239,5 @@ Use `spacing={2}` to add spacing between toggle group items.
   </ToggleGroup.Item>
 </ToggleGroup.Root>
 ```
+
+View Code
