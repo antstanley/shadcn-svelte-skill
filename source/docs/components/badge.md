@@ -2,6 +2,12 @@
 
 Displays a badge or a component that looks like a badge.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import { Badge } from "$lib/components/ui/badge/index.js";
@@ -37,7 +43,9 @@ Displays a badge or a component that looks like a badge.
 </div>
 ```
 
-## Installation
+View Code
+
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add badge
@@ -51,7 +59,7 @@ npx shadcn-svelte@latest add badge
 bun x shadcn-svelte@latest add badge
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -63,7 +71,7 @@ bun x shadcn-svelte@latest add badge
 <Badge variant="outline">Badge</Badge>
 ```
 
-### Link
+### [Link](#link)
 
 You can use the `badgeVariants` helper to create a link that looks like a badge.
 
