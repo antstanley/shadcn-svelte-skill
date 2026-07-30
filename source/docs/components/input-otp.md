@@ -6,32 +6,19 @@ Accessible one-time password component with copy paste functionality.
 
 [API Reference](https://bits-ui.com/docs/components/pin-input#api-reference)
 
-```svelte
-<script lang="ts">
-  import * as InputOTP from "$lib/components/ui/input-otp/index.js";
-</script>
-<InputOTP.Root maxlength={6}>
-  {#snippet children({ cells })}
-    <InputOTP.Group>
-      {#each cells.slice(0, 3) as cell (cell)}
-        <InputOTP.Slot {cell} />
-      {/each}
-    </InputOTP.Group>
-    <InputOTP.Separator />
-    <InputOTP.Group>
-      {#each cells.slice(3, 6) as cell (cell)}
-        <InputOTP.Slot {cell} />
-      {/each}
-    </InputOTP.Group>
-  {/snippet}
-</InputOTP.Root>
-```
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
 
-## About
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
+View Code
+
+## [About](#about)
 
 Input OTP is built on top of Bits UI's [PinInput](https://bits-ui.com/docs/components/pin-input) which is inspired by [@guilherme\_rodz](https://twitter.com/guilherme_rodz)'s Input OTP component.
 
-## Installation
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add input-otp
@@ -45,7 +32,7 @@ npx shadcn-svelte@latest add input-otp
 bun x shadcn-svelte@latest add input-otp
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -71,27 +58,13 @@ bun x shadcn-svelte@latest add input-otp
 </InputOTP.Root>
 ```
 
-## Examples
+## [Examples](#examples)
 
-### Pattern
+### [Pattern](#pattern)
 
 Use the `pattern` prop to define a custom pattern for the OTP input.
 
-```svelte
-<script lang="ts">
-  import * as InputOTP from "$lib/components/ui/input-otp/index.js";
-  import { REGEXP_ONLY_DIGITS_AND_CHARS } from "bits-ui";
-</script>
-<InputOTP.Root maxlength={6} pattern={REGEXP_ONLY_DIGITS_AND_CHARS}>
-  {#snippet children({ cells })}
-    <InputOTP.Group>
-      {#each cells as cell (cell)}
-        <InputOTP.Slot {cell} />
-      {/each}
-    </InputOTP.Group>
-  {/snippet}
-</InputOTP.Root>
-```
+View Code
 
 ```svelte
 <script lang="ts">
@@ -102,36 +75,11 @@ Use the `pattern` prop to define a custom pattern for the OTP input.
 </InputOTP.Root>
 ```
 
-### Separator
+### [Separator](#separator)
 
 You can use the `InputOTP.Separator` component to add a separator between the groups of cells.
 
-```svelte
-<script lang="ts">
-  import * as InputOTP from "$lib/components/ui/input-otp/index.js";
-</script>
-<InputOTP.Root maxlength={6}>
-  {#snippet children({ cells })}
-    <InputOTP.Group>
-      {#each cells.slice(0, 2) as cell (cell)}
-        <InputOTP.Slot {cell} />
-      {/each}
-    </InputOTP.Group>
-    <InputOTP.Separator />
-    <InputOTP.Group>
-      {#each cells.slice(2, 4) as cell (cell)}
-        <InputOTP.Slot {cell} />
-      {/each}
-    </InputOTP.Group>
-    <InputOTP.Separator />
-    <InputOTP.Group>
-      {#each cells.slice(4, 6) as cell (cell)}
-        <InputOTP.Slot {cell} />
-      {/each}
-    </InputOTP.Group>
-  {/snippet}
-</InputOTP.Root>
-```
+View Code
 
 ```svelte
 <script lang="ts">
@@ -154,80 +102,10 @@ You can use the `InputOTP.Separator` component to add a separator between the gr
 </InputOTP.Root>
 ```
 
-### Controlled
+### [Controlled](#controlled)
 
-```svelte
-<script lang="ts">
-  import * as InputOTP from "$lib/components/ui/input-otp/index.js";
-  let value = $state("");
-</script>
-<div class="space-y-2">
-  <InputOTP.Root maxlength={6} bind:value>
-    {#snippet children({ cells })}
-      <InputOTP.Group>
-        {#each cells.slice(0, 6) as cell (cell)}
-          <InputOTP.Slot {cell} />
-        {/each}
-      </InputOTP.Group>
-    {/snippet}
-  </InputOTP.Root>
-  <div class="text-center text-sm">
-    {value === "" ? "Enter your one-time password." : `You entered: ${value}`}
-  </div>
-</div>
-```
+View Code
 
-### Form
+### [Form](#form)
 
-```svelte
-<script lang="ts" module>
-  import { z } from "zod/v4";
-  const formSchema = z.object({
-    pin: z.string().min(6, {
-      message: "Your one-time password must be at least 6 characters."
-    })
-  });
-</script>
-<script lang="ts">
-  import { defaults, superForm } from "sveltekit-superforms";
-  import { zod4 } from "sveltekit-superforms/adapters";
-  import { toast } from "svelte-sonner";
-  import * as InputOTP from "$lib/components/ui/input-otp/index.js";
-  import * as Form from "$lib/components/ui/form/index.js";
-  const form = superForm(defaults(zod4(formSchema)), {
-    validators: zod4(formSchema),
-    SPA: true,
-    onUpdate: ({ form: f }) => {
-      if (f.valid) {
-        toast.success(`You submitted ${JSON.stringify(f.data, null, 2)}`);
-      } else {
-        toast.error("Please fix the errors in the form.");
-      }
-    }
-  });
-  const { form: formData, enhance } = form;
-</script>
-<form method="POST" class="w-2/3 space-y-6" use:enhance>
-  <Form.Field {form} name="pin">
-    <Form.Control>
-      {#snippet children({ props })}
-        <Form.Label>One-Time Password</Form.Label>
-        <InputOTP.Root maxlength={6} {...props} bind:value={$formData.pin}>
-          {#snippet children({ cells })}
-            <InputOTP.Group>
-              {#each cells as cell (cell)}
-                <InputOTP.Slot {cell} />
-              {/each}
-            </InputOTP.Group>
-          {/snippet}
-        </InputOTP.Root>
-      {/snippet}
-    </Form.Control>
-    <Form.Description
-      >Please enter the one-time password sent to your phone.</Form.Description
-    >
-    <Form.FieldErrors />
-  </Form.Field>
-  <Form.Button>Submit</Form.Button>
-</form>
-```
+View Code

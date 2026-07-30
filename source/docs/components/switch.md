@@ -6,18 +6,15 @@ A control that allows the user to toggle between checked and not checked.
 
 [API Reference](https://bits-ui.com/docs/components/switch#api-reference)
 
-```svelte
-<script lang="ts">
-  import { Label } from "$lib/components/ui/label/index.js";
-  import { Switch } from "$lib/components/ui/switch/index.js";
-</script>
-<div class="flex items-center space-x-2">
-  <Switch id="airplane-mode" />
-  <Label for="airplane-mode">Airplane Mode</Label>
-</div>
-```
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
 
-## Installation
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
+View Code
+
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add switch
@@ -31,7 +28,7 @@ npx shadcn-svelte@latest add switch
 bun x shadcn-svelte@latest add switch
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">

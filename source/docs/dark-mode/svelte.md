@@ -2,7 +2,13 @@
 
 Adding dark mode to your Svelte site.
 
-## Install mode-watcher
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
+## [Install mode-watcher](#install-mode-watcher)
 
 Start by installing `mode-watcher`:
 
@@ -18,7 +24,7 @@ npm i mode-watcher
 bun install mode-watcher
 ```
 
-## Add the ModeWatcher component
+## [Add the ModeWatcher component](#add-the-modewatcher-component)
 
 Import the `ModeWatcher` component and use it in your root layout:
 
@@ -34,53 +40,10 @@ src/routes/+layout.svelte
 {@render children?.()}
 ```
 
-## Add a mode toggle
+## [Add a mode toggle](#add-a-mode-toggle)
 
 Place a mode toggle on your site to toggle between light and dark mode.
 
-```svelte
-<script lang="ts">
-  import SunIcon from "@lucide/svelte/icons/sun";
-  import MoonIcon from "@lucide/svelte/icons/moon";
-  import { toggleMode } from "mode-watcher";
-  import { Button } from "$lib/components/ui/button/index.js";
-</script>
-<Button onclick={toggleMode} variant="outline" size="icon">
-  <SunIcon
-    class="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 !transition-all dark:scale-0 dark:-rotate-90"
-  />
-  <MoonIcon
-    class="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 !transition-all dark:scale-100 dark:rotate-0"
-  />
-  <span class="sr-only">Toggle theme</span>
-</Button>
-```
+View Code
 
-```svelte
-<script lang="ts">
-  import SunIcon from "@lucide/svelte/icons/sun";
-  import MoonIcon from "@lucide/svelte/icons/moon";
-  import { resetMode, setMode } from "mode-watcher";
-  import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
-  import { buttonVariants } from "$lib/components/ui/button/index.js";
-</script>
-<DropdownMenu.Root>
-  <DropdownMenu.Trigger
-    class={buttonVariants({ variant: "outline", size: "icon" })}
-  >
-    <SunIcon
-      class="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 !transition-all dark:scale-0 dark:-rotate-90"
-    />
-    <MoonIcon
-      class="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 !transition-all dark:scale-100 dark:rotate-0"
-    />
-    <span class="sr-only">Toggle theme</span>
-  </DropdownMenu.Trigger>
-  <DropdownMenu.Content align="end">
-    <DropdownMenu.Item onclick={() => setMode("light")}>Light</DropdownMenu.Item
-    >
-    <DropdownMenu.Item onclick={() => setMode("dark")}>Dark</DropdownMenu.Item>
-    <DropdownMenu.Item onclick={() => resetMode()}>System</DropdownMenu.Item>
-  </DropdownMenu.Content>
-</DropdownMenu.Root>
-```
+View Code

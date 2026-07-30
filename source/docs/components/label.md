@@ -6,20 +6,15 @@ Renders an accessible label associated with controls.
 
 [API Reference](https://bits-ui.com/docs/components/label#api-reference)
 
-```svelte
-<script lang="ts">
-  import { Checkbox } from "$lib/components/ui/checkbox/index.js";
-  import { Label } from "$lib/components/ui/label/index.js";
-</script>
-<div>
-  <div class="flex items-center space-x-2">
-    <Checkbox id="terms" />
-    <Label for="terms">Accept terms and conditions</Label>
-  </div>
-</div>
-```
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
 
-## Installation
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
+View Code
+
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add label
@@ -33,7 +28,7 @@ npx shadcn-svelte@latest add label
 bun x shadcn-svelte@latest add label
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">

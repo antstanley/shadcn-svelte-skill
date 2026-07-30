@@ -6,57 +6,15 @@ Fast, composable, unstyled command menu for Svelte.
 
 [API Reference](https://bits-ui.com/docs/components/command#api-reference)
 
-```svelte
-<script lang="ts">
-  import CalculatorIcon from "@lucide/svelte/icons/calculator";
-  import CalendarIcon from "@lucide/svelte/icons/calendar";
-  import CreditCardIcon from "@lucide/svelte/icons/credit-card";
-  import SettingsIcon from "@lucide/svelte/icons/settings";
-  import SmileIcon from "@lucide/svelte/icons/smile";
-  import UserIcon from "@lucide/svelte/icons/user";
-  import * as Command from "$lib/components/ui/command/index.js";
-</script>
-<Command.Root class="rounded-lg border shadow-md md:min-w-[450px]">
-  <Command.Input placeholder="Type a command or search..." />
-  <Command.List>
-    <Command.Empty>No results found.</Command.Empty>
-    <Command.Group heading="Suggestions">
-      <Command.Item>
-        <CalendarIcon />
-        <span>Calendar</span>
-      </Command.Item>
-      <Command.Item>
-        <SmileIcon />
-        <span>Search Emoji</span>
-      </Command.Item>
-      <Command.Item disabled>
-        <CalculatorIcon />
-        <span>Calculator</span>
-      </Command.Item>
-    </Command.Group>
-    <Command.Separator />
-    <Command.Group heading="Settings">
-      <Command.Item>
-        <UserIcon />
-        <span>Profile</span>
-        <Command.Shortcut>P</Command.Shortcut>
-      </Command.Item>
-      <Command.Item>
-        <CreditCardIcon />
-        <span>Billing</span>
-        <Command.Shortcut>B</Command.Shortcut>
-      </Command.Item>
-      <Command.Item>
-        <SettingsIcon />
-        <span>Settings</span>
-        <Command.Shortcut>S</Command.Shortcut>
-      </Command.Item>
-    </Command.Group>
-  </Command.List>
-</Command.Root>
-```
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
 
-## Installation
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
+View Code
+
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add command
@@ -70,7 +28,7 @@ npx shadcn-svelte@latest add command
 bun x shadcn-svelte@latest add command
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -98,75 +56,11 @@ bun x shadcn-svelte@latest add command
 </Command.Root>
 ```
 
-## Examples
+## [Examples](#examples)
 
-### Dialog
+### [Dialog](#dialog)
 
-```svelte
-<script lang="ts">
-  import CalculatorIcon from "@lucide/svelte/icons/calculator";
-  import CalendarIcon from "@lucide/svelte/icons/calendar";
-  import CreditCardIcon from "@lucide/svelte/icons/credit-card";
-  import SettingsIcon from "@lucide/svelte/icons/settings";
-  import SmileIcon from "@lucide/svelte/icons/smile";
-  import UserIcon from "@lucide/svelte/icons/user";
-  import * as Command from "$lib/components/ui/command/index.js";
-  let open = $state(false);
-  function handleKeydown(e: KeyboardEvent) {
-    if (e.key === "j" && (e.metaKey || e.ctrlKey)) {
-      e.preventDefault();
-      open = !open;
-    }
-  }
-</script>
-<svelte:document onkeydown={handleKeydown} />
-<p class="text-muted-foreground text-sm">
-  Press
-  <kbd
-    class="bg-muted text-muted-foreground pointer-events-none inline-flex h-5 items-center gap-1 rounded border px-1.5 font-mono text-[10px] font-medium opacity-100 select-none"
-  >
-    <span class="text-xs"></span>J
-  </kbd>
-</p>
-<Command.Dialog bind:open>
-  <Command.Input placeholder="Type a command or search..." />
-  <Command.List>
-    <Command.Empty>No results found.</Command.Empty>
-    <Command.Group heading="Suggestions">
-      <Command.Item>
-        <CalendarIcon class="me-2 size-4" />
-        <span>Calendar</span>
-      </Command.Item>
-      <Command.Item>
-        <SmileIcon class="me-2 size-4" />
-        <span>Search Emoji</span>
-      </Command.Item>
-      <Command.Item>
-        <CalculatorIcon class="me-2 size-4" />
-        <span>Calculator</span>
-      </Command.Item>
-    </Command.Group>
-    <Command.Separator />
-    <Command.Group heading="Settings">
-      <Command.Item>
-        <UserIcon class="me-2 size-4" />
-        <span>Profile</span>
-        <Command.Shortcut>P</Command.Shortcut>
-      </Command.Item>
-      <Command.Item>
-        <CreditCardIcon class="me-2 size-4" />
-        <span>Billing</span>
-        <Command.Shortcut>B</Command.Shortcut>
-      </Command.Item>
-      <Command.Item>
-        <SettingsIcon class="me-2 size-4" />
-        <span>Settings</span>
-        <Command.Shortcut>S</Command.Shortcut>
-      </Command.Item>
-    </Command.Group>
-  </Command.List>
-</Command.Dialog>
-```
+View Code
 
 To show the command menu in a dialog, use the `<Command.Dialog />` component instead of `<Command.Root />`. It accepts props for both the `<Dialog.Root />` and `<Command.Root />` components.
 
@@ -198,12 +92,12 @@ lib/components/example-command-menu.svelte
 </Command.Dialog>
 ```
 
-### Combobox
+### [Combobox](#combobox)
 
 You can use the `<Command />` component as a combobox. See the [Combobox](https://shadcn-svelte.com/docs/components/combobox) page for more information.
 
-## Changelog
+## [Changelog](#changelog)
 
-### 2024-10-30 Classes for icons
+### [2024-10-30 Classes for icons](#2024-10-30-classes-for-icons)
 
 - Added `gap-2 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0` to the `<Command.Item>` component to automatically style the icons inside.

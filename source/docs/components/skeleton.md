@@ -2,20 +2,15 @@
 
 Use to show a placeholder while content is loading.
 
-```svelte
-<script lang="ts">
-  import { Skeleton } from "$lib/components/ui/skeleton/index.js";
-</script>
-<div class="flex items-center space-x-4">
-  <Skeleton class="size-12 rounded-full" />
-  <div class="space-y-2">
-    <Skeleton class="h-4 w-[250px]" />
-    <Skeleton class="h-4 w-[200px]" />
-  </div>
-</div>
-```
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
 
-## Installation
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
+View Code
+
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add skeleton
@@ -29,7 +24,7 @@ npx shadcn-svelte@latest add skeleton
 bun x shadcn-svelte@latest add skeleton
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -41,19 +36,8 @@ bun x shadcn-svelte@latest add skeleton
 <Skeleton class="h-[20px] w-[100px] rounded-full" />
 ```
 
-## Examples
+## [Examples](#examples)
 
-## Card
+## [Card](#card)
 
-```svelte
-<script lang="ts">
-  import { Skeleton } from "$lib/components/ui/skeleton/index.js";
-</script>
-<div class="flex flex-col space-y-3">
-  <Skeleton class="h-[125px] w-[250px] rounded-xl" />
-  <div class="space-y-2">
-    <Skeleton class="h-4 w-[250px]" />
-    <Skeleton class="h-4 w-[200px]" />
-  </div>
-</div>
-```
+View Code

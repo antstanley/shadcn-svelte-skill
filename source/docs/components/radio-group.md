@@ -6,28 +6,15 @@ A set of checkable buttonsknown as radio buttonswhere no more than one of the bu
 
 [API Reference](https://bits-ui.com/docs/components/radio-group#api-reference)
 
-```svelte
-<script lang="ts">
-  import * as RadioGroup from "$lib/components/ui/radio-group/index.js";
-  import { Label } from "$lib/components/ui/label/index.js";
-</script>
-<RadioGroup.Root value="comfortable">
-  <div class="flex items-center space-x-2">
-    <RadioGroup.Item value="default" id="r1" />
-    <Label for="r1">Default</Label>
-  </div>
-  <div class="flex items-center space-x-2">
-    <RadioGroup.Item value="comfortable" id="r2" />
-    <Label for="r2">Comfortable</Label>
-  </div>
-  <div class="flex items-center space-x-2">
-    <RadioGroup.Item value="compact" id="r3" />
-    <Label for="r3">Compact</Label>
-  </div>
-</RadioGroup.Root>
-```
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
 
-## Installation
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
+View Code
+
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add radio-group
@@ -41,7 +28,7 @@ npx shadcn-svelte@latest add radio-group
 bun x shadcn-svelte@latest add radio-group
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
