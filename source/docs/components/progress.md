@@ -6,20 +6,15 @@ Displays an indicator showing the completion progress of a task, typically displ
 
 [API Reference](https://bits-ui.com/docs/components/progress#api-reference)
 
-```svelte
-<script lang="ts">
-  import { onMount } from "svelte";
-  import { Progress } from "$lib/components/ui/progress/index.js";
-  let value = $state(13);
-  onMount(() => {
-    const timer = setTimeout(() => (value = 66), 500);
-    return () => clearTimeout(timer);
-  });
-</script>
-<Progress {value} max={100} class="w-[60%]" />
-```
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
 
-## Installation
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
+View Code
+
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add progress
@@ -33,7 +28,7 @@ npx shadcn-svelte@latest add progress
 bun x shadcn-svelte@latest add progress
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">

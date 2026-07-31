@@ -6,46 +6,15 @@ Extends the Dialog component to display content that complements the main conten
 
 [API Reference](https://bits-ui.com/docs/components/dialog#api-reference)
 
-```svelte
-<script lang="ts">
-  import { Button } from "$lib/components/ui/button/index.js";
-  import * as Sheet from "$lib/components/ui/sheet/index.js";
-  import { buttonVariants } from "$lib/components/ui/button/index.js";
-  import { Input } from "$lib/components/ui/input/index.js";
-  import { Label } from "$lib/components/ui/label/index.js";
-</script>
-<Sheet.Root>
-  <Sheet.Trigger class={buttonVariants({ variant: "outline" })}
-    >Open</Sheet.Trigger
-  >
-  <Sheet.Content side="right">
-    <Sheet.Header>
-      <Sheet.Title>Edit profile</Sheet.Title>
-      <Sheet.Description>
-        Make changes to your profile here. Click save when you're done.
-      </Sheet.Description>
-    </Sheet.Header>
-    <div class="grid flex-1 auto-rows-min gap-6 px-4">
-      <div class="grid gap-3">
-        <Label for="name" class="text-end">Name</Label>
-        <Input id="name" value="Pedro Duarte" />
-      </div>
-      <div class="grid gap-3">
-        <Label for="username" class="text-end">Username</Label>
-        <Input id="username" value="@peduarte" />
-      </div>
-    </div>
-    <Sheet.Footer>
-      <Button type="submit">Save changes</Button>
-      <Sheet.Close class={buttonVariants({ variant: "outline" })}
-        >Close</Sheet.Close
-      >
-    </Sheet.Footer>
-  </Sheet.Content>
-</Sheet.Root>
-```
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
 
-## Installation
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
+View Code
+
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add sheet
@@ -59,7 +28,7 @@ npx shadcn-svelte@latest add sheet
 bun x shadcn-svelte@latest add sheet
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -82,13 +51,13 @@ bun x shadcn-svelte@latest add sheet
 </Sheet.Root>
 ```
 
-## Examples
+## [Examples](#examples)
 
-### Side
+### [Side](#side)
 
 Pass the `side` property to `<Sheet.Content />` to indicate the edge of the screen where the component will appear. The values can be `top`, `right`, `bottom` or `left`.
 
-### Size
+### [Size](#size)
 
 You can adjust the size of the sheet using CSS classes:
 
