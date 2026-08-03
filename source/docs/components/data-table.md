@@ -4,6 +4,12 @@ Powerful table and datagrids built using TanStack Table.
 
 [Docs](https://tanstack.com/table/v8/docs/introduction)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import ChevronDownIcon from "@lucide/svelte/icons/chevron-down";
@@ -20,19 +26,19 @@ Powerful table and datagrids built using TanStack Table.
     getSortedRowModel
   } from "@tanstack/table-core";
   import { createRawSnippet } from "svelte";
-  import DataTableCheckbox from "./data-table/data-table-checkbox.svelte";
-  import DataTableEmailButton from "./data-table/data-table-email-button.svelte";
-  import DataTableActions from "./data-table/data-table-actions.svelte";
+  import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
   import * as Table from "$lib/components/ui/table/index.js";
   import { Button } from "$lib/components/ui/button/index.js";
-  import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
-  import { Input } from "$lib/components/ui/input/index.js";
   import {
     FlexRender,
     createSvelteTable,
     renderComponent,
     renderSnippet
   } from "$lib/components/ui/data-table/index.js";
+  import { Input } from "$lib/components/ui/input/index.js";
+  import DataTableActions from "./data-table/data-table-actions.svelte";
+  import DataTableCheckbox from "./data-table/data-table-checkbox.svelte";
+  import DataTableEmailButton from "./data-table/data-table-email-button.svelte";
   type Payment = {
     id: string;
     amount: number;
@@ -297,16 +303,16 @@ Powerful table and datagrids built using TanStack Table.
           </Table.Row>
         {:else}
           <Table.Row>
-            <Table.Cell colspan={columns.length} class="h-24 text-center">
-              No results.
-            </Table.Cell>
+            <Table.Cell colspan={columns.length} class="h-24 text-center"
+              >No results.</Table.Cell
+            >
           </Table.Row>
         {/each}
       </Table.Body>
     </Table.Root>
   </div>
   <div class="flex items-center justify-end space-x-2 pt-4">
-    <div class="text-muted-foreground flex-1 text-sm">
+    <div class="flex-1 text-sm text-muted-foreground">
       {table.getFilteredSelectedRowModel().rows.length} of
       {table.getFilteredRowModel().rows.length} row(s) selected.
     </div>
@@ -332,7 +338,9 @@ Powerful table and datagrids built using TanStack Table.
 </div>
 ```
 
-## Introduction
+View Code
+
+## [Introduction](#introduction)
 
 Data tables are difficult to componentize because of the wide variety of features they support, and the uniqueness of every data set.
 
@@ -342,7 +350,7 @@ We'll start with the basic `<Table />` component, and work our way up to a fully
 
 Tip: If you find yourself using the same table in multiple places, you can always extract it into a reusable component.
 
-## Table of Contents
+## [Table of Contents](#table-of-contents)
 
 This guide will show you how to use [TanStack Table](https://tanstack.com/table) and the `<Table />` component to build your own custom data table. We'll cover the following topics:
 
@@ -353,7 +361,7 @@ This guide will show you how to use [TanStack Table](https://tanstack.com/table)
 - [Filtering](#filtering)  
 - [Visibility](#visibility)  
 - [Row Selection](#row-selection)  
-- [Reusable Components](#reusable-components) ## Installation
+- [Reusable Components](#reusable-components) ## [Installation](#installation)
 
 1. 
    Add the `<Table />` component to your project along with the `data-table` helpers. These helpers enable TanStack Table v8 to work with Svelte 5 Snippets, Components, etc.
@@ -385,7 +393,7 @@ npm i @tanstack/table-core
 bun install @tanstack/table-core
 ```
 
-## Prerequisites
+## [Prerequisites](#prerequisites)
 
 We're going to build a table to show recent payments. Here's what our data looks like:
 
@@ -412,7 +420,7 @@ export const data: Payment[] = [
   // ...];
 ```
 
-## Project Structure
+## [Project Structure](#project-structure)
 
 Start by creating a route where your data table will live (we'll call ours payments), along with the following files:
 
@@ -434,11 +442,11 @@ routes
 - `data-table-email-button.svelte` will contain the sortable email header button.
 - `+page.svelte` is where we'll render and access `<DataTable />` component.
 
-## Basic Table
+## [Basic Table](#basic-table)
 
 Let's start by building a basic table.
 
-### Column Definitions
+### [Column Definitions](#column-definitions)
 
 First, we'll define our columns.
 
@@ -471,7 +479,7 @@ export const columns: ColumnDef<Payment>[] = [
 
 **Note:** Columns are where you define the core of what your table will look like. They define the data that will be displayed, how it will be formatted, sorted and filtered.
 
-### `<DataTable />` Component
+### [`<DataTable />` Component](#datatable--component)
 
 Next, we'll create a `<DataTable />` component to render our table.
 
@@ -540,7 +548,7 @@ routes/payments/data-table.svelte
 </div>
 ```
 
-**Tip**: If you find yourself using `<DataTable />` in multiple places, this is the component you could make reusable by extracting it to `components/ui/data-table.svelte`. `<DataTable columns={columns} data={data} />` ### Render the table
+**Tip**: If you find yourself using `<DataTable />` in multiple places, this is the component you could make reusable by extracting it to `components/ui/data-table.svelte`. `<DataTable columns={columns} data={data} />` ### [Render the table](#render-the-table)
 
 Finally, we'll render our table in our page component.
 
@@ -567,11 +575,11 @@ routes/payments/+page.svelte
 <DataTable data={data.payments} {columns} />
 ```
 
-## Cell Formatting
+## [Cell Formatting](#cell-formatting)
 
 Let's format the amount cell to display the dollar amount. We'll also align the cell to the right.
 
-### Update columns definition
+### [Update columns definition](#update-columns-definition)
 
 Update the `header` and `cell` definitions for amount as follows:
 
@@ -616,7 +624,7 @@ We're using the `createRawSnippet` function to create a Svelte Snippet for rende
 
 You can use the same approach to format other cells and headers.
 
-## Row Actions
+## [Row Actions](#row-actions)
 
 Let's add row actions to our table. We'll use the `<DropdownMenu />` and the `<Button />` components for this, so you have install them if not done already:
 
@@ -632,7 +640,7 @@ npx shadcn-svelte@latest add button dropdown-menu
 bun x shadcn-svelte@latest add button dropdown-menu
 ```
 
-### Create actions component
+### [Create actions component](#create-actions-component)
 
 We'll start by defining the actions menu in our `data-table-actions.svelte` component.
 
@@ -673,7 +681,7 @@ routes/payments/data-table-actions.svelte
 </DropdownMenu.Root>
 ```
 
-### Update columns definition
+### [Update columns definition](#update-columns-definition-1)
 
 Now that we've defined the `<DataTableActions />` component, let's update our `actions` column definition to use it.
 
@@ -696,11 +704,13 @@ export const columns: ColumnDef<Payment>[] = [
 
 You can access the row data using `row.original` in the `cell` function. Use this to handle actions for your row eg. use the `id` to make a DELETE call to your API.
 
-## Pagination
+## [Pagination](#pagination)
 
 Next, we'll add pagination to our table.
 
-### Update `<DataTable />` routes/payments/data-table.svelte
+### [Update `<DataTable />`](#update-datatable-)
+
+routes/payments/data-table.svelte
 
 ```svelte
 <script lang="ts" generics="TData, TValue">
@@ -741,7 +751,7 @@ Next, we'll add pagination to our table.
 
 This will automatically paginate your rows into pages of 10. See the [pagination docs](https://tanstack.com/table/v8/docs/api/features/pagination) for more information on customizing page size and implementing manual pagination.
 
-### Adding pagination controls
+### [Adding pagination controls](#adding-pagination-controls)
 
 We can add pagination controls to our table using the `<Button />` component and the `table.previousPage()`, `table.nextPage()` API methods.
 
@@ -801,11 +811,11 @@ routes/payments/data-table.svelte
 
 See [Reusable Components](#reusable-components) section for a more advanced pagination component.
 
-## Sorting
+## [Sorting](#sorting)
 
 Let's make the email column sortable.
 
-### Define `<DataTableEmailButton />` component
+### [Define `<DataTableEmailButton />` component](#define-datatableemailbutton--component)
 
 We'll start by creating a component to render a sortable email header button.
 
@@ -825,7 +835,9 @@ routes/payments/data-table-email-button.svelte
 </Button>
 ```
 
-### Update `<DataTable />` routes/payments/data-table.svelte
+### [Update `<DataTable />`](#update-datatable--1)
+
+routes/payments/data-table.svelte
 
 ```svelte
 <script lang="ts" generics="TData, TValue">
@@ -874,7 +886,7 @@ routes/payments/data-table-email-button.svelte
 </script>
 ```
 
-### Make header cell sortable
+### [Make header cell sortable](#make-header-cell-sortable)
 
 We can now update the `email` header cell to add sorting controls.
 
@@ -897,11 +909,13 @@ export const columns: ColumnDef<Payment>[] = [
 
 This will automatically sort the table (asc and desc) when the user toggles on the header cell.
 
-## Filtering
+## [Filtering](#filtering)
 
 Let's add a search input to filter emails in our table.
 
-### Update `<DataTable />` routes/payments/data-table.svelte
+### [Update `<DataTable />`](#update-datatable--2)
+
+routes/payments/data-table.svelte
 
 ```svelte
 <script lang="ts" generics="TData, TValue">
@@ -985,11 +999,13 @@ Let's add a search input to filter emails in our table.
 
 Filtering is now enabled for the `email` column. You can add filters to other columns as well. See the [filtering docs](https://tanstack.com/table/v8/docs/guide/filters) for more information on customizing filters.
 
-## Visibility
+## [Visibility](#visibility)
 
 Adding column visibility is fairly simple using `@tanstack/table-core` visibility API.
 
-### Update `<DataTable />` routes/payments/data-table.svelte
+### [Update `<DataTable />`](#update-datatable--3)
+
+routes/payments/data-table.svelte
 
 ```svelte
 <script lang="ts" generics="TData, TValue">
@@ -1104,11 +1120,11 @@ Adding column visibility is fairly simple using `@tanstack/table-core` visibilit
 
 This adds a dropdown menu that you can use to toggle column visibility.
 
-## Row Selection
+## [Row Selection](#row-selection)
 
 Next, we're going to add row selection to our table.
 
-### Define `<DataTableCheckbox />` component
+### [Define `<DataTableCheckbox />` component](#define-datatablecheckbox--component)
 
 We'll start by defining the checkbox component in our `data-table-checkbox.svelte` component.
 
@@ -1127,7 +1143,7 @@ routes/payments/data-table-checkbox.svelte
 <Checkbox bind:checked={() => checked, onCheckedChange} {...restProps} />
 ```
 
-### Update columns definition
+### [Update columns definition](#update-columns-definition-2)
 
 Now that we have a new component, we can add a `select` column definition to render a checkbox.
 
@@ -1161,7 +1177,9 @@ export const columns: ColumnDef<Payment>[] = [
   },];
 ```
 
-### Update `<DataTable />` routes/payments/data-table.svelte
+### [Update `<DataTable />`](#update-datatable--4)
+
+routes/payments/data-table.svelte
 
 ```svelte
 <script lang="ts" generics="TData, TValue">
@@ -1251,7 +1269,7 @@ export const columns: ColumnDef<Payment>[] = [
 
 This adds a checkbox to each row and a checkbox in the header to select all rows.
 
-### Show selected rows
+### [Show selected rows](#show-selected-rows)
 
 You can show the number of selected rows using the `table.getFilteredSelectedRowModel()` API.
 
@@ -1262,6 +1280,6 @@ You can show the number of selected rows using the `table.getFilteredSelectedRow
 </div>
 ```
 
-## Reusable Components
+## [Reusable Components](#reusable-components)
 
 Check out the [Tasks](https://shadcn-svelte.com/examples/tasks) example to learn about creating reusable components for your data tables.
