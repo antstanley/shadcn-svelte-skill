@@ -2,6 +2,12 @@
 
 Displays a form textarea or a component that looks like a textarea.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import { Textarea } from "$lib/components/ui/textarea/index.js";
@@ -9,7 +15,9 @@ Displays a form textarea or a component that looks like a textarea.
 <Textarea placeholder="Type your message here." />
 ```
 
-## Installation
+View Code
+
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add textarea
@@ -23,7 +31,7 @@ npx shadcn-svelte@latest add textarea
 bun x shadcn-svelte@latest add textarea
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -35,9 +43,9 @@ bun x shadcn-svelte@latest add textarea
 <Textarea />
 ```
 
-## Examples
+## [Examples](#examples)
 
-### Default
+### [Default](#default)
 
 ```svelte
 <script lang="ts">
@@ -46,7 +54,9 @@ bun x shadcn-svelte@latest add textarea
 <Textarea placeholder="Type your message here." />
 ```
 
-### Disabled
+View Code
+
+### [Disabled](#disabled)
 
 ```svelte
 <script lang="ts">
@@ -55,7 +65,9 @@ bun x shadcn-svelte@latest add textarea
 <Textarea disabled placeholder="Type your message here." />
 ```
 
-### With Label
+View Code
+
+### [With Label](#with-label)
 
 ```svelte
 <script lang="ts">
@@ -68,7 +80,9 @@ bun x shadcn-svelte@latest add textarea
 </div>
 ```
 
-### With Text
+View Code
+
+### [With Text](#with-text)
 
 ```svelte
 <script lang="ts">
@@ -78,13 +92,15 @@ bun x shadcn-svelte@latest add textarea
 <div class="grid w-full gap-1.5">
   <Label for="message-2">Your Message</Label>
   <Textarea placeholder="Type your message here." id="message-2" />
-  <p class="text-muted-foreground text-sm">
+  <p class="text-sm text-muted-foreground">
     Your message will be copied to the support team.
   </p>
 </div>
 ```
 
-### With Button
+View Code
+
+### [With Button](#with-button)
 
 ```svelte
 <script lang="ts">
@@ -96,3 +112,5 @@ bun x shadcn-svelte@latest add textarea
   <Button>Send message</Button>
 </div>
 ```
+
+View Code
