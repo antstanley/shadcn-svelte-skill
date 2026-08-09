@@ -6,6 +6,12 @@ For sighted users to preview content available behind a link.
 
 [API Reference](https://bits-ui.com/docs/components/link-preview#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import CalendarDaysIcon from "@lucide/svelte/icons/calendar-days";
@@ -32,7 +38,7 @@ For sighted users to preview content available behind a link.
         <p class="text-sm">Cybernetically enhanced web apps.</p>
         <div class="flex items-center pt-2">
           <CalendarDaysIcon class="me-2 size-4 opacity-70" />
-          <span class="text-muted-foreground text-xs">
+          <span class="text-xs text-muted-foreground">
             Joined September 2022
           </span>
         </div>
@@ -42,7 +48,9 @@ For sighted users to preview content available behind a link.
 </HoverCard.Root>
 ```
 
-## Installation
+View Code
+
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add hover-card
@@ -56,7 +64,7 @@ npx shadcn-svelte@latest add hover-card
 bun x shadcn-svelte@latest add hover-card
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
