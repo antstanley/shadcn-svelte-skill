@@ -2,16 +2,22 @@
 
 A versatile component that you can use to display any content.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 The `Item` component is a straightforward flex container that can house nearly any type of content. Use it to display a title, description, and actions. Group it with the `ItemGroup` component to create a list of items.
 
 You can pretty much achieve the same result with the `div` element and some classes, but **I've built this so many times** that I decided to create a component for it. Now I use it all the time.
 
 ```svelte
 <script lang="ts">
-  import * as Item from "$lib/components/ui/item/index.js";
-  import { Button } from "$lib/components/ui/button/index.js";
   import BadgeCheckIcon from "@lucide/svelte/icons/badge-check";
   import ChevronRightIcon from "@lucide/svelte/icons/chevron-right";
+  import * as Item from "$lib/components/ui/item/index.js";
+  import { Button } from "$lib/components/ui/button/index.js";
 </script>
 <div class="flex w-full max-w-md flex-col gap-6">
   <Item.Root variant="outline">
@@ -43,7 +49,9 @@ You can pretty much achieve the same result with the `div` element and some clas
 </div>
 ```
 
-## Installation
+View Code
+
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add item
@@ -57,7 +65,7 @@ npx shadcn-svelte@latest add item
 bun x shadcn-svelte@latest add item
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -78,15 +86,15 @@ bun x shadcn-svelte@latest add item
 </Item.Root>
 ```
 
-## Item vs Field
+## [Item vs Field](#item-vs-field)
 
 Use Field if you need to display a form input such as a checkbox, input, radio, or select.
 
 If you only need to display content such as a title, description, and actions, use `Item`.
 
-## Examples
+## [Examples](#examples)
 
-### Variants
+### [Variants](#variants)
 
 ```svelte
 <script lang="ts">
@@ -97,9 +105,9 @@ If you only need to display content such as a title, description, and actions, u
   <Item.Root>
     <Item.Content>
       <Item.Title>Default Variant</Item.Title>
-      <Item.Description>
-        Standard styling with subtle background and borders.
-      </Item.Description>
+      <Item.Description
+        >Standard styling with subtle background and borders.</Item.Description
+      >
     </Item.Content>
     <Item.Actions>
       <Button variant="outline" size="sm">Open</Button>
@@ -130,16 +138,18 @@ If you only need to display content such as a title, description, and actions, u
 </div>
 ```
 
-### Size
+View Code
+
+### [Size](#size)
 
 The `Item` component has different sizes for different use cases. For example, you can use the `sm` size for a compact item or the default size for a standard item.
 
 ```svelte
 <script lang="ts">
-  import * as Item from "$lib/components/ui/item/index.js";
-  import { Button } from "$lib/components/ui/button/index.js";
   import BadgeCheckIcon from "@lucide/svelte/icons/badge-check";
   import ChevronRightIcon from "@lucide/svelte/icons/chevron-right";
+  import * as Item from "$lib/components/ui/item/index.js";
+  import { Button } from "$lib/components/ui/button/index.js";
 </script>
 <div class="flex w-full max-w-md flex-col gap-6">
   <Item.Root variant="outline">
@@ -171,13 +181,15 @@ The `Item` component has different sizes for different use cases. For example, y
 </div>
 ```
 
-### Icon
+View Code
+
+### [Icon](#icon)
 
 ```svelte
 <script lang="ts">
+  import ShieldAlertIcon from "@lucide/svelte/icons/shield-alert";
   import * as Item from "$lib/components/ui/item/index.js";
   import { Button } from "$lib/components/ui/button/index.js";
-  import ShieldAlertIcon from "@lucide/svelte/icons/shield-alert";
 </script>
 <div class="flex w-full max-w-lg flex-col gap-6">
   <Item.Root variant="outline">
@@ -197,14 +209,16 @@ The `Item` component has different sizes for different use cases. For example, y
 </div>
 ```
 
-### Avatar
+View Code
+
+### [Avatar](#avatar)
 
 ```svelte
 <script lang="ts">
-  import * as Item from "$lib/components/ui/item/index.js";
-  import * as Avatar from "$lib/components/ui/avatar/index.js";
-  import { Button } from "$lib/components/ui/button/index.js";
   import Plus from "@lucide/svelte/icons/plus";
+  import * as Avatar from "$lib/components/ui/avatar/index.js";
+  import * as Item from "$lib/components/ui/item/index.js";
+  import { Button } from "$lib/components/ui/button/index.js";
 </script>
 <div class="flex w-full max-w-lg flex-col gap-6">
   <Item.Root variant="outline">
@@ -232,7 +246,7 @@ The `Item` component has different sizes for different use cases. For example, y
   <Item.Root variant="outline">
     <Item.Media>
       <div
-        class="*:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:grayscale"
+        class="flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:ring-background *:data-[slot=avatar]:grayscale"
       >
         <Avatar.Root class="hidden sm:flex">
           <Avatar.Image src="https://github.com/shadcn.png" alt="@shadcn" />
@@ -267,7 +281,9 @@ The `Item` component has different sizes for different use cases. For example, y
 </div>
 ```
 
-### Image
+View Code
+
+### [Image](#image)
 
 ```svelte
 <script lang="ts">
@@ -326,14 +342,16 @@ The `Item` component has different sizes for different use cases. For example, y
 </div>
 ```
 
-### Group
+View Code
+
+### [Group](#group)
 
 ```svelte
 <script lang="ts">
-  import * as Item from "$lib/components/ui/item/index.js";
-  import * as Avatar from "$lib/components/ui/avatar/index.js";
-  import { Button } from "$lib/components/ui/button/index.js";
   import Plus from "@lucide/svelte/icons/plus";
+  import * as Avatar from "$lib/components/ui/avatar/index.js";
+  import * as Item from "$lib/components/ui/item/index.js";
+  import { Button } from "$lib/components/ui/button/index.js";
   const people = [
     {
       username: "shadcn",
@@ -379,7 +397,9 @@ The `Item` component has different sizes for different use cases. For example, y
 </div>
 ```
 
-### Header
+View Code
+
+### [Header](#header)
 
 ```svelte
 <script lang="ts">
@@ -431,15 +451,17 @@ The `Item` component has different sizes for different use cases. For example, y
 </div>
 ```
 
-### Link
+View Code
+
+### [Link](#link)
 
 To render an item as a link, use the the `child` snippet. The hover and focus states will be applied to the anchor element.
 
 ```svelte
 <script lang="ts">
-  import * as Item from "$lib/components/ui/item/index.js";
   import ChevronRightIcon from "@lucide/svelte/icons/chevron-right";
   import ExternalLinkIcon from "@lucide/svelte/icons/external-link";
+  import * as Item from "$lib/components/ui/item/index.js";
 </script>
 <div class="flex w-full max-w-md flex-col gap-4">
   <Item.Root>
@@ -447,9 +469,9 @@ To render an item as a link, use the the `child` snippet. The hover and focus st
       <a href="#/" {...props}>
         <Item.Content>
           <Item.Title>Visit our documentation</Item.Title>
-          <Item.Description>
-            Learn how to get started with our components.
-          </Item.Description>
+          <Item.Description
+            >Learn how to get started with our components.</Item.Description
+          >
         </Item.Content>
         <Item.Actions>
           <ChevronRightIcon class="size-4" />
@@ -462,9 +484,9 @@ To render an item as a link, use the the `child` snippet. The hover and focus st
       <a href="#/" target="_blank" rel="noopener noreferrer" {...props}>
         <Item.Content>
           <Item.Title>External resource</Item.Title>
-          <Item.Description>
-            Opens in a new tab with security attributes.
-          </Item.Description>
+          <Item.Description
+            >Opens in a new tab with security attributes.</Item.Description
+          >
         </Item.Content>
         <Item.Actions>
           <ExternalLinkIcon class="size-4" />
@@ -475,15 +497,17 @@ To render an item as a link, use the the `child` snippet. The hover and focus st
 </div>
 ```
 
-### Dropdown
+View Code
+
+### [Dropdown](#dropdown)
 
 ```svelte
 <script lang="ts">
-  import * as Item from "$lib/components/ui/item/index.js";
+  import ChevronDown from "@lucide/svelte/icons/chevron-down";
   import * as Avatar from "$lib/components/ui/avatar/index.js";
   import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
+  import * as Item from "$lib/components/ui/item/index.js";
   import { Button } from "$lib/components/ui/button/index.js";
-  import ChevronDown from "@lucide/svelte/icons/chevron-down";
   const people = [
     {
       username: "shadcn",
@@ -532,3 +556,5 @@ To render an item as a link, use the the `child` snippet. The hover and focus st
   </DropdownMenu.Root>
 </div>
 ```
+
+View Code
