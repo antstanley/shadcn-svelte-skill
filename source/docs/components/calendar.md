@@ -6,6 +6,12 @@ A calendar component that allows users to select dates.
 
 [API Reference](https://bits-ui.com/docs/components/calendar#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import { getLocalTimeZone, today } from "@internationalized/date";
@@ -20,13 +26,15 @@ A calendar component that allows users to select dates.
 />
 ```
 
-## Blocks
+View Code
+
+## [Blocks](#blocks)
 
 We have built a collection of 30+ calendar blocks that you can use to build your own calendar components.
 
 See call calendar blocks in the [Blocks Library](https://shadcn-svelte.com/blocks/calendar) page.
 
-## Installation
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add calendar
@@ -40,24 +48,24 @@ npx shadcn-svelte@latest add calendar
 bun x shadcn-svelte@latest add calendar
 ```
 
-## About
+## [About](#about)
 
 The `<Calendar />` component is built on top of the [Bits UI Calendar](https://www.bits-ui.com/docs/components/calendar) component, which uses the [@internationalized/date](https://react-spectrum.adobe.com/internationalized/date/index.html) package to handle dates.
 
 If you're looking for a range calendar, check out the [Range Calendar](https://shadcn-svelte.com/docs/components/range-calendar) component.
 
-## Date Picker
+## [Date Picker](#date-picker)
 
 You can use the `<Calendar />` component to build a date picker. See the [Date Picker](https://shadcn-svelte.com/docs/components/date-picker) page for more information.
 
-## Examples
+## [Examples](#examples)
 
-### Range Calendar
+### [Range Calendar](#range-calendar)
 
 ```svelte
 <script lang="ts">
-  import Calendar from "$lib/components/ui/calendar/calendar.svelte";
   import { CalendarDate } from "@internationalized/date";
+  import Calendar from "$lib/components/ui/calendar/calendar.svelte";
   let value = $state<CalendarDate | undefined>(new CalendarDate(2025, 6, 12));
 </script>
 <Calendar
@@ -68,14 +76,16 @@ You can use the `<Calendar />` component to build a date picker. See the [Date P
 />
 ```
 
-### Month and Year Selector
+View Code
+
+### [Month and Year Selector](#month-and-year-selector)
 
 ```svelte
 <script lang="ts">
-  import Calendar from "$lib/components/ui/calendar/calendar.svelte";
-  import * as Select from "$lib/components/ui/select/index.js";
-  import { Label } from "$lib/components/ui/label/index.js";
   import { CalendarDate } from "@internationalized/date";
+  import * as Select from "$lib/components/ui/select/index.js";
+  import Calendar from "$lib/components/ui/calendar/calendar.svelte";
+  import { Label } from "$lib/components/ui/label/index.js";
   import type { ComponentProps } from "svelte";
   let value = $state<CalendarDate>(new CalendarDate(2025, 6, 12));
   let dropdown =
@@ -110,7 +120,7 @@ You can use the `<Calendar />` component to build a date picker. See the [Date P
   <div class="flex flex-col gap-3">
     <Label for="{id}-dropdown" class="px-1">Dropdown</Label>
     <Select.Root type="single" bind:value={dropdown}>
-      <Select.Trigger id="{id}-dropdown" size="sm" class="bg-background w-full">
+      <Select.Trigger id="{id}-dropdown" size="sm" class="w-full bg-background">
         {selectedDropdown}
       </Select.Trigger>
       <Select.Content align="center">
@@ -123,20 +133,22 @@ You can use the `<Calendar />` component to build a date picker. See the [Date P
 </div>
 ```
 
-### Date of Birth Picker
+View Code
+
+### [Date of Birth Picker](#date-of-birth-picker)
 
 ```svelte
 <script lang="ts">
-  import Calendar from "$lib/components/ui/calendar/calendar.svelte";
-  import * as Popover from "$lib/components/ui/popover/index.js";
-  import { Button } from "$lib/components/ui/button/index.js";
-  import { Label } from "$lib/components/ui/label/index.js";
   import ChevronDownIcon from "@lucide/svelte/icons/chevron-down";
   import {
     getLocalTimeZone,
     today,
     type CalendarDate
   } from "@internationalized/date";
+  import * as Popover from "$lib/components/ui/popover/index.js";
+  import Calendar from "$lib/components/ui/calendar/calendar.svelte";
+  import { Button } from "$lib/components/ui/button/index.js";
+  import { Label } from "$lib/components/ui/label/index.js";
   const id = $props.id();
   let open = $state(false);
   let value = $state<CalendarDate | undefined>();
@@ -173,17 +185,19 @@ You can use the `<Calendar />` component to build a date picker. See the [Date P
 </div>
 ```
 
-### Date and Time Picker
+View Code
+
+### [Date and Time Picker](#date-and-time-picker)
 
 ```svelte
 <script lang="ts">
-  import Calendar from "$lib/components/ui/calendar/calendar.svelte";
-  import * as Popover from "$lib/components/ui/popover/index.js";
-  import { Button } from "$lib/components/ui/button/index.js";
-  import { Label } from "$lib/components/ui/label/index.js";
-  import { Input } from "$lib/components/ui/input/index.js";
   import ChevronDownIcon from "@lucide/svelte/icons/chevron-down";
   import { getLocalTimeZone } from "@internationalized/date";
+  import * as Popover from "$lib/components/ui/popover/index.js";
+  import Calendar from "$lib/components/ui/calendar/calendar.svelte";
+  import { Button } from "$lib/components/ui/button/index.js";
+  import { Input } from "$lib/components/ui/input/index.js";
+  import { Label } from "$lib/components/ui/label/index.js";
   import type { CalendarDate } from "@internationalized/date";
   const id = $props.id();
   let open = $state(false);
@@ -226,31 +240,33 @@ You can use the `<Calendar />` component to build a date picker. See the [Date P
       id="{id}-time"
       step="1"
       value="10:30:00"
-      class="bg-background appearance-none [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none"
+      class="appearance-none bg-background [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none"
     />
   </div>
 </div>
 ```
 
-### Natural Language Picker
+View Code
+
+### [Natural Language Picker](#natural-language-picker)
 
 This component uses the `chrono-node` library to parse natural language dates.
 
 ```svelte
 <script lang="ts">
-  import { Label } from "$lib/components/ui/label/index.js";
-  import * as Popover from "$lib/components/ui/popover/index.js";
-  import { Button } from "$lib/components/ui/button/index.js";
-  import { Calendar } from "$lib/components/ui/calendar/index.js";
-  import { Input } from "$lib/components/ui/input/index.js";
   import CalendarIcon from "@lucide/svelte/icons/calendar";
-  import { parseDate } from "chrono-node";
   import {
     CalendarDate,
     getLocalTimeZone,
     type DateValue
   } from "@internationalized/date";
+  import { parseDate } from "chrono-node";
   import { untrack } from "svelte";
+  import * as Popover from "$lib/components/ui/popover/index.js";
+  import { Button } from "$lib/components/ui/button/index.js";
+  import { Calendar } from "$lib/components/ui/calendar/index.js";
+  import { Input } from "$lib/components/ui/input/index.js";
+  import { Label } from "$lib/components/ui/label/index.js";
   function formatDate(date: DateValue | undefined) {
     if (!date) return "";
     return date.toDate(getLocalTimeZone()).toLocaleDateString("en-US", {
@@ -329,14 +345,16 @@ This component uses the `chrono-node` library to parse natural language dates.
       </Popover.Content>
     </Popover.Root>
   </div>
-  <div class="text-muted-foreground px-1 text-sm">
+  <div class="px-1 text-sm text-muted-foreground">
     Your post will be published on
     <span class="font-medium">{formatDate(value)}</span>.
   </div>
 </div>
 ```
 
-## Upgrade Guide
+View Code
+
+## [Upgrade Guide](#upgrade-guide)
 
 You can upgrade to the latest version of the `<Calendar />` component by running the following command:
 
@@ -354,7 +372,7 @@ bun x shadcn-svelte@latest add calendar
 
 When you're prompted to overwrite the existing files, select `Yes`. **If you have made any changes to the `Calendar` component, you will need to merge your changes with the new version.**
 
-#### Installing Blocks
+#### [Installing Blocks](#installing-blocks)
 
 After upgrading the `Calendar` component, you can add the new blocks with the following:
 

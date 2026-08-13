@@ -2,7 +2,15 @@
 
 A styled native HTML select element with consistent design system integration.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 For a styled select component, see the [Select](https://shadcn-svelte.com/docs/components/select) component.
+
+View Code
 
 ```svelte
 <script lang="ts">
@@ -17,7 +25,7 @@ For a styled select component, see the [Select](https://shadcn-svelte.com/docs/c
 </NativeSelect.Root>
 ```
 
-## Installation
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add native-select
@@ -31,7 +39,7 @@ npx shadcn-svelte@latest add native-select
 bun x shadcn-svelte@latest add native-select
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -50,9 +58,9 @@ bun x shadcn-svelte@latest add native-select
 </NativeSelect.Root>
 ```
 
-## Examples
+## [Examples](#examples)
 
-### With Groups
+### [With Groups](#with-groups)
 
 Organize options using `NativeSelect.OptGroup` for better categorization.
 
@@ -88,6 +96,8 @@ Organize options using `NativeSelect.OptGroup` for better categorization.
 </NativeSelect.Root>
 ```
 
+View Code
+
 ```svelte
 <NativeSelect.Root>
   <NativeSelect.Option value="">Select a food</NativeSelect.Option>
@@ -104,7 +114,7 @@ Organize options using `NativeSelect.OptGroup` for better categorization.
 </NativeSelect.Root>
 ```
 
-### Disabled State
+### [Disabled State](#disabled-state)
 
 Disable individual options or the entire select component.
 
@@ -121,7 +131,9 @@ Disable individual options or the entire select component.
 </NativeSelect.Root>
 ```
 
-### Invalid State
+View Code
+
+### [Invalid State](#invalid-state)
 
 Show validation errors with the `aria-invalid` attribute and error styling.
 
@@ -138,6 +150,8 @@ Show validation errors with the `aria-invalid` attribute and error styling.
 </NativeSelect.Root>
 ```
 
+View Code
+
 ```svelte
 <NativeSelect.Root aria-invalid="true">
   <NativeSelect.Option value="">Select a country</NativeSelect.Option>
@@ -147,14 +161,14 @@ Show validation errors with the `aria-invalid` attribute and error styling.
 </NativeSelect.Root>
 ```
 
-## Native Select vs Select
+## [Native Select vs Select](#native-select-vs-select)
 
 - Use `NativeSelect` when you need native browser behavior, better performance, or mobile-optimized dropdowns.
 - Use `Select` when you need custom styling, animations, or complex interactions.
 
 The `NativeSelect` component provides native HTML select functionality with consistent styling that matches your design system.
 
-## Accessibility
+## [Accessibility](#accessibility)
 
 - The component maintains all native HTML select accessibility features.  
 - Screen readers can navigate through options using arrow keys.  
@@ -169,14 +183,14 @@ The `NativeSelect` component provides native HTML select functionality with cons
 </NativeSelect.Root>
 ```
 
-## API Reference
+## [API Reference](#api-reference)
 
-### NativeSelect.Root
+### [NativeSelect.Root](#nativeselectroot)
 
 The main select component that wraps the native HTML select element.
 
-| Prop                  | Type            | Default |
-| ------------------------------------------------- | ------------------------------------------- | ------------------------------------------------- |
+| Prop                   | Type            | Default  |
+| ---------------------------------------------------- | --------------------------------------------- | ----------------------------------------------------- |
 | `class` | `string` |  |
 
 All other props are passed through to the underlying `<select>` element.
@@ -188,15 +202,15 @@ All other props are passed through to the underlying `<select>` element.
 </NativeSelect.Root>
 ```
 
-### NativeSelect.Option
+### [NativeSelect.Option](#nativeselectoption)
 
 Represents an individual option within the select.
 
-| Prop                     | Type             | Default        |
-| ---------------------------------------------------- | -------------------------------------------- | -------------------------------------------------------- |
+| Prop                      | Type             | Default        |
+| ------------------------------------------------------- | ---------------------------------------------- | ----------------------------------------------------------- |
 | `value`    | `string`  |                       |
 | `disabled` | `boolean` | `false` |
-| `class`    | `string`  |         |
+| `class`    | `string`  |        |
 
 All other props are passed through to the underlying `<option>` element.
 
@@ -205,15 +219,15 @@ All other props are passed through to the underlying `<option>` element.
 <NativeSelect.Option value="banana" disabled>Banana</NativeSelect.Option>
 ```
 
-### NativeSelect.OptGroup
+### [NativeSelect.OptGroup](#nativeselectoptgroup)
 
 Groups related options together for better organization.
 
-| Prop                     | Type             | Default        |
-| ---------------------------------------------------- | -------------------------------------------- | -------------------------------------------------------- |
+| Prop                      | Type             | Default        |
+| ------------------------------------------------------- | ---------------------------------------------- | ----------------------------------------------------------- |
 | `label`    | `string`  |                       |
 | `disabled` | `boolean` | `false` |
-| `class`    | `string`  |         |
+| `class`    | `string`  |        |
 
 All other props are passed through to the underlying `<optgroup>` element.
 
