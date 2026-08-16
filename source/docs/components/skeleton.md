@@ -2,6 +2,12 @@
 
 Use to show a placeholder while content is loading.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import { Skeleton } from "$lib/components/ui/skeleton/index.js";
@@ -15,7 +21,9 @@ Use to show a placeholder while content is loading.
 </div>
 ```
 
-## Installation
+View Code
+
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add skeleton
@@ -29,7 +37,7 @@ npx shadcn-svelte@latest add skeleton
 bun x shadcn-svelte@latest add skeleton
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -41,9 +49,9 @@ bun x shadcn-svelte@latest add skeleton
 <Skeleton class="h-[20px] w-[100px] rounded-full" />
 ```
 
-## Examples
+## [Examples](#examples)
 
-## Card
+## [Card](#card)
 
 ```svelte
 <script lang="ts">
@@ -57,3 +65,5 @@ bun x shadcn-svelte@latest add skeleton
   </div>
 </div>
 ```
+
+View Code
