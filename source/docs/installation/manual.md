@@ -2,7 +2,13 @@
 
 How to setup shadcn-svelte manually.
 
-### Add Tailwind
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
+### [Add Tailwind](#add-tailwind)
 
 Use the `sv` CLI to add Tailwind CSS to your project.
 
@@ -18,39 +24,39 @@ npx sv add tailwindcss
 bun x sv add tailwindcss
 ```
 
-### Add dependencies
+### [Add dependencies](#add-dependencies)
 
 Add the following dependencies to your project:
 
 ```bash
-pnpm i tailwind-variants clsx tailwind-merge tw-animate-css
+pnpm i tailwind-variants clsx tailwind-merge tw-animate-css -D
 ```
 
 ```bash
-npm i tailwind-variants clsx tailwind-merge tw-animate-css
+npm i tailwind-variants clsx tailwind-merge tw-animate-css -D
 ```
 
 ```bash
-bun install tailwind-variants clsx tailwind-merge tw-animate-css
+bun install tailwind-variants clsx tailwind-merge tw-animate-css -D
 ```
 
-### Add icon library
+### [Add icon library](#add-icon-library)
 
 Install `@lucide/svelte`:
 
 ```bash
-pnpm i @lucide/svelte
+pnpm i @lucide/svelte -D
 ```
 
 ```bash
-npm i @lucide/svelte
+npm i @lucide/svelte -D
 ```
 
 ```bash
-bun install @lucide/svelte
+bun install @lucide/svelte -D
 ```
 
-### Configure path aliases
+### [Configure path aliases](#configure-path-aliases)
 
 If you are using SvelteKit and are not using the default alias `$lib`, you'll need to update your `svelte.config.js` file to include those aliases.
 
@@ -98,7 +104,7 @@ export default defineConfig({
 });
 ```
 
-### Configure styles
+### [Configure styles](#configure-styles)
 
 Add the following to your global CSS file. You can learn more about using CSS variables for theming in the [theming section](https://shadcn-svelte.com/docs/theming).
 
@@ -223,7 +229,7 @@ src/routes/layout.css
 
 Feel free to add or modify as needed to suit your project.
 
-### Configure utils
+### [Configure utils](#configure-utils)
 
 You'll want to create a `cn` helper to make it easier to conditionally add and merge Tailwind CSS classes.
 
@@ -237,7 +243,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 ```
 
-### Import styles to your app
+### [Import styles to your app](#import-styles-to-your-app)
 
 Create `src/routes/+layout.svelte` and import the styles:
 
@@ -251,7 +257,7 @@ src/routes/+layout.svelte
 {@render children?.()}
 ```
 
-### That's it
+### [That's it](#thats-it)
 
 You can now start adding components to your project.
 
