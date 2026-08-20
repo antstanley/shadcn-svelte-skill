@@ -6,6 +6,12 @@ A visually persistent menu common in desktop applications that provides quick ac
 
 [API Reference](https://bits-ui.com/docs/components/menubar#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import * as Menubar from "$lib/components/ui/menubar/index.js";
@@ -71,9 +77,9 @@ A visually persistent menu common in desktop applications that provides quick ac
       <Menubar.CheckboxItem bind:checked={bookmarks}
         >Always Show Bookmarks Bar</Menubar.CheckboxItem
       >
-      <Menubar.CheckboxItem bind:checked={fullUrls}>
-        Always Show Full URLs
-      </Menubar.CheckboxItem>
+      <Menubar.CheckboxItem bind:checked={fullUrls}
+        >Always Show Full URLs</Menubar.CheckboxItem
+      >
       <Menubar.Separator />
       <Menubar.Item inset>
         Reload <Menubar.Shortcut>R</Menubar.Shortcut>
@@ -104,7 +110,9 @@ A visually persistent menu common in desktop applications that provides quick ac
 </Menubar.Root>
 ```
 
-## Installation
+View Code
+
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add menubar
@@ -118,7 +126,7 @@ npx shadcn-svelte@latest add menubar
 bun x shadcn-svelte@latest add menubar
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
