@@ -2,6 +2,12 @@
 
 Autocomplete input and command palette with a list of suggestions.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import CheckIcon from "@lucide/svelte/icons/check";
@@ -91,13 +97,15 @@ Autocomplete input and command palette with a list of suggestions.
 </Popover.Root>
 ```
 
-## Installation
+View Code
+
+## [Installation](#installation)
 
 The Combobox is built using a composition of the `<Popover />` and the `<Command />` components.
 
 See installation instructions for the [Popover](https://shadcn-svelte.com/docs/components/popover#installation) and the [Command](https://shadcn-svelte.com/docs/components/command#installation) components.
 
-## Usage
+## [Usage](#usage)
 
 Expand
 
@@ -197,9 +205,9 @@ lib/components/example-combobox.svelte
 
 Expand
 
-## Examples
+## [Examples](#examples)
 
-### Combobox
+### [Combobox](#combobox)
 
 ```svelte
 <script lang="ts">
@@ -290,7 +298,9 @@ Expand
 </Popover.Root>
 ```
 
-### Popover
+View Code
+
+### [Popover](#popover)
 
 ```svelte
 <script lang="ts">
@@ -299,12 +309,12 @@ Expand
   import CircleCheckIcon from "@lucide/svelte/icons/circle-check";
   import CircleHelpIcon from "@lucide/svelte/icons/circle-help";
   import CircleXIcon from "@lucide/svelte/icons/circle-x";
-  import { type Component, tick } from "svelte";
   import { useId } from "bits-ui";
-  import { cn } from "$lib/utils.js";
-  import * as Popover from "$lib/components/ui/popover/index.js";
+  import { type Component, tick } from "svelte";
   import * as Command from "$lib/components/ui/command/index.js";
+  import * as Popover from "$lib/components/ui/popover/index.js";
   import { buttonVariants } from "$lib/components/ui/button/index.js";
+  import { cn } from "$lib/utils.js";
   type Status = {
     value: string;
     label: string;
@@ -352,7 +362,7 @@ Expand
   const triggerId = useId();
 </script>
 <div class="flex items-center space-x-4">
-  <p class="text-muted-foreground text-sm">Status</p>
+  <p class="text-sm text-muted-foreground">Status</p>
   <Popover.Root bind:open>
     <Popover.Trigger
       id={triggerId}
@@ -405,7 +415,9 @@ Expand
 </div>
 ```
 
-### Dropdown menu
+View Code
+
+### [Dropdown menu](#dropdown-menu)
 
 ```svelte
 <script lang="ts">
@@ -415,8 +427,8 @@ Expand
   import TrashIcon from "@lucide/svelte/icons/trash";
   import UserIcon from "@lucide/svelte/icons/user";
   import { tick } from "svelte";
-  import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
   import * as Command from "$lib/components/ui/command/index.js";
+  import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
   import { Button } from "$lib/components/ui/button/index.js";
   const labels = [
     "feature",
@@ -445,7 +457,7 @@ Expand
 >
   <p class="text-sm leading-none font-medium">
     <span
-      class="bg-primary text-primary-foreground me-2 rounded-lg px-2 py-1 text-xs"
+      class="me-2 rounded-lg bg-primary px-2 py-1 text-xs text-primary-foreground"
     >
       {selectedLabel}
     </span>
@@ -510,18 +522,20 @@ Expand
 </div>
 ```
 
-### Responsive
+View Code
+
+### [Responsive](#responsive)
 
 You can create a responsive combobox by using the `<Popover />` on desktop and the `<Drawer />` components on mobile.
 
 ```svelte
 <script lang="ts">
   import { browser } from "$app/environment";
-  import { Button } from "$lib/components/ui/button/index.js";
+  import { onMount } from "svelte";
   import * as Command from "$lib/components/ui/command/index.js";
   import * as Drawer from "$lib/components/ui/drawer/index.js";
   import * as Popover from "$lib/components/ui/popover/index.js";
-  import { onMount } from "svelte";
+  import { Button } from "$lib/components/ui/button/index.js";
   type Status = {
     value: string;
     label: string;
@@ -622,3 +636,5 @@ You can create a responsive combobox by using the `<Popover />` on desktop and t
   </Drawer.Root>
 {/if}
 ```
+
+View Code
