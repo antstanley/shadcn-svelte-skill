@@ -6,6 +6,12 @@ Displays a menu to the user  such as a set of actions or functions  triggered by
 
 [API Reference](https://bits-ui.com/docs/components/context-menu#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import * as ContextMenu from "$lib/components/ui/context-menu/index.js";
@@ -46,12 +52,12 @@ Displays a menu to the user  such as a set of actions or functions  triggered by
       </ContextMenu.SubContent>
     </ContextMenu.Sub>
     <ContextMenu.Separator />
-    <ContextMenu.CheckboxItem bind:checked={showBookmarks}>
-      Show Bookmarks
-    </ContextMenu.CheckboxItem>
-    <ContextMenu.CheckboxItem bind:checked={showFullURLs}>
-      Show Full URLs
-    </ContextMenu.CheckboxItem>
+    <ContextMenu.CheckboxItem bind:checked={showBookmarks}
+      >Show Bookmarks</ContextMenu.CheckboxItem
+    >
+    <ContextMenu.CheckboxItem bind:checked={showFullURLs}
+      >Show Full URLs</ContextMenu.CheckboxItem
+    >
     <ContextMenu.Separator />
     <ContextMenu.RadioGroup bind:value>
       <ContextMenu.Group>
@@ -65,7 +71,9 @@ Displays a menu to the user  such as a set of actions or functions  triggered by
 </ContextMenu.Root>
 ```
 
-## Installation
+View Code
+
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add context-menu
@@ -79,7 +87,7 @@ npx shadcn-svelte@latest add context-menu
 bun x shadcn-svelte@latest add context-menu
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
