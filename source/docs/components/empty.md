@@ -1,13 +1,19 @@
 # Empty
 
-Use the Empty component to display a empty state.
+Use the Empty component to display an empty state.
+
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
 
 ```svelte
 <script lang="ts">
+  import ArrowUpRightIcon from "@lucide/svelte/icons/arrow-up-right";
+  import FolderCodeIcon from "@tabler/icons-svelte/icons/folder-code";
   import * as Empty from "$lib/components/ui/empty/index.js";
   import { Button } from "$lib/components/ui/button/index.js";
-  import FolderCodeIcon from "@tabler/icons-svelte/icons/folder-code";
-  import ArrowUpRightIcon from "@lucide/svelte/icons/arrow-up-right";
 </script>
 <Empty.Root>
   <Empty.Header>
@@ -34,7 +40,9 @@ Use the Empty component to display a empty state.
 </Empty.Root>
 ```
 
-## Installation
+View Code
+
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add empty
@@ -48,7 +56,7 @@ npx shadcn-svelte@latest add empty
 bun x shadcn-svelte@latest add empty
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -72,17 +80,17 @@ bun x shadcn-svelte@latest add empty
 </Empty.Root>
 ```
 
-## Examples
+## [Examples](#examples)
 
-### Outline
+### [Outline](#outline)
 
-Use the `border` utility class to create a outline empty state.
+Use the `border` utility class to create an outline empty state.
 
 ```svelte
 <script lang="ts">
+  import CloudIcon from "@tabler/icons-svelte/icons/cloud";
   import * as Empty from "$lib/components/ui/empty/index.js";
   import { Button } from "$lib/components/ui/button/index.js";
-  import CloudIcon from "@tabler/icons-svelte/icons/cloud";
 </script>
 <Empty.Root class="border border-dashed">
   <Empty.Header>
@@ -100,28 +108,30 @@ Use the `border` utility class to create a outline empty state.
 </Empty.Root>
 ```
 
-### Background
+View Code
+
+### [Background](#background)
 
 Use the `bg-*` and `bg-gradient-*` utilities to add a background to the empty state.
 
 ```svelte
 <script lang="ts">
+  import RefreshCcwIcon from "@lucide/svelte/icons/refresh-ccw";
+  import BellIcon from "@tabler/icons-svelte/icons/bell";
   import * as Empty from "$lib/components/ui/empty/index.js";
   import { Button } from "$lib/components/ui/button/index.js";
-  import BellIcon from "@tabler/icons-svelte/icons/bell";
-  import RefreshCcwIcon from "@lucide/svelte/icons/refresh-ccw";
 </script>
 <Empty.Root
-  class="from-muted/50 to-background h-full bg-gradient-to-b from-30%"
+  class="h-full bg-gradient-to-b from-muted/50 from-30% to-background"
 >
   <Empty.Header>
     <Empty.Media variant="icon">
       <BellIcon />
     </Empty.Media>
     <Empty.Title>No Notifications</Empty.Title>
-    <Empty.Description>
-      You're all caught up. New notifications will appear here.
-    </Empty.Description>
+    <Empty.Description
+      >You're all caught up. New notifications will appear here.</Empty.Description
+    >
   </Empty.Header>
   <Empty.Content>
     <Button variant="outline" size="sm">
@@ -132,15 +142,17 @@ Use the `bg-*` and `bg-gradient-*` utilities to add a background to the empty st
 </Empty.Root>
 ```
 
-### Avatar
+View Code
+
+### [Avatar](#avatar)
 
 Use the `EmptyMedia` component to display an avatar in the empty state.
 
 ```svelte
 <script lang="ts">
+  import * as Avatar from "$lib/components/ui/avatar/index.js";
   import * as Empty from "$lib/components/ui/empty/index.js";
   import { Button } from "$lib/components/ui/button/index.js";
-  import * as Avatar from "$lib/components/ui/avatar/index.js";
 </script>
 <Empty.Root>
   <Empty.Header>
@@ -162,23 +174,23 @@ Use the `EmptyMedia` component to display an avatar in the empty state.
 </Empty.Root>
 ```
 
-### Avatar Group
+View Code
+
+### [Avatar Group](#avatar-group)
 
 Use the `EmptyMedia` component to display an avatar group in the empty state.
 
 ```svelte
 <script lang="ts">
+  import PlusIcon from "@lucide/svelte/icons/plus";
+  import * as Avatar from "$lib/components/ui/avatar/index.js";
   import * as Empty from "$lib/components/ui/empty/index.js";
   import { Button } from "$lib/components/ui/button/index.js";
-  import * as Avatar from "$lib/components/ui/avatar/index.js";
-  import PlusIcon from "@lucide/svelte/icons/plus";
 </script>
 <Empty.Root class="flex-none border">
   <Empty.Header>
     <Empty.Media>
-      <div
-        class="*:ring-background flex -space-x-2 *:size-12 *:ring-2 *:grayscale"
-      >
+      <Avatar.Group class="grayscale">
         <Avatar.Root>
           <Avatar.Image src="https://github.com/shadcn.png" alt="@shadcn" />
           <Avatar.Fallback>CN</Avatar.Fallback>
@@ -197,7 +209,7 @@ Use the `EmptyMedia` component to display an avatar group in the empty state.
           />
           <Avatar.Fallback>ER</Avatar.Fallback>
         </Avatar.Root>
-      </div>
+      </Avatar.Group>
     </Empty.Media>
     <Empty.Title>No Team Members</Empty.Title>
     <Empty.Description
@@ -213,16 +225,18 @@ Use the `EmptyMedia` component to display an avatar group in the empty state.
 </Empty.Root>
 ```
 
-### InputGroup
+View Code
+
+### [InputGroup](#inputgroup)
 
 You can add an `InputGroup` component to the `EmptyContent` component.
 
 ```svelte
 <script lang="ts">
+  import SearchIcon from "@lucide/svelte/icons/search";
   import * as Empty from "$lib/components/ui/empty/index.js";
   import * as InputGroup from "$lib/components/ui/input-group/index.js";
   import * as Kbd from "$lib/components/ui/kbd/index.js";
-  import SearchIcon from "@lucide/svelte/icons/search";
 </script>
 <Empty.Root>
   <Empty.Header>
@@ -247,3 +261,5 @@ You can add an `InputGroup` component to the `EmptyContent` component.
   </Empty.Content>
 </Empty.Root>
 ```
+
+View Code
