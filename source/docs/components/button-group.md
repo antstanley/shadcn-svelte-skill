@@ -2,6 +2,12 @@
 
 A container that groups related buttons together with consistent styling.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import Archive from "@lucide/svelte/icons/archive";
@@ -13,9 +19,9 @@ A container that groups related buttons together with consistent styling.
   import MoreHorizontal from "@lucide/svelte/icons/more-horizontal";
   import Tag from "@lucide/svelte/icons/tag";
   import Trash2 from "@lucide/svelte/icons/trash-2";
-  import { Button } from "$lib/components/ui/button/index.js";
   import * as ButtonGroup from "$lib/components/ui/button-group/index.js";
   import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
+  import { Button } from "$lib/components/ui/button/index.js";
   let label = $state("personal");
 </script>
 <ButtonGroup.Root>
@@ -75,9 +81,9 @@ A container that groups related buttons together with consistent styling.
             </DropdownMenu.SubTrigger>
             <DropdownMenu.SubContent>
               <DropdownMenu.RadioGroup bind:value={label}>
-                <DropdownMenu.RadioItem value="personal">
-                  Personal
-                </DropdownMenu.RadioItem>
+                <DropdownMenu.RadioItem value="personal"
+                  >Personal</DropdownMenu.RadioItem
+                >
                 <DropdownMenu.RadioItem value="work"
                   >Work</DropdownMenu.RadioItem
                 >
@@ -101,7 +107,9 @@ A container that groups related buttons together with consistent styling.
 </ButtonGroup.Root>
 ```
 
-## Installation
+View Code
+
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add button-group
@@ -115,7 +123,7 @@ npx shadcn-svelte@latest add button-group
 bun x shadcn-svelte@latest add button-group
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -130,7 +138,7 @@ bun x shadcn-svelte@latest add button-group
 </ButtonGroup.Root>
 ```
 
-## Accessibility
+## [Accessibility](#accessibility)
 
 - The `ButtonGroup` component has the `role` attribute set to `group` .
 - Use `tabindex` to navigate between the buttons in the group.
@@ -143,14 +151,14 @@ bun x shadcn-svelte@latest add button-group
 </ButtonGroup>
 ```
 
-## ButtonGroup vs ToggleGroup
+## [ButtonGroup vs ToggleGroup](#buttongroup-vs-togglegroup)
 
 - Use the `ButtonGroup` component when you want to group buttons that perform an action.
 - Use the `ToggleGroup` component when you want to group buttons that toggle a state.
 
-## Examples
+## [Examples](#examples)
 
-### Orientation
+### [Orientation](#orientation)
 
 Set the `orientation` prop to change the button group layout.
 
@@ -158,8 +166,8 @@ Set the `orientation` prop to change the button group layout.
 <script lang="ts">
   import Minus from "@lucide/svelte/icons/minus";
   import Plus from "@lucide/svelte/icons/plus";
-  import { Button } from "$lib/components/ui/button/index.js";
   import * as ButtonGroup from "$lib/components/ui/button-group/index.js";
+  import { Button } from "$lib/components/ui/button/index.js";
 </script>
 <ButtonGroup.Root
   orientation="vertical"
@@ -175,15 +183,17 @@ Set the `orientation` prop to change the button group layout.
 </ButtonGroup.Root>
 ```
 
-### Size
+View Code
+
+### [Size](#size)
 
 Control the size of buttons using the `size` prop on individual buttons.
 
 ```svelte
 <script lang="ts">
   import Plus from "@lucide/svelte/icons/plus";
-  import { Button } from "$lib/components/ui/button/index.js";
   import * as ButtonGroup from "$lib/components/ui/button-group/index.js";
+  import { Button } from "$lib/components/ui/button/index.js";
 </script>
 <div class="flex flex-col items-start gap-8">
   <ButtonGroup.Root>
@@ -213,7 +223,9 @@ Control the size of buttons using the `size` prop on individual buttons.
 </div>
 ```
 
-### Nested
+View Code
+
+### [Nested](#nested)
 
 Nest `ButtonGroup` components to create button groups with spacing.
 
@@ -221,8 +233,8 @@ Nest `ButtonGroup` components to create button groups with spacing.
 <script lang="ts">
   import ArrowLeft from "@lucide/svelte/icons/arrow-left";
   import ArrowRight from "@lucide/svelte/icons/arrow-right";
-  import { Button } from "$lib/components/ui/button/index.js";
   import * as ButtonGroup from "$lib/components/ui/button-group/index.js";
+  import { Button } from "$lib/components/ui/button/index.js";
 </script>
 <ButtonGroup.Root>
   <ButtonGroup.Root>
@@ -243,7 +255,9 @@ Nest `ButtonGroup` components to create button groups with spacing.
 </ButtonGroup.Root>
 ```
 
-### Separator
+View Code
+
+### [Separator](#separator)
 
 The `ButtonGroupSeparator` component visually divides buttons within a group.
 
@@ -251,8 +265,8 @@ Buttons with variant `outline` do not need a separator since they have a border.
 
 ```svelte
 <script lang="ts">
-  import { Button } from "$lib/components/ui/button/index.js";
   import * as ButtonGroup from "$lib/components/ui/button-group/index.js";
+  import { Button } from "$lib/components/ui/button/index.js";
 </script>
 <ButtonGroup.Root>
   <Button variant="secondary" size="sm">Copy</Button>
@@ -261,15 +275,17 @@ Buttons with variant `outline` do not need a separator since they have a border.
 </ButtonGroup.Root>
 ```
 
-### Split
+View Code
+
+### [Split](#split)
 
 Create a split button group by adding two buttons separated by a `ButtonGroupSeparator`.
 
 ```svelte
 <script lang="ts">
   import Plus from "@lucide/svelte/icons/plus";
-  import { Button } from "$lib/components/ui/button/index.js";
   import * as ButtonGroup from "$lib/components/ui/button-group/index.js";
+  import { Button } from "$lib/components/ui/button/index.js";
 </script>
 <ButtonGroup.Root>
   <Button variant="secondary">Button</Button>
@@ -280,15 +296,17 @@ Create a split button group by adding two buttons separated by a `ButtonGroupSep
 </ButtonGroup.Root>
 ```
 
-### Input
+View Code
+
+### [Input](#input)
 
 Wrap an `Input` component with buttons.
 
 ```svelte
 <script lang="ts">
   import Search from "@lucide/svelte/icons/search";
-  import { Button } from "$lib/components/ui/button/index.js";
   import * as ButtonGroup from "$lib/components/ui/button-group/index.js";
+  import { Button } from "$lib/components/ui/button/index.js";
   import { Input } from "$lib/components/ui/input/index.js";
 </script>
 <ButtonGroup.Root>
@@ -299,7 +317,9 @@ Wrap an `Input` component with buttons.
 </ButtonGroup.Root>
 ```
 
-### Input Group
+View Code
+
+### [Input Group](#input-group)
 
 Wrap an `InputGroup` component to create complex input layouts.
 
@@ -307,10 +327,10 @@ Wrap an `InputGroup` component to create complex input layouts.
 <script lang="ts">
   import AudioLines from "@lucide/svelte/icons/audio-lines";
   import Plus from "@lucide/svelte/icons/plus";
-  import { Button } from "$lib/components/ui/button/index.js";
   import * as ButtonGroup from "$lib/components/ui/button-group/index.js";
   import * as InputGroup from "$lib/components/ui/input-group/index.js";
   import * as Tooltip from "$lib/components/ui/tooltip/index.js";
+  import { Button } from "$lib/components/ui/button/index.js";
   let voiceEnabled = $state(false);
 </script>
 <ButtonGroup.Root class="[--radius:9999rem]">
@@ -319,7 +339,7 @@ Wrap an `InputGroup` component to create complex input layouts.
       <Plus />
     </Button>
   </ButtonGroup.Root>
-  <ButtonGroup.Root>
+  <ButtonGroup.Root class="flex-1">
     <InputGroup.Root>
       <InputGroup.Input
         placeholder={voiceEnabled
@@ -351,7 +371,9 @@ Wrap an `InputGroup` component to create complex input layouts.
 </ButtonGroup.Root>
 ```
 
-### Dropdown Menu
+View Code
+
+### [Dropdown Menu](#dropdown-menu)
 
 Create a split button group with a `DropdownMenu` component.
 
@@ -359,15 +381,15 @@ Create a split button group with a `DropdownMenu` component.
 <script lang="ts">
   import AlertTriangle from "@lucide/svelte/icons/alert-triangle";
   import ChevronDown from "@lucide/svelte/icons/chevron-down";
-  import CopyIcon from "@tabler/icons-svelte/icons/copy";
-  import CheckIcon from "@tabler/icons-svelte/icons/check";
   import Share from "@lucide/svelte/icons/share";
   import Trash from "@lucide/svelte/icons/trash";
   import UserRoundX from "@lucide/svelte/icons/user-round-x";
   import VolumeOff from "@lucide/svelte/icons/volume-off";
-  import { Button } from "$lib/components/ui/button/index.js";
+  import CheckIcon from "@tabler/icons-svelte/icons/check";
+  import CopyIcon from "@tabler/icons-svelte/icons/copy";
   import * as ButtonGroup from "$lib/components/ui/button-group/index.js";
   import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
+  import { Button } from "$lib/components/ui/button/index.js";
 </script>
 <ButtonGroup.Root>
   <Button variant="outline">Follow</Button>
@@ -418,17 +440,19 @@ Create a split button group with a `DropdownMenu` component.
 </ButtonGroup.Root>
 ```
 
-### Select
+View Code
+
+### [Select](#select)
 
 Pair with a `Select` component.
 
 ```svelte
 <script lang="ts">
   import ArrowRight from "@lucide/svelte/icons/arrow-right";
-  import { Button } from "$lib/components/ui/button/index.js";
   import * as ButtonGroup from "$lib/components/ui/button-group/index.js";
-  import { Input } from "$lib/components/ui/input/index.js";
   import * as Select from "$lib/components/ui/select/index.js";
+  import { Button } from "$lib/components/ui/button/index.js";
+  import { Input } from "$lib/components/ui/input/index.js";
   const CURRENCIES = [
     {
       value: "$",
@@ -470,7 +494,9 @@ Pair with a `Select` component.
 </ButtonGroup.Root>
 ```
 
-### Popover
+View Code
+
+### [Popover](#popover)
 
 Use with a `Popover` component.
 
@@ -478,9 +504,9 @@ Use with a `Popover` component.
 <script lang="ts">
   import Bot from "@lucide/svelte/icons/bot";
   import ChevronDown from "@lucide/svelte/icons/chevron-down";
-  import { Button } from "$lib/components/ui/button/index.js";
   import * as ButtonGroup from "$lib/components/ui/button-group/index.js";
   import * as Popover from "$lib/components/ui/popover/index.js";
+  import { Button } from "$lib/components/ui/button/index.js";
   import { Separator } from "$lib/components/ui/separator/index.js";
   import { Textarea } from "$lib/components/ui/textarea/index.js";
 </script>
@@ -522,3 +548,5 @@ Use with a `Popover` component.
   </Popover.Root>
 </ButtonGroup.Root>
 ```
+
+View Code
