@@ -2,17 +2,23 @@
 
 Display additional information or actions to an input or textarea.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
+  import ArrowUpIcon from "@lucide/svelte/icons/arrow-up";
+  import SearchIcon from "@lucide/svelte/icons/search";
   import IconCheck from "@tabler/icons-svelte/icons/check";
   import IconInfoCircle from "@tabler/icons-svelte/icons/info-circle";
   import IconPlus from "@tabler/icons-svelte/icons/plus";
-  import * as InputGroup from "$lib/components/ui/input-group/index.js";
   import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
+  import * as InputGroup from "$lib/components/ui/input-group/index.js";
   import * as Tooltip from "$lib/components/ui/tooltip/index.js";
   import { Separator } from "$lib/components/ui/separator/index.js";
-  import SearchIcon from "@lucide/svelte/icons/search";
-  import ArrowUpIcon from "@lucide/svelte/icons/arrow-up";
 </script>
 <div class="grid w-full max-w-sm gap-6">
   <InputGroup.Root>
@@ -81,7 +87,7 @@ Display additional information or actions to an input or textarea.
     <InputGroup.Input placeholder="@shadcn" />
     <InputGroup.Addon align="inline-end">
       <div
-        class="bg-primary text-primary-foreground flex size-4 items-center justify-center rounded-full"
+        class="flex size-4 items-center justify-center rounded-full bg-primary text-primary-foreground"
       >
         <IconCheck class="size-3" />
       </div>
@@ -90,7 +96,9 @@ Display additional information or actions to an input or textarea.
 </div>
 ```
 
-## Installation
+View Code
+
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add input-group
@@ -104,7 +112,7 @@ npx shadcn-svelte@latest add input-group
 bun x shadcn-svelte@latest add input-group
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -125,19 +133,19 @@ bun x shadcn-svelte@latest add input-group
 </InputGroup.Root>
 ```
 
-## Examples
+## [Examples](#examples)
 
-### Icon
+### [Icon](#icon)
 
 ```svelte
 <script lang="ts">
-  import * as InputGroup from "$lib/components/ui/input-group/index.js";
   import CheckIcon from "@lucide/svelte/icons/check";
   import CreditCardIcon from "@lucide/svelte/icons/credit-card";
   import InfoIcon from "@lucide/svelte/icons/info";
   import MailIcon from "@lucide/svelte/icons/mail";
   import SearchIcon from "@lucide/svelte/icons/search";
   import StarIcon from "@lucide/svelte/icons/star";
+  import * as InputGroup from "$lib/components/ui/input-group/index.js";
 </script>
 <div class="grid w-full max-w-sm gap-6">
   <InputGroup.Root>
@@ -171,7 +179,9 @@ bun x shadcn-svelte@latest add input-group
 </div>
 ```
 
-### Text
+View Code
+
+### [Text](#text)
 
 Display additional text information alongside inputs.
 
@@ -207,15 +217,17 @@ Display additional text information alongside inputs.
   <InputGroup.Root>
     <InputGroup.Textarea placeholder="Enter your message" />
     <InputGroup.Addon align="block-end">
-      <InputGroup.Text class="text-muted-foreground text-xs">
-        120 characters left
-      </InputGroup.Text>
+      <InputGroup.Text class="text-xs text-muted-foreground"
+        >120 characters left</InputGroup.Text
+      >
     </InputGroup.Addon>
   </InputGroup.Root>
 </div>
 ```
 
-### Button
+View Code
+
+### [Button](#button)
 
 Add buttons to perform actions within the input group.
 
@@ -268,7 +280,7 @@ Add buttons to perform actions within the input group.
         <p>You should not enter any sensitive information on this site.</p>
       </Popover.Content>
     </Popover.Root>
-    <InputGroup.Addon class="text-muted-foreground ps-1.5">
+    <InputGroup.Addon class="ps-1.5 text-muted-foreground">
       <InputGroup.Text>https://</InputGroup.Text>
     </InputGroup.Addon>
     <InputGroup.Input />
@@ -290,16 +302,18 @@ Add buttons to perform actions within the input group.
 </div>
 ```
 
-### Tooltip
+View Code
+
+### [Tooltip](#tooltip)
 
 Add tooltips to provide additional context or help.
 
 ```svelte
 <script lang="ts">
-  import * as InputGroup from "$lib/components/ui/input-group/index.js";
-  import * as Tooltip from "$lib/components/ui/tooltip/index.js";
   import HelpCircleIcon from "@lucide/svelte/icons/help-circle";
   import InfoIcon from "@lucide/svelte/icons/info";
+  import * as InputGroup from "$lib/components/ui/input-group/index.js";
+  import * as Tooltip from "$lib/components/ui/tooltip/index.js";
 </script>
 <div class="grid w-full max-w-sm gap-4">
   <InputGroup.Root>
@@ -371,7 +385,9 @@ Add tooltips to provide additional context or help.
 </div>
 ```
 
-### Textarea
+View Code
+
+### [Textarea](#textarea)
 
 Input groups also work with textarea components. Use `block-start` or `block-end` for alignment.
 
@@ -411,15 +427,17 @@ Input groups also work with textarea components. Use `block-start` or `block-end
 </div>
 ```
 
-### Spinner
+View Code
+
+### [Spinner](#spinner)
 
 Show loading indicators while processing input.
 
 ```svelte
 <script lang="ts">
+  import LoaderIcon from "@lucide/svelte/icons/loader";
   import * as InputGroup from "$lib/components/ui/input-group/index.js";
   import { Spinner } from "$lib/components/ui/spinner/index.js";
-  import LoaderIcon from "@lucide/svelte/icons/loader";
 </script>
 <div class="grid w-full max-w-sm gap-4">
   <InputGroup.Root data-disabled>
@@ -455,16 +473,18 @@ Show loading indicators while processing input.
 </div>
 ```
 
-### Label
+View Code
+
+### [Label](#label)
 
 Add labels within input groups to improve accessibility.
 
 ```svelte
 <script lang="ts">
+  import InfoIcon from "@lucide/svelte/icons/info";
   import * as InputGroup from "$lib/components/ui/input-group/index.js";
   import * as Label from "$lib/components/ui/label/index.js";
   import * as Tooltip from "$lib/components/ui/tooltip/index.js";
-  import InfoIcon from "@lucide/svelte/icons/info";
 </script>
 <div class="grid w-full max-w-sm gap-4">
   <InputGroup.Root>
@@ -500,16 +520,18 @@ Add labels within input groups to improve accessibility.
 </div>
 ```
 
-### Dropdown
+View Code
+
+### [Dropdown](#dropdown)
 
 Pair input groups with dropdown menus for complex interactions.
 
 ```svelte
 <script lang="ts">
-  import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
-  import * as InputGroup from "$lib/components/ui/input-group/index.js";
   import ChevronDownIcon from "@lucide/svelte/icons/chevron-down";
   import MoreHorizontalIcon from "@lucide/svelte/icons/more-horizontal";
+  import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
+  import * as InputGroup from "$lib/components/ui/input-group/index.js";
 </script>
 <div class="grid w-full max-w-sm gap-4">
   <InputGroup.Root>
@@ -562,16 +584,18 @@ Pair input groups with dropdown menus for complex interactions.
 </div>
 ```
 
-### Button Group
+View Code
+
+### [Button Group](#button-group)
 
 Wrap input groups with button groups to create prefixes and suffixes.
 
 ```svelte
 <script lang="ts">
+  import Link2Icon from "@lucide/svelte/icons/link-2";
   import * as ButtonGroup from "$lib/components/ui/button-group/index.js";
   import * as InputGroup from "$lib/components/ui/input-group/index.js";
   import * as Label from "$lib/components/ui/label/index.js";
-  import Link2Icon from "@lucide/svelte/icons/link-2";
 </script>
 <div class="grid w-full max-w-sm gap-6">
   <ButtonGroup.Root>
@@ -589,7 +613,9 @@ Wrap input groups with button groups to create prefixes and suffixes.
 </div>
 ```
 
-### Custom Input
+View Code
+
+### [Custom Input](#custom-input)
 
 Add the `data-slot="input-group-control"` attribute to your custom input for automatic behavior and focus state handling.
 
@@ -604,13 +630,14 @@ No style is applied to the custom input. Apply your own styles using the `class`
     <textarea
       data-slot="input-group-control"
       class="flex field-sizing-content min-h-16 w-full resize-none rounded-md bg-transparent px-3 py-2.5 text-base transition-[color,box-shadow] outline-none md:text-sm"
-      placeholder="Autoresize textarea..."
-    ></textarea>
+      placeholder="Autoresize textarea..."></textarea>
     <InputGroup.Addon align="block-end">
-      <InputGroup.Button class="ms-auto" size="sm" variant="default">
-        Submit
-      </InputGroup.Button>
+      <InputGroup.Button class="ms-auto" size="sm" variant="default"
+        >Submit</InputGroup.Button
+      >
     </InputGroup.Addon>
   </InputGroup.Root>
 </div>
 ```
+
+View Code
