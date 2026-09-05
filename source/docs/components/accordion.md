@@ -6,6 +6,12 @@ A vertically stacked set of interactive headings that each reveal a section of c
 
 [API Reference](https://bits-ui.com/docs/components/accordion#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import * as Accordion from "$lib/components/ui/accordion/index.js";
@@ -56,7 +62,9 @@ A vertically stacked set of interactive headings that each reveal a section of c
 </Accordion.Root>
 ```
 
-## Installation
+View Code
+
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add accordion
@@ -70,7 +78,7 @@ npx shadcn-svelte@latest add accordion
 bun x shadcn-svelte@latest add accordion
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
