@@ -2,18 +2,24 @@
 
 A date picker component with range and presets.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
-  import Calendar from "$lib/components/ui/calendar/calendar.svelte";
-  import * as Popover from "$lib/components/ui/popover/index.js";
-  import { Button } from "$lib/components/ui/button/index.js";
-  import { Label } from "$lib/components/ui/label/index.js";
   import ChevronDownIcon from "@lucide/svelte/icons/chevron-down";
   import {
     getLocalTimeZone,
     today,
     type CalendarDate
   } from "@internationalized/date";
+  import * as Popover from "$lib/components/ui/popover/index.js";
+  import Calendar from "$lib/components/ui/calendar/calendar.svelte";
+  import { Button } from "$lib/components/ui/button/index.js";
+  import { Label } from "$lib/components/ui/label/index.js";
   const id = $props.id();
   let open = $state(false);
   let value = $state<CalendarDate | undefined>();
@@ -50,13 +56,15 @@ A date picker component with range and presets.
 </div>
 ```
 
-## Installation
+View Code
+
+## [Installation](#installation)
 
 The Date Picker is built using a composition of the `<Popover />` and either the `<Calendar />` or `<RangeCalendar />` components.
 
 See installations instructions for the [Popover](https://shadcn-svelte.com/docs/components/popover#installation), [Calendar](https://shadcn-svelte.com/docs/components/calendar#installation), and [Range Calendar](https://shadcn-svelte.com/docs/components/range-calendar#installation) components.
 
-## Usage
+## [Usage](#usage)
 
 lib/components/example-date-picker.svelte
 
@@ -99,22 +107,22 @@ lib/components/example-date-picker.svelte
 </Popover.Root>
 ```
 
-## Examples
+## [Examples](#examples)
 
-### Date of Birth Picker
+### [Date of Birth Picker](#date-of-birth-picker)
 
 ```svelte
 <script lang="ts">
-  import Calendar from "$lib/components/ui/calendar/calendar.svelte";
-  import * as Popover from "$lib/components/ui/popover/index.js";
-  import { Button } from "$lib/components/ui/button/index.js";
-  import { Label } from "$lib/components/ui/label/index.js";
   import ChevronDownIcon from "@lucide/svelte/icons/chevron-down";
   import {
     getLocalTimeZone,
     today,
     type CalendarDate
   } from "@internationalized/date";
+  import * as Popover from "$lib/components/ui/popover/index.js";
+  import Calendar from "$lib/components/ui/calendar/calendar.svelte";
+  import { Button } from "$lib/components/ui/button/index.js";
+  import { Label } from "$lib/components/ui/label/index.js";
   const id = $props.id();
   let open = $state(false);
   let value = $state<CalendarDate | undefined>();
@@ -151,19 +159,23 @@ lib/components/example-date-picker.svelte
 </div>
 ```
 
-### Picker with Input
+View Code
 
-### Date and Time Picker
+### [Picker with Input](#picker-with-input)
+
+View Code
+
+### [Date and Time Picker](#date-and-time-picker)
 
 ```svelte
 <script lang="ts">
-  import Calendar from "$lib/components/ui/calendar/calendar.svelte";
-  import * as Popover from "$lib/components/ui/popover/index.js";
-  import { Button } from "$lib/components/ui/button/index.js";
-  import { Label } from "$lib/components/ui/label/index.js";
-  import { Input } from "$lib/components/ui/input/index.js";
   import ChevronDownIcon from "@lucide/svelte/icons/chevron-down";
   import { getLocalTimeZone } from "@internationalized/date";
+  import * as Popover from "$lib/components/ui/popover/index.js";
+  import Calendar from "$lib/components/ui/calendar/calendar.svelte";
+  import { Button } from "$lib/components/ui/button/index.js";
+  import { Input } from "$lib/components/ui/input/index.js";
+  import { Label } from "$lib/components/ui/label/index.js";
   import type { CalendarDate } from "@internationalized/date";
   const id = $props.id();
   let open = $state(false);
@@ -206,31 +218,33 @@ lib/components/example-date-picker.svelte
       id="{id}-time"
       step="1"
       value="10:30:00"
-      class="bg-background appearance-none [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none"
+      class="appearance-none bg-background [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none"
     />
   </div>
 </div>
 ```
 
-### Natural Language Picker
+View Code
+
+### [Natural Language Picker](#natural-language-picker)
 
 This component uses the `chrono-node` library to parse natural language dates.
 
 ```svelte
 <script lang="ts">
-  import { Label } from "$lib/components/ui/label/index.js";
-  import * as Popover from "$lib/components/ui/popover/index.js";
-  import { Button } from "$lib/components/ui/button/index.js";
-  import { Calendar } from "$lib/components/ui/calendar/index.js";
-  import { Input } from "$lib/components/ui/input/index.js";
   import CalendarIcon from "@lucide/svelte/icons/calendar";
-  import { parseDate } from "chrono-node";
   import {
     CalendarDate,
     getLocalTimeZone,
     type DateValue
   } from "@internationalized/date";
+  import { parseDate } from "chrono-node";
   import { untrack } from "svelte";
+  import * as Popover from "$lib/components/ui/popover/index.js";
+  import { Button } from "$lib/components/ui/button/index.js";
+  import { Calendar } from "$lib/components/ui/calendar/index.js";
+  import { Input } from "$lib/components/ui/input/index.js";
+  import { Label } from "$lib/components/ui/label/index.js";
   function formatDate(date: DateValue | undefined) {
     if (!date) return "";
     return date.toDate(getLocalTimeZone()).toLocaleDateString("en-US", {
@@ -309,9 +323,11 @@ This component uses the `chrono-node` library to parse natural language dates.
       </Popover.Content>
     </Popover.Root>
   </div>
-  <div class="text-muted-foreground px-1 text-sm">
+  <div class="px-1 text-sm text-muted-foreground">
     Your post will be published on
     <span class="font-medium">{formatDate(value)}</span>.
   </div>
 </div>
 ```
+
+View Code
