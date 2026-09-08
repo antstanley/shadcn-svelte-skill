@@ -6,6 +6,12 @@ An image element with a fallback for representing the user.
 
 [API Reference](https://bits-ui.com/docs/components/avatar#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import * as Avatar from "$lib/components/ui/avatar/index.js";
@@ -20,7 +26,7 @@ An image element with a fallback for representing the user.
     <Avatar.Fallback>ER</Avatar.Fallback>
   </Avatar.Root>
   <div
-    class="*:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:grayscale"
+    class="flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:ring-background *:data-[slot=avatar]:grayscale"
   >
     <Avatar.Root>
       <Avatar.Image src="https://github.com/shadcn.png" alt="@shadcn" />
@@ -38,7 +44,9 @@ An image element with a fallback for representing the user.
 </div>
 ```
 
-## Installation
+View Code
+
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add avatar
@@ -52,7 +60,7 @@ npx shadcn-svelte@latest add avatar
 bun x shadcn-svelte@latest add avatar
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">

@@ -30,7 +30,6 @@
 - [Combobox](docs/components/combobox.md): Autocomplete input and command palette with a list of suggestions.
 - [Date Picker](docs/components/date-picker.md): A date picker component with range and presets.
 - [Field](docs/components/field.md): Combine labels, controls, and help text to compose accessible form fields and grouped inputs.
-- [Formsnap](docs/components/form.md): Building forms with Formsnap, Superforms, & Zod.
 - [Input](docs/components/input.md): Displays a form input field or a component that looks like an input field.
 - [Input Group](docs/components/input-group.md): Display additional information or actions to an input or textarea.
 - [Input OTP](docs/components/input-otp.md): Accessible one-time password component with copy paste functionality.
@@ -71,7 +70,7 @@
 
 - [Alert](docs/components/alert.md): Displays a callout for user attention.
 - [Badge](docs/components/badge.md): Displays a badge or a component that looks like a badge.
-- [Empty](docs/components/empty.md): Use the Empty component to display a empty state.
+- [Empty](docs/components/empty.md): Use the Empty component to display an empty state.
 - [Progress](docs/components/progress.md): Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.
 - [Skeleton](docs/components/skeleton.md): Use to show a placeholder while content is loading.
 - [Sonner](docs/components/sonner.md): An opinionated toast component for Svelte.
@@ -80,13 +79,17 @@
 ### Display & Media
 
 - [Aspect Ratio](docs/components/aspect-ratio.md): Displays content within a desired ratio.
+- [Attachment](docs/components/attachment.md): Displays a file or image attachment with media, metadata, upload state, and actions.
 - [Avatar](docs/components/avatar.md): An image element with a fallback for representing the user.
+- [Bubble](docs/components/bubble.md): Displays conversational content in a message bubble. Supports variants, alignment, grouping, reactions, and collapsible content.
 - [Card](docs/components/card.md): Displays a card with header, content, and footer.
 - [Carousel](docs/components/carousel.md): A carousel with motion and swipe built using Embla.
 - [Chart](docs/components/chart.md): Beautiful charts. Built using LayerChart. Copy and paste into your apps.
 - [Data Table](docs/components/data-table.md): Powerful table and datagrids built using TanStack Table.
 - [Item](docs/components/item.md): A versatile component that you can use to display any content.
 - [Kbd](docs/components/kbd.md): Used to display textual user input from keyboard.
+- [Marker](docs/components/marker.md): Displays an inline status, system note, bordered row, or labeled separator in a conversation.
+- [Message](docs/components/message.md): Displays a message in a conversation, with optional avatar, header, footer, and alignment.
 - [Table](docs/components/table.md): A responsive table component.
 - [Typography](docs/components/typography.md): Styles for headings, paragraphs, lists...etc
 
@@ -115,3 +118,8 @@
 - [Getting Started](docs/registry/getting-started.md): Learn how to get setup and run your own component registry.
 - [registry-item.json](docs/registry/registry-item-json.md): Specification for registry items.
 - [registry.json](docs/registry/registry-json.md): Schema for running your own component registry.
+
+## Utilities
+
+- [scroll-fade](docs/utils/scroll-fade.md): Utilities for adding a fade effect to the edges of a scroll container.
+- [shimmer](docs/utils/shimmer.md): Utilities for adding a shimmer effect to text elements.
