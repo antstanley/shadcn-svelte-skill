@@ -6,6 +6,12 @@ A calendar component that allows users to select a range of dates.
 
 [API Reference](https://bits-ui.com/docs/components/range-calendar#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import { getLocalTimeZone, today } from "@internationalized/date";
@@ -20,15 +26,17 @@ A calendar component that allows users to select a range of dates.
 <RangeCalendar bind:value class="rounded-md border" />
 ```
 
-## About
+View Code
+
+## [About](#about)
 
 The `<RangeCalendar />` component is built on top of the [Bits Range Calendar](https://www.bits-ui.com/docs/components/range-calendar) component, which uses the [@internationalized/date](https://react-spectrum.adobe.com/internationalized/date/index.html) package to handle dates.
 
-## Blocks
+## [Blocks](#blocks)
 
 You can see the `RangeCalendar` component in action in the 30+ [Calendar Blocks](https://shadcn-svelte.com/blocks/calendar) we've built.
 
-## Installation
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add range-calendar
