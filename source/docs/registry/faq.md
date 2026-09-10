@@ -2,9 +2,15 @@
 
 Frequently asked questions about running a registry.
 
-## Frequently asked questions
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
 
-### What does a complex component look like?
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
+## [Frequently asked questions](#frequently-asked-questions)
+
+### [What does a complex component look like?](#what-does-a-complex-component-look-like)
 
 Here's an example of a complex component that installs a page, two components, a hook, a format-date utils and a config file.
 
@@ -46,7 +52,7 @@ Here's an example of a complex component that installs a page, two components, a
 }
 ```
 
-### How do I add a new Tailwind color?
+### [How do I add a new Tailwind color?](#how-do-i-add-a-new-tailwind-color)
 
 To add a new color you need to add it to `cssVars` under `light` and `dark` keys.
 
@@ -75,7 +81,7 @@ To add a new color you need to add it to `cssVars` under `light` and `dark` keys
 
 The CLI will update the project CSS file. Once updated, the new colors will be available to be used as utility classes: `bg-brand` and `text-brand-accent`.
 
-### How do I add or override a Tailwind theme variable?
+### [How do I add or override a Tailwind theme variable?](#how-do-i-add-or-override-a-tailwind-theme-variable)
 
 To add or override a theme variable you add it to `cssVars.theme` under the key you want to add or override.
 

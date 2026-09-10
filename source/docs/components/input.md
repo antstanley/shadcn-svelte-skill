@@ -2,6 +2,12 @@
 
 Displays a form input field or a component that looks like an input field.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import { Input } from "$lib/components/ui/input/index.js";
@@ -9,7 +15,9 @@ Displays a form input field or a component that looks like an input field.
 <Input type="email" placeholder="Email" class="max-w-xs" />
 ```
 
-## Installation
+View Code
+
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add input
@@ -23,7 +31,7 @@ npx shadcn-svelte@latest add input
 bun x shadcn-svelte@latest add input
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -35,9 +43,9 @@ bun x shadcn-svelte@latest add input
 <Input />
 ```
 
-## Examples
+## [Examples](#examples)
 
-### Default
+### [Default](#default)
 
 ```svelte
 <script lang="ts">
@@ -46,7 +54,9 @@ bun x shadcn-svelte@latest add input
 <Input type="email" placeholder="Email" class="max-w-xs" />
 ```
 
-### File
+View Code
+
+### [File](#file)
 
 ```svelte
 <script lang="ts">
@@ -59,7 +69,9 @@ bun x shadcn-svelte@latest add input
 </div>
 ```
 
-### Disabled
+View Code
+
+### [Disabled](#disabled)
 
 ```svelte
 <script lang="ts">
@@ -68,7 +80,9 @@ bun x shadcn-svelte@latest add input
 <Input disabled type="email" placeholder="Email" class="max-w-sm" />
 ```
 
-### With Label
+View Code
+
+### [With Label](#with-label)
 
 ```svelte
 <script lang="ts">
@@ -82,7 +96,9 @@ bun x shadcn-svelte@latest add input
 </div>
 ```
 
-### With Button
+View Code
+
+### [With Button](#with-button)
 
 ```svelte
 <script lang="ts">
@@ -94,3 +110,5 @@ bun x shadcn-svelte@latest add input
   <Button type="submit" variant="outline">Subscribe</Button>
 </div>
 ```
+
+View Code

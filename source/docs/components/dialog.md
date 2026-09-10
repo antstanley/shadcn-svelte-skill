@@ -6,18 +6,27 @@ A window overlaid on either the primary window or another dialog window, renderi
 
 [API Reference](https://bits-ui.com/docs/components/dialog#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
-  import { Button, buttonVariants } from "$lib/components/ui/button/index.js";
   import * as Dialog from "$lib/components/ui/dialog/index.js";
+  import { Button, buttonVariants } from "$lib/components/ui/button/index.js";
   import { Input } from "$lib/components/ui/input/index.js";
   import { Label } from "$lib/components/ui/label/index.js";
 </script>
 <Dialog.Root>
   <form>
-    <Dialog.Trigger class={buttonVariants({ variant: "outline" })}
-      >Open Dialog</Dialog.Trigger
+    <Dialog.Trigger
+      type="button"
+      class={buttonVariants({ variant: "outline" })}
     >
+      Open Dialog
+    </Dialog.Trigger>
     <Dialog.Content class="sm:max-w-[425px]">
       <Dialog.Header>
         <Dialog.Title>Edit profile</Dialog.Title>
@@ -36,9 +45,12 @@ A window overlaid on either the primary window or another dialog window, renderi
         </div>
       </div>
       <Dialog.Footer>
-        <Dialog.Close class={buttonVariants({ variant: "outline" })}
-          >Cancel</Dialog.Close
+        <Dialog.Close
+          type="button"
+          class={buttonVariants({ variant: "outline" })}
         >
+          Cancel
+        </Dialog.Close>
         <Button type="submit">Save changes</Button>
       </Dialog.Footer>
     </Dialog.Content>
@@ -46,7 +58,9 @@ A window overlaid on either the primary window or another dialog window, renderi
 </Dialog.Root>
 ```
 
-## Installation
+View Code
+
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add dialog
@@ -60,7 +74,7 @@ npx shadcn-svelte@latest add dialog
 bun x shadcn-svelte@latest add dialog
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -83,14 +97,14 @@ bun x shadcn-svelte@latest add dialog
 </Dialog.Root>
 ```
 
-## Examples
+## [Examples](#examples)
 
-### Custom close button
+### [Custom close button](#custom-close-button)
 
 ```svelte
 <script lang="ts">
-  import { buttonVariants } from "$lib/components/ui/button/index.js";
   import * as Dialog from "$lib/components/ui/dialog/index.js";
+  import { buttonVariants } from "$lib/components/ui/button/index.js";
   import { Input } from "$lib/components/ui/input/index.js";
   import { Label } from "$lib/components/ui/label/index.js";
 </script>
@@ -101,9 +115,9 @@ bun x shadcn-svelte@latest add dialog
   <Dialog.Content class="sm:max-w-md">
     <Dialog.Header>
       <Dialog.Title>Share link</Dialog.Title>
-      <Dialog.Description>
-        Anyone who has this link will be able to view this.
-      </Dialog.Description>
+      <Dialog.Description
+        >Anyone who has this link will be able to view this.</Dialog.Description
+      >
     </Dialog.Header>
     <div class="flex items-center gap-2">
       <div class="grid flex-1 gap-2">
@@ -122,3 +136,5 @@ bun x shadcn-svelte@latest add dialog
   </Dialog.Content>
 </Dialog.Root>
 ```
+
+View Code
