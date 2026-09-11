@@ -2,367 +2,38 @@
 
 Latest updates and announcements.
 
-## October 2025 - New Components For this round of components, I looked at what we build every day, the boring stuff we rebuild over and over, and made reusable abstractions you can actually use.
+## May 2026 - Introducing Rhea Introducing Rhea, a new shadcn-svelte style. A more compact Luma. Smaller spacing. Denser surfaces. Built for focused product interfaces.
 
-- [Spinner](https://shadcn-svelte.com/docs/components/spinner) : An indicator to show a loading state.
-- [Kbd](https://shadcn-svelte.com/docs/components/kbd) : Display a keyboard key or group of keys.
-- [Button Group](https://shadcn-svelte.com/docs/components/button-group) : A group of buttons for actions and split buttons.
-- [Input Group](https://shadcn-svelte.com/docs/components/input-group) : Input with icons, buttons, labels and more.
-- [Field](https://shadcn-svelte.com/docs/components/field) : One component. All your forms.
-- [Item](https://shadcn-svelte.com/docs/components/item) : Display lists of items, cards, and more.
-- [Empty](https://shadcn-svelte.com/docs/components/empty) : Use this one for empty states.
+[![Rhea style preview](/img/examples/rhea-light.png) ![Rhea style preview](/img/examples/rhea-dark.png) Try Rhea in shadcn-svelte/create](https://shadcn-svelte.com/create?preset=b27GcrRo)
 
-***
+Rhea started from a simple request we've heard a lot: Luma, but more compact. We looked at how people were using the new styles and what they were asking for, and the pattern was clear. A lot of teams wanted the softness and shape of Luma with tighter spacing, smaller controls, and more information density.
 
-## June 2025
+Rhea keeps the same rounded foundation, but makes it more compact for product interfaces where space matters. Buttons, inputs, menus, cards, and lists all sit a little tighter so the UI can carry more without feeling crowded.
 
-### New Calendar Components
+## [Why a new style?](#why-a-new-style)
 
-We've completely overhauled the `Calendar` and `RangeCalendar` components to support dropdowns for the month and year selectors, and have added 30+ Calendar blocks to help you get started building your own calendar components.
+We considered making this a spacing tweak for Luma, but `--spacing` is a multiplier. Changing it would change what familiar utilities mean across your app. `p-2`, `w-4`, and `m-16` would no longer mean the same size.
 
-Check out the [Calendar](https://shadcn-svelte.com/docs/components/calendar) docs page and the [Calendar Blocks](https://shadcn-svelte.com/blocks/calendar) page for more.
+That tradeoff felt wrong. Compactness should not force you to relearn Tailwind's spacing scale or wonder whether a utility means something different in one style than another.
 
-***
+So Rhea is a new style instead. It lets us adjust component sizes, gaps, and density directly while keeping the underlying utility scale predictable.
 
-## May 2025
+Available now in [shadcn-svelte/create](https://shadcn-svelte.com/create).
 
-### Tailwind v4 Support
+[Try Rhea](https://shadcn-svelte.com/create?preset=b27GcrRo)
 
-Tailwind v4 support has officially landed. You can see a full demo of the refreshed styles that come with it here: [https://v4.shadcn-svelte.com](https://v4.shadcn-svelte.com).
+## April 2026 - Introducing Sera Introducing Sera, a new shadcn-svelte style. Minimal. Editorial. Typographic. Underline Controls and Uppercase Headings. Shaped by Print Design Principles.
 
-This release includes several key changes, all outlined in the [Tailwind v4 migration guide](https://shadcn-svelte.com/docs/migration/tailwind-v4). If you're still using Svelte v5 with Tailwind v3, your project and the CLI will continue to work as expected until you're ready to upgrade.
+[![Sera style preview](/img/examples/sera-01-light.png) ![Sera style preview](/img/examples/sera-01-dark.png) Try Sera in shadcn-svelte/create](https://shadcn-svelte.com/create?preset=b4xFeBLg4O)
 
-### Charts
+Sera is a typography-first style built on print design principles. It pairs serif headings with sans-serif body text, uses square corners, uppercase tracking, and underlined controls to create an editorial feel for your app.
 
-Charts have been added as a preview component to the project. See the [Charts](https://shadcn-svelte.com/charts) page for examples.
+Like the other new styles, Sera goes beyond theming. It changes the geometry, spacing, and feel of the components so your app starts from a different visual baseline.
 
-If you're running Svelte v5 and Tailwind v4 you can add them to your project via the CLI.
+Available now in [shadcn-svelte/create](https://shadcn-svelte.com/create).
 
-### Custom Registry Support
+[Try Sera](https://shadcn-svelte.com/create?preset=b4xFeBLg4O)
 
-We've added support for custom/remote registries - This means you can publish your own components and share them with the community via the `shadcn-svelte` CLI. See the [Registry documentation](https://shadcn-svelte.com/docs/registry) for more information.
+## More Updates
 
-***
-
-## March 2024
-
-### Introducing Blocks
-
-[Blocks](https://shadcn-svelte.com/blocks) are ready-made components that you can use to build your apps. They are fully responsive, accessible, and composable, meaning they are built using the same principles as the rest of the components in shadcn-svelte.
-
-[v0](https://v0.dev) only supports React at the moment, so you can't customize them like you can the original from [shadcn/ui](https://ui.shadcn.com). However, if having support for Svelte interests you, I'm sure the v0 team would love to hear about it. :)
-
-### New Component: Breadcrumb
-
-We've added a new component to the project, [Breadcrumb](https://shadcn-svelte.com/docs/components/breadcrumb).
-
-### New Component: Scroll Area
-
-We've added a new component to the project, [Scroll Area](https://shadcn-svelte.com/docs/components/scroll-area), which is built on top of the [Scroll Area](https://bits-ui.com/docs/components/scroll-area) component from Bits UI.
-
-It supports both vertical and horizontal scrolling, and is designed to provide a consistent experience across all browsers and platforms.
-
-## February 2024
-
-### New Component: Resizable
-
-We've added a new component to the project, [Resizable](https://shadcn-svelte.com/docs/components/resizable), which is built on top of [PaneForge](https://paneforge.com). PaneForge is still in an early stage, so be sure to raise any issues you find with the library on the [PaneForge GitHub](https://github.com/svecosystem/paneforge).
-
-### Updated Icon Imports
-
-After some feedback about dev server performance, we've updated the way we import icons. With this change, we've decided to move away from the unmaintained `radix-icons-svelte` package to [svelte-radix](https://github.com/shinokada/svelte-radix) for the `new-york` style.
-
-Instead of importing icons like so:
-
-```ts
-import { Check } from "@lucide/svelte";
-```
-
-We now import them directly:
-
-```ts
-import Check from "@lucide/svelte/icons/check";
-```
-
-With deep imports, we're preventing Vite from optimizing the entire icon collections, and instead only optimizing the icons that are actually used in your project. From what we've seen, this has a massive impact on dev server performance. Enjoy! 
-
-### Major Forms Update
-
-Formsnap has been completely rewritten to be more flexible, easier to use, and less opinionated. This means we've had to make some changes to the way we use it in `shadcn-svelte`, but once you get the hang of it, you'll find it's much more powerful and less restrictive than the previous iteration.
-
-Since the changes are so significant, there isn't a direct migration path from the old version to the new version. You'll need to update your components to use the new API, as well as ensure you're using the latest version of `formsnap` and `sveltekit-superforms`.
-
-All of the `Form` components have been updated to use the new API, and you can see live examples of them on the [Forms Examples](https://shadcn-svelte.com/examples/forms) page.
-
-Visit the [Formsnap](https://formsnap.dev) documentation (which has also been updated) to learn more about the new API and how its used.
-
-## January 2024
-
-We've added four new components to the project, [Carousel](https://shadcn-svelte.com/docs/components/carousel), [Drawer](https://shadcn-svelte.com/docs/components/drawer), [Sonner](https://shadcn-svelte.com/docs/components/sonner), & [Pagination](https://shadcn-svelte.com/docs/components/pagination).
-
-### New Component: Carousel
-
-We've added a new component to the project, [Carousel](https://shadcn-svelte.com/docs/components/carousel).
-
-```svelte
-<script lang="ts">
-  import * as Card from "$lib/components/ui/card/index.js";
-  import * as Carousel from "$lib/components/ui/carousel/index.js";
-</script>
-<Carousel.Root class="w-full max-w-xs">
-  <Carousel.Content>
-    {#each Array(5), i}
-      <Carousel.Item>
-        <div class="p-1">
-          <Card.Root>
-            <Card.Content
-              class="flex aspect-square items-center justify-center p-6"
-            >
-              <span class="text-4xl font-semibold">{i + 1}</span>
-            </Card.Content>
-          </Card.Root>
-        </div>
-      </Carousel.Item>
-    {/each}
-  </Carousel.Content>
-  <Carousel.Previous />
-  <Carousel.Next />
-</Carousel.Root>
-```
-
-### New Component: Drawer
-
-The Drawer is built on top of [vaul-svelte](https://vaul-svelte.com) and is a port of [vaul](https://vaul.emilkowalski.ski/), originally created by [Emil Kowalski](https://twitter.com/emilkowalski_) for React.
-
-```svelte
-<script lang="ts">
-  import MinusIcon from "@lucide/svelte/icons/minus";
-  import PlusIcon from "@lucide/svelte/icons/plus";
-  import * as Drawer from "$lib/components/ui/drawer/index.js";
-  import { Button, buttonVariants } from "$lib/components/ui/button/index.js";
-  import { BarChart, type ChartContextValue } from "layerchart";
-  import { scaleBand } from "d3-scale";
-  import { cubicInOut } from "svelte/easing";
-  const data = [
-    {
-      goal: 400
-    },
-    {
-      goal: 300
-    },
-    {
-      goal: 200
-    },
-    {
-      goal: 300
-    },
-    {
-      goal: 200
-    },
-    {
-      goal: 278
-    },
-    {
-      goal: 189
-    },
-    {
-      goal: 239
-    },
-    {
-      goal: 300
-    },
-    {
-      goal: 200
-    },
-    {
-      goal: 278
-    },
-    {
-      goal: 189
-    },
-    {
-      goal: 349
-    }
- ];
-  let goal = $state(350);
-  function handleClick(adjustment: number) {
-    goal = Math.max(200, Math.min(400, goal + adjustment));
-  }
-  let context = $state<ChartContextValue>();
-</script>
-<Drawer.Root>
-  <Drawer.Trigger class={buttonVariants({ variant: "outline" })}
-    >Open Drawer</Drawer.Trigger
-  >
-  <Drawer.Content>
-    <div class="mx-auto w-full max-w-sm">
-      <Drawer.Header>
-        <Drawer.Title>Move Goal</Drawer.Title>
-        <Drawer.Description>Set your daily activity goal.</Drawer.Description>
-      </Drawer.Header>
-      <div class="p-4 pb-0">
-        <div class="flex items-center justify-center space-x-2">
-          <Button
-            variant="outline"
-            size="icon"
-            class="size-8 shrink-0 rounded-full"
-            onclick={() => handleClick(-10)}
-            disabled={goal <= 200}
-          >
-            <MinusIcon />
-            <span class="sr-only">Decrease</span>
-          </Button>
-          <div class="flex-1 text-center">
-            <div class="text-7xl font-bold tracking-tighter">
-              {goal}
-            </div>
-            <div class="text-muted-foreground text-[0.70rem] uppercase">
-              Calories/day
-            </div>
-          </div>
-          <Button
-            variant="outline"
-            size="icon"
-            class="size-8 shrink-0 rounded-full"
-            onclick={() => handleClick(10)}
-            disabled={goal >= 400}
-          >
-            <PlusIcon />
-            <span class="sr-only">Increase</span>
-          </Button>
-        </div>
-        <div class="mt-3 h-[120px]">
-          <div class="h-full w-full">
-            <BarChart
-              bind:context
-              data={data.map((d, i) => ({ goal: d.goal, index: i }))}
-              y="goal"
-              x="index"
-              xScale={scaleBand().padding(0.25)}
-              axis={false}
-              tooltip={false}
-              props={{
-                bars: {
-                  stroke: "none",
-                  rounded: "all",
-                  radius: 4,
-                  // use the height of the chart to animate the bars
-                  initialY: context?.height,
-                  initialHeight: 0,
-                  motion: {
-                    x: { type: "tween", duration: 500, easing: cubicInOut },
-                    width: { type: "tween", duration: 500, easing: cubicInOut },
-                    height: {
-                      type: "tween",
-                      duration: 500,
-                      easing: cubicInOut
-                    },
-                    y: { type: "tween", duration: 500, easing: cubicInOut }
-                  },
-                  fill: "var(--color-foreground)",
-                  fillOpacity: 0.9
-                },
-                highlight: { area: { fill: "none" } }
-              }}
-            />
-          </div>
-        </div>
-      </div>
-      <Drawer.Footer>
-        <Button>Submit</Button>
-        <Drawer.Close class={buttonVariants({ variant: "outline" })}
-          >Cancel</Drawer.Close
-        >
-      </Drawer.Footer>
-    </div>
-  </Drawer.Content>
-</Drawer.Root>
-```
-
-### New Component: Sonner
-
-The Sonner component is provided by [svelte-sonner](https://svelte-sonner.vercel.app/), which is a Svelte port of [Sonner](https://sonner.emilkowal.ski/), originally created by [Emil Kowalski](https://twitter.com/emilkowalski_) for React.
-
-```svelte
-<script lang="ts">
-  import { toast } from "svelte-sonner";
-  import { Button } from "$lib/components/ui/button/index.js";
-</script>
-<Button
-  variant="outline"
-  onclick={() =>
-    toast("Event has been created", {
-      description: "Sunday, December 03, 2023 at 9:00 AM",
-      action: {
-        label: "Undo",
-        onClick: () => console.info("Undo")
-      }
-    })}
->
-  Show Toast
-</Button>
-```
-
-### New Component: Pagination
-
-Pagination leverages the [Pagination](https://bits-ui.com/docs/components/pagination) component from Bits UI.
-
-## December 2023
-
-We've added three new components to the project, [Calendar](https://shadcn-svelte.com/docs/components/calendar), [Range Calendar](https://shadcn-svelte.com/docs/components/range-calendar), & [Date Picker](https://shadcn-svelte.com/docs/components/date-picker).
-
-## November 2023
-
-### New Component: Toggle Group
-
-We've added a new component to the library, [Toggle Group](https://shadcn-svelte.com/docs/components/toggle-group).
-
-## October 2023
-
-We've added two new components to the library, [Command](https://shadcn-svelte.com/docs/components/command) & [Combobox](https://shadcn-svelte.com/docs/components/combobox). We've also made some updates to the `<Form.Label />` component that you'll want to be aware of.
-
-### New Component: Command
-
-Command is a component that allows you to create a command palette. It's built on top of [cmdk-sv](https://cmdk-sv.com), which is a Svelte port of [cmdk](https://cmdk.paco.me). The library is still in its infancy, but we're excited to see where it goes. If you notice any issues, please [open an issue](https://github.com/huntabyte/cmdk-sv) with the library.
-
-Be sure to check out the [Command](https://shadcn-svelte.com/docs/components/command) docs for more information.
-
-### New Component: Combobox
-
-Combobox is a combination of the `<Command />` & `<Popover />` components. It allows you to create a searchable dropdown menu.
-
-Be sure to check out the [Combobox](https://shadcn-svelte.com/docs/components/combobox) docs for more information.
-
-### Updates to Form
-
-#### Form.Label Changes
-
-Since we had to make some internal changes to formsnap to fix outstanding issues, there is a slight modification we have to make to the `<Form.Label />` component. The `ids` returned from `getFormField()` is now a store, so we need to prefix it with `$` when we use it.
-
-form-label.svelte
-
-```svelte
-<Label
-  for={$ids.input}
-  class={cn($errors && "text-destructive", className)}
-  {...$$restProps}
->
-  <slot />
-</Label>
-```
-
-### Form.Control
-
-Formsnap introduced a new component `<Form.Control />` which wraps non-traditional form elements. This allows us to ensure the components are accessible, and work well with the rest of the form components. You'll need to define & export that control in your `form/index.ts` file.
-
-src/lib/ui/form/index.ts
-
-```ts
-// ...rest
-const Control = FormPrimitive.Control;
-export {
-  // ...rest
-  Control,
-  Control as FormControl,
-};
-```
+[March 2026 Introducing Luma](https://shadcn-svelte.com/docs/changelog/2026-03-luma)[October 2025 New Components](https://shadcn-svelte.com/docs/changelog/2025-10-new-components)[June 2025 Calendar Components](https://shadcn-svelte.com/docs/changelog/2025-06-calendar)[May 2025 Tailwind v4 Support](https://shadcn-svelte.com/docs/changelog/2025-05-tailwind-v4)[March 2024 Introducing Blocks](https://shadcn-svelte.com/docs/changelog/2024-03-blocks)[February 2024 New Component Resizable](https://shadcn-svelte.com/docs/changelog/2024-02-resizable)[January 2024 New Components](https://shadcn-svelte.com/docs/changelog/2024-01-new-components)[December 2023 Calendar Components](https://shadcn-svelte.com/docs/changelog/2023-12-calendar)[November 2023 Toggle Group](https://shadcn-svelte.com/docs/changelog/2023-11-toggle-group)[October 2023 Command and Combobox](https://shadcn-svelte.com/docs/changelog/2023-10-command-combobox)
