@@ -6,12 +6,18 @@ Displays rich content in a portal, triggered by a button.
 
 [API Reference](https://bits-ui.com/docs/components/popover#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
+  import * as Popover from "$lib/components/ui/popover/index.js";
   import { buttonVariants } from "$lib/components/ui/button/index.js";
   import { Input } from "$lib/components/ui/input/index.js";
   import { Label } from "$lib/components/ui/label/index.js";
-  import * as Popover from "$lib/components/ui/popover/index.js";
 </script>
 <Popover.Root>
   <Popover.Trigger class={buttonVariants({ variant: "outline" })}
@@ -21,7 +27,7 @@ Displays rich content in a portal, triggered by a button.
     <div class="grid gap-4">
       <div class="space-y-2">
         <h4 class="leading-none font-medium">Dimensions</h4>
-        <p class="text-muted-foreground text-sm">
+        <p class="text-sm text-muted-foreground">
           Set the dimensions for the layer.
         </p>
       </div>
@@ -48,7 +54,9 @@ Displays rich content in a portal, triggered by a button.
 </Popover.Root>
 ```
 
-## Installation
+View Code
+
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add popover
@@ -62,7 +70,7 @@ npx shadcn-svelte@latest add popover
 bun x shadcn-svelte@latest add popover
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
