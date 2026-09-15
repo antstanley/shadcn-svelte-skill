@@ -6,16 +6,22 @@ A collection of links for navigating websites.
 
 [API Reference](https://bits-ui.com/docs/components/navigation-menu#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
-  import * as NavigationMenu from "$lib/components/ui/navigation-menu/index.js";
-  import { cn } from "$lib/utils.js";
-  import { navigationMenuTriggerStyle } from "$lib/components/ui/navigation-menu/navigation-menu-trigger.svelte";
-  import type { HTMLAttributes } from "svelte/elements";
-  import CircleHelpIcon from "@lucide/svelte/icons/circle-help";
   import CircleIcon from "@lucide/svelte/icons/circle";
   import CircleCheckIcon from "@lucide/svelte/icons/circle-check";
+  import CircleHelpIcon from "@lucide/svelte/icons/circle-help";
+  import * as NavigationMenu from "$lib/components/ui/navigation-menu/index.js";
   import { IsMobile } from "$lib/components/hooks/is-mobile.svelte.js";
+  import { navigationMenuTriggerStyle } from "$lib/components/ui/navigation-menu/navigation-menu-trigger.svelte";
+  import { cn } from "$lib/utils.js";
+  import type { HTMLAttributes } from "svelte/elements";
   const isMobile = new IsMobile();
   const components: { title: string; href: string; description: string }[] = [
     {
@@ -73,13 +79,13 @@ A collection of links for navigating websites.
         <a
           {href}
           class={cn(
-            "hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground block space-y-1 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none",
+            "block space-y-1 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
             className
           )}
           {...restProps}
         >
           <div class="text-sm leading-none font-medium">{title}</div>
-          <p class="text-muted-foreground line-clamp-2 text-sm leading-snug">
+          <p class="line-clamp-2 text-sm leading-snug text-muted-foreground">
             {content}
           </p>
         </a>
@@ -97,12 +103,12 @@ A collection of links for navigating websites.
         >
           <li class="row-span-3">
             <NavigationMenu.Link
-              class="from-muted/50 to-muted flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-4 no-underline outline-hidden select-none focus:shadow-md md:p-6"
+              class="flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b from-muted/50 to-muted p-4 no-underline outline-hidden select-none focus:shadow-md md:p-6"
             >
               {#snippet child({ props })}
                 <a {...props} href="/">
                   <div class="mt-4 mb-2 text-lg font-medium">shadcn-svelte</div>
-                  <p class="text-muted-foreground text-sm leading-tight">
+                  <p class="text-sm leading-tight text-muted-foreground">
                     Beautifully designed components built with Tailwind CSS.
                   </p>
                 </a>
@@ -215,7 +221,9 @@ A collection of links for navigating websites.
 </NavigationMenu.Root>
 ```
 
-## Installation
+View Code
+
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add navigation-menu
@@ -229,7 +237,7 @@ npx shadcn-svelte@latest add navigation-menu
 bun x shadcn-svelte@latest add navigation-menu
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
