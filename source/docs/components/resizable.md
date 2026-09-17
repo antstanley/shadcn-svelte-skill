@@ -6,6 +6,12 @@ Accessible resizable panel groups and layouts with keyboard support.
 
 [API Reference](https://www.paneforge.com/docs/components/pane-group)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import * as Resizable from "$lib/components/ui/resizable/index.js";
@@ -35,11 +41,13 @@ Accessible resizable panel groups and layouts with keyboard support.
 </Resizable.PaneGroup>
 ```
 
-## About
+View Code
+
+## [About](#about)
 
 The `Resizable` component is built on top of [PaneForge](https://github.com/svecosystem/paneforge) by [Huntabyte](https://github.com/huntabyte). Visit the [PaneForge documentation](https://paneforge.com) for all the available props and abilities of the `Resizable` component.
 
-## Installation
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add resizable
@@ -53,7 +61,7 @@ npx shadcn-svelte@latest add resizable
 bun x shadcn-svelte@latest add resizable
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -69,9 +77,9 @@ bun x shadcn-svelte@latest add resizable
 </Resizable.PaneGroup>
 ```
 
-## Examples
+## [Examples](#examples)
 
-### Vertical
+### [Vertical](#vertical)
 
 Use the `direction` prop to set the direction of the resizable panels.
 
@@ -97,6 +105,8 @@ Use the `direction` prop to set the direction of the resizable panels.
 </Resizable.PaneGroup>
 ```
 
+View Code
+
 ```svelte
 <script lang="ts">
   import * as Resizable from "$lib/components/ui/resizable/index.js";
@@ -108,7 +118,7 @@ Use the `direction` prop to set the direction of the resizable panels.
 </Resizable.PaneGroup>
 ```
 
-### Handle
+### [Handle](#handle)
 
 You can set or hide the handle by using the `withHandle` prop on the `ResizableHandle` component.
 
@@ -133,6 +143,8 @@ You can set or hide the handle by using the `withHandle` prop on the `ResizableH
   </Resizable.Pane>
 </Resizable.PaneGroup>
 ```
+
+View Code
 
 ```svelte
 <script lang="ts">
