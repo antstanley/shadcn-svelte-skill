@@ -2,7 +2,13 @@
 
 How to setup shadcn-svelte in a SvelteKit project.
 
-### Create project
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
+### [Create project](#create-project)
 
 Use the SvelteKit CLI to create a new project with TailwindCSS
 
@@ -18,7 +24,7 @@ npx sv create my-app --add tailwindcss
 bun x sv create my-app --add tailwindcss
 ```
 
-### Setup path aliases
+### [Setup path aliases](#setup-path-aliases)
 
 If you are not using the default alias `$lib`, you'll need to update your `svelte.config.js` file to include those aliases.
 
@@ -36,7 +42,7 @@ const config = {
 };
 ```
 
-### Run the CLI
+### [Run the CLI](#run-the-cli)
 
 ```bash
 pnpm dlx shadcn-svelte@latest init
@@ -50,7 +56,7 @@ npx shadcn-svelte@latest init
 bun x shadcn-svelte@latest init
 ```
 
-### Configure components.json
+### [Configure components.json](#configure-componentsjson)
 
 You will be asked a few questions to configure `components.json`:
 
@@ -64,7 +70,7 @@ Configure the import alias for hooks:  $lib/hooks
 Configure the import alias for ui:  $lib/components/ui
 ```
 
-### That's it
+### [That's it](#thats-it)
 
 You can now start adding components to your project.
 
