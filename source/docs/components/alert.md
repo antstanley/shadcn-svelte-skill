@@ -2,12 +2,18 @@
 
 Displays a callout for user attention.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
-  import * as Alert from "$lib/components/ui/alert/index.js";
-  import CheckCircle2Icon from "@lucide/svelte/icons/check-circle-2";
   import AlertCircleIcon from "@lucide/svelte/icons/alert-circle";
+  import CheckCircle2Icon from "@lucide/svelte/icons/check-circle-2";
   import PopcornIcon from "@lucide/svelte/icons/popcorn";
+  import * as Alert from "$lib/components/ui/alert/index.js";
 </script>
 <div class="grid w-full max-w-xl items-start gap-4">
   <Alert.Root>
@@ -38,7 +44,9 @@ Displays a callout for user attention.
 </div>
 ```
 
-## Installation
+View Code
+
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add alert
@@ -52,7 +60,7 @@ npx shadcn-svelte@latest add alert
 bun x shadcn-svelte@latest add alert
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">

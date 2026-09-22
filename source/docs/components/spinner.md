@@ -2,10 +2,16 @@
 
 An indicator that can be used to show a loading state.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
-  import { Spinner } from "$lib/components/ui/spinner/index.js";
   import * as Item from "$lib/components/ui/item/index.js";
+  import { Spinner } from "$lib/components/ui/spinner/index.js";
 </script>
 <div class="flex w-full max-w-xs flex-col gap-4 [--radius:1rem]">
   <Item.Root variant="muted">
@@ -22,7 +28,9 @@ An indicator that can be used to show a loading state.
 </div>
 ```
 
-## Installation
+View Code
+
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add spinner
@@ -36,7 +44,7 @@ npx shadcn-svelte@latest add spinner
 bun x shadcn-svelte@latest add spinner
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -48,14 +56,14 @@ bun x shadcn-svelte@latest add spinner
 <Spinner />
 ```
 
-## Customization
+## [Customization](#customization)
 
 You can replace the default spinner icon with any other icon by editing the `Spinner` component.
 
 ```svelte
 <script lang="ts">
-  import { cn } from "$lib/utils.js";
   import LoaderIcon from "@lucide/svelte/icons/loader";
+  import { cn } from "$lib/utils.js";
   import type { ComponentProps } from "svelte";
   type Props = ComponentProps<typeof LoaderIcon>;
   let { class: className, ...restProps }: Props = $props();
@@ -68,9 +76,11 @@ You can replace the default spinner icon with any other icon by editing the `Spi
 />
 ```
 
-## Examples
+View Code
 
-### Size
+## [Examples](#examples)
+
+### [Size](#size)
 
 Use the `size-*` utility class to change the size of the spinner.
 
@@ -86,7 +96,9 @@ Use the `size-*` utility class to change the size of the spinner.
 </div>
 ```
 
-### Color
+View Code
+
+### [Color](#color)
 
 Use the `text-*` utility class to change the color of the spinner.
 
@@ -103,7 +115,9 @@ Use the `text-*` utility class to change the color of the spinner.
 </div>
 ```
 
-### Button
+View Code
+
+### [Button](#button)
 
 Add a spinner to a button to indicate a loading state. The `<Button />` will handle the spacing between the spinner and the text.
 
@@ -128,7 +142,9 @@ Add a spinner to a button to indicate a loading state. The `<Button />` will han
 </div>
 ```
 
-### Badge
+View Code
+
+### [Badge](#badge)
 
 You can also use a spinner inside a badge.
 
@@ -153,15 +169,17 @@ You can also use a spinner inside a badge.
 </div>
 ```
 
-### Input Group
+View Code
+
+### [Input Group](#input-group)
 
 Input Group can have spinners inside `<InputGroup.Addon>`.
 
 ```svelte
 <script lang="ts">
+  import ArrowUpIcon from "@lucide/svelte/icons/arrow-up";
   import * as InputGroup from "$lib/components/ui/input-group/index.js";
   import { Spinner } from "$lib/components/ui/spinner/index.js";
-  import ArrowUpIcon from "@lucide/svelte/icons/arrow-up";
 </script>
 <div class="flex w-full max-w-md flex-col gap-4">
   <InputGroup.Root>
@@ -183,13 +201,15 @@ Input Group can have spinners inside `<InputGroup.Addon>`.
 </div>
 ```
 
-### Empty
+View Code
+
+### [Empty](#empty)
 
 ```svelte
 <script lang="ts">
   import * as Empty from "$lib/components/ui/empty/index.js";
-  import { Spinner } from "$lib/components/ui/spinner/index.js";
   import { Button } from "$lib/components/ui/button/index.js";
+  import { Spinner } from "$lib/components/ui/spinner/index.js";
 </script>
 <Empty.Root class="w-full border md:p-6">
   <Empty.Header>
@@ -207,16 +227,18 @@ Input Group can have spinners inside `<InputGroup.Addon>`.
 </Empty.Root>
 ```
 
-### Item
+View Code
+
+### [Item](#item)
 
 Use the spinner inside `<Item.Media>` to indicate a loading state.
 
 ```svelte
 <script lang="ts">
   import * as Item from "$lib/components/ui/item/index.js";
-  import { Spinner } from "$lib/components/ui/spinner/index.js";
   import { Button } from "$lib/components/ui/button/index.js";
   import { Progress } from "$lib/components/ui/progress/index.js";
+  import { Spinner } from "$lib/components/ui/spinner/index.js";
 </script>
 <div class="flex w-full max-w-md flex-col gap-4 [--radius:1rem]">
   <Item.Root variant="outline">
@@ -236,3 +258,5 @@ Use the spinner inside `<Item.Media>` to indicate a loading state.
   </Item.Root>
 </div>
 ```
+
+View Code
