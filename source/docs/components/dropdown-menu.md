@@ -6,6 +6,12 @@ Displays a menu to the user  such as a set of actions or functions  triggered by
 
 [API Reference](https://bits-ui.com/docs/components/dropdown-menu#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
@@ -67,7 +73,9 @@ Displays a menu to the user  such as a set of actions or functions  triggered by
 </DropdownMenu.Root>
 ```
 
-## Installation
+View Code
+
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add dropdown-menu
@@ -81,7 +89,7 @@ npx shadcn-svelte@latest add dropdown-menu
 bun x shadcn-svelte@latest add dropdown-menu
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -105,9 +113,9 @@ bun x shadcn-svelte@latest add dropdown-menu
 </DropdownMenu.Root>
 ```
 
-## Examples
+## [Examples](#examples)
 
-### Checkboxes
+### [Checkboxes](#checkboxes)
 
 ```svelte
 <script lang="ts">
@@ -127,9 +135,9 @@ bun x shadcn-svelte@latest add dropdown-menu
     <DropdownMenu.Group>
       <DropdownMenu.Label>Appearance</DropdownMenu.Label>
       <DropdownMenu.Separator />
-      <DropdownMenu.CheckboxItem bind:checked={showStatusBar}>
-        Status Bar
-      </DropdownMenu.CheckboxItem>
+      <DropdownMenu.CheckboxItem bind:checked={showStatusBar}
+        >Status Bar</DropdownMenu.CheckboxItem
+      >
       <DropdownMenu.CheckboxItem bind:checked={showActivityBar} disabled>
         Activity Bar
       </DropdownMenu.CheckboxItem>
@@ -141,7 +149,9 @@ bun x shadcn-svelte@latest add dropdown-menu
 </DropdownMenu.Root>
 ```
 
-### Radio Group
+View Code
+
+### [Radio Group](#radio-group)
 
 ```svelte
 <script lang="ts">
@@ -169,7 +179,9 @@ bun x shadcn-svelte@latest add dropdown-menu
 </DropdownMenu.Root>
 ```
 
-### Dialog
+View Code
+
+### [Dialog](#dialog)
 
 This example shows how to open a dialog from a dropdown menu.
 
@@ -184,13 +196,13 @@ This example shows how to open a dialog from a dropdown menu.
 ```svelte
 <script lang="ts">
   import MoreHorizontal from "@lucide/svelte/icons/more-horizontal";
-  import { Button, buttonVariants } from "$lib/components/ui/button/index.js";
   import * as Dialog from "$lib/components/ui/dialog/index.js";
   import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
+  import * as Field from "$lib/components/ui/field/index.js";
+  import { Button, buttonVariants } from "$lib/components/ui/button/index.js";
   import { Input } from "$lib/components/ui/input/index.js";
   import { Label } from "$lib/components/ui/label/index.js";
   import { Textarea } from "$lib/components/ui/textarea/index.js";
-  import * as Field from "$lib/components/ui/field/index.js";
   let showNewDialog = $state(false);
   let showShareDialog = $state(false);
 </script>
@@ -203,12 +215,12 @@ This example shows how to open a dialog from a dropdown menu.
   <DropdownMenu.Content class="w-40" align="end">
     <DropdownMenu.Label>File Actions</DropdownMenu.Label>
     <DropdownMenu.Group>
-      <DropdownMenu.Item onSelect={() => (showNewDialog = true)}>
-        New File...
-      </DropdownMenu.Item>
-      <DropdownMenu.Item onSelect={() => (showShareDialog = true)}>
-        Share...
-      </DropdownMenu.Item>
+      <DropdownMenu.Item onSelect={() => (showNewDialog = true)}
+        >New File...</DropdownMenu.Item
+      >
+      <DropdownMenu.Item onSelect={() => (showShareDialog = true)}
+        >Share...</DropdownMenu.Item
+      >
       <DropdownMenu.Item disabled>Download</DropdownMenu.Item>
     </DropdownMenu.Group>
   </DropdownMenu.Content>
@@ -239,9 +251,9 @@ This example shows how to open a dialog from a dropdown menu.
   <Dialog.Content class="sm:max-w-[425px]">
     <Dialog.Header>
       <Dialog.Title>Share File</Dialog.Title>
-      <Dialog.Description>
-        Anyone with the link will be able to view this file.
-      </Dialog.Description>
+      <Dialog.Description
+        >Anyone with the link will be able to view this file.</Dialog.Description
+      >
     </Dialog.Header>
     <Field.Group class="py-3">
       <Field.Field>
@@ -272,9 +284,11 @@ This example shows how to open a dialog from a dropdown menu.
 </Dialog.Root>
 ```
 
-## Changelog
+View Code
 
-### 2024-10-30 Classes for DropdownMenu.SubTrigger
+## [Changelog](#changelog)
+
+### [2024-10-30 Classes for DropdownMenu.SubTrigger](#2024-10-30-classes-for-dropdownmenusubtrigger)
 
 - Added `gap-2 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0` to the `<DropdownMenu.SubTrigger>` to automatically style icon inside the dropdown menu sub trigger.
 - Removed `size-4` from the icon inside the `<DropdownMenu.SubTrigger>` since it is now handled by the parent `<DropdownMenu.SubTrigger>` .
