@@ -4,6 +4,12 @@ Displays a button or a component that looks like a button.
 
 [API Reference](https://bits-ui.com/docs/components/button#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 **Updated:** We have updated the button component to add new sizes: `icon-sm` and `icon-lg`. See the [changelog](https://shadcn-svelte.com/docs/components/button#changelog) for more details. Follow the instructions to update your project.
 
 ```svelte
@@ -19,6 +25,8 @@ Displays a button or a component that looks like a button.
 </div>
 ```
 
+View Code
+
 ```svelte
 <Button variant="outline">Button</Button>
 <Button variant="outline" size="icon" aria-label="Submit">
@@ -26,7 +34,7 @@ Displays a button or a component that looks like a button.
 </Button>
 ```
 
-## Installation
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add button
@@ -40,7 +48,7 @@ npx shadcn-svelte@latest add button
 bun x shadcn-svelte@latest add button
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -49,9 +57,9 @@ bun x shadcn-svelte@latest add button
 <Button variant="outline">Button</Button>
 ```
 
-## Examples
+## [Examples](#examples)
 
-### Size
+### [Size](#size)
 
 ```svelte
 <script lang="ts">
@@ -80,6 +88,8 @@ bun x shadcn-svelte@latest add button
 </div>
 ```
 
+View Code
+
 ```svelte
 
 <Button size="sm" variant="outline">Small</Button>
@@ -98,7 +108,7 @@ bun x shadcn-svelte@latest add button
 </Button>
 ```
 
-### Default
+### [Default](#default)
 
 ```svelte
 <script lang="ts">
@@ -107,11 +117,13 @@ bun x shadcn-svelte@latest add button
 <Button>Button</Button>
 ```
 
+View Code
+
 ```svelte
 <Button>Button</Button>
 ```
 
-### Outline
+### [Outline](#outline)
 
 ```svelte
 <script lang="ts">
@@ -120,11 +132,13 @@ bun x shadcn-svelte@latest add button
 <Button variant="outline">Outline</Button>
 ```
 
+View Code
+
 ```svelte
 <Button variant="outline">Outline</Button>
 ```
 
-### Secondary
+### [Secondary](#secondary)
 
 ```svelte
 <script lang="ts">
@@ -133,11 +147,13 @@ bun x shadcn-svelte@latest add button
 <Button variant="secondary">Secondary</Button>
 ```
 
+View Code
+
 ```svelte
 <Button variant="secondary">Secondary</Button>
 ```
 
-### Ghost
+### [Ghost](#ghost)
 
 ```svelte
 <script lang="ts">
@@ -146,11 +162,13 @@ bun x shadcn-svelte@latest add button
 <Button variant="ghost">Ghost</Button>
 ```
 
+View Code
+
 ```svelte
 <Button variant="ghost">Ghost</Button>
 ```
 
-### Destructive
+### [Destructive](#destructive)
 
 ```svelte
 <script lang="ts">
@@ -159,11 +177,13 @@ bun x shadcn-svelte@latest add button
 <Button variant="destructive">Destructive</Button>
 ```
 
+View Code
+
 ```svelte
 <Button variant="destructive">Destructive</Button>
 ```
 
-### Link
+### [Link](#link)
 
 ```svelte
 <script lang="ts">
@@ -172,11 +192,13 @@ bun x shadcn-svelte@latest add button
 <Button variant="link">Link</Button>
 ```
 
+View Code
+
 ```svelte
 <Button variant="link">Link</Button>
 ```
 
-### Icon
+### [Icon](#icon)
 
 ```svelte
 <script lang="ts">
@@ -188,13 +210,15 @@ bun x shadcn-svelte@latest add button
 </Button>
 ```
 
+View Code
+
 ```svelte
 <Button variant="outline" size="icon" aria-label="Submit">
   <CircleFadingArrowUpIcon />
 </Button>
 ```
 
-### With Icon
+### [With Icon](#with-icon)
 
 The spacing between the icon and the text is automatically adjusted based on the size of the button. You do not need any margin on the icon.
 
@@ -208,13 +232,15 @@ The spacing between the icon and the text is automatically adjusted based on the
 </Button>
 ```
 
+View Code
+
 ```svelte
 <Button variant="outline" size="sm">
   <IconGitBranch /> New Branch
 </Button>
 ```
 
-### Rounded
+### [Rounded](#rounded)
 
 Use the `rounded-full` class to make the button rounded.
 
@@ -230,13 +256,15 @@ Use the `rounded-full` class to make the button rounded.
 </div>
 ```
 
+View Code
+
 ```svelte
 <Button variant="outline" size="icon" className="rounded-full">
   <ArrowUpRightIcon />
 </Button>
 ```
 
-### Spinner
+### [Spinner](#spinner)
 
 ```svelte
 <script lang="ts">
@@ -249,6 +277,8 @@ Use the `rounded-full` class to make the button rounded.
 </Button>
 ```
 
+View Code
+
 ```svelte
 <Button size="sm" variant="outline" disabled>
   <Spinner />
@@ -256,7 +286,7 @@ Use the `rounded-full` class to make the button rounded.
 </Button>
 ```
 
-### Button Group
+### [Button Group](#button-group)
 
 To create a button group, use the `ButtonGroup` component. See the [Button Group](https://shadcn-svelte.com/docs/components/button-group) documentation for more details.
 
@@ -271,9 +301,9 @@ To create a button group, use the `ButtonGroup` component. See the [Button Group
   import MoreHorizontal from "@lucide/svelte/icons/more-horizontal";
   import Tag from "@lucide/svelte/icons/tag";
   import Trash2 from "@lucide/svelte/icons/trash-2";
-  import { Button } from "$lib/components/ui/button/index.js";
   import * as ButtonGroup from "$lib/components/ui/button-group/index.js";
   import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
+  import { Button } from "$lib/components/ui/button/index.js";
   let label = $state("personal");
 </script>
 <ButtonGroup.Root>
@@ -333,9 +363,9 @@ To create a button group, use the `ButtonGroup` component. See the [Button Group
             </DropdownMenu.SubTrigger>
             <DropdownMenu.SubContent>
               <DropdownMenu.RadioGroup bind:value={label}>
-                <DropdownMenu.RadioItem value="personal">
-                  Personal
-                </DropdownMenu.RadioItem>
+                <DropdownMenu.RadioItem value="personal"
+                  >Personal</DropdownMenu.RadioItem
+                >
                 <DropdownMenu.RadioItem value="work"
                   >Work</DropdownMenu.RadioItem
                 >
@@ -358,6 +388,8 @@ To create a button group, use the `ButtonGroup` component. See the [Button Group
   </ButtonGroup.Root>
 </ButtonGroup.Root>
 ```
+
+View Code
 
 ```svelte
 <ButtonGroup.Root>
@@ -443,7 +475,7 @@ To create a button group, use the `ButtonGroup` component. See the [Button Group
 </ButtonGroup.Root>
 ```
 
-### Link
+### [Link](#link-1)
 
 You can convert the `<button>` into an `<a>` element by simply passing an `href` as a prop.
 
@@ -465,9 +497,9 @@ Alternatively, you can use the `buttonVariants` helper to create a link that loo
 </a>
 ```
 
-## Changelog
+## [Changelog](#changelog)
 
-### 2025-09-24 New sizes
+### [2025-09-24 New sizes](#2025-09-24-new-sizes)
 
 We have added two new sizes to the button component: `icon-sm` and `icon-lg`. These sizes are used to create icon buttons. To add them, edit `button.svelte` and add the following code under `size` in `buttonVariants`:
 
