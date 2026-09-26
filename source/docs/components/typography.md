@@ -2,6 +2,12 @@
 
 Styles for headings, paragraphs, lists...etc
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 We do not ship any typography styles by default. This page is an example of how you can use utility classes to style your text.
 
 ```svelte
@@ -9,7 +15,7 @@ We do not ship any typography styles by default. This page is an example of how 
   <h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight text-balance">
     Taxing Laughter: The Joke Tax Chronicles
   </h1>
-  <p class="text-muted-foreground text-xl leading-7 [&:not(:first-child)]:mt-6">
+  <p class="text-xl leading-7 text-muted-foreground [&:not(:first-child)]:mt-6">
     Once upon a time, in a far-off land, there was a very lazy king who spent
     all day lounging on his throne. One day, his advisors came to him with a
     problem: the kingdom was running out of money.
@@ -21,7 +27,7 @@ We do not ship any typography styles by default. This page is an example of how 
   </h2>
   <p class="leading-7 [&:not(:first-child)]:mt-6">
     The king thought long and hard, and finally came up with
-    <a href="##" class="text-primary font-medium underline underline-offset-4">
+    <a href="##" class="font-medium text-primary underline underline-offset-4">
       a brilliant plan
     </a>
     : he would tax the jokes in the kingdom.
@@ -71,7 +77,7 @@ We do not ship any typography styles by default. This page is an example of how 
   <div class="my-6 w-full overflow-y-auto">
     <table class="w-full">
       <thead>
-        <tr class="even:bg-muted m-0 border-t p-0">
+        <tr class="m-0 border-t p-0 even:bg-muted">
           <th
             class="border px-4 py-2 text-start font-bold [&[align=center]]:text-center [&[align=right]]:text-end"
           >
@@ -85,7 +91,7 @@ We do not ship any typography styles by default. This page is an example of how 
         </tr>
       </thead>
       <tbody>
-        <tr class="even:bg-muted m-0 border-t p-0">
+        <tr class="m-0 border-t p-0 even:bg-muted">
           <td
             class="border px-4 py-2 text-start [&[align=center]]:text-center [&[align=right]]:text-end"
           >
@@ -97,7 +103,7 @@ We do not ship any typography styles by default. This page is an example of how 
             Overflowing
           </td>
         </tr>
-        <tr class="even:bg-muted m-0 border-t p-0">
+        <tr class="m-0 border-t p-0 even:bg-muted">
           <td
             class="border px-4 py-2 text-start [&[align=center]]:text-center [&[align=right]]:text-end"
           >
@@ -109,7 +115,7 @@ We do not ship any typography styles by default. This page is an example of how 
             Satisfied
           </td>
         </tr>
-        <tr class="even:bg-muted m-0 border-t p-0">
+        <tr class="m-0 border-t p-0 even:bg-muted">
           <td
             class="border px-4 py-2 text-start [&[align=center]]:text-center [&[align=right]]:text-end"
           >
@@ -136,7 +142,9 @@ We do not ship any typography styles by default. This page is an example of how 
 </div>
 ```
 
-## h1
+View Code
+
+## [h1](#h1)
 
 ```svelte
 <h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
@@ -144,7 +152,9 @@ We do not ship any typography styles by default. This page is an example of how 
 </h1>
 ```
 
-## h2
+View Code
+
+## [h2](#h2)
 
 ```svelte
 <h2
@@ -154,13 +164,17 @@ We do not ship any typography styles by default. This page is an example of how 
 </h2>
 ```
 
-## h3
+View Code
+
+## [h3](#h3)
 
 ```svelte
 <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">The Joke Tax</h3>
 ```
 
-## h4
+View Code
+
+## [h4](#h4)
 
 ```svelte
 <h4 class="scroll-m-20 text-xl font-semibold tracking-tight">
@@ -168,7 +182,9 @@ We do not ship any typography styles by default. This page is an example of how 
 </h4>
 ```
 
-## p
+View Code
+
+## [p](#p)
 
 ```svelte
 <p class="leading-7 [&:not(:first-child)]:mt-6">
@@ -177,7 +193,9 @@ We do not ship any typography styles by default. This page is an example of how 
 </p>
 ```
 
-## blockquote
+View Code
+
+## [blockquote](#blockquote)
 
 ```svelte
 <blockquote class="mt-6 border-s-2 ps-6 italic">
@@ -186,13 +204,15 @@ We do not ship any typography styles by default. This page is an example of how 
 </blockquote>
 ```
 
-## table
+View Code
+
+## [table](#table)
 
 ```svelte
 <div class="my-6 w-full overflow-y-auto">
   <table class="w-full">
     <thead>
-      <tr class="even:bg-muted m-0 border-t p-0">
+      <tr class="m-0 border-t p-0 even:bg-muted">
         <th
           class="border px-4 py-2 text-start font-bold [&[align=center]]:text-center [&[align=right]]:text-end"
         >
@@ -206,7 +226,7 @@ We do not ship any typography styles by default. This page is an example of how 
       </tr>
     </thead>
     <tbody>
-      <tr class="even:bg-muted m-0 border-t p-0">
+      <tr class="m-0 border-t p-0 even:bg-muted">
         <td
           class="border px-4 py-2 text-start [&[align=center]]:text-center [&[align=right]]:text-end"
         >
@@ -218,7 +238,7 @@ We do not ship any typography styles by default. This page is an example of how 
           Overflowing
         </td>
       </tr>
-      <tr class="even:bg-muted m-0 border-t p-0">
+      <tr class="m-0 border-t p-0 even:bg-muted">
         <td
           class="border px-4 py-2 text-start [&[align=center]]:text-center [&[align=right]]:text-end"
         >
@@ -230,7 +250,7 @@ We do not ship any typography styles by default. This page is an example of how 
           Satisfied
         </td>
       </tr>
-      <tr class="even:bg-muted m-0 border-t p-0">
+      <tr class="m-0 border-t p-0 even:bg-muted">
         <td
           class="border px-4 py-2 text-start [&[align=center]]:text-center [&[align=right]]:text-end"
         >
@@ -247,7 +267,9 @@ We do not ship any typography styles by default. This page is an example of how 
 </div>
 ```
 
-## list
+View Code
+
+## [list](#list)
 
 ```svelte
 <ul class="my-6 ms-6 list-disc [&>li]:mt-2">
@@ -257,39 +279,51 @@ We do not ship any typography styles by default. This page is an example of how 
 </ul>
 ```
 
-## Inline code
+View Code
+
+## [Inline code](#inline-code)
 
 ```svelte
 <code
-  class="bg-muted relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold"
+  class="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold"
 >
   @lucide/svelte
 </code>
 ```
 
-## Lead
+View Code
+
+## [Lead](#lead)
 
 ```svelte
-<p class="text-muted-foreground text-xl">
+<p class="text-xl text-muted-foreground">
   A modal dialog that interrupts the user with important content and expects a
   response.
 </p>
 ```
 
-## Large
+View Code
+
+## [Large](#large)
 
 ```svelte
 <div class="text-lg font-semibold">Are you sure absolutely sure?</div>
 ```
 
-## Small
+View Code
+
+## [Small](#small)
 
 ```svelte
 <small class="text-sm leading-none font-medium">Email address</small>
 ```
 
-## Muted
+View Code
+
+## [Muted](#muted)
 
 ```svelte
-<p class="text-muted-foreground text-sm">Enter your email address.</p>
+<p class="text-sm text-muted-foreground">Enter your email address.</p>
 ```
+
+View Code
