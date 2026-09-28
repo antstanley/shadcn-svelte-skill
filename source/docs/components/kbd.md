@@ -2,6 +2,12 @@
 
 Used to display textual user input from keyboard.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import * as Kbd from "$lib/components/ui/kbd/index.js";
@@ -21,7 +27,9 @@ Used to display textual user input from keyboard.
 </div>
 ```
 
-## Installation
+View Code
+
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add kbd
@@ -35,7 +43,7 @@ npx shadcn-svelte@latest add kbd
 bun x shadcn-svelte@latest add kbd
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -47,9 +55,9 @@ bun x shadcn-svelte@latest add kbd
 <Kbd.Root>B</Kbd.Root>
 ```
 
-## Examples
+## [Examples](#examples)
 
-### Group
+### [Group](#group)
 
 Use the `Kbd.Group` component to group keyboard keys together.
 
@@ -58,7 +66,7 @@ Use the `Kbd.Group` component to group keyboard keys together.
   import * as Kbd from "$lib/components/ui/kbd/index.js";
 </script>
 <div class="flex flex-col items-center gap-4">
-  <p class="text-muted-foreground text-sm">
+  <p class="text-sm text-muted-foreground">
     Use
     <Kbd.Group>
       <Kbd.Root>Ctrl + B</Kbd.Root>
@@ -69,14 +77,16 @@ Use the `Kbd.Group` component to group keyboard keys together.
 </div>
 ```
 
-### Button
+View Code
+
+### [Button](#button)
 
 Use the `Kbd.Root` component inside a `Button` component to display a keyboard key inside a button.
 
 ```svelte
 <script lang="ts">
-  import { Button } from "$lib/components/ui/button/index.js";
   import * as Kbd from "$lib/components/ui/kbd/index.js";
+  import { Button } from "$lib/components/ui/button/index.js";
 </script>
 <div class="flex flex-wrap items-center gap-4">
   <Button variant="outline" size="sm" class="pe-2">
@@ -88,16 +98,18 @@ Use the `Kbd.Root` component inside a `Button` component to display a keyboard k
 </div>
 ```
 
-### Tooltip
+View Code
+
+### [Tooltip](#tooltip)
 
 You can use the `Kbd.Root` component inside a `Tooltip` component to display a tooltip with a keyboard key.
 
 ```svelte
 <script lang="ts">
   import * as ButtonGroup from "$lib/components/ui/button-group/index.js";
-  import { Button } from "$lib/components/ui/button/index.js";
   import * as Kbd from "$lib/components/ui/kbd/index.js";
   import * as Tooltip from "$lib/components/ui/tooltip/index.js";
+  import { Button } from "$lib/components/ui/button/index.js";
 </script>
 <div class="flex flex-wrap gap-4">
   <ButtonGroup.Root>
@@ -133,15 +145,17 @@ You can use the `Kbd.Root` component inside a `Tooltip` component to display a t
 </div>
 ```
 
-### Input Group
+View Code
+
+### [Input Group](#input-group)
 
 You can use the `Kbd.Root` component inside a `InputGroup.Addon` component to display a keyboard key inside an input group.
 
 ```svelte
 <script lang="ts">
-  import * as Kbd from "$lib/components/ui/kbd/index.js";
-  import * as InputGroup from "$lib/components/ui/input-group/index.js";
   import SearchIcon from "@lucide/svelte/icons/search";
+  import * as InputGroup from "$lib/components/ui/input-group/index.js";
+  import * as Kbd from "$lib/components/ui/kbd/index.js";
 </script>
 <div class="flex w-full max-w-xs flex-col gap-6">
   <InputGroup.Root>
@@ -156,3 +170,5 @@ You can use the `Kbd.Root` component inside a `InputGroup.Addon` component to di
   </InputGroup.Root>
 </div>
 ```
+
+View Code
