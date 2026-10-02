@@ -1,17 +1,19 @@
 # Item
 
-A versatile component that you can use to display any content.
+A versatile component for displaying content with media, title, description, and actions.
 
-The `Item` component is a straightforward flex container that can house nearly any type of content. Use it to display a title, description, and actions. Group it with the `ItemGroup` component to create a list of items.
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
 
-You can pretty much achieve the same result with the `div` element and some classes, but **I've built this so many times** that I decided to create a component for it. Now I use it all the time.
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
 
 ```svelte
 <script lang="ts">
-  import * as Item from "$lib/components/ui/item/index.js";
-  import { Button } from "$lib/components/ui/button/index.js";
   import BadgeCheckIcon from "@lucide/svelte/icons/badge-check";
   import ChevronRightIcon from "@lucide/svelte/icons/chevron-right";
+  import * as Item from "$lib/components/ui/item/index.js";
+  import { Button } from "$lib/components/ui/button/index.js";
 </script>
 <div class="flex w-full max-w-md flex-col gap-6">
   <Item.Root variant="outline">
@@ -27,7 +29,7 @@ You can pretty much achieve the same result with the `div` element and some clas
   </Item.Root>
   <Item.Root variant="outline" size="sm">
     {#snippet child({ props })}
-      <a href="#/" {...props}>
+      <a href="##" {...props}>
         <Item.Media>
           <BadgeCheckIcon class="size-5" />
         </Item.Media>
@@ -43,7 +45,11 @@ You can pretty much achieve the same result with the `div` element and some clas
 </div>
 ```
 
-## Installation
+View Code
+
+The `Item` component is a straightforward flex container that can house nearly any type of content. Use it to display a title, description, and actions. Group it with the `Item.Group` component to create a list of items.
+
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add item
@@ -57,7 +63,7 @@ npx shadcn-svelte@latest add item
 bun x shadcn-svelte@latest add item
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -78,106 +84,108 @@ bun x shadcn-svelte@latest add item
 </Item.Root>
 ```
 
-## Item vs Field
+## [Item vs Field](#item-vs-field)
 
 Use Field if you need to display a form input such as a checkbox, input, radio, or select.
 
 If you only need to display content such as a title, description, and actions, use `Item`.
 
-## Examples
+## [Variant](#variant)
 
-### Variants
+Use the `variant` prop to change the visual style of the item.
 
 ```svelte
 <script lang="ts">
+  import InboxIcon from "@lucide/svelte/icons/inbox";
   import * as Item from "$lib/components/ui/item/index.js";
-  import { Button } from "$lib/components/ui/button/index.js";
 </script>
-<div class="flex flex-col gap-6">
+<div class="flex w-full max-w-md flex-col gap-6">
   <Item.Root>
+    <Item.Media variant="icon">
+      <InboxIcon />
+    </Item.Media>
     <Item.Content>
       <Item.Title>Default Variant</Item.Title>
-      <Item.Description>
-        Standard styling with subtle background and borders.
-      </Item.Description>
+      <Item.Description>Transparent background with no border.</Item.Description
+      >
     </Item.Content>
-    <Item.Actions>
-      <Button variant="outline" size="sm">Open</Button>
-    </Item.Actions>
   </Item.Root>
   <Item.Root variant="outline">
+    <Item.Media variant="icon">
+      <InboxIcon />
+    </Item.Media>
     <Item.Content>
       <Item.Title>Outline Variant</Item.Title>
-      <Item.Description>
-        Outlined style with clear borders and transparent background.
-      </Item.Description>
+      <Item.Description>Outlined style with a visible border.</Item.Description>
     </Item.Content>
-    <Item.Actions>
-      <Button variant="outline" size="sm">Open</Button>
-    </Item.Actions>
   </Item.Root>
   <Item.Root variant="muted">
+    <Item.Media variant="icon">
+      <InboxIcon />
+    </Item.Media>
     <Item.Content>
       <Item.Title>Muted Variant</Item.Title>
-      <Item.Description>
-        Subdued appearance with muted colors for secondary content.
-      </Item.Description>
+      <Item.Description
+        >Muted background for secondary content.</Item.Description
+      >
     </Item.Content>
-    <Item.Actions>
-      <Button variant="outline" size="sm">Open</Button>
-    </Item.Actions>
   </Item.Root>
 </div>
 ```
 
-### Size
+View Code
 
-The `Item` component has different sizes for different use cases. For example, you can use the `sm` size for a compact item or the default size for a standard item.
+## [Size](#size)
+
+Use the `size` prop to change the size of the item. Available sizes are `default`, `sm`, and `xs`.
 
 ```svelte
 <script lang="ts">
+  import InboxIcon from "@lucide/svelte/icons/inbox";
   import * as Item from "$lib/components/ui/item/index.js";
-  import { Button } from "$lib/components/ui/button/index.js";
-  import BadgeCheckIcon from "@lucide/svelte/icons/badge-check";
-  import ChevronRightIcon from "@lucide/svelte/icons/chevron-right";
 </script>
 <div class="flex w-full max-w-md flex-col gap-6">
   <Item.Root variant="outline">
+    <Item.Media variant="icon">
+      <InboxIcon />
+    </Item.Media>
     <Item.Content>
-      <Item.Title>Basic Item</Item.Title>
-      <Item.Description
-        >A simple item with title and description.</Item.Description
-      >
+      <Item.Title>Default Size</Item.Title>
+      <Item.Description>The standard size for most use cases.</Item.Description>
     </Item.Content>
-    <Item.Actions>
-      <Button variant="outline" size="sm">Action</Button>
-    </Item.Actions>
   </Item.Root>
   <Item.Root variant="outline" size="sm">
-    {#snippet child({ props })}
-      <a href="#/" {...props}>
-        <Item.Media>
-          <BadgeCheckIcon class="size-5" />
-        </Item.Media>
-        <Item.Content>
-          <Item.Title>Your profile has been verified.</Item.Title>
-        </Item.Content>
-        <Item.Actions>
-          <ChevronRightIcon class="size-4" />
-        </Item.Actions>
-      </a>
-    {/snippet}
+    <Item.Media variant="icon">
+      <InboxIcon />
+    </Item.Media>
+    <Item.Content>
+      <Item.Title>Small Size</Item.Title>
+      <Item.Description>A compact size for dense layouts.</Item.Description>
+    </Item.Content>
+  </Item.Root>
+  <Item.Root variant="outline" size="xs">
+    <Item.Media variant="icon">
+      <InboxIcon />
+    </Item.Media>
+    <Item.Content>
+      <Item.Title>Extra Small Size</Item.Title>
+      <Item.Description>The most compact size available.</Item.Description>
+    </Item.Content>
   </Item.Root>
 </div>
 ```
 
-### Icon
+View Code
+
+## [Icon](#icon)
+
+Use `Item.Media` with `variant="icon"` to display an icon.
 
 ```svelte
 <script lang="ts">
+  import ShieldAlertIcon from "@lucide/svelte/icons/shield-alert";
   import * as Item from "$lib/components/ui/item/index.js";
   import { Button } from "$lib/components/ui/button/index.js";
-  import ShieldAlertIcon from "@lucide/svelte/icons/shield-alert";
 </script>
 <div class="flex w-full max-w-lg flex-col gap-6">
   <Item.Root variant="outline">
@@ -197,14 +205,18 @@ The `Item` component has different sizes for different use cases. For example, y
 </div>
 ```
 
-### Avatar
+View Code
+
+## [Avatar](#avatar)
+
+You can use `Item.Media` with `variant="avatar"` to display an avatar.
 
 ```svelte
 <script lang="ts">
-  import * as Item from "$lib/components/ui/item/index.js";
-  import * as Avatar from "$lib/components/ui/avatar/index.js";
-  import { Button } from "$lib/components/ui/button/index.js";
   import Plus from "@lucide/svelte/icons/plus";
+  import * as Avatar from "$lib/components/ui/avatar/index.js";
+  import * as Item from "$lib/components/ui/item/index.js";
+  import { Button } from "$lib/components/ui/button/index.js";
 </script>
 <div class="flex w-full max-w-lg flex-col gap-6">
   <Item.Root variant="outline">
@@ -220,7 +232,7 @@ The `Item` component has different sizes for different use cases. For example, y
     </Item.Content>
     <Item.Actions>
       <Button
-        size="icon"
+        size="icon-sm"
         variant="outline"
         class="rounded-full"
         aria-label="Invite"
@@ -232,7 +244,7 @@ The `Item` component has different sizes for different use cases. For example, y
   <Item.Root variant="outline">
     <Item.Media>
       <div
-        class="*:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:grayscale"
+        class="flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:ring-background *:data-[slot=avatar]:grayscale"
       >
         <Avatar.Root class="hidden sm:flex">
           <Avatar.Image src="https://github.com/shadcn.png" alt="@shadcn" />
@@ -267,7 +279,11 @@ The `Item` component has different sizes for different use cases. For example, y
 </div>
 ```
 
-### Image
+View Code
+
+## [Image](#image)
+
+Use `Item.Media` with `variant="image"` to display an image.
 
 ```svelte
 <script lang="ts">
@@ -294,18 +310,18 @@ The `Item` component has different sizes for different use cases. For example, y
  ];
 </script>
 <div class="flex w-full max-w-md flex-col gap-6">
-  <div class="flex w-full max-w-md flex-col gap-4">
-    {#each music as song (song)}
-      <Item.Root variant="outline">
+  <Item.Group class="gap-4">
+    {#each music as song (song.title)}
+      <Item.Root variant="outline" role="listitem">
         {#snippet child({ props })}
-          <a href="#/" {...props}>
+          <a href="##" {...props}>
             <Item.Media variant="image">
               <img
                 src={`https://avatar.vercel.sh/${song.title}`}
                 alt={song.title}
-                width="32"
-                height="32"
-                class="size-8 rounded object-cover grayscale"
+                width={32}
+                height={32}
+                class="object-cover grayscale"
               />
             </Item.Media>
             <Item.Content>
@@ -322,18 +338,22 @@ The `Item` component has different sizes for different use cases. For example, y
         {/snippet}
       </Item.Root>
     {/each}
-  </div>
+  </Item.Group>
 </div>
 ```
 
-### Group
+View Code
+
+## [Group](#group)
+
+Use `Item.Group` to group related items together.
 
 ```svelte
 <script lang="ts">
-  import * as Item from "$lib/components/ui/item/index.js";
-  import * as Avatar from "$lib/components/ui/avatar/index.js";
-  import { Button } from "$lib/components/ui/button/index.js";
   import Plus from "@lucide/svelte/icons/plus";
+  import * as Avatar from "$lib/components/ui/avatar/index.js";
+  import * as Item from "$lib/components/ui/item/index.js";
+  import { Button } from "$lib/components/ui/button/index.js";
   const people = [
     {
       username: "shadcn",
@@ -352,34 +372,34 @@ The `Item` component has different sizes for different use cases. For example, y
     }
  ];
 </script>
-<div class="flex w-full max-w-md flex-col gap-6">
-  <Item.Group>
-    {#each people as person, index (person.username)}
-      <Item.Root>
-        <Item.Media>
-          <Avatar.Root>
-            <Avatar.Image src={person.avatar} class="grayscale" />
-            <Avatar.Fallback>{person.username.charAt(0)}</Avatar.Fallback>
-          </Avatar.Root>
-        </Item.Media>
-        <Item.Content class="gap-1">
-          <Item.Title>{person.username}</Item.Title>
-          <Item.Description>{person.email}</Item.Description>
-        </Item.Content>
-        <Item.Actions>
-          <Button variant="ghost" size="icon" class="rounded-full">
-            <Plus />
-          </Button>
-        </Item.Actions>
-      </Item.Root>
-      {#if index !== people.length - 1} <Item.Separator />
-      {/if}
-    {/each}
-  </Item.Group>
-</div>
+<Item.Group class="max-w-sm">
+  {#each people as person (person.username)}
+    <Item.Root variant="outline">
+      <Item.Media>
+        <Avatar.Root>
+          <Avatar.Image src={person.avatar} class="grayscale" />
+          <Avatar.Fallback>{person.username.charAt(0)}</Avatar.Fallback>
+        </Avatar.Root>
+      </Item.Media>
+      <Item.Content class="gap-1">
+        <Item.Title>{person.username}</Item.Title>
+        <Item.Description>{person.email}</Item.Description>
+      </Item.Content>
+      <Item.Actions>
+        <Button variant="ghost" size="icon" class="rounded-full">
+          <Plus />
+        </Button>
+      </Item.Actions>
+    </Item.Root>
+  {/each}
+</Item.Group>
 ```
 
-### Header
+View Code
+
+## [Header](#header)
+
+Use `Item.Header` to add a header above the item content.
 
 ```svelte
 <script lang="ts">
@@ -416,8 +436,8 @@ The `Item` component has different sizes for different use cases. For example, y
           <img
             src={model.image}
             alt={model.name}
-            width="128"
-            height="128"
+            width={128}
+            height={128}
             class="aspect-square w-full rounded-sm object-cover"
           />
         </Item.Header>
@@ -431,25 +451,27 @@ The `Item` component has different sizes for different use cases. For example, y
 </div>
 ```
 
-### Link
+View Code
 
-To render an item as a link, use the the `child` snippet. The hover and focus states will be applied to the anchor element.
+## [Link](#link)
+
+Use the `child` snippet to render the item as a link. The hover and focus states will be applied to the anchor element.
 
 ```svelte
 <script lang="ts">
-  import * as Item from "$lib/components/ui/item/index.js";
   import ChevronRightIcon from "@lucide/svelte/icons/chevron-right";
   import ExternalLinkIcon from "@lucide/svelte/icons/external-link";
+  import * as Item from "$lib/components/ui/item/index.js";
 </script>
 <div class="flex w-full max-w-md flex-col gap-4">
   <Item.Root>
     {#snippet child({ props })}
-      <a href="#/" {...props}>
+      <a href="##" {...props}>
         <Item.Content>
           <Item.Title>Visit our documentation</Item.Title>
-          <Item.Description>
-            Learn how to get started with our components.
-          </Item.Description>
+          <Item.Description
+            >Learn how to get started with our components.</Item.Description
+          >
         </Item.Content>
         <Item.Actions>
           <ChevronRightIcon class="size-4" />
@@ -459,12 +481,12 @@ To render an item as a link, use the the `child` snippet. The hover and focus st
   </Item.Root>
   <Item.Root variant="outline">
     {#snippet child({ props })}
-      <a href="#/" target="_blank" rel="noopener noreferrer" {...props}>
+      <a href="##" target="_blank" rel="noopener noreferrer" {...props}>
         <Item.Content>
           <Item.Title>External resource</Item.Title>
-          <Item.Description>
-            Opens in a new tab with security attributes.
-          </Item.Description>
+          <Item.Description
+            >Opens in a new tab with security attributes.</Item.Description
+          >
         </Item.Content>
         <Item.Actions>
           <ExternalLinkIcon class="size-4" />
@@ -475,15 +497,35 @@ To render an item as a link, use the the `child` snippet. The hover and focus st
 </div>
 ```
 
-### Dropdown
+View Code
+
+```svelte
+<Item.Root>
+  {#snippet child({ props })}
+    <a href="/dashboard" {...props}>
+      <Item.Media variant="icon">
+        <HomeIcon />
+      </Item.Media>
+      <Item.Content>
+        <Item.Title>Dashboard</Item.Title>
+        <Item.Description
+          >Overview of your account and activity.</Item.Description
+        >
+      </Item.Content>
+    </a>
+  {/snippet}
+</Item.Root>
+```
+
+## [Dropdown](#dropdown)
 
 ```svelte
 <script lang="ts">
-  import * as Item from "$lib/components/ui/item/index.js";
+  import ChevronDown from "@lucide/svelte/icons/chevron-down";
   import * as Avatar from "$lib/components/ui/avatar/index.js";
   import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
+  import * as Item from "$lib/components/ui/item/index.js";
   import { Button } from "$lib/components/ui/button/index.js";
-  import ChevronDown from "@lucide/svelte/icons/chevron-down";
   const people = [
     {
       username: "shadcn",
@@ -502,33 +544,37 @@ To render an item as a link, use the the `child` snippet. The hover and focus st
     }
  ];
 </script>
-<div class="flex min-h-64 w-full max-w-md flex-col items-center gap-6">
-  <DropdownMenu.Root>
-    <DropdownMenu.Trigger>
-      {#snippet child({ props })}
-        <Button {...props} variant="outline" size="sm" class="w-fit">
-          Select <ChevronDown />
-        </Button>
-      {/snippet}
-    </DropdownMenu.Trigger>
-    <DropdownMenu.Content class="w-72 [--radius:0.65rem]" align="end">
+<DropdownMenu.Root>
+  <DropdownMenu.Trigger>
+    {#snippet child({ props })}
+      <Button {...props} variant="outline">
+        Select <ChevronDown />
+      </Button>
+    {/snippet}
+  </DropdownMenu.Trigger>
+  <DropdownMenu.Content class="w-auto" align="end">
+    <DropdownMenu.Group>
       {#each people as person (person.username)}
-        <DropdownMenu.Item class="p-0">
-          <Item.Root size="sm" class="w-full p-2">
+        <DropdownMenu.Item>
+          <Item.Root size="xs" class="w-full p-2">
             <Item.Media>
-              <Avatar.Root class="size-8">
+              <Avatar.Root class="size-[--spacing(6.5)]">
                 <Avatar.Image src={person.avatar} class="grayscale" />
                 <Avatar.Fallback>{person.username.charAt(0)}</Avatar.Fallback>
               </Avatar.Root>
             </Item.Media>
-            <Item.Content class="gap-0.5">
+            <Item.Content class="gap-0">
               <Item.Title>{person.username}</Item.Title>
-              <Item.Description>{person.email}</Item.Description>
+              <Item.Description class="leading-none"
+                >{person.email}</Item.Description
+              >
             </Item.Content>
           </Item.Root>
         </DropdownMenu.Item>
       {/each}
-    </DropdownMenu.Content>
-  </DropdownMenu.Root>
-</div>
+    </DropdownMenu.Group>
+  </DropdownMenu.Content>
+</DropdownMenu.Root>
 ```
+
+View Code

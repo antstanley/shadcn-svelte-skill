@@ -1,344 +1,38 @@
 # Calendar
 
-A calendar component that allows users to select dates.
+A calendar component that allows users to select a date or a range of dates.
 
 [Docs](https://bits-ui.com/docs/components/calendar)
 
 [API Reference](https://bits-ui.com/docs/components/calendar#api-reference)
 
-```svelte
-<script lang="ts">
-  import { getLocalTimeZone, today } from "@internationalized/date";
-  import { Calendar } from "$lib/components/ui/calendar/index.js";
-  let value = today(getLocalTimeZone());
-</script>
-<Calendar
-  type="single"
-  bind:value
-  class="rounded-md border shadow-sm"
-  captionLayout="dropdown"
-/>
-```
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
 
-## Blocks
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
 
-We have built a collection of 30+ calendar blocks that you can use to build your own calendar components.
-
-See call calendar blocks in the [Blocks Library](https://shadcn-svelte.com/blocks/calendar) page.
-
-## Installation
-
-```bash
-pnpm dlx shadcn-svelte@latest add calendar
-```
-
-```bash
-npx shadcn-svelte@latest add calendar
-```
-
-```bash
-bun x shadcn-svelte@latest add calendar
-```
-
-## About
-
-The `<Calendar />` component is built on top of the [Bits UI Calendar](https://www.bits-ui.com/docs/components/calendar) component, which uses the [@internationalized/date](https://react-spectrum.adobe.com/internationalized/date/index.html) package to handle dates.
-
-If you're looking for a range calendar, check out the [Range Calendar](https://shadcn-svelte.com/docs/components/range-calendar) component.
-
-## Date Picker
-
-You can use the `<Calendar />` component to build a date picker. See the [Date Picker](https://shadcn-svelte.com/docs/components/date-picker) page for more information.
-
-## Examples
-
-### Range Calendar
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
 
 ```svelte
 <script lang="ts">
-  import Calendar from "$lib/components/ui/calendar/calendar.svelte";
-  import { CalendarDate } from "@internationalized/date";
-  let value = $state<CalendarDate | undefined>(new CalendarDate(2025, 6, 12));
-</script>
-<Calendar
-  type="single"
-  bind:value
-  class="rounded-lg border shadow-sm"
-  numberOfMonths={2}
-/>
-```
-
-### Month and Year Selector
-
-```svelte
-<script lang="ts">
-  import Calendar from "$lib/components/ui/calendar/calendar.svelte";
-  import * as Select from "$lib/components/ui/select/index.js";
-  import { Label } from "$lib/components/ui/label/index.js";
-  import { CalendarDate } from "@internationalized/date";
-  import type { ComponentProps } from "svelte";
-  let value = $state<CalendarDate>(new CalendarDate(2025, 6, 12));
-  let dropdown =
-    $state<ComponentProps<typeof Calendar>["captionLayout"]>("dropdown");
-  const dropdownOptions = [
-    {
-      label: "Month and Year",
-      value: "dropdown"
-    },
-    {
-      label: "Month Only",
-      value: "dropdown-months"
-    },
-    {
-      label: "Year Only",
-      value: "dropdown-years"
-    }
- ];
-  const selectedDropdown = $derived(
-    dropdownOptions.find((option) => option.value === dropdown)?.label ??
-      "Dropdown"
-  );
-  const id = $props.id();
-</script>
-<div class="flex flex-col gap-4">
-  <Calendar
-    type="single"
-    bind:value
-    class="rounded-lg border shadow-sm"
-    captionLayout={dropdown}
-  />
-  <div class="flex flex-col gap-3">
-    <Label for="{id}-dropdown" class="px-1">Dropdown</Label>
-    <Select.Root type="single" bind:value={dropdown}>
-      <Select.Trigger id="{id}-dropdown" size="sm" class="bg-background w-full">
-        {selectedDropdown}
-      </Select.Trigger>
-      <Select.Content align="center">
-        {#each dropdownOptions as option (option.value)}
-          <Select.Item value={option.value}>{option.label}</Select.Item>
-        {/each}
-      </Select.Content>
-    </Select.Root>
-  </div>
-</div>
-```
-
-### Date of Birth Picker
-
-```svelte
-<script lang="ts">
-  import Calendar from "$lib/components/ui/calendar/calendar.svelte";
-  import * as Popover from "$lib/components/ui/popover/index.js";
-  import { Button } from "$lib/components/ui/button/index.js";
-  import { Label } from "$lib/components/ui/label/index.js";
-  import ChevronDownIcon from "@lucide/svelte/icons/chevron-down";
   import {
     getLocalTimeZone,
     today,
     type CalendarDate
   } from "@internationalized/date";
-  const id = $props.id();
-  let open = $state(false);
-  let value = $state<CalendarDate | undefined>();
-</script>
-<div class="flex flex-col gap-3">
-  <Label for="{id}-date" class="px-1">Date of birth</Label>
-  <Popover.Root bind:open>
-    <Popover.Trigger id="{id}-date">
-      {#snippet child({ props })}
-        <Button
-          {...props}
-          variant="outline"
-          class="w-48 justify-between font-normal"
-        >
-          {value
-            ? value.toDate(getLocalTimeZone()).toLocaleDateString()
-            : "Select date"}
-          <ChevronDownIcon />
-        </Button>
-      {/snippet}
-    </Popover.Trigger>
-    <Popover.Content class="w-auto overflow-hidden p-0" align="start">
-      <Calendar
-        type="single"
-        bind:value
-        captionLayout="dropdown"
-        onValueChange={() => {
-          open = false;
-        }}
-        maxValue={today(getLocalTimeZone())}
-      />
-    </Popover.Content>
-  </Popover.Root>
-</div>
-```
-
-### Date and Time Picker
-
-```svelte
-<script lang="ts">
-  import Calendar from "$lib/components/ui/calendar/calendar.svelte";
-  import * as Popover from "$lib/components/ui/popover/index.js";
-  import { Button } from "$lib/components/ui/button/index.js";
-  import { Label } from "$lib/components/ui/label/index.js";
-  import { Input } from "$lib/components/ui/input/index.js";
-  import ChevronDownIcon from "@lucide/svelte/icons/chevron-down";
-  import { getLocalTimeZone } from "@internationalized/date";
-  import type { CalendarDate } from "@internationalized/date";
-  const id = $props.id();
-  let open = $state(false);
-  let value = $state<CalendarDate | undefined>();
-</script>
-<div class="flex gap-4">
-  <div class="flex flex-col gap-3">
-    <Label for="{id}-date" class="px-1">Date</Label>
-    <Popover.Root bind:open>
-      <Popover.Trigger id="{id}-date">
-        {#snippet child({ props })}
-          <Button
-            {...props}
-            variant="outline"
-            class="w-32 justify-between font-normal"
-          >
-            {value
-              ? value.toDate(getLocalTimeZone()).toLocaleDateString()
-              : "Select date"}
-            <ChevronDownIcon />
-          </Button>
-        {/snippet}
-      </Popover.Trigger>
-      <Popover.Content class="w-auto overflow-hidden p-0" align="start">
-        <Calendar
-          type="single"
-          bind:value
-          onValueChange={() => {
-            open = false;
-          }}
-          captionLayout="dropdown"
-        />
-      </Popover.Content>
-    </Popover.Root>
-  </div>
-  <div class="flex flex-col gap-3">
-    <Label for="{id}-time" class="px-1">Time</Label>
-    <Input
-      type="time"
-      id="{id}-time"
-      step="1"
-      value="10:30:00"
-      class="bg-background appearance-none [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none"
-    />
-  </div>
-</div>
-```
-
-### Natural Language Picker
-
-This component uses the `chrono-node` library to parse natural language dates.
-
-```svelte
-<script lang="ts">
-  import { Label } from "$lib/components/ui/label/index.js";
-  import * as Popover from "$lib/components/ui/popover/index.js";
-  import { Button } from "$lib/components/ui/button/index.js";
   import { Calendar } from "$lib/components/ui/calendar/index.js";
-  import { Input } from "$lib/components/ui/input/index.js";
-  import CalendarIcon from "@lucide/svelte/icons/calendar";
-  import { parseDate } from "chrono-node";
-  import {
-    CalendarDate,
-    getLocalTimeZone,
-    type DateValue
-  } from "@internationalized/date";
-  import { untrack } from "svelte";
-  function formatDate(date: DateValue | undefined) {
-    if (!date) return "";
-    return date.toDate(getLocalTimeZone()).toLocaleDateString("en-US", {
-      day: "2-digit",
-      month: "long",
-      year: "numeric"
-    });
-  }
-  const id = $props.id();
-  let open = $state(false);
-  let inputValue = $state("In 2 days");
-  let value = $state<DateValue | undefined>(
-    untrack(() => {
-      const date = parseDate(inputValue);
-      if (date)
-        return new CalendarDate(
-          date.getFullYear(),
-          date.getMonth() + 1,
-          date.getDate()
-        );
-      return undefined;
-    })
-  );
+  let value = $state<CalendarDate | undefined>(today(getLocalTimeZone()));
 </script>
-<div class="flex flex-col gap-3">
-  <Label for="{id}-date" class="px-1">Schedule Date</Label>
-  <div class="relative flex gap-2">
-    <Input
-      id="date"
-      bind:value={
-        () => inputValue,
-        (v) => {
-          inputValue = v;
-          const date = parseDate(v);
-          if (date) {
-            value = new CalendarDate(
-              date.getFullYear(),
-              date.getMonth() + 1,
-              date.getDate()
-            );
-          }
-        }
-      }
-      placeholder="Tomorrow or next week"
-      class="bg-background pe-10"
-      onkeydown={(e) => {
-        if (e.key === "ArrowDown") {
-          e.preventDefault();
-          open = true;
-        }
-      }}
-    />
-    <Popover.Root bind:open>
-      <Popover.Trigger id="{id}-date-picker">
-        {#snippet child({ props })}
-          <Button
-            {...props}
-            variant="ghost"
-            class="absolute end-2 top-1/2 size-6 -translate-y-1/2"
-          >
-            <CalendarIcon class="size-3.5" />
-            <span class="sr-only">Select date</span>
-          </Button>
-        {/snippet}
-      </Popover.Trigger>
-      <Popover.Content class="w-auto overflow-hidden p-0" align="end">
-        <Calendar
-          type="single"
-          bind:value
-          captionLayout="dropdown"
-          onValueChange={(v) => {
-            inputValue = formatDate(v);
-            open = false;
-          }}
-        />
-      </Popover.Content>
-    </Popover.Root>
-  </div>
-  <div class="text-muted-foreground px-1 text-sm">
-    Your post will be published on
-    <span class="font-medium">{formatDate(value)}</span>.
-  </div>
-</div>
+<Calendar
+  type="single"
+  bind:value
+  class="rounded-lg border"
+  captionLayout="dropdown"
+/>
 ```
 
-## Upgrade Guide
+View Code
 
-You can upgrade to the latest version of the `<Calendar />` component by running the following command:
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add calendar
@@ -352,22 +46,297 @@ npx shadcn-svelte@latest add calendar
 bun x shadcn-svelte@latest add calendar
 ```
 
-When you're prompted to overwrite the existing files, select `Yes`. **If you have made any changes to the `Calendar` component, you will need to merge your changes with the new version.**
+## [Usage](#usage)
 
-#### Installing Blocks
-
-After upgrading the `Calendar` component, you can add the new blocks with the following:
-
-```bash
-pnpm dlx shadcn-svelte@latest add calendar-02
+```svelte
+<script lang="ts">
+  import { getLocalTimeZone, today } from "@internationalized/date";
+  import { Calendar } from "$lib/components/ui/calendar/index.js";
+  let value = $state(today(getLocalTimeZone()));
+</script>
 ```
 
-```bash
-npx shadcn-svelte@latest add calendar-02
+```svelte
+<Calendar type="single" bind:value class="rounded-lg border" />
 ```
 
-```bash
-bun x shadcn-svelte@latest add calendar-02
+See the [Bits UI Calendar](https://bits-ui.com/docs/components/calendar) documentation for more information.
+
+## [About](#about)
+
+The `<Calendar />` component is built on top of the [Bits UI Calendar](https://bits-ui.com/docs/components/calendar) component, which uses the [@internationalized/date](https://react-spectrum.adobe.com/internationalized/date/index.html) package to handle dates.
+
+## [Date Picker](#date-picker)
+
+You can use the `<Calendar />` component to build a date picker. See the [Date Picker](https://shadcn-svelte.com/docs/components/date-picker) page for more information.
+
+## [Basic](#basic)
+
+A basic calendar component. We used `class="rounded-lg border"` to style the calendar.
+
+```svelte
+<script lang="ts">
+  import { Calendar } from "$lib/components/ui/calendar/index.js";
+</script>
+<Calendar type="single" class="rounded-lg border" />
 ```
 
-This will add the latest version of the calendar blocks.
+View Code
+
+## [Range Calendar](#range-calendar)
+
+Use the [`RangeCalendar`](https://shadcn-svelte.com/docs/components/range-calendar) component to enable range selection.
+
+```svelte
+<script lang="ts">
+  import {
+    CalendarDate,
+    getLocalTimeZone,
+    today
+  } from "@internationalized/date";
+  import * as Card from "$lib/components/ui/card/index.js";
+  import { RangeCalendar } from "$lib/components/ui/range-calendar/index.js";
+  import type { DateRange } from "bits-ui";
+  const start = new CalendarDate(today(getLocalTimeZone()).year, 1, 12);
+  let value = $state<DateRange | undefined>({
+    start,
+    end: start.add({ days: 30 })
+  });
+</script>
+<Card.Root class="mx-auto w-fit p-0">
+  <Card.Content class="p-0">
+    <RangeCalendar
+      bind:value
+      numberOfMonths={2}
+      minValue={new CalendarDate(1900, 1, 1)}
+      maxValue={today(getLocalTimeZone())}
+    />
+  </Card.Content>
+</Card.Root>
+```
+
+View Code
+
+## [Month and Year Selector](#month-and-year-selector)
+
+Use `captionLayout="dropdown"` to show month and year dropdowns.
+
+```svelte
+<script lang="ts">
+  import { Calendar } from "$lib/components/ui/calendar/index.js";
+</script>
+<Calendar type="single" captionLayout="dropdown" class="rounded-lg border" />
+```
+
+View Code
+
+## [Presets](#presets)
+
+```svelte
+<script lang="ts">
+  import {
+    CalendarDate,
+    getLocalTimeZone,
+    today
+  } from "@internationalized/date";
+  import * as Card from "$lib/components/ui/card/index.js";
+  import { Button } from "$lib/components/ui/button/index.js";
+  import { Calendar } from "$lib/components/ui/calendar/index.js";
+  const presets = [
+    { label: "Today", value: 0 },
+    { label: "Tomorrow", value: 1 },
+    { label: "In 3 days", value: 3 },
+    { label: "In a week", value: 7 },
+    { label: "In 2 weeks", value: 14 }
+ ];
+  let value = $state<CalendarDate | undefined>(
+    new CalendarDate(today(getLocalTimeZone()).year, 2, 12)
+  );
+  let placeholder = $state<CalendarDate>(today(getLocalTimeZone()));
+</script>
+<Card.Root class="mx-auto w-fit max-w-[300px]" size="sm">
+  <Card.Content>
+    <Calendar
+      type="single"
+      bind:value
+      bind:placeholder
+      fixedWeeks
+      class="p-0 [--cell-size:--spacing(9.5)]"
+    />
+  </Card.Content>
+  <Card.Footer class="flex flex-wrap gap-2 border-t">
+    {#each presets as preset (preset.value)}
+      <Button
+        variant="outline"
+        size="sm"
+        class="flex-1"
+        onclick={() => {
+          const newDate = today(getLocalTimeZone()).add({ days: preset.value });
+          value = newDate;
+          placeholder = newDate;
+        }}
+      >
+        {preset.label}
+      </Button>
+    {/each}
+  </Card.Footer>
+</Card.Root>
+```
+
+View Code
+
+## [Date and Time Picker](#date-and-time-picker)
+
+```svelte
+<script lang="ts">
+  import Clock2Icon from "@lucide/svelte/icons/clock-2";
+  import {
+    CalendarDate,
+    getLocalTimeZone,
+    today
+  } from "@internationalized/date";
+  import * as Card from "$lib/components/ui/card/index.js";
+  import * as Field from "$lib/components/ui/field/index.js";
+  import * as InputGroup from "$lib/components/ui/input-group/index.js";
+  import { Calendar } from "$lib/components/ui/calendar/index.js";
+  const now = today(getLocalTimeZone());
+  let value = $state<CalendarDate | undefined>(
+    new CalendarDate(now.year, now.month, 12)
+  );
+</script>
+<Card.Root size="sm" class="mx-auto w-fit">
+  <Card.Content>
+    <Calendar type="single" bind:value class="p-0" />
+  </Card.Content>
+  <Card.Footer class="border-t bg-card">
+    <Field.Group>
+      <Field.Field>
+        <Field.Label for="time-from">Start Time</Field.Label>
+        <InputGroup.Root>
+          <InputGroup.Input
+            id="time-from"
+            type="time"
+            step="1"
+            value="10:30:00"
+            class="appearance-none [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none"
+          />
+          <InputGroup.Addon>
+            <Clock2Icon class="text-muted-foreground" />
+          </InputGroup.Addon>
+        </InputGroup.Root>
+      </Field.Field>
+      <Field.Field>
+        <Field.Label for="time-to">End Time</Field.Label>
+        <InputGroup.Root>
+          <InputGroup.Input
+            id="time-to"
+            type="time"
+            step="1"
+            value="12:30:00"
+            class="appearance-none [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none"
+          />
+          <InputGroup.Addon>
+            <Clock2Icon class="text-muted-foreground" />
+          </InputGroup.Addon>
+        </InputGroup.Root>
+      </Field.Field>
+    </Field.Group>
+  </Card.Footer>
+</Card.Root>
+```
+
+View Code
+
+## [Booked dates](#booked-dates)
+
+```svelte
+<script lang="ts">
+  import {
+    CalendarDate,
+    getLocalTimeZone,
+    today,
+    type DateValue
+  } from "@internationalized/date";
+  import * as Card from "$lib/components/ui/card/index.js";
+  import { Calendar } from "$lib/components/ui/calendar/index.js";
+  const year = today(getLocalTimeZone()).year;
+  let value = $state<CalendarDate | undefined>(new CalendarDate(year, 2, 3));
+  const bookedDates = Array.from(
+    { length: 15 },
+    (_, i) => new CalendarDate(year, 2, 12 + i)
+  );
+  function isBooked(date: DateValue) {
+    return bookedDates.some((d) => d.compare(date) === 0);
+  }
+</script>
+<Card.Root class="mx-auto w-fit p-0">
+  <Card.Content class="p-0">
+    <Calendar type="single" bind:value isDateUnavailable={isBooked} />
+  </Card.Content>
+</Card.Root>
+```
+
+View Code
+
+## [Custom Cell Size](#custom-cell-size)
+
+```svelte
+<script lang="ts">
+  import {
+    CalendarDate,
+    getLocalTimeZone,
+    isWeekend,
+    today
+  } from "@internationalized/date";
+  import * as Card from "$lib/components/ui/card/index.js";
+  import RangeCalendarDay from "$lib/components/ui/range-calendar/range-calendar-day.svelte";
+  import { RangeCalendar } from "$lib/components/ui/range-calendar/index.js";
+  import type { DateRange } from "bits-ui";
+  const start = new CalendarDate(today(getLocalTimeZone()).year, 12, 8);
+  let value = $state<DateRange | undefined>({
+    start,
+    end: start.add({ days: 10 })
+  });
+</script>
+<Card.Root class="mx-auto w-fit p-0">
+  <Card.Content class="p-0">
+    <RangeCalendar
+      bind:value
+      captionLayout="dropdown"
+      monthFormat="long"
+      class="[--cell-size:--spacing(10)] md:[--cell-size:--spacing(12)]"
+    >
+      {#snippet day({ day, outsideMonth })}
+        <RangeCalendarDay>
+          {day.day}
+          {#if !outsideMonth}
+            <span>{isWeekend(day, "en-US") ? "$120" : "$100"}</span>
+          {/if}
+        </RangeCalendarDay>
+      {/snippet}
+    </RangeCalendar>
+  </Card.Content>
+</Card.Root>
+```
+
+View Code
+
+You can customize the size of calendar cells using the `--cell-size` CSS variable. You can also make it responsive by using breakpoint-specific values:
+
+```svelte
+<Calendar
+  type="single"
+  bind:value
+  class="rounded-lg border [--cell-size:--spacing(11)] md:[--cell-size:--spacing(12)]"
+/>
+```
+
+Or use fixed values:
+
+```svelte
+<Calendar
+  type="single"
+  bind:value
+  class="rounded-lg border [--cell-size:2.75rem] md:[--cell-size:3rem]"
+/>
+```
