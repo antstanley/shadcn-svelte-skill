@@ -6,71 +6,72 @@ A set of layered sections of contentknown as tab panelsthat are displayed one at
 
 [API Reference](https://bits-ui.com/docs/components/tabs#api-reference)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
-  import * as Tabs from "$lib/components/ui/tabs/index.js";
   import * as Card from "$lib/components/ui/card/index.js";
-  import { Button } from "$lib/components/ui/button/index.js";
-  import { Input } from "$lib/components/ui/input/index.js";
-  import { Label } from "$lib/components/ui/label/index.js";
+  import * as Tabs from "$lib/components/ui/tabs/index.js";
+  const tabs = [
+    {
+      value: "overview",
+      title: "Overview",
+      description:
+        "View your key metrics and recent project activity. Track progress across all your active projects.",
+      content: "You have 12 active projects and 3 pending tasks."
+    },
+    {
+      value: "analytics",
+      title: "Analytics",
+      description:
+        "Track performance and user engagement metrics. Monitor trends and identify growth opportunities.",
+      content: "Page views are up 25% compared to last month."
+    },
+    {
+      value: "reports",
+      title: "Reports",
+      description:
+        "Generate and download your detailed reports. Export data in multiple formats for analysis.",
+      content: "You have 5 reports ready and available to export."
+    },
+    {
+      value: "settings",
+      title: "Settings",
+      description:
+        "Manage your account preferences and options. Customize your experience to fit your needs.",
+      content: "Configure notifications, security, and themes."
+    }
+ ];
 </script>
-<div class="-mb-4 flex w-full max-w-sm flex-col gap-6">
-  <Tabs.Root value="account">
-    <Tabs.List>
-      <Tabs.Trigger value="account">Account</Tabs.Trigger>
-      <Tabs.Trigger value="password">Password</Tabs.Trigger>
-    </Tabs.List>
-    <Tabs.Content value="account">
+<Tabs.Root value="overview" class="w-[400px]">
+  <Tabs.List>
+    {#each tabs as tab (tab.value)}
+      <Tabs.Trigger value={tab.value}>{tab.title}</Tabs.Trigger>
+    {/each}
+  </Tabs.List>
+  {#each tabs as tab (tab.value)}
+    <Tabs.Content value={tab.value}>
       <Card.Root>
         <Card.Header>
-          <Card.Title>Account</Card.Title>
-          <Card.Description>
-            Make changes to your account here. Click save when you&apos;re done.
-          </Card.Description>
+          <Card.Title>{tab.title}</Card.Title>
+          <Card.Description>{tab.description}</Card.Description>
         </Card.Header>
-        <Card.Content class="grid gap-6">
-          <div class="grid gap-3">
-            <Label for="tabs-demo-name">Name</Label>
-            <Input id="tabs-demo-name" value="Pedro Duarte" />
-          </div>
-          <div class="grid gap-3">
-            <Label for="tabs-demo-username">Username</Label>
-            <Input id="tabs-demo-username" value="@peduarte" />
-          </div>
-        </Card.Content>
-        <Card.Footer>
-          <Button>Save changes</Button>
-        </Card.Footer>
+        <Card.Content class="text-sm text-muted-foreground"
+          >{tab.content}</Card.Content
+        >
       </Card.Root>
     </Tabs.Content>
-    <Tabs.Content value="password">
-      <Card.Root>
-        <Card.Header>
-          <Card.Title>Password</Card.Title>
-          <Card.Description>
-            Change your password here. After saving, you&apos;ll be logged out.
-          </Card.Description>
-        </Card.Header>
-        <Card.Content class="grid gap-6">
-          <div class="grid gap-3">
-            <Label for="tabs-demo-current">Current password</Label>
-            <Input id="tabs-demo-current" type="password" />
-          </div>
-          <div class="grid gap-3">
-            <Label for="tabs-demo-new">New password</Label>
-            <Input id="tabs-demo-new" type="password" />
-          </div>
-        </Card.Content>
-        <Card.Footer>
-          <Button>Save password</Button>
-        </Card.Footer>
-      </Card.Root>
-    </Tabs.Content>
-  </Tabs.Root>
-</div>
+  {/each}
+</Tabs.Root>
 ```
 
-## Installation
+View Code
+
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add tabs
@@ -84,7 +85,7 @@ npx shadcn-svelte@latest add tabs
 bun x shadcn-svelte@latest add tabs
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -104,3 +105,81 @@ bun x shadcn-svelte@latest add tabs
   <Tabs.Content value="password">Change your password here.</Tabs.Content>
 </Tabs.Root>
 ```
+
+## [Line](#line)
+
+Use the `variant="line"` prop on `Tabs.List` for a line style.
+
+```svelte
+<script lang="ts">
+  import * as Tabs from "$lib/components/ui/tabs/index.js";
+</script>
+<Tabs.Root value="overview">
+  <Tabs.List variant="line">
+    <Tabs.Trigger value="overview">Overview</Tabs.Trigger>
+    <Tabs.Trigger value="analytics">Analytics</Tabs.Trigger>
+    <Tabs.Trigger value="reports">Reports</Tabs.Trigger>
+  </Tabs.List>
+</Tabs.Root>
+```
+
+View Code
+
+## [Vertical](#vertical)
+
+Use `orientation="vertical"` for vertical tabs.
+
+```svelte
+<script lang="ts">
+  import * as Tabs from "$lib/components/ui/tabs/index.js";
+</script>
+<Tabs.Root value="account" orientation="vertical">
+  <Tabs.List>
+    <Tabs.Trigger value="account">Account</Tabs.Trigger>
+    <Tabs.Trigger value="password">Password</Tabs.Trigger>
+    <Tabs.Trigger value="notifications">Notifications</Tabs.Trigger>
+  </Tabs.List>
+</Tabs.Root>
+```
+
+View Code
+
+## [Disabled](#disabled)
+
+```svelte
+<script lang="ts">
+  import * as Tabs from "$lib/components/ui/tabs/index.js";
+</script>
+<Tabs.Root value="home">
+  <Tabs.List>
+    <Tabs.Trigger value="home">Home</Tabs.Trigger>
+    <Tabs.Trigger value="settings" disabled>Disabled</Tabs.Trigger>
+  </Tabs.List>
+</Tabs.Root>
+```
+
+View Code
+
+## [Icons](#icons)
+
+```svelte
+<script lang="ts">
+  import AppWindowIcon from "@lucide/svelte/icons/app-window";
+  import CodeIcon from "@lucide/svelte/icons/code";
+  import * as Tabs from "$lib/components/ui/tabs/index.js";
+</script>
+<Tabs.Root value="preview">
+  <Tabs.List>
+    <Tabs.Trigger value="preview">
+      <AppWindowIcon />
+      Preview
+    </Tabs.Trigger>
+    <Tabs.Trigger value="code">
+      <CodeIcon />
+      Code
+    </Tabs.Trigger>
+  </Tabs.List>
+</Tabs.Root>
+```
+
+View Code
