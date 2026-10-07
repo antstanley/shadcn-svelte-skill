@@ -4,6 +4,12 @@ An opinionated toast component for Svelte.
 
 [Docs](https://svelte-sonner.vercel.app/)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
   import { toast } from "svelte-sonner";
@@ -24,11 +30,13 @@ An opinionated toast component for Svelte.
 </Button>
 ```
 
-## About
+View Code
+
+## [About](#about)
 
 The Sonner component is provided by [svelte-sonner](https://svelte-sonner.vercel.app/), which is a Svelte port of [Sonner](https://sonner.emilkowal.ski/), originally created by [Emil Kowalski](https://twitter.com/emilkowalski_) for React.
 
-## Installation
+## [Installation](#installation)
 
 Setup theme support
 
@@ -63,7 +71,7 @@ Add the Toaster component
 {@render children?.()}
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -76,7 +84,7 @@ Add the Toaster component
 <Button onclick={() => toast("Hello world")}>Show toast</Button>
 ```
 
-## Examples
+## [Types](#types)
 
 ```svelte
 <script lang="ts">
@@ -89,10 +97,8 @@ Add the Toaster component
   >
   <Button
     variant="outline"
-    onclick={() => toast.success("Event has been created")}
+    onclick={() => toast.success("Event has been created")}>Success</Button
   >
-    Success
-  </Button>
   <Button
     variant="outline"
     onclick={() =>
@@ -108,10 +114,8 @@ Add the Toaster component
   </Button>
   <Button
     variant="outline"
-    onclick={() => toast.error("Event has not been created")}
+    onclick={() => toast.error("Event has not been created")}>Error</Button
   >
-    Error
-  </Button>
   <Button
     variant="outline"
     onclick={() => {
@@ -133,9 +137,64 @@ Add the Toaster component
 </div>
 ```
 
-## Changelog
+View Code
 
-### 2025-12 Icons
+## [Description](#description)
+
+```svelte
+<script lang="ts">
+  import { toast } from "svelte-sonner";
+  import { Button } from "$lib/components/ui/button/index.js";
+</script>
+<Button
+  onclick={() =>
+    toast("Event has been created", {
+      description: "Monday, January 3rd at 6:00pm"
+    })}
+  variant="outline"
+  class="w-fit"
+>
+  Show Toast
+</Button>
+```
+
+View Code
+
+## [Position](#position)
+
+Use the `position` prop to change the position of the toast.
+
+```svelte
+<script lang="ts">
+  import { toast } from "svelte-sonner";
+  import { Button } from "$lib/components/ui/button/index.js";
+  const positions = [
+    { label: "Top Left", value: "top-left" },
+    { label: "Top Center", value: "top-center" },
+    { label: "Top Right", value: "top-right" },
+    { label: "Bottom Left", value: "bottom-left" },
+    { label: "Bottom Center", value: "bottom-center" },
+    { label: "Bottom Right", value: "bottom-right" }
+ ] as const;
+</script>
+<div class="flex flex-wrap justify-center gap-2">
+  {#each positions as position (position.value)}
+    <Button
+      variant="outline"
+      onclick={() =>
+        toast("Event has been created", { position: position.value })}
+    >
+      {position.label}
+    </Button>
+  {/each}
+</div>
+```
+
+View Code
+
+## [Changelog](#changelog)
+
+### [2025-12 Icons](#2025-12-icons)
 
 We've updated the Sonner component to use icons from `lucide`. Update your `sonner.svelte` file to use the new icons.
 

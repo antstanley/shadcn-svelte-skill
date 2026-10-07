@@ -1,10 +1,16 @@
 # Command
 
-Fast, composable, unstyled command menu for Svelte.
+Command menu for search and quick actions.
 
 [Docs](https://bits-ui.com/docs/components/command)
 
 [API Reference](https://bits-ui.com/docs/components/command#api-reference)
+
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
 
 ```svelte
 <script lang="ts">
@@ -16,7 +22,7 @@ Fast, composable, unstyled command menu for Svelte.
   import UserIcon from "@lucide/svelte/icons/user";
   import * as Command from "$lib/components/ui/command/index.js";
 </script>
-<Command.Root class="rounded-lg border shadow-md md:min-w-[450px]">
+<Command.Root class="max-w-sm rounded-lg border">
   <Command.Input placeholder="Type a command or search..." />
   <Command.List>
     <Command.Empty>No results found.</Command.Empty>
@@ -56,7 +62,13 @@ Fast, composable, unstyled command menu for Svelte.
 </Command.Root>
 ```
 
-## Installation
+View Code
+
+## [About](#about)
+
+The `<Command />` component uses the [`Command`](https://bits-ui.com/docs/components/command) component from [Bits UI](https://bits-ui.com), which is inspired by [`cmdk`](https://github.com/dip/cmdk).
+
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add command
@@ -70,7 +82,7 @@ npx shadcn-svelte@latest add command
 bun x shadcn-svelte@latest add command
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -98,9 +110,82 @@ bun x shadcn-svelte@latest add command
 </Command.Root>
 ```
 
-## Examples
+## [Basic](#basic)
 
-### Dialog
+A simple command menu in a dialog.
+
+```svelte
+<script lang="ts">
+  import * as Command from "$lib/components/ui/command/index.js";
+  import { Button } from "$lib/components/ui/button/index.js";
+  let open = $state(false);
+</script>
+<div class="flex flex-col gap-4">
+  <Button onclick={() => (open = true)} variant="outline" class="w-fit"
+    >Open Menu</Button
+  >
+  <Command.Dialog bind:open>
+    <Command.Input placeholder="Type a command or search..." />
+    <Command.List>
+      <Command.Empty>No results found.</Command.Empty>
+      <Command.Group heading="Suggestions">
+        <Command.Item>Calendar</Command.Item>
+        <Command.Item>Search Emoji</Command.Item>
+        <Command.Item>Calculator</Command.Item>
+      </Command.Group>
+    </Command.List>
+  </Command.Dialog>
+</div>
+```
+
+View Code
+
+## [Shortcuts](#shortcuts)
+
+```svelte
+<script lang="ts">
+  import CreditCardIcon from "@lucide/svelte/icons/credit-card";
+  import SettingsIcon from "@lucide/svelte/icons/settings";
+  import UserIcon from "@lucide/svelte/icons/user";
+  import * as Command from "$lib/components/ui/command/index.js";
+  import { Button } from "$lib/components/ui/button/index.js";
+  let open = $state(false);
+</script>
+<div class="flex flex-col gap-4">
+  <Button onclick={() => (open = true)} variant="outline" class="w-fit"
+    >Open Menu</Button
+  >
+  <Command.Dialog bind:open>
+    <Command.Input placeholder="Type a command or search..." />
+    <Command.List>
+      <Command.Empty>No results found.</Command.Empty>
+      <Command.Group heading="Settings">
+        <Command.Item>
+          <UserIcon />
+          <span>Profile</span>
+          <Command.Shortcut>P</Command.Shortcut>
+        </Command.Item>
+        <Command.Item>
+          <CreditCardIcon />
+          <span>Billing</span>
+          <Command.Shortcut>B</Command.Shortcut>
+        </Command.Item>
+        <Command.Item>
+          <SettingsIcon />
+          <span>Settings</span>
+          <Command.Shortcut>S</Command.Shortcut>
+        </Command.Item>
+      </Command.Group>
+    </Command.List>
+  </Command.Dialog>
+</div>
+```
+
+View Code
+
+## [Groups](#groups)
+
+A command menu with groups, icons and separators.
 
 ```svelte
 <script lang="ts">
@@ -111,99 +196,221 @@ bun x shadcn-svelte@latest add command
   import SmileIcon from "@lucide/svelte/icons/smile";
   import UserIcon from "@lucide/svelte/icons/user";
   import * as Command from "$lib/components/ui/command/index.js";
+  import { Button } from "$lib/components/ui/button/index.js";
   let open = $state(false);
-  function handleKeydown(e: KeyboardEvent) {
-    if (e.key === "j" && (e.metaKey || e.ctrlKey)) {
-      e.preventDefault();
-      open = !open;
-    }
-  }
 </script>
-<svelte:document onkeydown={handleKeydown} />
-<p class="text-muted-foreground text-sm">
-  Press
-  <kbd
-    class="bg-muted text-muted-foreground pointer-events-none inline-flex h-5 items-center gap-1 rounded border px-1.5 font-mono text-[10px] font-medium opacity-100 select-none"
+<div class="flex flex-col gap-4">
+  <Button onclick={() => (open = true)} variant="outline" class="w-fit"
+    >Open Menu</Button
   >
-    <span class="text-xs"></span>J
-  </kbd>
-</p>
-<Command.Dialog bind:open>
-  <Command.Input placeholder="Type a command or search..." />
-  <Command.List>
-    <Command.Empty>No results found.</Command.Empty>
-    <Command.Group heading="Suggestions">
-      <Command.Item>
-        <CalendarIcon class="me-2 size-4" />
-        <span>Calendar</span>
-      </Command.Item>
-      <Command.Item>
-        <SmileIcon class="me-2 size-4" />
-        <span>Search Emoji</span>
-      </Command.Item>
-      <Command.Item>
-        <CalculatorIcon class="me-2 size-4" />
-        <span>Calculator</span>
-      </Command.Item>
-    </Command.Group>
-    <Command.Separator />
-    <Command.Group heading="Settings">
-      <Command.Item>
-        <UserIcon class="me-2 size-4" />
-        <span>Profile</span>
-        <Command.Shortcut>P</Command.Shortcut>
-      </Command.Item>
-      <Command.Item>
-        <CreditCardIcon class="me-2 size-4" />
-        <span>Billing</span>
-        <Command.Shortcut>B</Command.Shortcut>
-      </Command.Item>
-      <Command.Item>
-        <SettingsIcon class="me-2 size-4" />
-        <span>Settings</span>
-        <Command.Shortcut>S</Command.Shortcut>
-      </Command.Item>
-    </Command.Group>
-  </Command.List>
-</Command.Dialog>
+  <Command.Dialog bind:open>
+    <Command.Input placeholder="Type a command or search..." />
+    <Command.List>
+      <Command.Empty>No results found.</Command.Empty>
+      <Command.Group heading="Suggestions">
+        <Command.Item>
+          <CalendarIcon />
+          <span>Calendar</span>
+        </Command.Item>
+        <Command.Item>
+          <SmileIcon />
+          <span>Search Emoji</span>
+        </Command.Item>
+        <Command.Item>
+          <CalculatorIcon />
+          <span>Calculator</span>
+        </Command.Item>
+      </Command.Group>
+      <Command.Separator />
+      <Command.Group heading="Settings">
+        <Command.Item>
+          <UserIcon />
+          <span>Profile</span>
+          <Command.Shortcut>P</Command.Shortcut>
+        </Command.Item>
+        <Command.Item>
+          <CreditCardIcon />
+          <span>Billing</span>
+          <Command.Shortcut>B</Command.Shortcut>
+        </Command.Item>
+        <Command.Item>
+          <SettingsIcon />
+          <span>Settings</span>
+          <Command.Shortcut>S</Command.Shortcut>
+        </Command.Item>
+      </Command.Group>
+    </Command.List>
+  </Command.Dialog>
+</div>
 ```
 
-To show the command menu in a dialog, use the `<Command.Dialog />` component instead of `<Command.Root />`. It accepts props for both the `<Dialog.Root />` and `<Command.Root />` components.
+View Code
 
-lib/components/example-command-menu.svelte
+## [Scrollable](#scrollable)
+
+Scrollable command menu with multiple items.
 
 ```svelte
 <script lang="ts">
+  import BellIcon from "@lucide/svelte/icons/bell";
+  import CalculatorIcon from "@lucide/svelte/icons/calculator";
+  import CalendarIcon from "@lucide/svelte/icons/calendar";
+  import CircleQuestionMarkIcon from "@lucide/svelte/icons/circle-question-mark";
+  import ClipboardPasteIcon from "@lucide/svelte/icons/clipboard-paste";
+  import CodeIcon from "@lucide/svelte/icons/code";
+  import CopyIcon from "@lucide/svelte/icons/copy";
+  import CreditCardIcon from "@lucide/svelte/icons/credit-card";
+  import FileTextIcon from "@lucide/svelte/icons/file-text";
+  import FolderIcon from "@lucide/svelte/icons/folder";
+  import FolderPlusIcon from "@lucide/svelte/icons/folder-plus";
+  import HouseIcon from "@lucide/svelte/icons/house";
+  import ImageIcon from "@lucide/svelte/icons/image";
+  import InboxIcon from "@lucide/svelte/icons/inbox";
+  import LayoutGridIcon from "@lucide/svelte/icons/layout-grid";
+  import ListIcon from "@lucide/svelte/icons/list";
+  import PlusIcon from "@lucide/svelte/icons/plus";
+  import ScissorsIcon from "@lucide/svelte/icons/scissors";
+  import SettingsIcon from "@lucide/svelte/icons/settings";
+  import TrashIcon from "@lucide/svelte/icons/trash";
+  import UserIcon from "@lucide/svelte/icons/user";
+  import ZoomInIcon from "@lucide/svelte/icons/zoom-in";
+  import ZoomOutIcon from "@lucide/svelte/icons/zoom-out";
   import * as Command from "$lib/components/ui/command/index.js";
-  import { onMount } from "svelte";
+  import { Button } from "$lib/components/ui/button/index.js";
   let open = $state(false);
-  function handleKeydown(e: KeyboardEvent) {
-    if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
-      e.preventDefault();
-      open = !open;
-    }
-  }
 </script>
-<svelte:document onkeydown={handleKeydown} />
-<Command.Dialog bind:open>
-  <Command.Input placeholder="Type a command or search..." />
-  <Command.List>
-    <Command.Empty>No results found.</Command.Empty>
-    <Command.Group heading="Suggestions">
-      <Command.Item>Calendar</Command.Item>
-      <Command.Item>Search Emoji</Command.Item>
-      <Command.Item>Calculator</Command.Item>
-    </Command.Group>
-  </Command.List>
-</Command.Dialog>
+<div class="flex flex-col gap-4">
+  <Button onclick={() => (open = true)} variant="outline" class="w-fit"
+    >Open Menu</Button
+  >
+  <Command.Dialog bind:open>
+    <Command.Input placeholder="Type a command or search..." />
+    <Command.List>
+      <Command.Empty>No results found.</Command.Empty>
+      <Command.Group heading="Navigation">
+        <Command.Item>
+          <HouseIcon />
+          <span>Home</span>
+          <Command.Shortcut>H</Command.Shortcut>
+        </Command.Item>
+        <Command.Item>
+          <InboxIcon />
+          <span>Inbox</span>
+          <Command.Shortcut>I</Command.Shortcut>
+        </Command.Item>
+        <Command.Item>
+          <FileTextIcon />
+          <span>Documents</span>
+          <Command.Shortcut>D</Command.Shortcut>
+        </Command.Item>
+        <Command.Item>
+          <FolderIcon />
+          <span>Folders</span>
+          <Command.Shortcut>F</Command.Shortcut>
+        </Command.Item>
+      </Command.Group>
+      <Command.Separator />
+      <Command.Group heading="Actions">
+        <Command.Item>
+          <PlusIcon />
+          <span>New File</span>
+          <Command.Shortcut>N</Command.Shortcut>
+        </Command.Item>
+        <Command.Item>
+          <FolderPlusIcon />
+          <span>New Folder</span>
+          <Command.Shortcut>N</Command.Shortcut>
+        </Command.Item>
+        <Command.Item>
+          <CopyIcon />
+          <span>Copy</span>
+          <Command.Shortcut>C</Command.Shortcut>
+        </Command.Item>
+        <Command.Item>
+          <ScissorsIcon />
+          <span>Cut</span>
+          <Command.Shortcut>X</Command.Shortcut>
+        </Command.Item>
+        <Command.Item>
+          <ClipboardPasteIcon />
+          <span>Paste</span>
+          <Command.Shortcut>V</Command.Shortcut>
+        </Command.Item>
+        <Command.Item>
+          <TrashIcon />
+          <span>Delete</span>
+          <Command.Shortcut></Command.Shortcut>
+        </Command.Item>
+      </Command.Group>
+      <Command.Separator />
+      <Command.Group heading="View">
+        <Command.Item>
+          <LayoutGridIcon />
+          <span>Grid View</span>
+        </Command.Item>
+        <Command.Item>
+          <ListIcon />
+          <span>List View</span>
+        </Command.Item>
+        <Command.Item>
+          <ZoomInIcon />
+          <span>Zoom In</span>
+          <Command.Shortcut>+</Command.Shortcut>
+        </Command.Item>
+        <Command.Item>
+          <ZoomOutIcon />
+          <span>Zoom Out</span>
+          <Command.Shortcut>-</Command.Shortcut>
+        </Command.Item>
+      </Command.Group>
+      <Command.Separator />
+      <Command.Group heading="Account">
+        <Command.Item>
+          <UserIcon />
+          <span>Profile</span>
+          <Command.Shortcut>P</Command.Shortcut>
+        </Command.Item>
+        <Command.Item>
+          <CreditCardIcon />
+          <span>Billing</span>
+          <Command.Shortcut>B</Command.Shortcut>
+        </Command.Item>
+        <Command.Item>
+          <SettingsIcon />
+          <span>Settings</span>
+          <Command.Shortcut>S</Command.Shortcut>
+        </Command.Item>
+        <Command.Item>
+          <BellIcon />
+          <span>Notifications</span>
+        </Command.Item>
+        <Command.Item>
+          <CircleQuestionMarkIcon />
+          <span>Help & Support</span>
+        </Command.Item>
+      </Command.Group>
+      <Command.Separator />
+      <Command.Group heading="Tools">
+        <Command.Item>
+          <CalculatorIcon />
+          <span>Calculator</span>
+        </Command.Item>
+        <Command.Item>
+          <CalendarIcon />
+          <span>Calendar</span>
+        </Command.Item>
+        <Command.Item>
+          <ImageIcon />
+          <span>Image Editor</span>
+        </Command.Item>
+        <Command.Item>
+          <CodeIcon />
+          <span>Code Editor</span>
+        </Command.Item>
+      </Command.Group>
+    </Command.List>
+  </Command.Dialog>
+</div>
 ```
 
-### Combobox
-
-You can use the `<Command />` component as a combobox. See the [Combobox](https://shadcn-svelte.com/docs/components/combobox) page for more information.
-
-## Changelog
-
-### 2024-10-30 Classes for icons
-
-- Added `gap-2 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0` to the `<Command.Item>` component to automatically style the icons inside.
+View Code
