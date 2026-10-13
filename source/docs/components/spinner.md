@@ -2,10 +2,16 @@
 
 An indicator that can be used to show a loading state.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
-  import { Spinner } from "$lib/components/ui/spinner/index.js";
   import * as Item from "$lib/components/ui/item/index.js";
+  import { Spinner } from "$lib/components/ui/spinner/index.js";
 </script>
 <div class="flex w-full max-w-xs flex-col gap-4 [--radius:1rem]">
   <Item.Root variant="muted">
@@ -22,7 +28,9 @@ An indicator that can be used to show a loading state.
 </div>
 ```
 
-## Installation
+View Code
+
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add spinner
@@ -36,7 +44,7 @@ npx shadcn-svelte@latest add spinner
 bun x shadcn-svelte@latest add spinner
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -48,17 +56,30 @@ bun x shadcn-svelte@latest add spinner
 <Spinner />
 ```
 
-## Customization
+## [Customization](#customization)
 
 You can replace the default spinner icon with any other icon by editing the `Spinner` component.
 
 ```svelte
 <script lang="ts">
-  import { cn } from "$lib/utils.js";
   import LoaderIcon from "@lucide/svelte/icons/loader";
-  import type { ComponentProps } from "svelte";
-  type Props = ComponentProps<typeof LoaderIcon>;
-  let { class: className, ...restProps }: Props = $props();
+</script>
+<div class="flex items-center gap-4">
+  <LoaderIcon role="status" aria-label="Loading" class="size-4 animate-spin" />
+</div>
+```
+
+View Code
+
+components/ui/spinner/spinner.svelte
+
+```svelte
+<script lang="ts">
+  import LoaderIcon from "@lucide/svelte/icons/loader";
+  import { cn } from "$lib/utils.js";
+  import type { SVGAttributes } from "svelte/elements";
+  let { class: className, ...restProps }: SVGAttributes<SVGSVGElement> =
+    $props();
 </script>
 <LoaderIcon
   role="status"
@@ -68,9 +89,7 @@ You can replace the default spinner icon with any other icon by editing the `Spi
 />
 ```
 
-## Examples
-
-### Size
+## [Size](#size)
 
 Use the `size-*` utility class to change the size of the spinner.
 
@@ -86,26 +105,11 @@ Use the `size-*` utility class to change the size of the spinner.
 </div>
 ```
 
-### Color
+View Code
 
-Use the `text-*` utility class to change the color of the spinner.
+## [Button](#button)
 
-```svelte
-<script lang="ts">
-  import { Spinner } from "$lib/components/ui/spinner/index.js";
-</script>
-<div class="flex items-center gap-6">
-  <Spinner class="size-6 text-red-500" />
-  <Spinner class="size-6 text-green-500" />
-  <Spinner class="size-6 text-blue-500" />
-  <Spinner class="size-6 text-yellow-500" />
-  <Spinner class="size-6 text-purple-500" />
-</div>
-```
-
-### Button
-
-Add a spinner to a button to indicate a loading state. The `<Button />` will handle the spacing between the spinner and the text.
+Add a spinner to a button to indicate a loading state. Place the `<Spinner />` before the label with `data-icon="inline-start"` for a start position, or after the label with `data-icon="inline-end"` for an end position.
 
 ```svelte
 <script lang="ts">
@@ -114,54 +118,56 @@ Add a spinner to a button to indicate a loading state. The `<Button />` will han
 </script>
 <div class="flex flex-col items-center gap-4">
   <Button disabled size="sm">
-    <Spinner />
+    <Spinner data-icon="inline-start" />
     Loading...
   </Button>
   <Button variant="outline" disabled size="sm">
-    <Spinner />
+    <Spinner data-icon="inline-start" />
     Please wait
   </Button>
   <Button variant="secondary" disabled size="sm">
-    <Spinner />
+    <Spinner data-icon="inline-start" />
     Processing
   </Button>
 </div>
 ```
 
-### Badge
+View Code
 
-You can also use a spinner inside a badge.
+## [Badge](#badge)
+
+Add a spinner to a badge to indicate a loading state. Place the `<Spinner />` before the label with `data-icon="inline-start"` for a start position, or after the label with `data-icon="inline-end"` for an end position.
 
 ```svelte
 <script lang="ts">
   import { Badge } from "$lib/components/ui/badge/index.js";
   import { Spinner } from "$lib/components/ui/spinner/index.js";
 </script>
-<div class="flex items-center gap-2">
+<div class="flex items-center gap-4 [--radius:1.2rem]">
   <Badge>
-    <Spinner />
+    <Spinner data-icon="inline-start" />
     Syncing
   </Badge>
   <Badge variant="secondary">
-    <Spinner />
+    <Spinner data-icon="inline-start" />
     Updating
   </Badge>
   <Badge variant="outline">
-    <Spinner />
-    Loading
+    <Spinner data-icon="inline-start" />
+    Processing
   </Badge>
 </div>
 ```
 
-### Input Group
+View Code
 
-Input Group can have spinners inside `<InputGroup.Addon>`.
+## [Input Group](#input-group)
 
 ```svelte
 <script lang="ts">
+  import ArrowUpIcon from "@lucide/svelte/icons/arrow-up";
   import * as InputGroup from "$lib/components/ui/input-group/index.js";
   import { Spinner } from "$lib/components/ui/spinner/index.js";
-  import ArrowUpIcon from "@lucide/svelte/icons/arrow-up";
 </script>
 <div class="flex w-full max-w-md flex-col gap-4">
   <InputGroup.Root>
@@ -183,15 +189,17 @@ Input Group can have spinners inside `<InputGroup.Addon>`.
 </div>
 ```
 
-### Empty
+View Code
+
+## [Empty](#empty)
 
 ```svelte
 <script lang="ts">
   import * as Empty from "$lib/components/ui/empty/index.js";
-  import { Spinner } from "$lib/components/ui/spinner/index.js";
   import { Button } from "$lib/components/ui/button/index.js";
+  import { Spinner } from "$lib/components/ui/spinner/index.js";
 </script>
-<Empty.Root class="w-full border md:p-6">
+<Empty.Root class="w-full">
   <Empty.Header>
     <Empty.Media variant="icon">
       <Spinner />
@@ -207,32 +215,4 @@ Input Group can have spinners inside `<InputGroup.Addon>`.
 </Empty.Root>
 ```
 
-### Item
-
-Use the spinner inside `<Item.Media>` to indicate a loading state.
-
-```svelte
-<script lang="ts">
-  import * as Item from "$lib/components/ui/item/index.js";
-  import { Spinner } from "$lib/components/ui/spinner/index.js";
-  import { Button } from "$lib/components/ui/button/index.js";
-  import { Progress } from "$lib/components/ui/progress/index.js";
-</script>
-<div class="flex w-full max-w-md flex-col gap-4 [--radius:1rem]">
-  <Item.Root variant="outline">
-    <Item.Media variant="icon">
-      <Spinner />
-    </Item.Media>
-    <Item.Content>
-      <Item.Title>Downloading...</Item.Title>
-      <Item.Description>129 MB / 1000 MB</Item.Description>
-    </Item.Content>
-    <Item.Actions class="hidden sm:flex">
-      <Button variant="outline" size="sm">Cancel</Button>
-    </Item.Actions>
-    <Item.Footer>
-      <Progress value={75} />
-    </Item.Footer>
-  </Item.Root>
-</div>
-```
+View Code
