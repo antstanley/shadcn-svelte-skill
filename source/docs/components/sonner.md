@@ -4,39 +4,47 @@ An opinionated toast component for Svelte.
 
 [Docs](https://svelte-sonner.vercel.app/)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
-  import { toast } from "svelte-sonner";
-  import { Button } from "$lib/components/ui/button/index.js";
+ import { toast } from "svelte-sonner";
+ import { Button } from "$lib/components/ui/button/index.js";
 </script>
 <Button
-  variant="outline"
-  onclick={() =>
-    toast("Event has been created", {
-      description: "Sunday, December 03, 2023 at 9:00 AM",
-      action: {
-        label: "Undo",
-        onClick: () => console.info("Undo")
-      }
-    })}
+ variant="outline"
+ onclick={() =>
+  toast("Event has been created", {
+   description: "Sunday, December 03, 2023 at 9:00 AM",
+   action: {
+    label: "Undo",
+    onClick: () => console.info("Undo"),
+   },
+  })}
 >
-  Show Toast
+ Show Toast
 </Button>
 ```
 
-## About
+View Code
+
+## [About](#about)
 
 The Sonner component is provided by [svelte-sonner](https://svelte-sonner.vercel.app/), which is a Svelte port of [Sonner](https://sonner.emilkowal.ski/), originally created by [Emil Kowalski](https://twitter.com/emilkowalski_) for React.
 
-## Installation
+## [Installation](#installation)
 
-Setup theme support
+### Setup theme support
 
 By default, Sonner will use the user's system preferences to determine whether to show the light or dark theme. To get around this, you can either pass in a custom `theme` prop to the component, or simply use [mode-watcher](https://github.com/svecosystem/mode-watcher) which you can hardcode to `dark` or `light` mode should you wish.
 
 You can learn more about setting up Dark Mode support [here](https://shadcn-svelte.com/docs/dark-mode).
 
-If you wish to opt out of Dark Mode support, you can uninstall `mode-watcher` and remove the `theme` prop from the component after installing via CLI, or manually install the component and don't include `mode-watcher` Run the following command:
+If you wish to opt out of Dark Mode support, you can uninstall `mode-watcher` and remove the `theme` prop from the component after installing via CLI, or manually install the component and don't include `mode-watcher` ### Run the following command:
 
 ```bash
 pnpm dlx shadcn-svelte@latest add sonner
@@ -50,7 +58,7 @@ npx shadcn-svelte@latest add sonner
 bun x shadcn-svelte@latest add sonner
 ```
 
-Add the Toaster component
+### Add the Toaster component
 
 +layout.svelte
 
@@ -63,7 +71,7 @@ Add the Toaster component
 {@render children?.()}
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -76,66 +84,104 @@ Add the Toaster component
 <Button onclick={() => toast("Hello world")}>Show toast</Button>
 ```
 
-## Examples
+## [Types](#types)
 
 ```svelte
 <script lang="ts">
-  import { toast } from "svelte-sonner";
-  import { Button } from "$lib/components/ui/button/index.js";
+ import { toast } from "svelte-sonner";
+ import { Button } from "$lib/components/ui/button/index.js";
 </script>
 <div class="flex flex-wrap gap-2">
-  <Button variant="outline" onclick={() => toast("Event has been created")}
-    >Default</Button
-  >
-  <Button
-    variant="outline"
-    onclick={() => toast.success("Event has been created")}
-  >
-    Success
-  </Button>
-  <Button
-    variant="outline"
-    onclick={() =>
-      toast.info("Be at the area 10 minutes before the event time")}
-  >
-    Info
-  </Button>
-  <Button
-    variant="outline"
-    onclick={() => toast.warning("Event start time cannot be earlier than 8am")}
-  >
-    Warning
-  </Button>
-  <Button
-    variant="outline"
-    onclick={() => toast.error("Event has not been created")}
-  >
-    Error
-  </Button>
-  <Button
-    variant="outline"
-    onclick={() => {
-      toast.promise<{ name: string }>(
-        () =>
-          new Promise((resolve) =>
-            setTimeout(() => resolve({ name: "Event" }), 2000)
-          ),
-        {
-          loading: "Loading...",
-          success: (data) => `${data.name} has been created`,
-          error: "Error"
-        }
-      );
-    }}
-  >
-    Promise
-  </Button>
+ <Button variant="outline" onclick={() => toast("Event has been created")}>Default</Button>
+ <Button variant="outline" onclick={() => toast.success("Event has been created")}>Success</Button>
+ <Button
+  variant="outline"
+  onclick={() => toast.info("Be at the area 10 minutes before the event time")}
+ >
+  Info
+ </Button>
+ <Button
+  variant="outline"
+  onclick={() => toast.warning("Event start time cannot be earlier than 8am")}
+ >
+  Warning
+ </Button>
+ <Button variant="outline" onclick={() => toast.error("Event has not been created")}>Error</Button>
+ <Button
+  variant="outline"
+  onclick={() => {
+   toast.promise<{ name: string }>(
+    () => new Promise((resolve) => setTimeout(() => resolve({ name: "Event" }), 2000)),
+    {
+     loading: "Loading...",
+     success: (data) => `${data.name} has been created`,
+     error: "Error",
+    }
+   );
+  }}
+ >
+  Promise
+ </Button>
 </div>
 ```
 
-## Changelog
+View Code
 
-### 2025-12 Icons
+## [Description](#description)
+
+```svelte
+<script lang="ts">
+ import { toast } from "svelte-sonner";
+ import { Button } from "$lib/components/ui/button/index.js";
+</script>
+<Button
+ onclick={() =>
+  toast("Event has been created", {
+   description: "Monday, January 3rd at 6:00pm",
+  })}
+ variant="outline"
+ class="w-fit"
+>
+ Show Toast
+</Button>
+```
+
+View Code
+
+## [Position](#position)
+
+Use the `position` prop to change the position of the toast.
+
+```svelte
+<script lang="ts">
+ import { toast } from "svelte-sonner";
+ import { Button } from "$lib/components/ui/button/index.js";
+ const positions = [
+  { label: "Top Left", value: "top-left" },
+  { label: "Top Center", value: "top-center" },
+  { label: "Top Right", value: "top-right" },
+  { label: "Bottom Left", value: "bottom-left" },
+  { label: "Bottom Center", value: "bottom-center" },
+  { label: "Bottom Right", value: "bottom-right" },
+] as const;
+</script>
+<div class="flex flex-wrap justify-center gap-2">
+ {#each positions as position (position.value)}
+  <Button
+   variant="outline"
+   onclick={() => toast("Event has been created", { position: position.value })}
+  >
+   {position.label}
+  </Button>
+ {/each}
+</div>
+```
+
+View Code
+
+## [Changelog](#changelog)
+
+### [2025-12 Icons](#2025-12-icons)
 
 We've updated the Sonner component to use icons from `lucide`. Update your `sonner.svelte` file to use the new icons.
 
