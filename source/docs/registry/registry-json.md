@@ -2,6 +2,12 @@
 
 Schema for running your own component registry.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 The `registry.json` schema is used to define your custom component registry.
 
 registry.json
@@ -28,11 +34,11 @@ registry.json
 }
 ```
 
-## Definitions
+## [Definitions](#definitions)
 
 You can see the JSON Schema for `registry.json` [here](https://shadcn-svelte.com/schema/registry.json).
 
-### $schema
+### [$schema](#schema)
 
 The `$schema` property is used to specify the schema for the `registry.json` file.
 
@@ -44,7 +50,7 @@ registry.json
 }
 ```
 
-### name
+### [name](#name)
 
 The `name` property is used to specify the name of your registry. This is used for data attributes and other metadata.
 
@@ -56,7 +62,7 @@ registry.json
 }
 ```
 
-### homepage
+### [homepage](#homepage)
 
 The homepage of your registry. This is used for data attributes and other metadata.
 
@@ -68,7 +74,7 @@ registry.json
 }
 ```
 
-### items
+### [items](#items)
 
 The `items` in your registry. Each item must implement the [registry-item schema specification](https://shadcn-svelte.com/schema/registry-item.json).
 
@@ -95,7 +101,7 @@ registry.json
 
 See the [registry-item schema documentation](https://shadcn-svelte.com/docs/registry/registry-item-json) for more information.
 
-### aliases `aliases` define how your registry's internal import paths will be transformed when users install your components. These should match how you import components within your registry code.
+### [aliases](#aliases) `aliases` define how your registry's internal import paths will be transformed when users install your components. These should match how you import components within your registry code.
 
 For example, if your registry's component has:
 
@@ -140,7 +146,7 @@ registry.json
 }
 ```
 
-### overrideDependencies `overrideDependencies` lets you force specific version ranges for dependencies, overriding what `shadcn-svelte registry build` detects in your `package.json`.
+### [overrideDependencies](#overridedependencies) `overrideDependencies` lets you force specific version ranges for dependencies, overriding what `shadcn-svelte registry build` detects in your `package.json`.
 
 Common use cases:
 

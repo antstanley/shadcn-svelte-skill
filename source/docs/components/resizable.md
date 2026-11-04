@@ -6,40 +6,48 @@ Accessible resizable panel groups and layouts with keyboard support.
 
 [API Reference](https://www.paneforge.com/docs/components/pane-group)
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
-  import * as Resizable from "$lib/components/ui/resizable/index.js";
+ import * as Resizable from "$lib/components/ui/resizable/index.js";
 </script>
-<Resizable.PaneGroup direction="horizontal" class="max-w-md rounded-lg border">
-  <Resizable.Pane defaultSize={50}>
-    <div class="flex h-[200px] items-center justify-center p-6">
-      <span class="font-semibold">One</span>
+<Resizable.PaneGroup direction="horizontal" class="max-w-sm rounded-lg border">
+ <Resizable.Pane defaultSize={50}>
+  <div class="flex h-[200px] items-center justify-center p-6">
+   <span class="font-semibold">One</span>
+  </div>
+ </Resizable.Pane>
+ <Resizable.Handle withHandle />
+ <Resizable.Pane defaultSize={50}>
+  <Resizable.PaneGroup direction="vertical">
+   <Resizable.Pane defaultSize={25}>
+    <div class="flex h-full items-center justify-center p-6">
+     <span class="font-semibold">Two</span>
     </div>
-  </Resizable.Pane>
-  <Resizable.Handle />
-  <Resizable.Pane defaultSize={50}>
-    <Resizable.PaneGroup direction="vertical">
-      <Resizable.Pane defaultSize={25}>
-        <div class="flex h-full items-center justify-center p-6">
-          <span class="font-semibold">Two</span>
-        </div>
-      </Resizable.Pane>
-      <Resizable.Handle />
-      <Resizable.Pane defaultSize={75}>
-        <div class="flex h-full items-center justify-center p-6">
-          <span class="font-semibold">Three</span>
-        </div>
-      </Resizable.Pane>
-    </Resizable.PaneGroup>
-  </Resizable.Pane>
+   </Resizable.Pane>
+   <Resizable.Handle withHandle />
+   <Resizable.Pane defaultSize={75}>
+    <div class="flex h-full items-center justify-center p-6">
+     <span class="font-semibold">Three</span>
+    </div>
+   </Resizable.Pane>
+  </Resizable.PaneGroup>
+ </Resizable.Pane>
 </Resizable.PaneGroup>
 ```
 
-## About
+View Code
+
+## [About](#about)
 
 The `Resizable` component is built on top of [PaneForge](https://github.com/svecosystem/paneforge) by [Huntabyte](https://github.com/huntabyte). Visit the [PaneForge documentation](https://paneforge.com) for all the available props and abilities of the `Resizable` component.
 
-## Installation
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add resizable
@@ -53,7 +61,7 @@ npx shadcn-svelte@latest add resizable
 bun x shadcn-svelte@latest add resizable
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -69,78 +77,52 @@ bun x shadcn-svelte@latest add resizable
 </Resizable.PaneGroup>
 ```
 
-## Examples
+## [Vertical](#vertical)
 
-### Vertical
-
-Use the `direction` prop to set the direction of the resizable panels.
+Use `direction="vertical"` for vertical resizing.
 
 ```svelte
 <script lang="ts">
-  import * as Resizable from "$lib/components/ui/resizable/index.js";
+ import * as Resizable from "$lib/components/ui/resizable/index.js";
 </script>
-<Resizable.PaneGroup
-  direction="vertical"
-  class="min-h-[200px] max-w-md rounded-lg border"
->
-  <Resizable.Pane defaultSize={25}>
-    <div class="flex h-full items-center justify-center p-6">
-      <span class="font-semibold">Header</span>
-    </div>
-  </Resizable.Pane>
-  <Resizable.Handle />
-  <Resizable.Pane defaultSize={75}>
-    <div class="flex h-full items-center justify-center p-6">
-      <span class="font-semibold">Content</span>
-    </div>
-  </Resizable.Pane>
+<Resizable.PaneGroup direction="vertical" class="min-h-[200px] max-w-sm rounded-lg border">
+ <Resizable.Pane defaultSize={25}>
+  <div class="flex h-full items-center justify-center p-6">
+   <span class="font-semibold">Header</span>
+  </div>
+ </Resizable.Pane>
+ <Resizable.Handle />
+ <Resizable.Pane defaultSize={75}>
+  <div class="flex h-full items-center justify-center p-6">
+   <span class="font-semibold">Content</span>
+  </div>
+ </Resizable.Pane>
 </Resizable.PaneGroup>
 ```
+
+View Code
+
+## [Handle](#handle)
+
+Use the `withHandle` prop on `Resizable.Handle` to show a visible handle.
 
 ```svelte
 <script lang="ts">
-  import * as Resizable from "$lib/components/ui/resizable/index.js";
+ import * as Resizable from "$lib/components/ui/resizable/index.js";
 </script>
-<Resizable.PaneGroup direction="vertical">
-  <Resizable.Pane>One</Resizable.Pane>
-  <Resizable.Handle />
-  <Resizable.Pane>Two</Resizable.Pane>
+<Resizable.PaneGroup direction="horizontal" class="min-h-[200px] max-w-sm rounded-lg border">
+ <Resizable.Pane defaultSize={25}>
+  <div class="flex h-full items-center justify-center p-6">
+   <span class="font-semibold">Sidebar</span>
+  </div>
+ </Resizable.Pane>
+ <Resizable.Handle withHandle />
+ <Resizable.Pane defaultSize={75}>
+  <div class="flex h-full items-center justify-center p-6">
+   <span class="font-semibold">Content</span>
+  </div>
+ </Resizable.Pane>
 </Resizable.PaneGroup>
 ```
 
-### Handle
-
-You can set or hide the handle by using the `withHandle` prop on the `ResizableHandle` component.
-
-```svelte
-<script lang="ts">
-  import * as Resizable from "$lib/components/ui/resizable/index.js";
-</script>
-<Resizable.PaneGroup
-  direction="horizontal"
-  class="min-h-[200px] max-w-md rounded-lg border"
->
-  <Resizable.Pane defaultSize={25}>
-    <div class="flex h-full items-center justify-center p-6">
-      <span class="font-semibold">Sidebar</span>
-    </div>
-  </Resizable.Pane>
-  <Resizable.Handle withHandle />
-  <Resizable.Pane defaultSize={75}>
-    <div class="flex h-full items-center justify-center p-6">
-      <span class="font-semibold">Content</span>
-    </div>
-  </Resizable.Pane>
-</Resizable.PaneGroup>
-```
-
-```svelte
-<script lang="ts">
-  import * as Resizable from "$lib/components/ui/resizable/index.js";
-</script>
-<Resizable.PaneGroup direction="vertical">
-  <Resizable.Pane>One</Resizable.Pane>
-  <Resizable.Handle withHandle />
-  <Resizable.Pane>Two</Resizable.Pane>
-</Resizable.PaneGroup>
-```
+View Code
