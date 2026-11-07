@@ -2,7 +2,13 @@
 
 How to setup shadcn-svelte in a Vite project.
 
-### Add TailwindCSS
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
+### [Add TailwindCSS](#add-tailwindcss)
 
 Use the Svelte CLI to add Tailwind CSS to your project.
 
@@ -18,7 +24,7 @@ npx sv add tailwindcss
 bun x sv add tailwindcss
 ```
 
-### Edit tsconfig.json file
+### [Edit tsconfig.json file](#edit-tsconfigjson-file)
 
 The current version of Vite splits TypeScript configuration into three files, two of which need to be edited. Add the `baseUrl` and `paths` properties to the `compilerOptions` section of the `tsconfig.json` and `tsconfig.app.json` files:
 
@@ -41,7 +47,7 @@ tsconfig.json
 }
 ```
 
-### Edit tsconfig.app.json file
+### [Edit tsconfig.app.json file](#edit-tsconfigappjson-file)
 
 Add the following code to the `tsconfig.app.json` file to resolve paths, for your IDE:
 
@@ -60,7 +66,7 @@ tsconfig.app.json
 }
 ```
 
-### Update vite.config.ts
+### [Update vite.config.ts](#update-viteconfigts)
 
 Add the following code to the vite.config.ts so your app can resolve paths without error:
 
@@ -78,7 +84,7 @@ export default defineConfig({
 });
 ```
 
-### Run the CLI
+### [Run the CLI](#run-the-cli)
 
 ```bash
 pnpm dlx shadcn-svelte@latest init
@@ -92,7 +98,7 @@ npx shadcn-svelte@latest init
 bun x shadcn-svelte@latest init
 ```
 
-### Configure components.json
+### [Configure components.json](#configure-componentsjson)
 
 You will be asked a few questions to configure `components.json`:
 
@@ -106,7 +112,7 @@ Configure the import alias for hooks:  $lib/hooks
 Configure the import alias for ui:  $lib/components/ui
 ```
 
-### That's it
+### [That's it](#thats-it)
 
 You can now start adding components to your project.
 
