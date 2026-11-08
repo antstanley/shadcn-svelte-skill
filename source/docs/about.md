@@ -2,11 +2,17 @@
 
 Powered by amazing open source projects.
 
-## About
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
+## [About](#about)
 
 [shadcn-svelte](https://github.com/huntabyte/shadcn-svelte) is a port of [shadcn/ui](https://ui.shadcn.com) for Svelte/SvelteKit. It's maintained by [Huntabyte](https://x.com/huntabyte), [CokaKoala](https://github.com/adriangonz97), and [Aidan Bleser](https://x.com/ieeeedan) and has received countless contributions from the community.
 
-## Credits
+## [Credits](#credits)
 
 - [shadcn](https://twitter.com/shadcn) \- The brilliant mind behind the designs, methodology, and implementation of the original
   [shadcn/ui](https://ui.shadcn.com)
@@ -21,6 +27,6 @@ Powered by amazing open source projects.
 - [Shu Ding](https://shud.in) \- The typography style is adapted from his work on Nextra.
 - [Cal](https://cal.com) \- Where shad copied the styles for the first component: the `Button` .
 
-## License
+## [License](#license)
 
 MIT  [shadcn](https://shadcn.com) & [huntabyte](https://twitter.com/huntabyte)
