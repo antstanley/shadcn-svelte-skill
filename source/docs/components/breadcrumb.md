@@ -2,43 +2,58 @@
 
 Displays the path to the current resource using a hierarchy of links.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 ```svelte
 <script lang="ts">
-  import * as Breadcrumb from "$lib/components/ui/breadcrumb/index.js";
-  import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
+ import * as Breadcrumb from "$lib/components/ui/breadcrumb/index.js";
+ import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
+ import { Button } from "$lib/components/ui/button/index.js";
 </script>
 <Breadcrumb.Root>
-  <Breadcrumb.List>
-    <Breadcrumb.Item>
-      <Breadcrumb.Link href="/">Home</Breadcrumb.Link>
-    </Breadcrumb.Item>
-    <Breadcrumb.Separator />
-    <Breadcrumb.Item>
-      <DropdownMenu.Root>
-        <DropdownMenu.Trigger class="flex items-center gap-1">
-          <Breadcrumb.Ellipsis class="size-4" />
-          <span class="sr-only">Toggle menu</span>
-        </DropdownMenu.Trigger>
-        <DropdownMenu.Content align="start">
-          <DropdownMenu.Item>Documentation</DropdownMenu.Item>
-          <DropdownMenu.Item>Themes</DropdownMenu.Item>
-          <DropdownMenu.Item>GitHub</DropdownMenu.Item>
-        </DropdownMenu.Content>
-      </DropdownMenu.Root>
-    </Breadcrumb.Item>
-    <Breadcrumb.Separator />
-    <Breadcrumb.Item>
-      <Breadcrumb.Link href="/docs/components">Components</Breadcrumb.Link>
-    </Breadcrumb.Item>
-    <Breadcrumb.Separator />
-    <Breadcrumb.Item>
-      <Breadcrumb.Page>Breadcrumb</Breadcrumb.Page>
-    </Breadcrumb.Item>
-  </Breadcrumb.List>
+ <Breadcrumb.List>
+  <Breadcrumb.Item>
+   <Breadcrumb.Link href="#">Home</Breadcrumb.Link>
+  </Breadcrumb.Item>
+  <Breadcrumb.Separator />
+  <Breadcrumb.Item>
+   <DropdownMenu.Root>
+    <DropdownMenu.Trigger>
+     {#snippet child({ props })}
+      <Button {...props} size="icon-sm" variant="ghost">
+       <Breadcrumb.Ellipsis />
+       <span class="sr-only">Toggle menu</span>
+      </Button>
+     {/snippet}
+    </DropdownMenu.Trigger>
+    <DropdownMenu.Content align="start">
+     <DropdownMenu.Group>
+      <DropdownMenu.Item>Documentation</DropdownMenu.Item>
+      <DropdownMenu.Item>Themes</DropdownMenu.Item>
+      <DropdownMenu.Item>GitHub</DropdownMenu.Item>
+     </DropdownMenu.Group>
+    </DropdownMenu.Content>
+   </DropdownMenu.Root>
+  </Breadcrumb.Item>
+  <Breadcrumb.Separator />
+  <Breadcrumb.Item>
+   <Breadcrumb.Link href="#">Components</Breadcrumb.Link>
+  </Breadcrumb.Item>
+  <Breadcrumb.Separator />
+  <Breadcrumb.Item>
+   <Breadcrumb.Page>Breadcrumb</Breadcrumb.Page>
+  </Breadcrumb.Item>
+ </Breadcrumb.List>
 </Breadcrumb.Root>
 ```
 
-## Installation
+View Code
+
+## [Installation](#installation)
 
 ```bash
 pnpm dlx shadcn-svelte@latest add breadcrumb
@@ -52,7 +67,7 @@ npx shadcn-svelte@latest add breadcrumb
 bun x shadcn-svelte@latest add breadcrumb
 ```
 
-## Usage
+## [Usage](#usage)
 
 ```svelte
 <script lang="ts">
@@ -78,155 +93,9 @@ bun x shadcn-svelte@latest add breadcrumb
 </Breadcrumb.Root>
 ```
 
-## Examples
+## [Basic](#basic)
 
-### Custom separator
-
-Use a custom component in the `<slot>` of `<Breadcrumb.Separator />` to create a custom separator.
-
-```svelte
-<script lang="ts">
-  import SlashIcon from "@lucide/svelte/icons/slash";
-  import * as Breadcrumb from "$lib/components/ui/breadcrumb/index.js";
-</script>
-<Breadcrumb.Root>
-  <Breadcrumb.List>
-    <Breadcrumb.Item>
-      <Breadcrumb.Link href="/">Home</Breadcrumb.Link>
-    </Breadcrumb.Item>
-    <Breadcrumb.Separator>
-      <SlashIcon />
-    </Breadcrumb.Separator>
-    <Breadcrumb.Item>
-      <Breadcrumb.Link href="/components">Components</Breadcrumb.Link>
-    </Breadcrumb.Item>
-    <Breadcrumb.Separator>
-      <SlashIcon />
-    </Breadcrumb.Separator>
-    <Breadcrumb.Item>
-      <Breadcrumb.Page>Breadcrumb</Breadcrumb.Page>
-    </Breadcrumb.Item>
-  </Breadcrumb.List>
-</Breadcrumb.Root>
-```
-
-```svelte
-<script lang="ts">
-  import SlashIcon from "@lucide/svelte/icons/slash";
-  import * as Breadcrumb from "$lib/components/ui/breadcrumb/index.js";
-</script>
-<Breadcrumb.Root>
-  <Breadcrumb.List>
-    <Breadcrumb.Item>
-      <Breadcrumb.Link href="/">Home</Breadcrumb.Link>
-    </Breadcrumb.Item>
-    <Breadcrumb.Separator>
-      <SlashIcon />
-    </Breadcrumb.Separator>
-    <Breadcrumb.Item>
-      <Breadcrumb.Link href="/components">Components</Breadcrumb.Link>
-    </Breadcrumb.Item>
-  </Breadcrumb.List>
-</Breadcrumb.Root>
-```
-
-***
-
-### Dropdown
-
-You can compose `<Breadcrumb.Item />` with a `<DropdownMenu />` to create a dropdown in the breadcrumb.
-
-```svelte
-<script lang="ts">
-  import ChevronDownIcon from "@lucide/svelte/icons/chevron-down";
-  import SlashIcon from "@lucide/svelte/icons/slash";
-  import * as Breadcrumb from "$lib/components/ui/breadcrumb/index.js";
-  import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
-</script>
-<Breadcrumb.Root>
-  <Breadcrumb.List>
-    <Breadcrumb.Item>
-      <Breadcrumb.Link href="/">Home</Breadcrumb.Link>
-    </Breadcrumb.Item>
-    <Breadcrumb.Separator>
-      <SlashIcon />
-    </Breadcrumb.Separator>
-    <Breadcrumb.Item>
-      <DropdownMenu.Root>
-        <DropdownMenu.Trigger class="flex items-center gap-1">
-          Components
-          <ChevronDownIcon class="size-4" />
-        </DropdownMenu.Trigger>
-        <DropdownMenu.Content align="start">
-          <DropdownMenu.Item>Documentation</DropdownMenu.Item>
-          <DropdownMenu.Item>Themes</DropdownMenu.Item>
-          <DropdownMenu.Item>GitHub</DropdownMenu.Item>
-        </DropdownMenu.Content>
-      </DropdownMenu.Root>
-    </Breadcrumb.Item>
-    <Breadcrumb.Separator>
-      <SlashIcon />
-    </Breadcrumb.Separator>
-    <Breadcrumb.Item>
-      <Breadcrumb.Page>Breadcrumb</Breadcrumb.Page>
-    </Breadcrumb.Item>
-  </Breadcrumb.List>
-</Breadcrumb.Root>
-```
-
-```svelte
-<script lang="ts">
-  import ChevronDownIcon from "@lucide/svelte/icons/chevron-down";
-  import SlashIcon from "@lucide/svelte/icons/slash";
-  import * as Breadcrumb from "$lib/components/ui/breadcrumb/index.js";
-  import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
-</script>
-
-<Breadcrumb.Item>
-  <DropdownMenu.Root>
-    <DropdownMenu.Trigger class="flex items-center gap-1">
-      Components
-      <ChevronDownIcon class="size-4" />
-    </DropdownMenu.Trigger>
-    <DropdownMenu.Content align="start">
-      <DropdownMenu.Item>Documentation</DropdownMenu.Item>
-      <DropdownMenu.Item>Themes</DropdownMenu.Item>
-      <DropdownMenu.Item>GitHub</DropdownMenu.Item>
-    </DropdownMenu.Content>
-  </DropdownMenu.Root>
-</Breadcrumb.Item>
-```
-
-***
-
-### Collapsed
-
-We provide a `<Breadcrumb.Ellipsis />` component to show a collapsed state when the breadcrumb is too long.
-
-```svelte
-<script lang="ts">
-  import * as Breadcrumb from "$lib/components/ui/breadcrumb/index.js";
-</script>
-<Breadcrumb.Root>
-  <Breadcrumb.List>
-    <Breadcrumb.Item>
-      <Breadcrumb.Link href="/">Home</Breadcrumb.Link>
-    </Breadcrumb.Item>
-    <Breadcrumb.Separator />
-    <Breadcrumb.Item>
-      <Breadcrumb.Ellipsis />
-    </Breadcrumb.Item>
-    <Breadcrumb.Separator />
-    <Breadcrumb.Item>
-      <Breadcrumb.Link href="/docs/components">Components</Breadcrumb.Link>
-    </Breadcrumb.Item>
-    <Breadcrumb.Separator />
-    <Breadcrumb.Item>
-      <Breadcrumb.Page>Breadcrumb</Breadcrumb.Page>
-    </Breadcrumb.Item>
-  </Breadcrumb.List>
-</Breadcrumb.Root>
-```
+A basic breadcrumb with a home link and a components link.
 
 ```svelte
 <script lang="ts">
@@ -234,41 +103,104 @@ We provide a `<Breadcrumb.Ellipsis />` component to show a collapsed state when 
 </script>
 <Breadcrumb.Root>
  <Breadcrumb.List>
-     {/* ... */}
   <Breadcrumb.Item>
-   <Breadcrumb.Ellipsis />
+   <Breadcrumb.Link href="#">Home</Breadcrumb.Link>
   </Breadcrumb.Item>
-    {/* ... */}
+  <Breadcrumb.Separator />
+  <Breadcrumb.Item>
+   <Breadcrumb.Link href="#">Components</Breadcrumb.Link>
+  </Breadcrumb.Item>
+  <Breadcrumb.Separator />
+  <Breadcrumb.Item>
+   <Breadcrumb.Page>Breadcrumb</Breadcrumb.Page>
+  </Breadcrumb.Item>
  </Breadcrumb.List>
 </Breadcrumb.Root>
 ```
 
-***
+View Code
 
-### Link component
+## [Custom separator](#custom-separator)
 
-To use a custom link component from your routing library, you can use the `asChild` prop on `<Breadcrumb.Link />`.
+Use a custom component as `children` for `<Breadcrumb.Separator />` to create a custom separator.
 
 ```svelte
 <script lang="ts">
-  import * as Breadcrumb from "$lib/components/ui/breadcrumb/index.js";
+ import DotIcon from "@lucide/svelte/icons/dot";
+ import * as Breadcrumb from "$lib/components/ui/breadcrumb/index.js";
 </script>
 <Breadcrumb.Root>
-  <Breadcrumb.List>
-    <Breadcrumb.Item>
-      <Breadcrumb.Link href="/">Home</Breadcrumb.Link>
-    </Breadcrumb.Item>
-    <Breadcrumb.Separator />
-    <Breadcrumb.Item>
-      <Breadcrumb.Link href="/components">Components</Breadcrumb.Link>
-    </Breadcrumb.Item>
-    <Breadcrumb.Separator />
-    <Breadcrumb.Item>
-      <Breadcrumb.Page>Breadcrumb</Breadcrumb.Page>
-    </Breadcrumb.Item>
-  </Breadcrumb.List>
+ <Breadcrumb.List>
+  <Breadcrumb.Item>
+   <Breadcrumb.Link href="/">Home</Breadcrumb.Link>
+  </Breadcrumb.Item>
+  <Breadcrumb.Separator>
+   <DotIcon />
+  </Breadcrumb.Separator>
+  <Breadcrumb.Item>
+   <Breadcrumb.Link href="/components">Components</Breadcrumb.Link>
+  </Breadcrumb.Item>
+  <Breadcrumb.Separator>
+   <DotIcon />
+  </Breadcrumb.Separator>
+  <Breadcrumb.Item>
+   <Breadcrumb.Page>Breadcrumb</Breadcrumb.Page>
+  </Breadcrumb.Item>
+ </Breadcrumb.List>
 </Breadcrumb.Root>
 ```
+
+View Code
+
+## [Dropdown](#dropdown)
+
+You can compose `<Breadcrumb.Item />` with a `<DropdownMenu />` to create a dropdown in the breadcrumb.
+
+```svelte
+<script lang="ts">
+ import ChevronDownIcon from "@lucide/svelte/icons/chevron-down";
+ import DotIcon from "@lucide/svelte/icons/dot";
+ import * as Breadcrumb from "$lib/components/ui/breadcrumb/index.js";
+ import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
+</script>
+<Breadcrumb.Root>
+ <Breadcrumb.List>
+  <Breadcrumb.Item>
+   <Breadcrumb.Link href="/">Home</Breadcrumb.Link>
+  </Breadcrumb.Item>
+  <Breadcrumb.Separator>
+   <DotIcon />
+  </Breadcrumb.Separator>
+  <Breadcrumb.Item>
+   <DropdownMenu.Root>
+    <DropdownMenu.Trigger class="flex items-center gap-1">
+     Components
+     <ChevronDownIcon data-icon="inline-end" class="size-3.5" />
+    </DropdownMenu.Trigger>
+    <DropdownMenu.Content align="start">
+     <DropdownMenu.Group>
+      <DropdownMenu.Item>Documentation</DropdownMenu.Item>
+      <DropdownMenu.Item>Themes</DropdownMenu.Item>
+      <DropdownMenu.Item>GitHub</DropdownMenu.Item>
+     </DropdownMenu.Group>
+    </DropdownMenu.Content>
+   </DropdownMenu.Root>
+  </Breadcrumb.Item>
+  <Breadcrumb.Separator>
+   <DotIcon />
+  </Breadcrumb.Separator>
+  <Breadcrumb.Item>
+   <Breadcrumb.Page>Breadcrumb</Breadcrumb.Page>
+  </Breadcrumb.Item>
+ </Breadcrumb.List>
+</Breadcrumb.Root>
+```
+
+View Code
+
+## [Collapsed](#collapsed)
+
+We provide a `<Breadcrumb.Ellipsis />` component to show a collapsed state when the breadcrumb is too long.
 
 ```svelte
 <script lang="ts">
@@ -279,112 +211,47 @@ To use a custom link component from your routing library, you can use the `asChi
   <Breadcrumb.Item>
    <Breadcrumb.Link href="/">Home</Breadcrumb.Link>
   </Breadcrumb.Item>
-    {/* ... */}
+  <Breadcrumb.Separator />
+  <Breadcrumb.Item>
+   <Breadcrumb.Ellipsis />
+  </Breadcrumb.Item>
+  <Breadcrumb.Separator />
+  <Breadcrumb.Item>
+   <Breadcrumb.Link href="/docs/components">Components</Breadcrumb.Link>
+  </Breadcrumb.Item>
+  <Breadcrumb.Separator />
+  <Breadcrumb.Item>
+   <Breadcrumb.Page>Breadcrumb</Breadcrumb.Page>
+  </Breadcrumb.Item>
  </Breadcrumb.List>
 </Breadcrumb.Root>
 ```
 
-***
+View Code
 
-### Responsive
+## [Link component](#link-component)
 
-Here's an example of a responsive breadcrumb that composes `<Breadcrumb.Item />` with `<Breadcrumb.Ellipsis />`, `<DropdownMenu />`, and `<Drawer />`.
-
-It displays a dropdown on desktop and a drawer on mobile.
+To use a link just add the `href` prop to `<Breadcrumb.Link />`.
 
 ```svelte
 <script lang="ts">
-  import { MediaQuery } from "svelte/reactivity";
-  import * as Breadcrumb from "$lib/components/ui/breadcrumb/index.js";
-  import * as Drawer from "$lib/components/ui/drawer/index.js";
-  import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
-  import { buttonVariants } from "$lib/components/ui/button/index.js";
-  const items = [
-    { href: "#", label: "Home" },
-    { href: "#", label: "Documentation" },
-    { href: "#", label: "Building Your Application" },
-    { href: "#", label: "Data Fetching" },
-    { label: "Caching and Revalidating" }
- ];
-  const ITEMS_TO_DISPLAY = 3;
-  let open = $state(false);
-  const isDesktop = new MediaQuery("(min-width: 768px)");
+ import * as Breadcrumb from "$lib/components/ui/breadcrumb/index.js";
 </script>
 <Breadcrumb.Root>
-  <Breadcrumb.List>
-    <Breadcrumb.Item>
-      <Breadcrumb.Link href={items[0].href}>
-        {items[0].label}
-      </Breadcrumb.Link>
-    </Breadcrumb.Item>
-    <Breadcrumb.Separator />
-    {#if items.length > ITEMS_TO_DISPLAY}
-      <Breadcrumb.Item>
-        {#if isDesktop.current}
-          <DropdownMenu.Root bind:open>
-            <DropdownMenu.Trigger
-              class="flex items-center gap-1"
-              aria-label="Toggle menu"
-            >
-              <Breadcrumb.Ellipsis class="size-4" />
-            </DropdownMenu.Trigger>
-            <DropdownMenu.Content align="start">
-              {#each items.slice(1, -2) as item, i (i)}
-                <DropdownMenu.Item>
-                  <a href={item.href ? item.href : "#"}>
-                    {item.label}
-                  </a>
-                </DropdownMenu.Item>
-              {/each}
-            </DropdownMenu.Content>
-          </DropdownMenu.Root>
-        {:else}
-          <Drawer.Root bind:open>
-            <Drawer.Trigger aria-label="Toggle Menu">
-              <Breadcrumb.Ellipsis class="size-4" />
-            </Drawer.Trigger>
-            <Drawer.Content>
-              <Drawer.Header class="text-start">
-                <Drawer.Title>Navigate to</Drawer.Title>
-                <Drawer.Description>
-                  Select a page to navigate to.
-                </Drawer.Description>
-              </Drawer.Header>
-              <div class="grid gap-1 px-4">
-                {#each items.slice(1, -2) as item, i (i)}
-                  <a href={item.href ? item.href : "#"} class="py-1 text-sm">
-                    {item.label}
-                  </a>
-                {/each}
-              </div>
-              <Drawer.Footer class="pt-4">
-                <Drawer.Close class={buttonVariants({ variant: "outline" })}>
-                  Close
-                </Drawer.Close>
-              </Drawer.Footer>
-            </Drawer.Content>
-          </Drawer.Root>
-        {/if}
-      </Breadcrumb.Item>
-      <Breadcrumb.Separator />
-    {/if}
-    {#each items.slice(-ITEMS_TO_DISPLAY + 1) as item (item.label)}
-      <Breadcrumb.Item>
-        {#if item.href}
-          <Breadcrumb.Link
-            href={item.href}
-            class="max-w-20 truncate md:max-w-none"
-          >
-            {item.label}
-          </Breadcrumb.Link>
-          <Breadcrumb.Separator />
-        {:else}
-          <Breadcrumb.Page class="max-w-20 truncate md:max-w-none">
-            {item.label}
-          </Breadcrumb.Page>
-        {/if}
-      </Breadcrumb.Item>
-    {/each}
-  </Breadcrumb.List>
+ <Breadcrumb.List>
+  <Breadcrumb.Item>
+   <Breadcrumb.Link href="#link-component">Home</Breadcrumb.Link>
+  </Breadcrumb.Item>
+  <Breadcrumb.Separator />
+  <Breadcrumb.Item>
+   <Breadcrumb.Link href="#link-component">Components</Breadcrumb.Link>
+  </Breadcrumb.Item>
+  <Breadcrumb.Separator />
+  <Breadcrumb.Item>
+   <Breadcrumb.Page>Breadcrumb</Breadcrumb.Page>
+  </Breadcrumb.Item>
+ </Breadcrumb.List>
 </Breadcrumb.Root>
 ```
+
+View Code
