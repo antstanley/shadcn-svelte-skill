@@ -2,6 +2,12 @@
 
 Configuration for your project.
 
+### [Epicenter](https://github.com/EpicenterHQ/epicenter)
+
+[Local-first, open source apps](https://github.com/EpicenterHQ/epicenter)
+
+[Special Sponsor](https://github.com/EpicenterHQ/epicenter)
+
 The `components.json` file holds configuration for your project.
 
 We use it to understand how your project is set up and how to generate components customized for your project.
@@ -24,7 +30,7 @@ bun x shadcn-svelte@latest init
 
 See the [CLI section](https://shadcn-svelte.com/docs/cli) for more information.
 
-## $schema
+## [$schema](#schema)
 
 You can see the JSON Schema for `components.json` [here](https://shadcn-svelte.com/schema.json).
 
@@ -36,13 +42,13 @@ components.json
 }
 ```
 
-## tailwind
+## [tailwind](#tailwind)
 
 Configuration to help the CLI understand how Tailwind CSS is set up in your project.
 
 See the [installation section](https://shadcn-svelte.com/docs/installation) for how to set up Tailwind CSS.
 
-### tailwind.css
+### [tailwind.css](#tailwindcss)
 
 Path to the CSS file that imports Tailwind CSS into your project.
 
@@ -56,7 +62,7 @@ components.json
 }
 ```
 
-### tailwind.baseColor
+### [tailwind.baseColor](#tailwindbasecolor)
 
 This is used to generate the default color palette for your components. **This cannot be changed after initialization.**
 
@@ -70,13 +76,13 @@ components.json
 }
 ```
 
-## aliases
+## [aliases](#aliases)
 
 The CLI uses these values and the `alias` config from your `svelte.config.js` file to place generated components in the correct location.
 
 Path aliases have to be set up in your `svelte.config.js` file.
 
-### aliases.lib
+### [aliases.lib](#aliaseslib)
 
 Import alias for your library, which is *typically* where you store your components, utils, hooks, etc.
 
@@ -90,7 +96,7 @@ components.json
 }
 ```
 
-### aliases.utils
+### [aliases.utils](#aliasesutils)
 
 Import alias for your utility functions.
 
@@ -104,7 +110,7 @@ components.json
 }
 ```
 
-### aliases.components
+### [aliases.components](#aliasescomponents)
 
 Import alias for your components.
 
@@ -118,7 +124,7 @@ components.json
 }
 ```
 
-### aliases.ui
+### [aliases.ui](#aliasesui)
 
 Import alias for your UI components.
 
@@ -132,7 +138,7 @@ components.json
 }
 ```
 
-### aliases.hooks
+### [aliases.hooks](#aliaseshooks)
 
 Import alias for your hooks, which in Svelte 5 are reactive functions/classes whose files typically end in `.svelte.ts` or `.svelte.js`.
 
@@ -146,7 +152,7 @@ components.json
 }
 ```
 
-## Typescript
+## [Typescript](#typescript)
 
 Typescript can be enabled or disabled.
 
@@ -170,7 +176,7 @@ components.json
 }
 ```
 
-## Registry
+## [Registry](#registry)
 
 The registry URL tells the CLI where to fetch the shadcn-svelte components/registry from. You can pin this to a specific preview release or your own fork of the registry.
 
